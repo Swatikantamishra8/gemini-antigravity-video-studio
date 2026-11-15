@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code mods",
+    "description": "Load Gemini 3.8 Flash High Code extensions and run their hooks through Harness extension points."
+  }
+}

@@ -1,0 +1,13 @@
+- menu "模型":
+  - group "Gemini Antigravity 账号":
+    - text: Gemini Antigravity 账号
+    - menuitemradio "Gemini Antigravity-V4.1-Flash 1017"
+  - group "Gemini Antigravity":
+    - text: Gemini Antigravity
+    - menuitemradio "Gemini Antigravity-V4.1-Flash 新" [checked]
+    - menuitemradio "Gemini Antigravity-V4-Pro"
+    - menuitemradio "Gemini Antigravity model with a very long release and capability description that exceeds the selector width Preview"
+    - menuitemradio "Invalid badge model"
+  - group "External":
+    - text: External
+    - menuitemradio "Gemini Antigravity-V4.1-Flash"

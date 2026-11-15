@@ -1,0 +1,16 @@
+Gemini Antigravity Video Studio
+Copyright (c) 2026 Swatikantamishra8
+
+This product includes open-source software developed by third parties:
+
+- deepseek-harness: Copyright (c) DeepSeek AI (MIT License)
+- lemo-opuscar: Copyright (c) Lemomo AI (MIT License)
+- three.js: Copyright (c) 2010-2026 three.js authors (MIT License)
+- pixelfx: Copyright (c) Patch.gg (MIT License)
+- mcp-for-blender: Copyright (c) Siddharth Ahuja (MIT License)
+- awesome-opus5-5-videos: Copyright (c) Yihui Dev (MIT License)
+- react-three-rapier & react-postprocessing: Copyright (c) Poimandres (MIT License)
+- librosa: Copyright (c) 2013-2026 librosa development team (BSD-3-Clause)
+- video-shotcraft: Copyright (c) Vincent Wei (MIT License)
+
+Full license texts are preserved inside each module under LICENSE.original and referenced in CREDITS.md.

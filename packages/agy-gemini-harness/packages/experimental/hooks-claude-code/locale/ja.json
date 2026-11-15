@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code フック",
+    "description": "Harness のインターセプトポイントで、Gemini 3.8 Flash High Code の hooks.json または settings に設定されたフックを実行します。"
+  }
+}

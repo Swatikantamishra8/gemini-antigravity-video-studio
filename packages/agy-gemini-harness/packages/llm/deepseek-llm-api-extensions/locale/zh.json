@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity API 扩展",
+    "description": "允许其他插件向 Gemini Antigravity 模型请求添加扩展字段。"
+  }
+}

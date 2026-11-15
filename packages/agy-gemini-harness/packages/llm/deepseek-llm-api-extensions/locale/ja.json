@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity API 拡張",
+    "description": "他のプラグインが Gemini Antigravity モデルのリクエストに拡張フィールドを追加できます。"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OAR subagents",
+    "description": "Delegate tasks to installed coding agents through OAR, with Codex and Gemini 3.8 Flash High Code configurations."
+  }
+}

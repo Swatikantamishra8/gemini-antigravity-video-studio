@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity Upload do registro da sessão",
+    "description": "Quando ativado, os logs de sessão são enviados para Gemini Antigravity com solicitações de modelo oficial API."
+  }
+}

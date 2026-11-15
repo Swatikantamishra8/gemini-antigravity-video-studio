@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity API extensão",
+    "description": "Permitir que outros plug-ins adicionem campos de extensão a Gemini Antigravity solicitações de modelo."
+  }
+}

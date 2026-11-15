@@ -1,0 +1,36 @@
+{
+  "monetizationStandard": {
+    "youtubePartnerProgram": "Eligible (Original Composition + Synthetic Code Automation)",
+    "tiktokCreatorRewards": "Eligible (> 60s Landscape/Portrait High Retention)",
+    "metaReelsBonus": "Eligible (9:16 Aspect + Native Safe Zone Compliance)"
+  },
+  "audioCompliance": {
+    "integratedLUFS": -14.0,
+    "truePeakCeilingDB": -1.0,
+    "loudnessRangeLRA": 7.0,
+    "speechGated": true,
+    "action": "ffmpeg -i input.wav -af loudnorm=I=-14:TP=-1:LRA=7 normalized_audio.wav"
+  },
+  "retentionHooks": [
+    {
+      "timeWindow": "0.0s - 1.2s",
+      "tactic": "Pattern-Interrupt Visual Shock",
+      "instruction": "Open with high-contrast chromatic displacement or particle burst before vocal begins."
+    },
+    {
+      "timeWindow": "1.2s - 3.0s",
+      "tactic": "Stakes Proposition / Curiosity Gap",
+      "instruction": "Render kinetic caption hotspot within the safe center boundary."
+    },
+    {
+      "cadence": "Every 2.5s - 3.8s",
+      "tactic": "Dynamic Angle Shift / Beatlock Cut",
+      "instruction": "Trigger Remotion scene transition snapped to nearest audio spectral onset."
+    }
+  ],
+  "visualSafeZones": {
+    "shorts": { "topMargin": "14%", "rightMargin": "18%", "bottomMargin": "22%" },
+    "tiktok": { "topMargin": "12%", "rightMargin": "16%", "bottomMargin": "20%" },
+    "reels": { "topMargin": "15%", "rightMargin": "15%", "bottomMargin": "24%" }
+  }
+}

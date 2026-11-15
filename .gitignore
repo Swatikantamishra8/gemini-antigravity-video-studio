@@ -1,0 +1,14 @@
+node_modules/
+.venv/
+raw_sources/
+__pycache__/
+*.pyc
+.DS_Store
+*.mp4
+*.mov
+*.wav
+*.mkv
+out/
+dist/
+build/
+.cache/

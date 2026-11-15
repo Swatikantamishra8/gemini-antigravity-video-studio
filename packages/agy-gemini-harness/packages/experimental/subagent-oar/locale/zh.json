@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OAR 子智能体",
+    "description": "通过 OAR 向已安装的编程智能体委派任务，并提供 Codex 和 Gemini 3.8 Flash High Code 配置。"
+  }
+}

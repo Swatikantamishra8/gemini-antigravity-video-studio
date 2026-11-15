@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code サブエージェント",
+    "description": "Gemini 3.8 Flash High Code のネイティブの認証と設定を使用して、単独のタスクを委派します。"
+  }
+}

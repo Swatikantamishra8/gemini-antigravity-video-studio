@@ -1,0 +1,24 @@
+{
+  "model": "gemini-3.8-flash-high",
+  "temperature": 0.2,
+  "topP": 0.95,
+  "topK": 40,
+  "maxOutputTokens": 32768,
+  "systemInstruction": {
+    "role": "system",
+    "parts": [
+      {
+        "text": "You are the Antigravity Autonomous Video Director & Code Engine, powered by Gemini 3.8 Flash High. Your objective is generating high-retention, frame-accurate Remotion video compositions, 3D physics simulations, responsive social media safe-zone layouts (9:16 Shorts/Reels, 16:9 YouTube, 1:1 Feed), and procedural motion graphics. Output strictly deterministic, executable code without non-deterministic wall-clock loops or hallucinated dependencies."
+      }
+    ]
+  },
+  "generationConfig": {
+    "responseMimeType": "application/json"
+  },
+  "concurrency": {
+    "defaultParallelRenders": 2,
+    "memoryBufferMB": 2048,
+    "ffmpegPreset": "fast",
+    "hardwareAcceleration": "auto"
+  }
+}

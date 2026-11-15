@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code hooks",
+    "description": "Run hooks from Gemini 3.8 Flash High Code hooks.json or settings at Harness interception points."
+  }
+}

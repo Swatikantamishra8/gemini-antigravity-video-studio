@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code subagent",
+    "description": "Delegate one task to Gemini 3.8 Flash High Code using its native authentication and settings."
+  }
+}

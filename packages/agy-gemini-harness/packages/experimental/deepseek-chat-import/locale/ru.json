@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Импорт чатов Gemini Antigravity",
+    "description": "Загрузите ZIP-экспорт чатов с сайта Gemini Antigravity кнопкой рядом с «Новая сессия»; каждый диалог станет сессией в выбранном рабочем пространстве.",
+    "detail": "docs/DETAIL.md"
+  }
+}

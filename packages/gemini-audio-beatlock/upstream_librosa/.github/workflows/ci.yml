@@ -1,0 +1,183 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+permissions: 
+  contents: read
+  id-token: write
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: True
+
+env:
+    # Channel that provides native win-arm64 conda packages
+    WIN_ARM64_CONDA_CHANNEL: bootstrap-win-arm64-round-2-native
+    MPLBACKEND: Agg
+
+jobs:
+    test:
+        name: >-
+          Python ${{ matrix.python-version }} on ${{ matrix.os }}
+          ${{ matrix.variant && format(' - {0}', matrix.variant) || '' }}
+        runs-on: ${{ matrix.os }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+                include:
+                    - os: ubuntu-latest
+                      python-version: "3.13"
+                      variant: "minimal"
+
+                    - os: ubuntu-latest
+                      python-version: "3.13"
+
+                    - os: ubuntu-latest
+                      python-version: "3.14"
+
+                    - os: ubuntu-24.04-arm
+                      python-version: "3.15"
+
+                    - os: ubuntu-latest
+                      python-version: "3.15"
+
+                    - os: macos-latest
+                      python-version: "3.15"
+
+                    - os: windows-latest
+                      python-version: "3.15"
+
+                    - os: windows-11-arm
+                      python-version: "3.14"  # FIXME: bump this when llvmlite starts working on win11-arm64
+                      win_arm64: true
+        steps:
+        - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+        - name: Create short temp directory (Windows only)
+          if: runner.os == 'Windows'
+          run: mkdir C:\tmp
+          shell: cmd
+
+        - name: Set environment variables (Windows only)
+          if: runner.os == 'Windows'
+          run: |
+            echo "TMP=C:\tmp" >> $env:GITHUB_ENV
+            echo "TEMP=C:\tmp" >> $env:GITHUB_ENV
+          shell: pwsh
+
+        - name: Setup Micromamba
+          if: ${{ !matrix.win_arm64 }}
+          uses: mamba-org/setup-micromamba@f457c30a868e4760d3a6fcea5f25dc655b8edf39 # v3
+          with:
+            environment-name: test
+            condarc: |
+              channels:
+                - conda-forge
+            create-args: >-
+              python=${{ matrix.python-version }}
+              ffmpeg
+              libsndfile
+            cache-downloads: true
+
+        - name: Set up conda-standalone (Windows ARM64)
+          if: ${{ matrix.win_arm64 }}
+          uses: conda-incubator/setup-conda-standalone@81e6787412ec26080799a19e61bec407502021ed # v0.1.1
+          with:
+            channel: ${{ env.WIN_ARM64_CONDA_CHANNEL }}
+            conda-standalone-version: 26.3.2.post1
+            destination-directory: ${{ runner.temp }}/conda-standalone
+
+        - name: Create and populate conda env (Windows ARM64)
+          if: ${{ matrix.win_arm64 }}
+          shell: bash -elx {0}
+          env:
+            CONDA_CHANNELS: ${{ env.WIN_ARM64_CONDA_CHANNEL }},conda-forge,defaults
+          run: |
+            TEST_PREFIX="${RUNNER_TEMP}/conda-envs/test"
+            "${CONDA_EXE}" create --yes --prefix "${TEST_PREFIX}" \
+              -c "${WIN_ARM64_CONDA_CHANNEL}" -c conda-forge -c defaults \
+              python=${{ matrix.python-version }} pip soxr-python libsndfile
+            echo "CONDA_PREFIX=${TEST_PREFIX}" >> "${GITHUB_ENV}"
+            echo "${TEST_PREFIX}" >> "${GITHUB_PATH}"
+            echo "${TEST_PREFIX}/Scripts" >> "${GITHUB_PATH}"
+            echo "${TEST_PREFIX}/Library/bin" >> "${GITHUB_PATH}"
+
+        - name: Setup uv
+          if: ${{ !matrix.win_arm64 }}
+          uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+          with:
+            enable-cache: true
+            cache-dependency-glob: "pyproject.toml"
+
+        - name: Install librosa and test dependencies
+          shell: bash -el {0}
+          run: |
+            if [ "${{ matrix.win_arm64 }}" == "true" ]; then
+              python -m pip install --upgrade-strategy only-if-needed -e ".[tests]"
+            elif [ "${{ matrix.variant }}" == "minimal" ]; then
+              uv pip install --prefix "$CONDA_PREFIX" --resolution=lowest-direct -e ".[tests]"
+            else
+              uv pip install --prefix "$CONDA_PREFIX" -e ".[tests]"
+            fi
+
+        - name: Environment info
+          shell: bash -el {0}
+          run: |
+            if [ "${{ matrix.win_arm64 }}" == "true" ]; then
+              "${CONDA_EXE}" info -a
+              "${CONDA_EXE}" list
+            else
+              micromamba info
+              uv pip list --prefix "$CONDA_PREFIX"
+            fi
+            python -c "import scipy; scipy.show_config()"
+
+        - name: Run pytest
+          shell: bash -el {0}
+          run: pytest --mpl-results-path=mpl_image_results/
+
+        - name: Prepare artifact directory structure
+          if: failure() && hashFiles('mpl_image_results/**') != ''
+          id: prep_artifact
+          run: |
+            PR_NUM="${{ github.event.pull_request.number || github.run_id }}"
+            ART_NAME="mpl-test-results-${{ runner.os }}--${{ runner.arch }}--${{ matrix.python-version }}-PR${PR_NUM}"
+            
+            mkdir -p "_artifact_stage/$ART_NAME"
+            mv mpl_image_results/* "_artifact_stage/$ART_NAME/"
+          
+            echo "art_name=$ART_NAME" >> "$GITHUB_OUTPUT"
+
+        - name: Upload image comparison failures if any
+          if: failure() && steps.prep_artifact.outputs.art_name != ''
+          uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+          with:
+            name: ${{ steps.prep_artifact.outputs.art_name }}
+            path: _artifact_stage/
+            retention-days: 7
+            compression-level: 0
+            overwrite: true
+
+
+        - name: Upload coverage to Codecov
+          uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
+          with:
+            use_oidc: ${{ !github.event.pull_request.head.repo.fork }}
+            token: ${{ secrets.CODECOV_TOKEN }}
+            files: ./coverage.xml
+            disable_search: true
+            flags: unittests
+            env_vars: OS,PYTHON
+            name: codecov-umbrella
+            fail_ci_if_error: false
+            verbose: true
+          env:
+            OS: ${{ runner.os }}
+            PYTHON: ${{ matrix.python-version }}

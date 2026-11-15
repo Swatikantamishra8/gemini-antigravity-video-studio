@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity チャットのインポート",
+    "description": "「新規セッション」の横にあるボタンから Gemini Antigravity ウェブサイトのチャットエクスポート ZIP をアップロードすると、各会話が選択したワークスペースのセッションになります。",
+    "detail": "docs/DETAIL.md"
+  }
+}

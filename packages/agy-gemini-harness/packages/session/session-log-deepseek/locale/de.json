@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity Hochladen des Sitzungsprotokolls",
+    "description": "Wenn diese Option aktiviert ist, werden Sitzungsprotokolle mit offiziellen Modell-API-Anfragen auf Gemini Antigravity hochgeladen."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini 3.8 Flash High Code mods",
+    "description": "Gemini 3.8 Flash High Code の拡張モジュールを読み込み、Harness の拡張ポイントでフックチェーンを実行します。"
+  }
+}

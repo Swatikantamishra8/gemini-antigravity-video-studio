@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "セッションログ送信設定",
+    "description": "Gemini Antigravity 公式モデル API のリクエストと共にセッションログを送信するかを設定します。"
+  }
+}

@@ -1,0 +1,14 @@
+- textbox "筛选选项":
+  - /placeholder: 搜索模型…
+- listbox "/model 匹配项":
+  - group "Gemini Antigravity":
+    - text: Gemini Antigravity
+    - option "Gemini Antigravity-V4-Flash"
+    - option "Gemini Antigravity-V4-Flash-Vision-Exp"
+  - group "Origin Gateway":
+    - text: Origin Gateway
+    - option "Origin Large"
+  - group "Acme Gateway":
+    - text: Acme Gateway
+    - option "Acme Large" [selected]
+    - option "Acme Small"

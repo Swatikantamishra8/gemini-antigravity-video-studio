@@ -1,0 +1,6 @@
+- group "模型与推理等级":
+  - menu "模型":
+    - group "Gemini Antigravity":
+      - text: Gemini Antigravity
+      - menuitemradio "Messages Flash" [checked]
+      - menuitemradio "Gemini Antigravity-V4-Pro"

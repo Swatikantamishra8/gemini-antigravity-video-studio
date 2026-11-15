@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Gemini Antigravity API extensión",
+    "description": "Permita que otros complementos agreguen campos de extensión a Gemini Antigravity solicitudes de modelo."
+  }
+}

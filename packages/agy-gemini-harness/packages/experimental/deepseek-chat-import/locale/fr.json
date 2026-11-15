@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Importation des discussions Gemini Antigravity",
+    "description": "Téléversez une exportation ZIP des discussions du site Gemini Antigravity avec le bouton à côté de Nouvelle séance ; chaque conversation devient une séance dans l’espace de travail choisi.",
+    "detail": "docs/DETAIL.md"
+  }
+}
