@@ -68,7 +68,7 @@ def analyze_audio(audio_path, output_path="assets/audio/beatmap.json", fps=60):
     silence_times = librosa.frames_to_time(silence_frames, sr=sr).tolist()
 
     beatmap = {
-        "audio_file": os.path.abspath(audio_path),
+        "audio_file": os.path.relpath(audio_path) if os.path.exists(audio_path) else os.path.basename(audio_path),
         "duration_sec": round(duration, 3),
         "total_frames": int(round(duration * fps)),
         "target_fps": fps,
@@ -175,7 +175,7 @@ def fallback_audio_analysis(audio_path, output_path, fps):
         silence_times = [round(float(idx * 0.5), 3) for idx in silence_idx]
 
     beatmap = {
-        "audio_file": os.path.abspath(audio_path),
+        "audio_file": os.path.relpath(audio_path) if os.path.exists(audio_path) else os.path.basename(audio_path),
         "analyzer": "scipy-signal-native",
         "duration_sec": round(duration, 3),
         "total_frames": int(round(duration * fps)),

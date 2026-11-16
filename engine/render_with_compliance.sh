@@ -8,7 +8,8 @@ OUT_RAW="renders/${OUT_NAME}_raw.mp4"
 OUT_FINAL="renders/${OUT_NAME}_monetizable.mp4"
 ATTR_FILE="renders/ATTRIBUTION.md"
 
-export PATH="/Users/swatikantamishra/.aside/runtime/bin:$PATH"
+# Configure path to local runtime if available
+export PATH="${RUNTIME_BIN:-$HOME/.aside/runtime/bin}:$PATH"
 
 mkdir -p renders assets/audio
 

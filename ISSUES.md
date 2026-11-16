@@ -1,7 +1,7 @@
 # Antigravity Video Studio — Issues Log & Roadmap
 
 > **Updated**: 2026-11-16  
-> **Workspace**: `/Users/swatikantamishra/Desktop/VideoEditor`  
+> **Workspace**: `<workspace_root>`  
 > **Repository**: [Swatikantamishra8/gemini-antigravity-video-studio](https://github.com/Swatikantamishra8/gemini-antigravity-video-studio)
 
 ---

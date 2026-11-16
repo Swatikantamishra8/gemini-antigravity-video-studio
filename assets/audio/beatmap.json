@@ -1,5 +1,5 @@
 {
-  "audio_file": "/Users/swatikantamishra/Desktop/VideoEditor/assets/audio/test_bgm.wav",
+  "audio_file": "assets/audio/test_bgm.wav",
   "analyzer": "scipy-signal-native",
   "duration_sec": 10.0,
   "total_frames": 600,
