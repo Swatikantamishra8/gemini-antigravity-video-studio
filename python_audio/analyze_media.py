@@ -92,19 +92,110 @@ def analyze_audio(audio_path, output_path="assets/audio/beatmap.json", fps=60):
 
 
 def fallback_audio_analysis(audio_path, output_path, fps):
-    # Minimal deterministic structure if librosa is in installation process
+    """
+    Native SciPy & SoundFile acoustic analysis.
+    Performs true STFT spectral flux onset detection, autocorrelation BPM estimation,
+    sub-bass (<130Hz) drop identification, and silence mapping without librosa/llvmlite.
+    """
+    print(f"[*] Running native SciPy spectral analyzer on: {audio_path}")
+    import soundfile as sf
+    from scipy import signal
+
+    data, sr = sf.read(audio_path)
+    if data.ndim > 1:
+        y = np.mean(data, axis=1)
+    else:
+        y = data
+
+    duration = float(len(y) / sr)
+
+    # 1. STFT Spectrogram Computation
+    nperseg = 1024
+    noverlap = 512
+    freqs, times, Zxx = signal.stft(y, fs=sr, nperseg=nperseg, noverlap=noverlap)
+    spec = np.abs(Zxx)
+
+    # 2. Spectral Flux Onset Envelope
+    spec_diff = np.diff(spec, axis=1)
+    flux = np.sum(np.maximum(0, spec_diff), axis=0)
+    flux = np.pad(flux, (1, 0), mode='constant')
+
+    # 3. Peak / Onset Picking
+    hop_time = (nperseg - noverlap) / sr
+    min_dist_frames = max(1, int(0.25 / hop_time))  # at least 250ms apart
+    prominence = np.std(flux) * 0.75
+    peaks, _ = signal.find_peaks(flux, distance=min_dist_frames, prominence=prominence)
+    peak_times = (peaks * hop_time).tolist()
+    peak_fps_frames = [int(round(t * fps)) for t in peak_times]
+
+    # 4. BPM Estimation via Flux Autocorrelation (60 to 180 BPM range)
+    norm_flux = flux - np.mean(flux)
+    autocorr = signal.correlate(norm_flux, norm_flux, mode='full', method='fft')
+    autocorr = autocorr[len(autocorr)//2:]
+
+    min_lag = int((60.0 / 180.0) / hop_time)
+    max_lag = int((60.0 / 60.0) / hop_time)
+    bpm = 120.0
+    if max_lag < len(autocorr) and min_lag < max_lag:
+        valid_range = autocorr[min_lag:max_lag]
+        if len(valid_range) > 0:
+            best_lag = min_lag + np.argmax(valid_range)
+            detected_bpm = float(60.0 / (best_lag * hop_time))
+            # If detected as half-time (< 90 BPM), double it to standard tempo
+            if detected_bpm < 85.0:
+                detected_bpm *= 2.0
+            bpm = detected_bpm
+
+    # Generate grid-aligned beats from detected BPM & phase
+    beat_interval = 60.0 / bpm
+    total_beats = int(duration / beat_interval)
+    first_peak = peak_times[0] if len(peak_times) > 0 else 0.0
+    beat_times = [first_peak + i * beat_interval for i in range(total_beats) if (first_peak + i * beat_interval) <= duration]
+    beat_fps_frames = [int(round(t * fps)) for t in beat_times]
+
+    # 5. Bass Drop Detection (< 130 Hz)
+    bass_mask = freqs <= 130
+    bass_energy = np.mean(spec[bass_mask, :], axis=0)
+    bass_norm = bass_energy / (np.max(bass_energy) + 1e-6)
+    min_bass_dist = max(1, int(1.0 / hop_time))
+    bass_peaks, _ = signal.find_peaks(bass_norm, distance=min_bass_dist, height=0.6)
+    bass_times = (bass_peaks * hop_time).tolist()
+    bass_drop_frames = [int(round(t * fps)) for t in bass_times]
+
+    # 6. Silence intervals (RMS < 10% of mean)
+    window_size = max(1, int(sr * 0.5))
+    num_windows = len(y) // window_size
+    silence_times = []
+    if num_windows > 0:
+        rms = np.array([
+            np.sqrt(np.mean(y[i * window_size:(i + 1) * window_size]**2))
+            for i in range(num_windows)
+        ])
+        silence_idx = np.where(rms < (np.mean(rms) * 0.1))[0]
+        silence_times = [round(float(idx * 0.5), 3) for idx in silence_idx]
+
     beatmap = {
         "audio_file": os.path.abspath(audio_path),
+        "analyzer": "scipy-signal-native",
+        "duration_sec": round(duration, 3),
+        "total_frames": int(round(duration * fps)),
         "target_fps": fps,
-        "bpm": 120.0,
-        "beat_frames": [int(i * (fps * 60 / 120.0)) for i in range(120)],
-        "peak_frames": [int(i * fps * 2.5) for i in range(24)],
-        "bass_drop_frames": [int(fps * 3), int(fps * 8), int(fps * 15)],
-        "note": "Standard 120 BPM fallback grid"
+        "bpm": round(bpm, 2),
+        "beat_timestamps": [round(t, 3) for t in beat_times],
+        "beat_frames": beat_fps_frames,
+        "peak_frames": peak_fps_frames,
+        "bass_drop_frames": bass_drop_frames,
+        "silence_intervals_sec": silence_times[:50],
+        "pattern_interrupt_recommendations": [
+            f for f in beat_fps_frames if (f % int(fps * 3.0) < fps * 0.5)
+        ]
     }
+
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
     with open(output_path, "w") as f:
         json.dump(beatmap, f, indent=2)
+
+    print(f"[+] SciPy Spectral Beatmap generated: {output_path} (BPM: {bpm:.1f}, {len(beat_fps_frames)} beats, {len(bass_drop_frames)} bass drops)")
     return beatmap
 
 

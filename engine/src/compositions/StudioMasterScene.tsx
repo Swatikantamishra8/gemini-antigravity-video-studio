@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import {
   interpolate,
   spring,
@@ -8,9 +8,15 @@ import {
 } from 'remotion';
 import { ThreeCanvas } from '@remotion/three';
 import * as THREE from 'three';
+import {
+  EffectComposer,
+  Bloom,
+  ChromaticAberration,
+  Vignette,
+} from '@react-three/postprocessing';
 
 // Procedural Deterministic Mesh inside ThreeCanvas
-const Deterministic3DScene: React.FC<{ progress: number }> = ({ progress }) => {
+const Deterministic3DScene: React.FC<{ progress: number; frame: number }> = ({ progress, frame }) => {
   const meshRef = useRef<THREE.Mesh>(null);
 
   // Strictly driven by Remotion frame progress
@@ -18,11 +24,18 @@ const Deterministic3DScene: React.FC<{ progress: number }> = ({ progress }) => {
   const rotationX = Math.sin(progress * Math.PI * 2) * 0.5;
   const scale = 1.0 + Math.sin(progress * Math.PI * 6) * 0.15;
 
+  // Cinematic chromatic aberration burst during hook (frames 0 to 25)
+  const chromaStrength = interpolate(frame, [0, 8, 25], [0.006, 0.003, 0.0005], {
+    extrapolateRight: 'clamp',
+  });
+  const chromaOffset = useMemo(() => new THREE.Vector2(chromaStrength, chromaStrength), [chromaStrength]);
+
   return (
     <>
-      <ambientLight intensity={0.8} />
-      <directionalLight position={[5, 10, 7]} intensity={1.5} />
-      <pointLight position={[-5, -5, -2]} color="#00F5FF" intensity={2.0} />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 10, 7]} intensity={1.8} />
+      <pointLight position={[-5, -5, -2]} color="#00F5FF" intensity={2.5} />
+      <pointLight position={[5, -5, 2]} color="#FF0055" intensity={1.5} />
 
       <mesh
         ref={meshRef}
@@ -32,11 +45,25 @@ const Deterministic3DScene: React.FC<{ progress: number }> = ({ progress }) => {
         <torusKnotGeometry args={[1.5, 0.45, 128, 32]} />
         <meshStandardMaterial
           color="#00F5FF"
-          roughness={0.15}
-          metalness={0.9}
+          roughness={0.12}
+          metalness={0.88}
           wireframe={false}
+          emissive="#003344"
+          emissiveIntensity={0.6}
         />
       </mesh>
+
+      {/* Cinematic Postprocessing Pass */}
+      <EffectComposer autoClear={false}>
+        <Bloom
+          luminanceThreshold={0.3}
+          luminanceSmoothing={0.8}
+          intensity={1.2}
+          mipmapBlur
+        />
+        <ChromaticAberration offset={chromaOffset} radialModulation={false} modulationOffset={0} />
+        <Vignette eskil={false} offset={0.15} darkness={0.9} />
+      </EffectComposer>
     </>
   );
 };
@@ -90,7 +117,7 @@ export const StudioMasterScene: React.FC<StudioMasterSceneProps> = ({
         height={height}
         camera={{ position: [0, 0, cameraZ], fov: 45 }}
       >
-        <Deterministic3DScene progress={progress} />
+        <Deterministic3DScene progress={progress} frame={frame} />
       </ThreeCanvas>
 
       {/* Foreground Kinetic Typography Layer */}
