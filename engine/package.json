@@ -1,0 +1,38 @@
+{
+  "name": "engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx remotion studio src/index.ts --gl=angle",
+    "compositions": "npx remotion compositions src/index.ts --gl=angle",
+    "render:vertical": "npx remotion render src/index.ts Studio-Vertical-9x16 ../renders/vertical.mp4 --concurrency=2 --gl=angle",
+    "render:landscape": "npx remotion render src/index.ts Studio-Landscape-16x9 ../renders/landscape.mp4 --concurrency=2 --gl=angle",
+    "render:square": "npx remotion render src/index.ts Studio-Square-1x1 ../renders/square.mp4 --concurrency=2 --gl=angle",
+    "render:feed": "npx remotion render src/index.ts Studio-Feed-4x5 ../renders/feed.mp4 --concurrency=2 --gl=angle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.2",
+    "@react-three/rapier": "^2.2.0",
+    "@remotion/cli": "^4.0.543",
+    "@remotion/media-utils": "^4.0.543",
+    "@remotion/three": "^4.0.543",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
+    "pixelfx": "file:../vendors/pixelfx",
+    "postprocessing": "^6.39.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.543",
+    "three": "^0.187.0",
+    "typescript": "^7.0.2"
+  }
+}

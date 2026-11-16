@@ -1,0 +1,9 @@
+{
+  "name": "blender-mcp",
+  "command": "python3",
+  "args": ["vendors/mcp-for-blender/main.py"],
+  "env": {
+    "PYTHONPATH": "vendors/mcp-for-blender/src"
+  },
+  "description": "Blender MCP server for programmatic 3D scene generation and GLTF/GLB export"
+}

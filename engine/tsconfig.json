@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "pixelfx": ["../vendors/pixelfx/src/core/index.js"],
+      "pixelfx/*": ["../vendors/pixelfx/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
