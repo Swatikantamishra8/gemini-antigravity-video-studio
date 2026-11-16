@@ -3,11 +3,11 @@ import { lstatSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:f
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { Context, FiberState, type Plugin } from '@deepseek-ai/cordis'
-import { PluginPackages, readPluginMeta, type RuntimeResolution } from '@deepseek-ai/dsh-app-boot'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { remoteMethods } from '@deepseek-ai/dsh-typert-protocol'
-import type { AgentPresetRegistry } from '@deepseek-ai/dsh-agent-preset-registry'
+import { Context, FiberState, type Plugin } from '@gemini-agy/cordis'
+import { PluginPackages, readPluginMeta, type RuntimeResolution } from '@gemini-agy/dsh-app-boot'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import { remoteMethods } from '@gemini-agy/dsh-typert-protocol'
+import type { AgentPresetRegistry } from '@gemini-agy/dsh-agent-preset-registry'
 import PluginInventoryGateway from '../src/index.ts'
 
 const contexts: Context[] = []

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-acp",
+  "name": "@gemini-agy/dsh-acp",
   "description": "Automation-only Agent Client Protocol server for driving Gemini Antigravity Harness agents over JSON-RPC stdio",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/acp/acp"
   },
   "type": "module",
@@ -33,41 +33,41 @@
   "license": "MIT",
   "dependencies": {
     "@agentclientprotocol/sdk": "1.4.0",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-mcp-client": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-attachment": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-mcp-client": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-persistence": "workspace:*",
+    "@gemini-agy/dsh-token-meter": "workspace:*",
+    "@gemini-agy/dsh-user-approval": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-token-meter": {
+    "@gemini-agy/dsh-token-meter": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-mcp-client": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-token-meter": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-agent-loop": "workspace:*",
+    "@gemini-agy/dsh-agent-loop-testkit": "workspace:*",
+    "@gemini-agy/dsh-attachment": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-mcp-client": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-persistence": "workspace:*",
+    "@gemini-agy/dsh-session-persistence-jsonl": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*",
+    "@gemini-agy/dsh-subagent": "workspace:*",
+    "@gemini-agy/dsh-token-meter": "workspace:*",
+    "@gemini-agy/dsh-tool-testkit": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-user-approval": "workspace:*"
   }
 }

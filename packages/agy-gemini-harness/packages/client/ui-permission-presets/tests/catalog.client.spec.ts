@@ -1,10 +1,10 @@
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import type {
   ConnectionGeneration, ConnectionHandle,
-} from '@deepseek-ai/dsh-client-connection/client'
-import { TestRemote } from '@deepseek-ai/dsh-client-test-runtime'
-import type { PermissionCatalog } from '@deepseek-ai/dsh-permission-presets/client'
+} from '@gemini-agy/dsh-client-connection/client'
+import { TestRemote } from '@gemini-agy/dsh-client-test-runtime'
+import type { PermissionCatalog } from '@gemini-agy/dsh-permission-presets/client'
 import { PermissionCatalogDirectory } from '../src/client/catalog.ts'
 
 const FIRST: PermissionCatalog = {

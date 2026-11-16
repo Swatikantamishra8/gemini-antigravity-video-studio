@@ -1,8 +1,8 @@
 import { readFile } from 'node:fs/promises'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { AttachmentStore } from '@deepseek-ai/dsh-attachment'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
+import { Context } from '@gemini-agy/cordis'
+import { AttachmentStore } from '@gemini-agy/dsh-attachment'
+import type { AttachmentId, ImageVariantId } from '@gemini-agy/dsh-attachment/types'
 import type {
   ImageAttachmentLimits,
   ImageAttachmentRef,
@@ -10,11 +10,11 @@ import type {
   RequestImageAttachment,
   SaveImageAttachment,
   StoredImageAttachment,
-} from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createToolResultMessage, createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Message, ToolSchema } from '@deepseek-ai/dsh-llm'
-import * as LlmPiAi from '@deepseek-ai/dsh-llm-pi-ai'
+} from '@gemini-agy/dsh-attachment'
+import { brandString } from '@gemini-agy/dsh-brand'
+import LlmRuntime, { createToolResultMessage, createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
+import type { Message, ToolSchema } from '@gemini-agy/dsh-llm'
+import * as LlmPiAi from '@gemini-agy/dsh-llm-pi-ai'
 import type { PiAiReplayResponse } from '../src/replay.ts'
 import { assemble, type AssembledResult } from './assemble.ts'
 

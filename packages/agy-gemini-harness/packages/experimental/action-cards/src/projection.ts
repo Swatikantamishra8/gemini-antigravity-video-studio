@@ -1,9 +1,9 @@
 /** Recover card proposals from logged `propose_action` calls and decisions from plugin records. */
 import { z } from 'zod'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { pluginRecordOf, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import { pluginRecordOf, SessionLogOffset } from '@gemini-agy/dsh-session'
+import type { ProjectionDefinition } from '@gemini-agy/dsh-session-projection'
 
 /** Model-facing name of the card tool. */
 export const PROPOSE_ACTION = 'propose_action'

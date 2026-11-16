@@ -3,7 +3,7 @@ description: "面向发送官方 Gemini Antigravity 请求的部署，说明活�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-plugin-package-inventory-deepseek
+# @gemini-agy/dsh-plugin-package-inventory-deepseek
 
 [English](README.md) | 中文
 

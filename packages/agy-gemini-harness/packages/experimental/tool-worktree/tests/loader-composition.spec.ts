@@ -1,5 +1,5 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { execFile } from 'node:child_process'
 import { mkdir, mkdtemp, readFile, realpath, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -7,23 +7,23 @@ import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { promisify } from 'node:util'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { type ToolCallId } from '@deepseek-ai/dsh-llm'
-import LocalSandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import WorkingDirectoryService from '@deepseek-ai/dsh-working-directory'
-import WorktreeService from '@deepseek-ai/dsh-experimental-worktree'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import LocalFileSystem from '@gemini-agy/dsh-fs-local'
+import { brandString } from '@gemini-agy/dsh-brand'
+import LlmRuntime, { type ToolCallId } from '@gemini-agy/dsh-llm'
+import LocalSandbox from '@gemini-agy/dsh-sandbox-local'
+import SandboxPolicyService from '@gemini-agy/dsh-sandbox-policy'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import LocalSubprocessRuntime from '@gemini-agy/dsh-subprocess-local'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import WorkingDirectoryService from '@gemini-agy/dsh-working-directory'
+import WorktreeService from '@gemini-agy/dsh-experimental-worktree'
 import * as ToolWorktree from '../src/index.ts'
 
 const exec = promisify(execFile)
@@ -54,27 +54,27 @@ describe('worktree tool through real Loader composition', () => {
     const baseCommit = (await git('rev-parse', 'HEAD')).stdout.trim()
 
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-agent', AgentRegistry],
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
+      ['@gemini-agy/dsh-agent', AgentRegistry],
+      ['@gemini-agy/dsh-session', SessionStore],
+      ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
 
-      ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-      ['@deepseek-ai/dsh-llm', LlmRuntime],
-      ['@deepseek-ai/dsh-tools', ToolRuntime],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-      ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-      ['@deepseek-ai/dsh-sandbox-local', LocalSandbox],
-      ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-      ['@deepseek-ai/dsh-working-directory', WorkingDirectoryService],
-      ['@deepseek-ai/dsh-experimental-worktree', WorktreeService],
-      ['@deepseek-ai/dsh-experimental-tool-worktree', ToolWorktree],
-      ['@deepseek-ai/dsh-agent-loop', AgentLoop],
+      ['@gemini-agy/dsh-system-prompt', SystemPrompt],
+      ['@gemini-agy/dsh-llm', LlmRuntime],
+      ['@gemini-agy/dsh-tools', ToolRuntime],
+      ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+      ['@gemini-agy/dsh-fs-local', LocalFileSystem],
+      ['@gemini-agy/dsh-subprocess-local', LocalSubprocessRuntime],
+      ['@gemini-agy/dsh-sandbox-local', LocalSandbox],
+      ['@gemini-agy/dsh-sandbox-policy', SandboxPolicyService],
+      ['@gemini-agy/dsh-working-directory', WorkingDirectoryService],
+      ['@gemini-agy/dsh-experimental-worktree', WorktreeService],
+      ['@gemini-agy/dsh-experimental-tool-worktree', ToolWorktree],
+      ['@gemini-agy/dsh-agent-loop', AgentLoop],
     ])
     const config = [...modules.keys()].flatMap(name => [
       `- name: 'cordis:${name}'`,
-      ...name === '@deepseek-ai/dsh-sandbox-policy' ? ['  config:', '    mode: danger-full-access'] : [],
-      ...name === '@deepseek-ai/dsh-agent-loop' ? ['  config:', '    agents: []'] : [],
+      ...name === '@gemini-agy/dsh-sandbox-policy' ? ['  config:', '    mode: danger-full-access'] : [],
+      ...name === '@gemini-agy/dsh-agent-loop' ? ['  config:', '    agents: []'] : [],
     ]).join('\n') + '\n'
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, config)
@@ -109,7 +109,7 @@ describe('worktree tool through real Loader composition', () => {
     expect(context.tools.get('create_worktree')!.presentCall!({ name: 'named' })).toEqual({
       card: 'generic', title: 'create_worktree', rawInput: { name: 'named' },
     })
-    const entry = [...context.loader.entries()].find(candidate => candidate.options.name === 'cordis:@deepseek-ai/dsh-experimental-tool-worktree')
+    const entry = [...context.loader.entries()].find(candidate => candidate.options.name === 'cordis:@gemini-agy/dsh-experimental-tool-worktree')
     await entry!.fiber!.dispose()
     expect(context.tools.schemas().some(tool => tool.name === 'create_worktree')).toBe(false)
   })

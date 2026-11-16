@@ -1,7 +1,7 @@
 /** Prepare plugin-contributed request fields and commit their delivery after HTTP acceptance. */
 
-import { errorChain, LlmError } from '@deepseek-ai/dsh-llm'
-import type { Gemini AntigravityLlmApiExtensionRequest, PreparedGemini AntigravityLlmApiExtensions } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
+import { errorChain, LlmError } from '@gemini-agy/dsh-llm'
+import type { Gemini AntigravityLlmApiExtensionRequest, PreparedGemini AntigravityLlmApiExtensions } from '@gemini-agy/dsh-deepseek-llm-api-extensions'
 import type { Gemini AntigravityAdapterOptions } from './types.ts'
 
 /**

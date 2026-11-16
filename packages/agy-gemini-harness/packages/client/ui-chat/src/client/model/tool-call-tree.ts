@@ -1,9 +1,9 @@
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/client'
+import type { SessionEvent } from '@gemini-agy/dsh-session/types'
+import type {} from '@gemini-agy/dsh-tool-executor-ptc/client'
 import type {
   ConversationNode, RunningToolCall, ToolCallBlock, ToolResultNode,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+} from '@gemini-agy/dsh-client-ui-conversation/client'
+import { PartialArguments } from '@gemini-agy/dsh-util-values'
 
 interface ProjectedBlock {
   source: ToolCallBlock

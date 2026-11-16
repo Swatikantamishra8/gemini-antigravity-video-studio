@@ -2,10 +2,10 @@
  * Dialect-neutral vocabulary and log-only events shared by the Gemini 3.8 Flash High Code and
  * Codex hook bridges. Payload construction, matching differences, environment,
  * and extension-point-specific decision mapping remain owned by each bridge.
- * @module @deepseek-ai/dsh-hook-protocol/types
+ * @module @gemini-agy/dsh-hook-protocol/types
  */
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@gemini-agy/dsh-session/types' {
   interface SessionEventMap {
     /**
      * A hook command was invoked at a hook point — a log-only record (like

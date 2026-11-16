@@ -1,18 +1,18 @@
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent, Inbox, InboxState } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import type { Agent, Inbox, InboxState } from '@gemini-agy/dsh-agent'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
 import { afterEach, describe, expect, it } from 'vitest'
 import { SessionControlController } from '../src/control.ts'
 import type { SessionControlFrame } from '../src/types.ts'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@gemini-agy/dsh-agent-loop-testkit'
+import { brandString } from '@gemini-agy/dsh-brand'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'fixture': { kind: 'fixture' } & ContextFormed
   }

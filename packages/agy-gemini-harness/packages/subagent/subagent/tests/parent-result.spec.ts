@@ -2,16 +2,16 @@ import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 /** Parent result delivery independent of a local child's messaging tool. */
 
 import { expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import * as Spawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
-import * as Control from '@deepseek-ai/dsh-tool-subagent-control'
+import { Context } from '@gemini-agy/cordis'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import * as Spawn from '@gemini-agy/dsh-subagent-spawn-in-process'
+import * as Control from '@gemini-agy/dsh-tool-subagent-control'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import SubagentRuntime from '../src/index.ts'
 import { mountLocalActivations } from './local-activation.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 it.each(['absent', 'unused'] as const)('returns the closing answer when send_message is %s', async (availability) => {
   const ctx = new Context()

@@ -20,9 +20,9 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { LlmDiscoveredModel } from '@deepseek-ai/dsh-api-remotes/client'
-import { AnimatedRows, Button, IconPlusOutlineRegular, Modal } from '@deepseek-ai/dsh-client-ui-primitives'
-import { TextSearchIndex } from '@deepseek-ai/dsh-util-text-search'
+import type { LlmDiscoveredModel } from '@gemini-agy/dsh-api-remotes/client'
+import { AnimatedRows, Button, IconPlusOutlineRegular, Modal } from '@gemini-agy/dsh-client-ui-primitives'
+import { TextSearchIndex } from '@gemini-agy/dsh-util-text-search'
 import { formatCapacity, parseCapacity } from './Gemini AntigravityModelsEditor.tsx'
 import type { ModelsOperations } from './operations.ts'
 import type { Gemini AntigravityModelDraft } from './Gemini AntigravityModelsEditor.tsx'

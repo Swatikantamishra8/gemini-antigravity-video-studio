@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import type { SessionStatsProjection } from '@deepseek-ai/dsh-session-stats/types'
-import type { TokenUsageProjection } from '@deepseek-ai/dsh-token-meter/client'
+import type { SessionStatsProjection } from '@gemini-agy/dsh-session-stats/types'
+import type { TokenUsageProjection } from '@gemini-agy/dsh-token-meter/client'
 import { totalsFromProjections } from '../src/client/stats-totals.ts'
 
 const STATS: SessionStatsProjection = {

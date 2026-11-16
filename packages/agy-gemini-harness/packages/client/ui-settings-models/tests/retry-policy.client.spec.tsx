@@ -2,9 +2,9 @@
 /** Provider retry-policy fields of the Models editor card. */
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import Schema from '@deepseek-ai/schemastery'
-import type { SettingsNamespaceView } from '@deepseek-ai/dsh-api-remotes/client'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import Schema from '@gemini-agy/schemastery'
+import type { SettingsNamespaceView } from '@gemini-agy/dsh-api-remotes/client'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import { ProviderEditor } from '../src/client/ProviderEditor.tsx'
 import type { ModelsOperations } from '../src/client/operations.ts'
 import { en } from '../src/client/locales.ts'

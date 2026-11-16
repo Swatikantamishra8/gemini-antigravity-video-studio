@@ -3,11 +3,11 @@
  * consumes and produces, plus the fields in the `workflow/*` event payloads.
  * Types only (plus the id-brand factory), per the package convention.
  *
- * @module @deepseek-ai/dsh-workflow/types
+ * @module @gemini-agy/dsh-workflow/types
  */
 
-import type { Branded } from '@deepseek-ai/dsh-brand'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { Branded } from '@gemini-agy/dsh-brand'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import type { WorkflowErrorCode } from './index.ts'
 
 /** Identifies one workflow run. */

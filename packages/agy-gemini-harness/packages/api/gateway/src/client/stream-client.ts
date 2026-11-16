@@ -1,6 +1,6 @@
 /** Client owner for the Gateway multiplexed Remote stream socket. */
-import { RemoteError, remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
-import type { ConnectionWebSocket } from '@deepseek-ai/dsh-client-connection/client'
+import { RemoteError, remoteErrorOf } from '@gemini-agy/dsh-typert-protocol'
+import type { ConnectionWebSocket } from '@gemini-agy/dsh-client-connection/client'
 
 import {
   parseRemoteStreamServerMessage,
@@ -8,8 +8,8 @@ import {
   type RemoteStreamClientMessage,
   type RemoteStreamServerMessage,
 } from '../stream-protocol.ts'
-import { Deque } from '@deepseek-ai/dsh-deque'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
+import { Deque } from '@gemini-agy/dsh-deque'
+import { randomUUID } from '@gemini-agy/dsh-util-crypto'
 
 /**
  * Retryable physical Remote stream carrier failure. {@link RemoteStream} reconnects on any error whose `code` is

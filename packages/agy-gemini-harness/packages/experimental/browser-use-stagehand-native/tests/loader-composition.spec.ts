@@ -1,25 +1,25 @@
 /** A real Loader and AgentLoop exercise independently configured browser inference and durable screenshots. */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import BrowserUseRegistry from '@deepseek-ai/dsh-browser-use'
-import LocalAttachmentStore from '@deepseek-ai/dsh-attachment-local'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { LlmAdapter, type ToolCallId, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import BrowserUseRegistry from '@gemini-agy/dsh-browser-use'
+import LocalAttachmentStore from '@gemini-agy/dsh-attachment-local'
+import { brandString } from '@gemini-agy/dsh-brand'
+import LlmRuntime, { LlmAdapter, type ToolCallId, createUserMessage } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@gemini-agy/dsh-llm'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
 import * as Provider from '../src/index.ts'
 import { resetFixture, screenshotBase64 } from './fixtures/stagehand.ts'
 
@@ -77,24 +77,24 @@ it('loads browser tools from cordis.yml, logs browser results, and admits the sc
   resetFixture()
   root = await mkdtemp(join(tmpdir(), 'dsh-stagehand-composition-'))
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
+    ['@gemini-agy/dsh-llm', LlmRuntime],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
 
-    ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-    ['@deepseek-ai/dsh-tools', ToolRuntime],
-    ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-    ['@deepseek-ai/dsh-agent', AgentRegistry],
-    ['@deepseek-ai/dsh-agent-loop', AgentLoop],
-    ['@deepseek-ai/dsh-attachment-local', LocalAttachmentStore],
-    ['@deepseek-ai/dsh-browser-use', BrowserUseRegistry],
-    ['@deepseek-ai/dsh-experimental-browser-use-stagehand-native', Provider],
+    ['@gemini-agy/dsh-system-prompt', SystemPrompt],
+    ['@gemini-agy/dsh-tools', ToolRuntime],
+    ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+    ['@gemini-agy/dsh-agent', AgentRegistry],
+    ['@gemini-agy/dsh-agent-loop', AgentLoop],
+    ['@gemini-agy/dsh-attachment-local', LocalAttachmentStore],
+    ['@gemini-agy/dsh-browser-use', BrowserUseRegistry],
+    ['@gemini-agy/dsh-experimental-browser-use-stagehand-native', Provider],
   ])
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [...modules.keys()].flatMap(name => [
     `- name: '${name}'`,
-    ...name === '@deepseek-ai/dsh-attachment-local' ? ['  config:', `    dshHome: ${JSON.stringify(root)}`] : [],
-    ...name === '@deepseek-ai/dsh-experimental-browser-use-stagehand-native' ? ['  config:', '    mode: launch', '    model:', '      modelName: openai/gpt-5.4-mini', '      apiKey: fixture-model-key'] : [],
+    ...name === '@gemini-agy/dsh-attachment-local' ? ['  config:', `    dshHome: ${JSON.stringify(root)}`] : [],
+    ...name === '@gemini-agy/dsh-experimental-browser-use-stagehand-native' ? ['  config:', '    mode: launch', '    model:', '      modelName: openai/gpt-5.4-mini', '      apiKey: fixture-model-key'] : [],
   ]).join('\n') + '\n')
   const context = ctx = new Context()
   context.baseUrl = pathToFileURL(root).href + '/'

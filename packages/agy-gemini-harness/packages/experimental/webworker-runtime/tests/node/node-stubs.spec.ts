@@ -66,7 +66,7 @@ const CALLED: [string, Record<string, unknown>, readonly string[]][] = [
     create: piCodingAgent.SessionManager.create, open: piCodingAgent.SessionManager.open,
     inMemory: piCodingAgent.SessionManager.inMemory, list: piCodingAgent.SessionManager.list,
   }, ['create', 'open', 'inMemory', 'list']],
-  ['@deepseek-ai/pi-ai', piAi, [
+  ['@gemini-agy/pi-ai', piAi, [
     'createProvider', 'createModels', 'openAICompletionsApi', 'openAIResponsesApi', 'anthropicMessagesApi',
     'isContextOverflow', 'getSupportedThinkingLevels', 'builtinModels',
   ]],
@@ -163,14 +163,14 @@ describe('replaced external packages', () => {
     quiet()
     await expect(libreofficeKit.createConverter()).rejects.toMatchObject({
       code: 'unavailable',
-      message: 'web-preview: @deepseek-ai/libreoffice-kit.createConverter is not available in the worker host',
+      message: 'web-preview: @gemini-agy/libreoffice-kit.createConverter is not available in the worker host',
     })
   })
 
   it('lists the packages the loader serves from the bundle', () => {
     expect(REPLACED_EXTERNAL_PACKAGES).not.toContain('chokidar')
-    expect(REPLACED_EXTERNAL_PACKAGES).not.toContain('@deepseek-ai/node-addon-system')
-    expect(REPLACED_EXTERNAL_PACKAGES).not.toContain('@deepseek-ai/node-addon-system/landlock-run')
+    expect(REPLACED_EXTERNAL_PACKAGES).not.toContain('@gemini-agy/node-addon-system')
+    expect(REPLACED_EXTERNAL_PACKAGES).not.toContain('@gemini-agy/node-addon-system/landlock-run')
     expect(REPLACED_EXTERNAL_PACKAGES).toContain('ws')
   })
 

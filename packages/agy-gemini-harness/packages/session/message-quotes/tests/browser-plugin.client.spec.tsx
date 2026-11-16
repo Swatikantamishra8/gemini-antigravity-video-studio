@@ -1,15 +1,15 @@
 // @vitest-environment jsdom
 /** Quote registrations follow their plugin and Slot declaration lifetimes. */
-import { Context } from '@deepseek-ai/cordis'
-import type { SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { TestSessions } from '@deepseek-ai/dsh-client-test-runtime'
-import { UiConversation } from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { Context } from '@gemini-agy/cordis'
+import type { SessionSnapshot } from '@gemini-agy/dsh-api-session-controller/client'
+import { LocaleRuntime } from '@gemini-agy/dsh-client-locale/client'
+import { TestSessions } from '@gemini-agy/dsh-client-test-runtime'
+import { UiConversation } from '@gemini-agy/dsh-client-ui-conversation/client'
+import { SlotRegistry } from '@gemini-agy/dsh-client-ui-renderer/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import * as plugin from '../src/client/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 async function fixture() {
   const ctx = new Context()

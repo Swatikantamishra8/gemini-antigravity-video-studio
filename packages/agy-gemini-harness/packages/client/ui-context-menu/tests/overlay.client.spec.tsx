@@ -1,19 +1,19 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react'
 import { afterEach, expect, it, onTestFinished, vi } from 'vitest'
-import { bindSnapshotSelector, SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import type { PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import { MenuItemButton } from '@deepseek-ai/dsh-client-ui-primitives'
+import { bindSnapshotSelector, SlotTestRuntime } from '@gemini-agy/dsh-client-test-runtime'
+import { createSnapshotStore } from '@gemini-agy/dsh-client-store'
+import { LocaleRuntime } from '@gemini-agy/dsh-client-locale/client'
+import type { PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import { MenuItemButton } from '@gemini-agy/dsh-client-ui-primitives'
 import { ShortcutRegistry } from '../../shortcuts/src/client/registry.ts'
-import type { ShortcutCommandId } from '@deepseek-ai/dsh-client-shortcuts/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { ShortcutCommandId } from '@gemini-agy/dsh-client-shortcuts/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import { createMenuStore } from '../src/client/store.ts'
 import { MenuOverlay } from '../src/client/View.tsx'
 import { apply, inject } from '../src/client/index.ts'
 import type { ContextMenuTarget } from '../src/client/types.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 afterEach(() => { cleanup(); vi.useRealTimers() })
 

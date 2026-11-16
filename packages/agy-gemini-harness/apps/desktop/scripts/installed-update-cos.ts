@@ -2,8 +2,8 @@
 import { createReadStream } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { Readable, Writable } from 'node:stream'
-import { cosOperation } from '@deepseek-ai/dsh-desktop-publisher/cos-operation.ts'
-import { createDesktopCos, DESKTOP_COS_REGION } from '@deepseek-ai/dsh-desktop-publisher/desktop-cos.ts'
+import { cosOperation } from '@gemini-agy/dsh-desktop-publisher/cos-operation.ts'
+import { createDesktopCos, DESKTOP_COS_REGION } from '@gemini-agy/dsh-desktop-publisher/desktop-cos.ts'
 import { loadDesktopPackageEnvironment } from './desktop-package-environment.mjs'
 import type { InstalledUpdatePublicationStore, InstalledUpdateRemoteObject } from './installed-update-publication.ts'
 

@@ -13,10 +13,10 @@ import { fileURLToPath } from 'node:url'
 import type { Browser, Locator, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { ReplayEntry } from '@deepseek-ai/dsh-llm-replay'
-import type { SessionEvent, SessionId } from '@deepseek-ai/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId, StreamChunk } from '@gemini-agy/dsh-llm'
+import type { ReplayEntry } from '@gemini-agy/dsh-llm-replay'
+import type { SessionEvent, SessionId } from '@gemini-agy/dsh-session'
 import {
   assertFixtureInventory, captureStableAria, compareOrRefreshGolden, launchWebScaffold, readPersistedEvents,
   watchConsole, webSnapshotMode, type WebScaffold,

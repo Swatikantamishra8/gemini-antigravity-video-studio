@@ -1,21 +1,21 @@
 /**
  * Basic replay-aware compaction backend.
  *
- * @module @deepseek-ai/dsh-compaction-basic
+ * @module @gemini-agy/dsh-compaction-basic
  */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { CompactionEngine, ManualCompactionError } from '@deepseek-ai/dsh-compaction'
-import type { CompactionResult, CompactionTrigger } from '@deepseek-ai/dsh-compaction'
-import type { EpochHeader, Session, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import { CONTEXT_WINDOW_EXCEEDED_CODE, LlmError } from '@deepseek-ai/dsh-llm'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import type { CommandId } from '@deepseek-ai/dsh-commands/types'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { CompactionEngine, ManualCompactionError } from '@gemini-agy/dsh-compaction'
+import type { CompactionResult, CompactionTrigger } from '@gemini-agy/dsh-compaction'
+import type { EpochHeader, Session, SessionSeq } from '@gemini-agy/dsh-session'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import { CONTEXT_WINDOW_EXCEEDED_CODE, LlmError } from '@gemini-agy/dsh-llm'
+import { assertNever } from '@gemini-agy/dsh-util-values'
+import type { Agent, PreStepDecision } from '@gemini-agy/dsh-agent'
+import type { CommandId } from '@gemini-agy/dsh-commands/types'
 // Type-only: makes the optional sibling service available to `ctx.get()`.
-import type {} from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+import type {} from '@gemini-agy/dsh-compaction-tool-result-pruner'
 import { answeredRouteProjectionDefinition } from './answered-route.ts'
 import type { AnsweredRoute } from './answered-route.ts'
 import {

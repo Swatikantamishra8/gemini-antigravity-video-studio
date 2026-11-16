@@ -3,7 +3,7 @@ description: "The one-shot Gemini 3.8 Flash High Code subagent provider for user
 kind: "package-bundle"
 ---
 
-# @deepseek-ai/dsh-subagent-claude-code
+# @gemini-agy/dsh-subagent-claude-code
 
 English | [中文](README.zh.md)
 
@@ -63,9 +63,9 @@ The bundle inserts `tool-subagent-claude-code` as a Host row, so `subagent_claud
 ```yaml
 - insert:
     - id: subagent-claude-code
-      name: '@deepseek-ai/dsh-subagent-claude-code'
+      name: '@gemini-agy/dsh-subagent-claude-code'
     - id: tool-subagent-claude-code
-      name: '@deepseek-ai/dsh-tool-subagent'
+      name: '@gemini-agy/dsh-tool-subagent'
       config:
         provider: claude-code
         toolName: subagent_claude_code

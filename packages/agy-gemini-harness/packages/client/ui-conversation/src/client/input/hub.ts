@@ -4,18 +4,18 @@
  * catalog subscription. Saved drafts enter the model before the first lookup
  * returns; Session-scope disposal releases the shell and its resources.
  */
-import type {} from '@deepseek-ai/dsh-client-product-analytics/client'
-import type { PlanProjection } from '@deepseek-ai/dsh-plan-mode/types'
-import type { GoalProjection } from '@deepseek-ai/dsh-goal/types'
-import type { Context } from '@deepseek-ai/cordis'
+import type {} from '@gemini-agy/dsh-client-product-analytics/client'
+import type { PlanProjection } from '@gemini-agy/dsh-plan-mode/types'
+import type { GoalProjection } from '@gemini-agy/dsh-goal/types'
+import type { Context } from '@gemini-agy/cordis'
 import type {
   ISessions, SessionBinding, SessionFace,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionId, SessionSeq } from '@deepseek-ai/dsh-session/types'
-import type { TranslateNS } from '@deepseek-ai/dsh-client-locale/client'
-import type { InboxState } from '@deepseek-ai/dsh-agent/types'
-import type { ModelSelectionProjection } from '@deepseek-ai/dsh-agent/types'
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
+} from '@gemini-agy/dsh-api-session-controller/client'
+import type { SessionId, SessionSeq } from '@gemini-agy/dsh-session/types'
+import type { TranslateNS } from '@gemini-agy/dsh-client-locale/client'
+import type { InboxState } from '@gemini-agy/dsh-agent/types'
+import type { ModelSelectionProjection } from '@gemini-agy/dsh-agent/types'
+import type { ObservableSnapshot } from '@gemini-agy/dsh-client-store'
 import type {
   DraftAttachmentId, DraftAttachmentSerializationResult, DraftInitializationOptions, DraftInitializationResult, InputTriggerController,
   SessionInputResolver, SessionInput, SubmitOutcome,

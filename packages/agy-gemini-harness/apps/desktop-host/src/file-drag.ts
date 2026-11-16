@@ -1,12 +1,12 @@
 /** Resolve desktop-only file references through the active Host filesystem and Session. */
 import { createHash } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-fs'
-import type {} from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-persistence'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { parseFileAddress } from '@deepseek-ai/dsh-util-workspace-path'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-fs'
+import type {} from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-session-persistence'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import { parseFileAddress } from '@gemini-agy/dsh-util-workspace-path'
 
 /** Private Host-to-main answer; never exposed to renderer JavaScript. */
 export interface LocalDragResource {

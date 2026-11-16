@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-deliverable-file-references",
+  "name": "@gemini-agy/dsh-deliverable-file-references",
   "description": "Shared model guidance for file links and deliverables across Gemini Antigravity Harness hosts",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/deliverables/deliverable-file-references"
   },
   "type": "module",
@@ -32,11 +32,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-system-prompt": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-system-prompt": "workspace:*"
   }
 }

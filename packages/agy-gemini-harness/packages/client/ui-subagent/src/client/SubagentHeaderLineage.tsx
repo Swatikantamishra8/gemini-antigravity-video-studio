@@ -3,18 +3,18 @@ import { createPortal } from 'react-dom'
 import {
   type SessionProjectionMap, type SessionSummary,
   type SessionProjectionSnapshot,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SubagentAddress } from '@deepseek-ai/dsh-subagent/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+} from '@gemini-agy/dsh-api-session-controller/client'
+import type { SubagentAddress } from '@gemini-agy/dsh-subagent/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import {
   IconChevronRightOutlineRegular, IconRefreshOutlineRegular, IconUsersOutlineRegular,
   IconCheckOutlineRegular, MenuSurface, StateDot, Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, TranslateNS } from '@deepseek-ai/dsh-client-ui-slots'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, TranslateNS } from '@gemini-agy/dsh-client-ui-slots'
 import { NS } from './locales.ts'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-token-meter/client'
-import type {} from '@deepseek-ai/dsh-agent-team/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
+import type {} from '@gemini-agy/dsh-token-meter/client'
+import type {} from '@gemini-agy/dsh-agent-team/client'
 import type {} from './slots.ts'
 import css from './SubagentHeaderLineage.module.css'
 

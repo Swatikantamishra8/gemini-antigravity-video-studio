@@ -1,18 +1,18 @@
 /** Creates a new Git branch and checkout, then changes the calling Session's working directory; restores a removed checkout. */
 
-import { Context, Service, type Volatile } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-fs'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type {} from '@deepseek-ai/dsh-settings'
-import { appendPluginRecord } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { Context, Service, type Volatile } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-fs'
+import type { SandboxExecutionPolicy } from '@gemini-agy/dsh-sandbox'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import type {} from '@gemini-agy/dsh-settings'
+import { appendPluginRecord } from '@gemini-agy/dsh-session'
+import type { Session } from '@gemini-agy/dsh-session'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-working-directory'
+import { HarnessError } from '@gemini-agy/dsh-error'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
 import { WorktreeReclamation } from './archive.ts'
 import { WorktreeError } from './error.ts'
 import { PREPARE_DIRECTORY } from './directory.ts'
@@ -69,7 +69,7 @@ interface WorktreeSpec {
 /** Runs one confined Git command; output with an exit code outside `allowedExitCodes` throws. */
 type GitRun = (directory: string, args: string[], allowedExitCodes?: number[], env?: NodeJS.ProcessEnv) => ReturnType<typeof runCommand>
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     worktrees: WorktreeService
   }

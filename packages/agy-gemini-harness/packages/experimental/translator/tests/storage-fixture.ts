@@ -1,18 +1,18 @@
 /** Loader-owned anonymous provider, live Sessions, and restartable real JSONL storage. */
-import type { Context, Fiber } from '@deepseek-ai/cordis'
-import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionHandle } from '@deepseek-ai/dsh-session-persistence'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import type { Context, Fiber } from '@gemini-agy/cordis'
+import type { ModuleLoaderV2 } from '@gemini-agy/cordis-plugin-loader'
+import { boot } from '@gemini-agy/dsh-app-boot'
+import { createAssistantMessage, createUserMessage } from '@gemini-agy/dsh-llm'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@gemini-agy/dsh-session'
+import type { SessionHandle } from '@gemini-agy/dsh-session-persistence'
+import * as JsonlPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
 import { once } from 'node:events'
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import Translator from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** One external anonymous request, with only the relevant protocol facts. */
 export interface StorageWireCall { provider: 'bing' | 'google'; path: string; text: string; source: string; target: string }
@@ -96,16 +96,16 @@ export async function storageFixture(cleanups: Array<() => Promise<void>>, optio
   const origin = `http://127.0.0.1:${address.port}`, path = join(root, 'cordis.yml'), storedRoot = join(root, 'sessions')
   const config = { bingEndpoint: `${origin}/bing`, googleEndpoint: `${origin}/google`, timeoutMs: 60_000 }
   await writeFile(path, JSON.stringify([
-    ...options.withSessions === false ? [] : [{ id: 'sessions', name: '@deepseek-ai/dsh-session' }],
+    ...options.withSessions === false ? [] : [{ id: 'sessions', name: '@gemini-agy/dsh-session' }],
     ...options.withPersistence === false ? [] : [
-      { id: 'storage', name: '@deepseek-ai/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
+      { id: 'storage', name: '@gemini-agy/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
     ],
-    { id: 'translator', name: '@deepseek-ai/dsh-experimental-translator', config },
+    { id: 'translator', name: '@gemini-agy/dsh-experimental-translator', config },
   ]))
   const start = () => boot('translator-storage', path, [], (host) => {
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', SessionStore], ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence],
-      ['@deepseek-ai/dsh-experimental-translator', Translator],
+      ['@gemini-agy/dsh-session', SessionStore], ['@gemini-agy/dsh-session-persistence-jsonl', JsonlPersistence],
+      ['@gemini-agy/dsh-experimental-translator', Translator],
     ])
     const loader: ModuleLoaderV2 = {
       version: 'v2', loadCache: new Map(),

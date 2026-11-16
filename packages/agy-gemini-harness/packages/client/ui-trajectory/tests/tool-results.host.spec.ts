@@ -1,14 +1,14 @@
 /** Live tool inspection shares the real Session's unload lifetime, never its replay data. */
-import { Context } from '@deepseek-ai/cordis'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import { Context } from '@gemini-agy/cordis'
+import TypertRegistry from '@gemini-agy/dsh-typert-registry'
 import { expect, it, onTestFinished } from 'vitest'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@gemini-agy/dsh-agent-loop-testkit'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import type { SessionId, SessionEvent } from '@gemini-agy/dsh-session'
+import { defineTool } from '@gemini-agy/dsh-tools'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import SessionToolResults, { type Config } from '../src/index.ts'
 
 async function setup(value: JsonValue = { answer: 42 }, config: Partial<Config> = {}) {

@@ -1,5 +1,5 @@
-import { Context, Service } from '@deepseek-ai/cordis'
-import type { Gemini AntigravityAccount, AccountView, AccountUpdate, PlatformSession } from '@deepseek-ai/dsh-deepseek-account'
+import { Context, Service } from '@gemini-agy/cordis'
+import type { Gemini AntigravityAccount, AccountView, AccountUpdate, PlatformSession } from '@gemini-agy/dsh-deepseek-account'
 import { expect, it } from 'vitest'
 import { installPlatformSessionPublisher } from '../src/platform-session.ts'
 

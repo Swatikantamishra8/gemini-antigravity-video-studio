@@ -1,10 +1,10 @@
 /** The `web-search-deepseek` settings section layered over the composition entry. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { liveConfig } from '../../../settings/settings/tests/live-config.ts'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as deepseekPlugin from '@deepseek-ai/dsh-web-search-deepseek'
+import WebRuntime from '@gemini-agy/dsh-web'
+import * as deepseekPlugin from '@gemini-agy/dsh-web-search-deepseek'
 
 function jsonResponse(body: unknown): Response {
   return new Response(JSON.stringify(body), {

@@ -1,15 +1,15 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { agentEvents, type Agent } from '@deepseek-ai/dsh-agent'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
-import { compactCheckpointSource } from '@deepseek-ai/dsh-compaction'
-import LlmRuntime, { createDeveloperMessage, createMessage, createSystemMessage, createToolResultMessage, createUserMessage, LlmError, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
-import SessionTitleService from '@deepseek-ai/dsh-session-title'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry, { agentEvents, type Agent } from '@gemini-agy/dsh-agent'
+import type { CompactionId } from '@gemini-agy/dsh-compaction/types'
+import { compactCheckpointSource } from '@gemini-agy/dsh-compaction'
+import LlmRuntime, { createDeveloperMessage, createMessage, createSystemMessage, createToolResultMessage, createUserMessage, LlmError, type ToolCallId } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionSeq } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SessionQueryEngine from '@gemini-agy/dsh-session-query'
+import SessionTitleService from '@gemini-agy/dsh-session-title'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
 import SessionReferenceResolver, {
   decodeSessionReferenceUri,
   encodeSessionReferenceUri,
@@ -17,12 +17,12 @@ import SessionReferenceResolver, {
   parseSessionReferenceText,
   type Config,
   type SessionReferenceErrorCode,
-} from '@deepseek-ai/dsh-session-reference'
+} from '@gemini-agy/dsh-session-reference'
 import { stringifyTagSafeJson } from '../src/serialization.ts'
-import { type SpillLocator, SpillStore, type SaveTextSpill, type SpillRef } from '@deepseek-ai/dsh-spill'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { type SpillLocator, SpillStore, type SaveTextSpill, type SpillRef } from '@gemini-agy/dsh-spill'
+import { brandString } from '@gemini-agy/dsh-brand'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
     'workspace': { kind: 'workspace' } & ContextFormed

@@ -1,11 +1,11 @@
 import { memo, useCallback, useMemo, type KeyboardEvent } from 'react'
-import type { Context } from '@deepseek-ai/cordis'
+import type { Context } from '@gemini-agy/cordis'
 import clsx from 'clsx'
 import {
   IconApiOutlineRegular, IconChevronDownOutlineRegular, IconChevronUpOutlineRegular, IconInspectOutlineRegular,
   CommandText, TerminalBlock, TextShimmer,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { PropsLocale } from '@gemini-agy/dsh-client-ui-slots'
 import type { ToolCallViewProps } from '../../contract/slots.ts'
 import {
   isBackgroundShellCall,

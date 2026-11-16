@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-persona",
+  "name": "@gemini-agy/dsh-persona",
   "description": "Composition-authored deployment persona section for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/preset/persona"
   },
   "type": "module",
@@ -32,15 +32,15 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-system-prompt": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-scope": "workspace:*",
+    "@gemini-agy/dsh-system-prompt": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

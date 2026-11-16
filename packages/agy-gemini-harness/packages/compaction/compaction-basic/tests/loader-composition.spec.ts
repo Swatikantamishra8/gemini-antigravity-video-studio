@@ -3,15 +3,15 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
-import BasicCompactionEngine from '@deepseek-ai/dsh-compaction-basic'
-import ToolResultPruner from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import LlmRuntime from '@gemini-agy/dsh-llm'
+import SessionStore from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import TokenMeter from '@gemini-agy/dsh-token-meter'
+import BasicCompactionEngine from '@gemini-agy/dsh-compaction-basic'
+import ToolResultPruner from '@gemini-agy/dsh-compaction-tool-result-pruner'
 
 let root: string | undefined
 let context: Context | undefined
@@ -33,12 +33,12 @@ async function loadYaml(lines: readonly string[]): Promise<Context> {
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-    ['@deepseek-ai/dsh-token-meter', TokenMeter],
-    ['@deepseek-ai/dsh-compaction-tool-result-pruner', ToolResultPruner],
-    ['@deepseek-ai/dsh-compaction-basic', BasicCompactionEngine],
+    ['@gemini-agy/dsh-llm', LlmRuntime],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+    ['@gemini-agy/dsh-token-meter', TokenMeter],
+    ['@gemini-agy/dsh-compaction-tool-result-pruner', ToolResultPruner],
+    ['@gemini-agy/dsh-compaction-basic', BasicCompactionEngine],
   ])
   context.loader.internal = {
     version: 'v2',
@@ -58,16 +58,16 @@ async function loadYaml(lines: readonly string[]): Promise<Context> {
 describe('real Loader composition', () => {
   it('loads the shipped token-meter, pruning, and compaction-basic YAML order', async () => {
     const loaded = await loadYaml([
-      "- name: '@deepseek-ai/dsh-llm'",
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-session-projection'",
-      "- name: '@deepseek-ai/dsh-token-meter'",
-      "- name: '@deepseek-ai/dsh-compaction-tool-result-pruner'",
+      "- name: '@gemini-agy/dsh-llm'",
+      "- name: '@gemini-agy/dsh-session'",
+      "- name: '@gemini-agy/dsh-session-projection'",
+      "- name: '@gemini-agy/dsh-token-meter'",
+      "- name: '@gemini-agy/dsh-compaction-tool-result-pruner'",
       '  config:',
       '    thresholdChars: 100',
       '    headChars: 20',
       '    tailChars: 10',
-      "- name: '@deepseek-ai/dsh-compaction-basic'",
+      "- name: '@gemini-agy/dsh-compaction-basic'",
       '  config:',
       '    thresholdRatio: 0.5',
       '    headroomTokens: 4000',

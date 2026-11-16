@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-fs-ssh",
+  "name": "@gemini-agy/dsh-fs-ssh",
   "description": "Filesystem provider over the shared POSIX SSH helper",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/ssh/fs-ssh"
   },
   "type": "module",
@@ -32,22 +32,22 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ssh": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-ssh": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-sandbox": "workspace:*",
+    "@gemini-agy/dsh-sandbox-policy": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ssh": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-ssh": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-sandbox": "workspace:*",
+    "@gemini-agy/dsh-sandbox-policy": "workspace:*"
   }
 }

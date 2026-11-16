@@ -1,9 +1,9 @@
 /** Prepared calls retain their endpoint and credential generation. */
 import { afterEach, expect, it } from 'vitest'
-import type { AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import type { AnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
 import { Gemini AntigravityAdapter } from '../src/index.ts'
-import { Config, plainOptions, resolveAdapterOptions } from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import type { ResolvedGemini AntigravityOptions as Gemini AntigravityConnectionOptions } from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Config, plainOptions, resolveAdapterOptions } from '@gemini-agy/dsh-llm-deepseek-api-key'
+import type { ResolvedGemini AntigravityOptions as Gemini AntigravityConnectionOptions } from '@gemini-agy/dsh-llm-deepseek-api-key'
 import { assemble, chunks, MODEL, options, server } from './helpers.ts'
 
 const close: (() => Promise<void>)[] = []

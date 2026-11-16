@@ -1,9 +1,9 @@
 /** Model tool descriptions and complete batch execution owned by plugins. @module */
-import { HarnessError } from '@deepseek-ai/dsh-llm'
-import type { ToolCallBlock, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { UserMessage } from '@deepseek-ai/dsh-session'
-import type { PromptSection, ToolProviderResult } from '@deepseek-ai/dsh-system-prompt'
+import { HarnessError } from '@gemini-agy/dsh-llm'
+import type { ToolCallBlock, ToolCallId } from '@gemini-agy/dsh-llm'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { UserMessage } from '@gemini-agy/dsh-session'
+import type { PromptSection, ToolProviderResult } from '@gemini-agy/dsh-system-prompt'
 import type { ResolvedToolSet, ToolDefinition, ToolExecutionResult } from './contracts.ts'
 
 /** Model-call schemas produced by an executor. */

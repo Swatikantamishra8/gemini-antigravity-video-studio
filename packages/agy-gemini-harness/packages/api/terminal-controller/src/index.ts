@@ -1,13 +1,13 @@
 /** Session-owned user terminals with the execution environment's system-user permissions. */
 import { randomUUID } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import { Remote, RemoteError, TypertRemoteService, type RemoteStream } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import type { SandboxExecutionPolicy } from '@gemini-agy/dsh-sandbox'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import type {} from '@gemini-agy/dsh-working-directory'
+import { Remote, RemoteError, TypertRemoteService, type RemoteStream } from '@gemini-agy/dsh-typert-protocol'
 import { AgentTerminalHandle, type AgentTerminal, type AgentTerminalRequest } from './agent.ts'
 import { discoverShells, findShell, resolveShell } from './shells.ts'
 import { BrowserTerminal } from './terminal.ts'
@@ -21,7 +21,7 @@ export type * from './types.ts'
 export { AgentTerminalError } from './agent.ts'
 export type { AgentTerminal, AgentTerminalErrorCode, AgentTerminalRequest } from './agent.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Interactive user terminals, separate from the Agent terminal tool registry. */
     terminalController: TerminalController

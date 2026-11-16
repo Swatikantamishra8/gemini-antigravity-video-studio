@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
-import type { AttachmentStore, ImageMediaType } from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { AttachmentId, ImageVariantId } from '@gemini-agy/dsh-attachment/types'
+import type { AttachmentStore, ImageMediaType } from '@gemini-agy/dsh-attachment'
+import { brandString } from '@gemini-agy/dsh-brand'
 import {
   type ToolCallId,
   contentHasFile,

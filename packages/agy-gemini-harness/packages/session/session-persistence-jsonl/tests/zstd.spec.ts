@@ -1,14 +1,14 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { appendFile, mkdir, mkdtemp, open, readFile, readdir, rm, stat, utimes, writeFile } from 'node:fs/promises'
 import type { FileHandle } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { performance } from 'node:perf_hooks'
-import { SessionSeq, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionPersistence } from '@deepseek-ai/dsh-session-persistence'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import { SessionSeq, type SessionId } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionHeader } from '@gemini-agy/dsh-session'
+import type { SessionPersistence } from '@gemini-agy/dsh-session-persistence'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
 import {
   generationLogPath, logPath, scanLog, sessionDir, toHeaderLine, type JsonlCompression,
 } from '../src/format.ts'
@@ -21,7 +21,7 @@ import { PublicZstdFrameDecoder } from '../src/zstd-public-decoder.ts'
 import {
   runPersistenceContract, meta, oneTurnLog, releasedV1OneTurnLog,
 } from '../../session-persistence/tests/contract.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const MAGIC = Buffer.from([0x28, 0xB5, 0x2F, 0xFD])
 const roots: string[] = []

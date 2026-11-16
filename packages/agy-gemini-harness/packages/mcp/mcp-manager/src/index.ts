@@ -14,23 +14,23 @@
  * mount under the manager's fiber, so disposing the manager unwinds every
  * instance and its registered tools.
  *
- * @module @deepseek-ai/dsh-mcp-manager
+ * @module @gemini-agy/dsh-mcp-manager
  */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import type { Fiber, Volatile, VolatileSnapshot } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import * as McpClient from '@deepseek-ai/dsh-mcp-client'
-import { ReconnectSchema, SERVER_NAME_PATTERN, connectionStatusOf, probeServer, resolveReconnectPolicy } from '@deepseek-ai/dsh-mcp-client'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
-import type { McpCloseResult, McpProbeOptions, McpProbeResult, ReconnectConfig } from '@deepseek-ai/dsh-mcp-client'
-import { deepEqualJson } from '@deepseek-ai/dsh-util-values'
-import { assertTemplateSyntax } from '@deepseek-ai/dsh-mcp-client'
+import { Context, Service } from '@gemini-agy/cordis'
+import { Remote, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
+import type { Fiber, Volatile, VolatileSnapshot } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import * as McpClient from '@gemini-agy/dsh-mcp-client'
+import { ReconnectSchema, SERVER_NAME_PATTERN, connectionStatusOf, probeServer, resolveReconnectPolicy } from '@gemini-agy/dsh-mcp-client'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
+import type { McpCloseResult, McpProbeOptions, McpProbeResult, ReconnectConfig } from '@gemini-agy/dsh-mcp-client'
+import { deepEqualJson } from '@gemini-agy/dsh-util-values'
+import { assertTemplateSyntax } from '@gemini-agy/dsh-mcp-client'
 import type { McpManagedServerStatus, McpManagedServerView } from './types.ts'
 // Side-effect type imports: declare the tool service and Loader's volatile events.
-import type {} from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
+import type {} from '@gemini-agy/dsh-tools'
+import type {} from '@gemini-agy/cordis-plugin-loader'
 
 export type { McpManagedServerStatus, McpManagedServerView } from './types.ts'
 
@@ -178,7 +178,7 @@ interface ManagedRecord {
   detachStatus?: () => void
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** The MCP server manager. */
     mcpManager: McpServerManager

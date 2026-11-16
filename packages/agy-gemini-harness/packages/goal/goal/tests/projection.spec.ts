@@ -9,21 +9,21 @@
  */
 
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
-import GoalService, { applyGoalProjection, foldGoal, goalProjectionDefinition } from '@deepseek-ai/dsh-goal'
-import type { GoalProjection, GoalProjectionState, GoalRef } from '@deepseek-ai/dsh-goal'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry, { agentEvents } from '@gemini-agy/dsh-agent'
+import type { Agent, AgentStatus } from '@gemini-agy/dsh-agent'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+import SessionStore from '@gemini-agy/dsh-session'
+import type { Session } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { GoalId } from '@gemini-agy/dsh-goal/types'
+import GoalService, { applyGoalProjection, foldGoal, goalProjectionDefinition } from '@gemini-agy/dsh-goal'
+import type { GoalProjection, GoalProjectionState, GoalRef } from '@gemini-agy/dsh-goal'
+import { unsupportedModel, unsupportedInbox } from '@gemini-agy/dsh-agent-loop-testkit'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

@@ -1,17 +1,17 @@
 /** Register the official plugin card body, its catalog-text Remote and its localized copy. */
 import { createElement } from 'react'
-import type { Context } from '@deepseek-ai/cordis'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
-import type {} from '@deepseek-ai/dsh-client-ui-action-cards/client'
-import type {} from '@deepseek-ai/dsh-plugin-recommendations/remote'
-import type { TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@gemini-agy/cordis'
+import { createSnapshotStore } from '@gemini-agy/dsh-client-store'
+import type {} from '@gemini-agy/dsh-api-remotes/client'
+import type {} from '@gemini-agy/dsh-client-locale/client'
+import type {} from '@gemini-agy/dsh-client-ui-plugin-manager/client'
+import type {} from '@gemini-agy/dsh-client-ui-action-cards/client'
+import type {} from '@gemini-agy/dsh-plugin-recommendations/remote'
+import type { TypertRemoteContribution } from '@gemini-agy/dsh-typert-protocol'
 import { PluginCardBody, type CatalogDetails, type PluginCardServices } from './Card.tsx'
 import { de, en, es, fr, ja, pt, ru, zh, type RecommendationKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface LocaleNamespaceMap { pluginRecommendations: RecommendationKey }
 }
 

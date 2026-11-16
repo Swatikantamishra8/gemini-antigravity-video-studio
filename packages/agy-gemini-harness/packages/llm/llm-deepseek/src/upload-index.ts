@@ -3,10 +3,10 @@
 import { createHash } from 'node:crypto'
 import { readFile, mkdir } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
-import { withFileLock, writeFileAtomic } from '@deepseek-ai/dsh-atomic-write'
-import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { AttachmentId, ImageVariantId as ImageVariantIdType } from '@deepseek-ai/dsh-attachment/types'
+import { withFileLock, writeFileAtomic } from '@gemini-agy/dsh-atomic-write'
+import { resolveDshHome } from '@gemini-agy/dsh-home-paths'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { AttachmentId, ImageVariantId as ImageVariantIdType } from '@gemini-agy/dsh-attachment/types'
 import type { Gemini AntigravityFileId as Gemini AntigravityFileIdType, Gemini AntigravityFileScope as Gemini AntigravityFileScopeType } from './file-id.ts'
 
 /** One durable remote upload mapping. Unix times are milliseconds. */

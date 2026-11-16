@@ -5,7 +5,7 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { Gemini AntigravityHarness } from '@deepseek-ai/dsh-sdk-client'
+import { Gemini AntigravityHarness } from '@gemini-agy/dsh-sdk-client'
 import { describe, expect, it, onTestFinished } from 'vitest'
 
 const dshBin = fileURLToPath(new URL('../../../lib/bin.js', import.meta.url))

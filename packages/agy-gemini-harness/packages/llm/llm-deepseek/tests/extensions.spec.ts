@@ -3,16 +3,16 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi, type Mock } from 'vitest'
-import { Context, LoggerLevel } from '@deepseek-ai/cordis'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import Gemini AntigravityLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import type { Gemini AntigravityLlmApiExtensionRequest } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import * as Gemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Context, LoggerLevel } from '@gemini-agy/cordis'
+import LlmRuntime from '@gemini-agy/dsh-llm'
+import Gemini AntigravityLlmApiExtensionRegistry from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import type { Gemini AntigravityLlmApiExtensionRequest } from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import * as Gemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
 import { adapter, assemble, options, sse, textEvents } from './helpers.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
-declare module '@deepseek-ai/dsh-deepseek-llm-api-extensions' {
+declare module '@gemini-agy/dsh-deepseek-llm-api-extensions' {
   interface Gemini AntigravityLlmApiExtensionMap {
     dsh_messages_test: { value: string }
   }

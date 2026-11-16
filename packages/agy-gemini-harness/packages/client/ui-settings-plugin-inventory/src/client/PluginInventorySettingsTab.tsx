@@ -1,18 +1,18 @@
 import { useEffect, useId, useMemo, useState, type ReactNode } from 'react'
-import type { ClientEntryState } from '@deepseek-ai/dsh-client-modules/client'
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
-import type { PluginInventorySnapshot } from '@deepseek-ai/dsh-api-remotes/client'
-import type { LocalizedText } from '@deepseek-ai/dsh-package-manifest'
+import type { ClientEntryState } from '@gemini-agy/dsh-client-modules/client'
+import type { ObservableSnapshot } from '@gemini-agy/dsh-client-store'
+import type { PluginInventorySnapshot } from '@gemini-agy/dsh-api-remotes/client'
+import type { LocalizedText } from '@gemini-agy/dsh-package-manifest'
 import {
   IconChevronDownOutlineRegular,
   IconSearchOutlineRegular,
   Menu,
   StateDot,
   Tag,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { StateDotState, TagTone } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import { localizedValues, TextSearchIndex, type SearchKeys } from '@deepseek-ai/dsh-util-text-search'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { StateDotState, TagTone } from '@gemini-agy/dsh-client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import { localizedValues, TextSearchIndex, type SearchKeys } from '@gemini-agy/dsh-util-text-search'
 import type { PluginInventoryLocaleKey } from './locales.ts'
 import css from './PluginInventorySettingsTab.module.css'
 

@@ -4,8 +4,8 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'
 import { expect, it } from 'vitest'
-import { runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
-import { parseSessionLog } from '@deepseek-ai/dsh-llm-replay'
+import { runLoaderSmoke } from '@gemini-agy/dsh-loader-smoke'
+import { parseSessionLog } from '@gemini-agy/dsh-llm-replay'
 import { expectNoRenderContext, officeCalls, officeImages, officeModelPatches, officeToolPatches } from './fixtures/real-office.ts'
 
 const repo = fileURLToPath(new URL('../../../../', import.meta.url))
@@ -22,9 +22,9 @@ const launch = {
 async function prepareOffice(cwd: string) {
   await writeFile(join(cwd, 'office.patch.json'), JSON.stringify([
     ...officeModelPatches(),
-    { insert: [{ id: 'skill-office', name: '@deepseek-ai/dsh-skill-office', config: { assetRoot: join(repo, 'packages/skill/skill-office/assets') } }] },
+    { insert: [{ id: 'skill-office', name: '@gemini-agy/dsh-skill-office', config: { assetRoot: join(repo, 'packages/skill/skill-office/assets') } }] },
     ...officeToolPatches(),
-    { insert: [{ id: 'workspace-dependencies', name: '@deepseek-ai/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
+    { insert: [{ id: 'workspace-dependencies', name: '@gemini-agy/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
     { id: 'session-persistence-jsonl', config: { root: join(cwd, '.sessions'), compression: 'none' } },
   ]))
 }

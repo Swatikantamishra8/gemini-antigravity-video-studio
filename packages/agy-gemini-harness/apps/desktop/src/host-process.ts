@@ -4,9 +4,9 @@ import { spawn, type ChildProcess } from 'node:child_process'
 import { DesktopParentAuthentication } from './parent-authentication.ts'
 import { join } from 'node:path'
 import { z } from 'zod'
-import type { PlatformSession } from '@deepseek-ai/dsh-deepseek-account'
+import type { PlatformSession } from '@gemini-agy/dsh-deepseek-account'
 import { desktopNodeEnvironment } from './node-environment.ts'
-import { parsePluginOperationRecord, type PluginOperationRecord, type PluginOperationRunId } from '@deepseek-ai/dsh-plugin-manager/diagnostic'
+import { parsePluginOperationRecord, type PluginOperationRecord, type PluginOperationRunId } from '@gemini-agy/dsh-plugin-manager/diagnostic'
 
 interface ReadyEvent {
   readonly type: 'ready'

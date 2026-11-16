@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-settings",
+  "name": "@gemini-agy/dsh-client-ui-settings",
   "description": "Settings domain base plugin: shared configuration forms and the canonical settings slot-type contract",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/client/ui-settings"
   },
   "type": "module",
@@ -29,7 +29,7 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-remotes"
+        "@gemini-agy/dsh-api-remotes"
       ],
       "platform": "web"
     }
@@ -40,17 +40,17 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-api-remotes": "workspace:*",
+    "@gemini-agy/dsh-client-store": "workspace:*",
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-settings": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@gemini-agy/dsh-util-values": "workspace:*"
   },
   "files": [
     "locale/*.json",
@@ -62,6 +62,6 @@
     "src"
   ],
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/schemastery": "workspace:~"
   }
 }

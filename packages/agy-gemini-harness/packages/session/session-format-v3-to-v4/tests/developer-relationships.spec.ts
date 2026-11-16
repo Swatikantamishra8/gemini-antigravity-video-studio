@@ -1,11 +1,11 @@
 /** Developer surface positions and admission remain distinct from unknown ignorable records. */
 import { describe, expect, it } from 'vitest'
-import { Session, type SessionId, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import { SessionFormatEventCollector } from '@deepseek-ai/dsh-session-format'
-import type { SessionFormatArtifact, SessionFormatEvent, SessionFormatJsonValue } from '@deepseek-ai/dsh-session-format'
+import { Session, type SessionId, SessionLogOffset } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionHeader } from '@gemini-agy/dsh-session'
+import { SessionFormatEventCollector } from '@gemini-agy/dsh-session-format'
+import type { SessionFormatArtifact, SessionFormatEvent, SessionFormatJsonValue } from '@gemini-agy/dsh-session-format'
 import { assertV4RowAdmission, releasedV4SessionFormatCodec as codec, restoreReleasedV4Artifact } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 type Row = {
   type: string

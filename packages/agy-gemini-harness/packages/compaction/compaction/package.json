@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-compaction",
+  "name": "@gemini-agy/dsh-compaction",
   "description": "Abstract compaction service seam (ctx.compaction) for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/compaction/compaction"
   },
   "type": "module",
@@ -39,16 +39,16 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-commands": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-commands": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

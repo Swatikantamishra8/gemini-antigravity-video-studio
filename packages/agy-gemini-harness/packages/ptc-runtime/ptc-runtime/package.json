@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-ptc-runtime",
+  "name": "@gemini-agy/dsh-ptc-runtime",
   "description": "Abstract PTC execution seam (ctx.ptcRuntime) for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/ptc-runtime/ptc-runtime"
   },
   "type": "module",
@@ -30,15 +30,15 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-sandbox": "workspace:*",
+    "@gemini-agy/dsh-attachment": "workspace:*",
+    "@gemini-agy/dsh-error": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-sandbox": "workspace:*",
+    "@gemini-agy/dsh-attachment": "workspace:*",
+    "@gemini-agy/dsh-error": "workspace:*"
   }
 }

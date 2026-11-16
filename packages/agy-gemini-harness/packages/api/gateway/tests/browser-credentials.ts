@@ -1,7 +1,7 @@
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import type { IncomingMessage, ServerResponse } from 'node:http'
-import * as Token from '@deepseek-ai/dsh-host-authentication-token'
-import { BrowserAuth } from '@deepseek-ai/dsh-host-authentication-token/src/browser-auth.ts'
+import * as Token from '@gemini-agy/dsh-host-authentication-token'
+import { BrowserAuth } from '@gemini-agy/dsh-host-authentication-token/src/browser-auth.ts'
 
 const browserCookies = new WeakMap<Context, string>()
 

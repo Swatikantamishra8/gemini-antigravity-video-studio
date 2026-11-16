@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-workspace-files",
+  "name": "@gemini-agy/dsh-api-workspace-files",
   "description": "Workspace file service and Client resource provider: bounded reads, directory listing, and live metadata over the workspaceFiles Remote namespace",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/api/workspace-files"
   },
   "type": "module",
@@ -41,8 +41,8 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-gateway",
-        "@deepseek-ai/dsh-client-resources"
+        "@gemini-agy/dsh-api-gateway",
+        "@gemini-agy/dsh-client-resources"
       ],
       "platform": "web"
     }
@@ -53,31 +53,31 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/dsh-deque": "workspace:*",
+    "@gemini-agy/dsh-typert-protocol": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-util-ripgrep": "workspace:*"
+    "@gemini-agy/dsh-util-ripgrep": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-resources": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-remote-mock": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-util-workspace-path": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-api-gateway": "workspace:*",
+    "@gemini-agy/dsh-api-remote-access": "workspace:*",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-client-resources": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-remote-mock": "workspace:*",
+    "@gemini-agy/dsh-sandbox-policy": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-persistence": "workspace:*",
+    "@gemini-agy/dsh-util-workspace-path": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-subprocess-local": "workspace:*"
   },
   "files": [
     "locale/*.json",

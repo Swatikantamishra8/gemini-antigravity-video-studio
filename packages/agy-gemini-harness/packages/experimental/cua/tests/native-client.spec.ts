@@ -1,16 +1,16 @@
 /** Controlled connection streams exercise the platform-independent native protocol client. */
 import { PassThrough, Writable } from 'node:stream'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { Context } from '@deepseek-ai/cordis'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import { NativeToolExecutor } from '@deepseek-ai/dsh-tool-executor-native'
-import Tools, { defineTool } from '@deepseek-ai/dsh-tools'
+import { HarnessError } from '@gemini-agy/dsh-error'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import { Context } from '@gemini-agy/cordis'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import { NativeToolExecutor } from '@gemini-agy/dsh-tool-executor-native'
+import Tools, { defineTool } from '@gemini-agy/dsh-tools'
 import type { NativeChannel } from '../src/native-client.ts'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { z } from 'zod'
 import { NativeClient, NativeError } from '../src/native-client.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const shared = vi.hoisted(() => ({ create: vi.fn() }))
 

@@ -1,7 +1,7 @@
 /** Session-specific adapters for Gateway-owned Remote stream lifecycles. */
 
-import type {} from '@deepseek-ai/dsh-api-session-controller/remote'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+import type {} from '@gemini-agy/dsh-api-session-controller/remote'
+import { RemoteError } from '@gemini-agy/dsh-typert-protocol'
 import {
   RemoteJournalStream,
   RemoteSnapshotStream,
@@ -10,7 +10,7 @@ import {
   type RemoteStreamCarrierFailure,
   type RemoteJournalChange,
   type RemoteJournalFrame,
-} from '@deepseek-ai/dsh-api-gateway/client'
+} from '@gemini-agy/dsh-api-gateway/client'
 import type {
   SessionAddress,
   SessionAssistantStreamBaseline,

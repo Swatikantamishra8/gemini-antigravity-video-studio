@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-title",
+  "name": "@gemini-agy/dsh-session-title",
   "description": "Log-backed session title service and provider registry for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/session/session-title"
   },
   "type": "module",
@@ -41,25 +41,25 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/dsh-util-values": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-agent-loop": "workspace:*",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-persistence-jsonl": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*"
   }
 }

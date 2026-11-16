@@ -5,29 +5,29 @@ import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { strToU8, zipSync } from 'fflate'
 import { afterEach, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import type { ImageAttachmentRef, SaveImageAttachment } from '@deepseek-ai/dsh-attachment'
-import { AttachmentId } from '@deepseek-ai/dsh-attachment'
-import type { ConnectionFetchRoute } from '@deepseek-ai/dsh-client-connection'
-import * as SessionStore from '@deepseek-ai/dsh-session'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import * as SessionProjection from '@deepseek-ai/dsh-session-projection'
-import * as SessionProjectionCache from '@deepseek-ai/dsh-session-projection-cache'
-import * as Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import * as TypertRegistry from '@deepseek-ai/dsh-typert-registry'
-import * as Workspace from '@deepseek-ai/dsh-workspace'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import type { ImageAttachmentRef, SaveImageAttachment } from '@gemini-agy/dsh-attachment'
+import { AttachmentId } from '@gemini-agy/dsh-attachment'
+import type { ConnectionFetchRoute } from '@gemini-agy/dsh-client-connection'
+import * as SessionStore from '@gemini-agy/dsh-session'
+import { SessionId } from '@gemini-agy/dsh-session'
+import * as JsonlPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import * as SessionProjection from '@gemini-agy/dsh-session-projection'
+import * as SessionProjectionCache from '@gemini-agy/dsh-session-projection-cache'
+import * as Storage from '@gemini-agy/dsh-storage'
+import * as StorageDomain from '@gemini-agy/dsh-storage-domain'
+import * as StorageJson from '@gemini-agy/dsh-storage-json'
+import * as TypertRegistry from '@gemini-agy/dsh-typert-registry'
+import * as Workspace from '@gemini-agy/dsh-workspace'
 import * as DeepseekChatImport from '../src/index.ts'
 import { UPLOAD_PATH } from '../src/protocol.ts'
 import type { ExportSessionFile } from '../src/format.ts'
 import type { DeepseekChatImportLine } from '../src/types.ts'
-import type { PeerId, Principal, RemoteInvocation } from '@deepseek-ai/dsh-typert-protocol'
+import type { PeerId, Principal, RemoteInvocation } from '@gemini-agy/dsh-typert-protocol'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@gemini-agy/dsh-typert-protocol' {
   interface PrincipalMap {
     /** Test-only non-owner caller shared by the access specs. */
     'test-guest': { readonly kind: 'test-guest'; readonly guest: string }
@@ -64,26 +64,26 @@ async function boot(saveImage: (input: SaveImageAttachment) => Promise<ImageAtta
   await mkdir(workspacePath)
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-session'",
-    "- name: '@deepseek-ai/dsh-session-persistence-jsonl'",
+    "- name: '@gemini-agy/dsh-session'",
+    "- name: '@gemini-agy/dsh-session-persistence-jsonl'",
     '  config:',
     `    root: ${JSON.stringify(join(root, 'sessions'))}`,
-    "- name: '@deepseek-ai/dsh-storage'",
-    "- name: '@deepseek-ai/dsh-storage-json'",
+    "- name: '@gemini-agy/dsh-storage'",
+    "- name: '@gemini-agy/dsh-storage-json'",
     '  config:',
     `    root: ${JSON.stringify(join(root, 'storage'))}`,
-    "- name: '@deepseek-ai/dsh-storage-domain'",
+    "- name: '@gemini-agy/dsh-storage-domain'",
     '  config:',
     '    backend: json',
-    "- name: '@deepseek-ai/dsh-workspace'",
-    "- name: '@deepseek-ai/dsh-session-projection'",
-    "- name: '@deepseek-ai/dsh-session-projection-cache'",
+    "- name: '@gemini-agy/dsh-workspace'",
+    "- name: '@gemini-agy/dsh-session-projection'",
+    "- name: '@gemini-agy/dsh-session-projection-cache'",
     '  config:',
     '    writeEveryEvents: 1',
     '    writeIntervalMs: 1000',
-    "- name: '@deepseek-ai/dsh-typert-registry'",
+    "- name: '@gemini-agy/dsh-typert-registry'",
     '- id: gemini-3.8-flash-high-import',
-    "  name: '@deepseek-ai/dsh-gemini-3.8-flash-high-import'",
+    "  name: '@gemini-agy/dsh-gemini-3.8-flash-high-import'",
     '  config:',
     '    maxSessions: 1',
     '    maxUploadBytes: 4096',
@@ -105,16 +105,16 @@ async function boot(saveImage: (input: SaveImageAttachment) => Promise<ImageAtta
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence],
-    ['@deepseek-ai/dsh-storage', Storage],
-    ['@deepseek-ai/dsh-storage-json', StorageJson],
-    ['@deepseek-ai/dsh-storage-domain', StorageDomain],
-    ['@deepseek-ai/dsh-workspace', Workspace],
-    ['@deepseek-ai/dsh-session-projection', SessionProjection],
-    ['@deepseek-ai/dsh-session-projection-cache', SessionProjectionCache],
-    ['@deepseek-ai/dsh-typert-registry', TypertRegistry],
-    ['@deepseek-ai/dsh-gemini-3.8-flash-high-import', DeepseekChatImport],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-persistence-jsonl', JsonlPersistence],
+    ['@gemini-agy/dsh-storage', Storage],
+    ['@gemini-agy/dsh-storage-json', StorageJson],
+    ['@gemini-agy/dsh-storage-domain', StorageDomain],
+    ['@gemini-agy/dsh-workspace', Workspace],
+    ['@gemini-agy/dsh-session-projection', SessionProjection],
+    ['@gemini-agy/dsh-session-projection-cache', SessionProjectionCache],
+    ['@gemini-agy/dsh-typert-registry', TypertRegistry],
+    ['@gemini-agy/dsh-gemini-3.8-flash-high-import', DeepseekChatImport],
   ])
   context.loader.internal = {
     version: 'v2',

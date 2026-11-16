@@ -1,11 +1,11 @@
 /** Resolve unqualified CLI references in the shell execution world and persist only confirmed URLs. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-shell'
-import type {} from '@deepseek-ai/dsh-shell-env'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
+import type { Context } from '@gemini-agy/cordis'
+import type { Session } from '@gemini-agy/dsh-session'
+import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@gemini-agy/dsh-tools'
+import type {} from '@gemini-agy/dsh-shell'
+import type {} from '@gemini-agy/dsh-shell-env'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
 import { z } from 'zod'
 import { ownChangeRequestUrls } from './commands.ts'
 import { ghReferences } from './references.ts'

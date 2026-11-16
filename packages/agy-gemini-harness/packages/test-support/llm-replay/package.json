@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-llm-replay",
+  "name": "@gemini-agy/dsh-llm-replay",
   "description": "Replay LLM plugin: short-circuits llm/stream with model chunks reconstructed from a recorded session JSONL (keyless snapshot tests)",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/test-support/llm-replay"
   },
   "type": "module",
@@ -30,27 +30,27 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-compaction": "workspace:*",
+    "@gemini-agy/dsh-deepseek-llm-api-extensions": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": {
+    "@gemini-agy/dsh-deepseek-llm-api-extensions": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-compaction": "workspace:*",
+    "@gemini-agy/dsh-deepseek-llm-api-extensions": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-session-format-catalog": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-session-format-catalog": "workspace:*",
+    "@gemini-agy/dsh-util-values": "workspace:*"
   }
 }

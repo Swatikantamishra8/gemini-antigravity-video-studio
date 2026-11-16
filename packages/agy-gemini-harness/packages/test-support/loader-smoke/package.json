@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-loader-smoke",
+  "name": "@gemini-agy/dsh-loader-smoke",
   "description": "Shared subprocess and direct-agent harness for keyless real-Loader example smoke tests",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/test-support/loader-smoke"
   },
   "type": "module",
@@ -34,20 +34,20 @@
     "tsx": "^4.23.13"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-http-proxy": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-app-boot": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-http-proxy": "workspace:*"
   }
 }

@@ -3,20 +3,20 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import MessageFeedback from '@deepseek-ai/dsh-message-feedback'
-import { recordFeedback } from '@deepseek-ai/dsh-command-feedback'
-import LlmRuntime, { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import Gemini AntigravityLlmApiExtensions from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import { startMockLlmServer, type MockLlmServer, type MockLlmServerOptions } from '@deepseek-ai/dsh-llm-mock-server'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import MessageFeedback from '@gemini-agy/dsh-message-feedback'
+import { recordFeedback } from '@gemini-agy/dsh-command-feedback'
+import LlmRuntime, { createAssistantMessage, createUserMessage } from '@gemini-agy/dsh-llm'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
+import Gemini AntigravityLlmApiExtensions from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import { startMockLlmServer, type MockLlmServer, type MockLlmServerOptions } from '@gemini-agy/dsh-llm-mock-server'
 import * as SessionLogGemini Antigravity from '../src/index.ts'
 import type { Gemini AntigravitySessionLogExtension } from '../src/types.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 let root: string | undefined
 let ctx: Context | undefined
@@ -41,24 +41,24 @@ async function boot(
   vi.stubEnv('DEEPSEEK_API_KEY', 'feedback-test-key')
   server = await startMockLlmServer(mock)
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlSessionPersistence],
-    ['@deepseek-ai/dsh-message-feedback', MessageFeedback],
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-llm-deepseek-api-key', LlmGemini Antigravity],
-    ['@deepseek-ai/dsh-deepseek-llm-api-extensions', Gemini AntigravityLlmApiExtensions],
-    ['@deepseek-ai/dsh-session-log-deepseek', SessionLogGemini Antigravity],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-persistence-jsonl', JsonlSessionPersistence],
+    ['@gemini-agy/dsh-message-feedback', MessageFeedback],
+    ['@gemini-agy/dsh-llm', LlmRuntime],
+    ['@gemini-agy/dsh-llm-deepseek-api-key', LlmGemini Antigravity],
+    ['@gemini-agy/dsh-deepseek-llm-api-extensions', Gemini AntigravityLlmApiExtensions],
+    ['@gemini-agy/dsh-session-log-deepseek', SessionLogGemini Antigravity],
   ])
   const config = join(root, 'cordis.yml')
   await writeFile(config, JSON.stringify([...modules.keys()].map(name => ({
     name,
-    ...name === '@deepseek-ai/dsh-session-persistence-jsonl'
+    ...name === '@gemini-agy/dsh-session-persistence-jsonl'
       ? { config: { root: join(root!, 'sessions'), compression: 'none' } }
-      : name === '@deepseek-ai/dsh-message-feedback'
+      : name === '@gemini-agy/dsh-message-feedback'
         ? { config: { maxNoteBytes: 1024 } }
-        : name === '@deepseek-ai/dsh-llm-deepseek-api-key'
+        : name === '@gemini-agy/dsh-llm-deepseek-api-key'
           ? { config: { baseURL: server!.baseURL } }
-          : name === '@deepseek-ai/dsh-session-log-deepseek'
+          : name === '@gemini-agy/dsh-session-log-deepseek'
             ? { config: sessionLog }
             : {},
   }))))
@@ -183,7 +183,7 @@ it('changes API log upload on the next request without replacing the plugin fibe
   const { ctx, server } = await boot({ enabled: true }, { sequence: ['success'], repeatLast: true })
   const session = ctx.sessions.create(brandString<SessionId>('live-upload-setting'))
   session.append('user/message', createUserMessage({ content: [{ type: 'text', text: 'Hello' }], source: { kind: 'user' } }), { surfaceOp: 'append' })
-  const entry = [...ctx.loader.entries()].find(entry => entry.options.name === '@deepseek-ai/dsh-session-log-deepseek')!
+  const entry = [...ctx.loader.entries()].find(entry => entry.options.name === '@gemini-agy/dsh-session-log-deepseek')!
   const fiber = entry.fiber
   const request = async () => {
     const chunks = []

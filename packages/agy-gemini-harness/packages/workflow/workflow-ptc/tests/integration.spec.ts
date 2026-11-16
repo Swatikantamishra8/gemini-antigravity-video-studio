@@ -1,15 +1,15 @@
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import * as spawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
-import { STRUCTURED_OUTPUT_TOOL } from '@deepseek-ai/dsh-subagent'
+import { Context } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import * as spawn from '@gemini-agy/dsh-subagent-spawn-in-process'
+import { STRUCTURED_OUTPUT_TOOL } from '@gemini-agy/dsh-subagent'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import PtcWorkflowEngine from '../src/index.ts'
 import { mountPtcRuntime } from './setup.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 type Script = ConstructorParameters<typeof MockAdapter>[0]
 

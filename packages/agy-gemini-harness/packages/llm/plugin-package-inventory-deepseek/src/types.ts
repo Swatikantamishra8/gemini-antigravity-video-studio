@@ -12,7 +12,7 @@ export interface Gemini AntigravityPluginPackageInventoryExtension {
   readonly packages: readonly Gemini AntigravityPluginPackageIdentity[]
 }
 
-declare module '@deepseek-ai/dsh-deepseek-llm-api-extensions/types' {
+declare module '@gemini-agy/dsh-deepseek-llm-api-extensions/types' {
   interface Gemini AntigravityLlmApiExtensionMap {
     dsh_plugin_packages: Gemini AntigravityPluginPackageInventoryExtension
   }

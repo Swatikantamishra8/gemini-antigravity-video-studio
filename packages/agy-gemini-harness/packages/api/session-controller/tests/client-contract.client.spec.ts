@@ -1,12 +1,12 @@
 import { describe, expect, expectTypeOf, it, vi } from 'vitest'
-import type { PromptContentPart as AttachmentPromptContentPart } from '@deepseek-ai/dsh-attachment/types'
-import { SessionSeq, type SessionId, type SessionSeqCursor } from '@deepseek-ai/dsh-session/types'
+import type { PromptContentPart as AttachmentPromptContentPart } from '@gemini-agy/dsh-attachment/types'
+import { SessionSeq, type SessionId, type SessionSeqCursor } from '@gemini-agy/dsh-session/types'
 import {
   MutableSessionEventSource, type SessionAssistantSettlementEntry,
   type SessionLiveEventEntry, type SessionTransientEventEntry,
 } from '../src/client/contract/events.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { LlmAttemptId } from '@deepseek-ai/dsh-llm/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { LlmAttemptId } from '@gemini-agy/dsh-llm/types'
 import type { ISession } from '../src/client/contract/session.ts'
 import type { ProjectionsBaseline } from '../src/client/sessions/projection-store.ts'
 import { ProjectionValueStore } from '../src/client/sessions/projection-store.ts'

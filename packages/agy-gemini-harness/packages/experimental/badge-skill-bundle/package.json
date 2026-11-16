@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-badge-skill-bundle",
+  "name": "@gemini-agy/dsh-experimental-badge-skill-bundle",
   "description": "Let agents add a “powered by dsh” badge to documents, pull requests, and other outputs.",
   "version": "0.2.2-rc.3",
   "icon": "./icon.svg",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/badge-skill-bundle"
   },
   "type": "module",
@@ -42,12 +42,12 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-skill-badge": "workspace:*"
+    "@gemini-agy/dsh-skill-badge": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

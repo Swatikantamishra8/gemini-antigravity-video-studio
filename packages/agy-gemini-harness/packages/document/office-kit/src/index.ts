@@ -3,16 +3,16 @@ import { randomUUID } from 'node:crypto'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { extname, isAbsolute, join, relative, sep } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import type { Converter, ConverterOptions } from '@deepseek-ai/libreoffice-kit'
-import z from '@deepseek-ai/schemastery'
-import type { WorkspaceFileScope, WorkspaceFileStat } from '@deepseek-ai/dsh-api-workspace-files'
-import type {} from '@deepseek-ai/dsh-fs'
-import type {} from '@deepseek-ai/dsh-session'
-import { dshHomePath } from '@deepseek-ai/dsh-home-paths'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Context } from '@gemini-agy/cordis'
+import type { Converter, ConverterOptions } from '@gemini-agy/libreoffice-kit'
+import z from '@gemini-agy/schemastery'
+import type { WorkspaceFileScope, WorkspaceFileStat } from '@gemini-agy/dsh-api-workspace-files'
+import type {} from '@gemini-agy/dsh-fs'
+import type {} from '@gemini-agy/dsh-session'
+import { dshHomePath } from '@gemini-agy/dsh-home-paths'
+import { brandString } from '@gemini-agy/dsh-brand'
 import { resolveKitModule } from './locate.ts'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
+import { Remote, RemoteError, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
 import { OfficeKitError } from './errors.ts'
 import type { OfficeKitGeneration, OfficeSourceKey } from './identity.ts'
 import type {
@@ -27,7 +27,7 @@ export * from './errors.ts'
 export * from './identity.ts'
 export * from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Shared Office rendering, conversion, recalculation, and authorized workspace-file previews. */
     officeKit: OfficeKit
@@ -109,7 +109,7 @@ export const Config: z<Partial<Config>, Config> = z.object({
 })
 
 /** Kit operations loaded from the provider's Kit entry. */
-type KitModule = Pick<typeof import('@deepseek-ai/libreoffice-kit'), 'createConverter'>
+type KitModule = Pick<typeof import('@gemini-agy/libreoffice-kit'), 'createConverter'>
 
 /** Imported Kit operations with the engine resolver anchored at the same Kit entry. */
 interface LoadedKit extends KitModule {
@@ -344,7 +344,7 @@ export class OfficeKit extends TypertRemoteService {
   }
 
   private async importKit(): Promise<LoadedKit> {
-    const kit = resolveKitModule(() => import.meta.resolve('@deepseek-ai/libreoffice-kit'))
+    const kit = resolveKitModule(() => import.meta.resolve('@gemini-agy/libreoffice-kit'))
     if (kit.kind === 'missing') throw this.unavailableKit('LibreOffice Kit is not installed.', kit.error)
     let createConverter: KitModule['createConverter']
     try {

@@ -12,11 +12,11 @@ import { mkdir, mkdtemp, readFile, realpath, rm, stat, symlink, unlink, utimes, 
 import { tmpdir } from 'node:os'
 import { join, parse, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { Context } from '@deepseek-ai/cordis'
-import { LocalFileSystem } from '@deepseek-ai/dsh-fs-local'
-import type { FsVersion } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { FsTarget } from '@deepseek-ai/dsh-fs'
+import { Context } from '@gemini-agy/cordis'
+import { LocalFileSystem } from '@gemini-agy/dsh-fs-local'
+import type { FsVersion } from '@gemini-agy/dsh-fs'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { FsTarget } from '@gemini-agy/dsh-fs'
 
 let dir: string
 let ctx: Context

@@ -2,11 +2,11 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
-import { Context } from '@deepseek-ai/cordis'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
+import { Context } from '@gemini-agy/cordis'
+import Include from '@gemini-agy/cordis-plugin-include'
+import Loader from '@gemini-agy/cordis-plugin-loader'
 import { afterEach, describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import WebhookRuntime, {
   type WebhookDeliveryId,
   type WebhookRuleId,
@@ -29,7 +29,7 @@ describe('real Loader composition', () => {
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
       '- name: fixture-dependencies',
-      "- name: '@deepseek-ai/dsh-webhook'",
+      "- name: '@gemini-agy/dsh-webhook'",
       '- name: fixture-rule',
       '',
     ].join('\n'))
@@ -66,7 +66,7 @@ describe('real Loader composition', () => {
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
       ['fixture-dependencies', dependencies],
-      ['@deepseek-ai/dsh-webhook', WebhookRuntime],
+      ['@gemini-agy/dsh-webhook', WebhookRuntime],
       ['fixture-rule', rule],
     ])
     context.loader.internal = {

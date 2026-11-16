@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-util-values",
+  "name": "@gemini-agy/dsh-util-values",
   "description": "Duplicate-install-safe value primitives for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/util/values"
   },
   "type": "module",
@@ -30,9 +30,9 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

@@ -6,11 +6,11 @@
  * derives them from its log, and builders for the attachment references
  * the Host's log carries.
  */
-import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { ok, type RemoteMock, type RemoteTable, type StreamScript, type UnaryRuleFn } from '@deepseek-ai/dsh-remote-mock'
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
-import type { RemoteFailure, RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
+import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { ok, type RemoteMock, type RemoteTable, type StreamScript, type UnaryRuleFn } from '@gemini-agy/dsh-remote-mock'
+import type { SessionEvent } from '@gemini-agy/dsh-session/types'
+import type { RemoteFailure, RemoteResult } from '@gemini-agy/dsh-typert-protocol'
 import type {
   SessionAssistantStreamBaseline, SessionFollowFrame, SessionFollowRequest,
   SessionEventsPage, SessionPageRequest,

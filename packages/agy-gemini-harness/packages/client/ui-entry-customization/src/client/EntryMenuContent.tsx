@@ -1,9 +1,9 @@
 /** Folded Conversation Views, plugin discovery while reachable, and creation. */
 import {
   Button, IconCheckOutlineRegular, IconPinOutlineRegular, IconPluginPinwheelOutlineRegular, IconPlusOutlineRegular, MenuItemButton, Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { HostObservable, InjectFace, PropsLocale, PropsRenderFactories, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar/client'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { HostObservable, InjectFace, PropsLocale, PropsRenderFactories, PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import type {} from '@gemini-agy/dsh-client-ui-sidebar/client'
 import css from './EntryMenu.module.css'
 
 /** Navigation region whose More menu hosts one registration. */

@@ -3,7 +3,7 @@ description: "The shared hook rules behind the Gemini 3.8 Flash High Code and Co
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-hook-protocol
+# @gemini-agy/dsh-hook-protocol
 
 English | [中文](README.zh.md)
 

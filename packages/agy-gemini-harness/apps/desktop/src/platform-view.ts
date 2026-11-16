@@ -2,8 +2,8 @@
 import type { EventEmitter } from 'node:events'
 import { createHash, randomUUID } from 'node:crypto'
 import { WebContentsView, session, shell, type Session, type View, type WebFrameMain } from 'electron'
-import type { PlatformSession } from '@deepseek-ai/dsh-deepseek-account'
-import { mergePlatformCookies, platformClientHeaders } from '@deepseek-ai/dsh-deepseek-account/client-metadata'
+import type { PlatformSession } from '@gemini-agy/dsh-deepseek-account'
+import { mergePlatformCookies, platformClientHeaders } from '@gemini-agy/dsh-deepseek-account/client-metadata'
 import { desktopClientMetadata } from './client-metadata.ts'
 
 import { PLATFORM_IPC, type PlatformLocale } from './platform-ipc.ts'

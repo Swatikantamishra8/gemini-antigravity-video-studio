@@ -1,19 +1,19 @@
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import {
   type ToolCallId, createMessage, createToolResultMessage, createUserMessage,
-} from '@deepseek-ai/dsh-llm'
-import { SessionSeq } from '@deepseek-ai/dsh-session/types'
+} from '@gemini-agy/dsh-llm'
+import { SessionSeq } from '@gemini-agy/dsh-session/types'
 // Minimal SessionEvent builders for orchestration tests (shape mirrors what the
 // host emits; only the fields the object layer reads).
-import type { ContentBlock } from '@deepseek-ai/dsh-llm/types'
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
+import type { ContentBlock } from '@gemini-agy/dsh-llm/types'
+import type { SessionEvent } from '@gemini-agy/dsh-session/types'
 import type {
   SessionEventEntry,
   SessionEventsPage,
   SessionWireEvent,
 } from '../src/types.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'compact-checkpoint': { kind: 'compact-checkpoint'; compactionId: string }
   }

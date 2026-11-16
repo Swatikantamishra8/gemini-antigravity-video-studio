@@ -1,8 +1,8 @@
 import { once } from 'node:events'
 import { createServer } from 'node:http'
 import { describe, expect, it, vi } from 'vitest'
-import { LlmError, userAgent } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { LlmError, userAgent } from '@gemini-agy/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type { Gemini AntigravityFileId } from '../src/file-id.ts'
 import {
   Gemini AntigravityFilesClient,

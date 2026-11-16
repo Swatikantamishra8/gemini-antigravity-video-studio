@@ -1,23 +1,23 @@
 /**
  * Session working directories, durable changes, and model context.
- * @module @deepseek-ai/dsh-working-directory
+ * @module @gemini-agy/dsh-working-directory
  */
 
 import { isAbsolute } from 'node:path'
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
 import { z as zod } from 'zod'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-fs'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-fs'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { Session } from '@gemini-agy/dsh-session'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-system-prompt'
 import { WorkingDirectoryError } from './error.ts'
 
 export { WorkingDirectoryError, type WorkingDirectoryErrorCode } from './error.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Events {
     /**
      * Coordinate directory validation and publication with a resource operation
@@ -39,7 +39,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     /**
      * Committed working-directory transition notices.
@@ -49,7 +49,7 @@ declare module '@deepseek-ai/dsh-llm' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@gemini-agy/dsh-session/types' {
   interface SessionEventMap {
     /** Effective working directory; the immutable Session header retains the original project. */
     'working-directory/change': {
@@ -59,7 +59,7 @@ declare module '@deepseek-ai/dsh-session/types' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@gemini-agy/dsh-session-projection/types' {
   interface SessionProjectionMap {
     /** Recorded current directory for Session observations, or null when none is recorded. */
     workingDirectory: string | null

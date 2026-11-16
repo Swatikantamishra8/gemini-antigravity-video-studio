@@ -2,12 +2,12 @@
  * Authentication and redirect-rejecting transport shared by the Search and
  * Fetch API providers in this package
  * ([rationale](../../../../.agents/notes/implemented/feature/2026-10-15-deepseek-search-fetch-api.md)).
- * @module @deepseek-ai/dsh-web-deepseek-api/transport
+ * @module @gemini-agy/dsh-web-deepseek-api/transport
  */
-import type { CredentialRef } from '@deepseek-ai/dsh-credentials'
-import { WebError } from '@deepseek-ai/dsh-web'
+import type { CredentialRef } from '@gemini-agy/dsh-credentials'
+import { WebError } from '@gemini-agy/dsh-web'
 
-const USER_AGENT = 'deepseek-harness/0.0.1'
+const USER_AGENT = 'agy-gemini-harness/0.0.1'
 
 /**
  * API key of one {@link Gemini AntigravityWebAuthSource}: a literal value, where an empty string means no key, or a credential

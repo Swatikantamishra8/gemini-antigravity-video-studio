@@ -9,24 +9,24 @@ import { mountWorkingDirectoryFixture } from '../../subagent/tests/working-direc
 
 import { startExternalActivation } from '../../subagent/tests/external-activation-helpers.ts'
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent, AgentOptions } from '@deepseek-ai/dsh-agent'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import type { Agent, AgentOptions } from '@gemini-agy/dsh-agent'
 import {
   Gemini AntigravityHarness,
   HarnessClient,
   SdkProtocolError,
-} from '@deepseek-ai/dsh-sdk-client'
+} from '@gemini-agy/dsh-sdk-client'
 import { createProcessGemini AntigravityHarness } from '../../../sdk/client/src/api.ts'
 import type { RuntimeProcessOptions } from '../../../sdk/client/src/launch.ts'
-import type { Gemini AntigravityHarnessOptions } from '@deepseek-ai/dsh-sdk-client'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
+import type { Gemini AntigravityHarnessOptions } from '@gemini-agy/dsh-sdk-client'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ReasoningEffortId } from '@gemini-agy/dsh-llm/types'
 import * as sdk from '../src/index.ts'
 import {
   DEFAULT_DISPOSE_EOF_GRACE_MS,
@@ -158,7 +158,7 @@ describe('sdkChildOutcome', () => {
 describe('dsh-subagent-dsh-sdk provider', () => {
   it('constructs the production dsh-backed harness lazily', async () => {
     const harness = defaultCreateHarness({})
-    expect(harness).toBeInstanceOf((await import('@deepseek-ai/dsh-sdk-client')).Gemini AntigravityHarness)
+    expect(harness).toBeInstanceOf((await import('@gemini-agy/dsh-sdk-client')).Gemini AntigravityHarness)
     await harness.close()
   })
 

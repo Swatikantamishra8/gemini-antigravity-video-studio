@@ -1,24 +1,24 @@
 /** Web subagent catalog, navigation, and addressed-session composer owner. */
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { SubagentAddress } from '@deepseek-ai/dsh-subagent/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { ComposerChainProps } from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
+import type { SubagentAddress } from '@gemini-agy/dsh-subagent/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { ComposerChainProps } from '@gemini-agy/dsh-client-ui-conversation/client'
 import { SubagentCatalogAction, SubagentHeaderLineage, type SubagentCatalogInjected, type SubagentCatalogActionInjected } from './SubagentHeaderLineage.tsx'
 import {
   SubagentReadOnlyComposer, type SubagentReadOnlyMatch,
 } from './SubagentReadOnlyComposer.tsx'
 import { registerSidebarChat, subagentChatAddress } from './sidebar-chat/index.tsx'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-chat/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session-status/client'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
+import type {} from '@gemini-agy/dsh-client-locale/client'
+import type {} from '@gemini-agy/dsh-client-ui-chat/client'
+import type {} from '@gemini-agy/dsh-client-ui-renderer/client'
+import type {} from '@gemini-agy/dsh-client-ui-session/client'
+import type {} from '@gemini-agy/dsh-client-ui-session-status/client'
+import type {} from '@gemini-agy/dsh-client-ui-sidebar-right/client'
+import type {} from '@gemini-agy/dsh-client-ui-workspace/client'
 import { en, ja, es, fr, de, ru, pt, NS, zh, type SubagentKey } from './locales.ts'
 export type * from './slots.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Subagent catalog and read-only composer copy. */
     'subagent': SubagentKey

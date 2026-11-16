@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-workspace-changes",
+  "name": "@gemini-agy/dsh-workspace-changes",
   "description": "Per-turn workspace file changes recorded from git working-tree snapshots and whole-file captures, with per-file comparisons, for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/deliverables/workspace-changes"
   },
   "type": "module",
@@ -37,38 +37,38 @@
     "src"
   ],
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/schemastery": "workspace:~",
     "diff": "^9.0.0"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-fs": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tool-str-replace-editor": "workspace:*",
-    "@deepseek-ai/dsh-fs-observation-policy": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-subprocess-local": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-fs-local": "workspace:*",
+    "@gemini-agy/dsh-agent-loop-testkit": "workspace:*",
+    "@gemini-agy/dsh-agent-loop": "workspace:*",
+    "@gemini-agy/dsh-working-directory": "workspace:*",
+    "@gemini-agy/dsh-tool-executor-native": "workspace:*",
+    "@gemini-agy/dsh-tool-fs": "workspace:*",
+    "@gemini-agy/dsh-tool-testkit": "workspace:*",
+    "@gemini-agy/dsh-tool-str-replace-editor": "workspace:*",
+    "@gemini-agy/dsh-fs-observation-policy": "workspace:*",
+    "@gemini-agy/dsh-system-prompt": "workspace:*"
   }
 }

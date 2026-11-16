@@ -3,7 +3,7 @@ description: "在通用设置中控制随 Gemini Antigravity API 请求上传会
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-ui-settings-session-log
+# @gemini-agy/dsh-client-ui-settings-session-log
 
 [English](README.md) | 中文
 

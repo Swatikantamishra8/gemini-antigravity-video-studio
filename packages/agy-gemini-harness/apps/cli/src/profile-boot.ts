@@ -7,14 +7,14 @@
  * App flags are not the launcher's business: the invocation's inner arguments
  * are provided to the tree through `ctx.cmdlineArgs`, where any injected app
  * plugin may read the same immutable snapshot.
- * @module @deepseek-ai/dsh/profile-boot
+ * @module @gemini-agy/dsh/profile-boot
  */
 
 import { existsSync, mkdirSync, mkdtempSync, renameSync, rmSync, writeFileSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { FiberState, type Context } from '@deepseek-ai/cordis'
-import type { PatchOptions } from '@deepseek-ai/cordis-plugin-include'
+import { FiberState, type Context } from '@gemini-agy/cordis'
+import type { PatchOptions } from '@gemini-agy/cordis-plugin-include'
 import {
   boot,
   readProfilePatches,
@@ -30,12 +30,12 @@ import {
   type ProfileContext,
   type Profile,
   type RuntimeResolution,
-} from '@deepseek-ai/dsh-app-boot'
-import { PROFILE_TEMPLATES } from '@deepseek-ai/dsh-official-bundles'
-import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'
-import { installProxyFromEnvironment } from '@deepseek-ai/dsh-http-proxy'
-import { DSH_LAUNCH_ENVIRONMENT_KEY, type LaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import { provideCmdline, type AppReady } from '@deepseek-ai/dsh-cmdline'
+} from '@gemini-agy/dsh-app-boot'
+import { PROFILE_TEMPLATES } from '@gemini-agy/dsh-official-bundles'
+import { resolveDshHome } from '@gemini-agy/dsh-home-paths'
+import { installProxyFromEnvironment } from '@gemini-agy/dsh-http-proxy'
+import { DSH_LAUNCH_ENVIRONMENT_KEY, type LaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
+import { provideCmdline, type AppReady } from '@gemini-agy/dsh-cmdline'
 import { createProcessShutdown, type ProcessShutdown } from './process-shutdown.ts'
 
 const NAME = 'dsh'

@@ -1,31 +1,31 @@
 /** Real Loader composition: the bridge mounted from a cordis.yml row beside the shipped core plugins. */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import CommandRuntime from '@deepseek-ai/dsh-commands'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
-import LlmRuntime, { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import CommandRuntime from '@gemini-agy/dsh-commands'
+import LocalFileSystem from '@gemini-agy/dsh-fs-local'
+import WorkingDirectory from '@gemini-agy/dsh-working-directory'
+import LlmRuntime, { createUserMessage } from '@gemini-agy/dsh-llm'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import { defineContentToolFixture } from '@gemini-agy/dsh-tool-testkit'
 import * as Gemini 3.8 Flash HighCodeMods from '../src/index.ts'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 // Keep workspace imports in Vitest's source graph even when the config has a package scope.
-vi.mock('@deepseek-ai/cordis-plugin-loader/src/resolve.ts', () => ({ createResolve: () => undefined }))
+vi.mock('@gemini-agy/cordis-plugin-loader/src/resolve.ts', () => ({ createResolve: () => undefined }))
 
 const FIXTURES = resolve(import.meta.dirname, 'fixtures')
 
@@ -44,19 +44,19 @@ it('loads from cordis.yml, counts the model\'s tool calls, and answers /tally th
   await writeFile(join(root, 'package.json'), JSON.stringify({ type: 'module' }))
   const configPath = join(root, 'cordis.yml')
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
+    ['@gemini-agy/dsh-llm', LlmRuntime],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
 
-    ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-    ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-    ['@deepseek-ai/dsh-working-directory', WorkingDirectory],
-    ['@deepseek-ai/dsh-tools', ToolRuntime],
-    ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-    ['@deepseek-ai/dsh-agent', AgentRegistry],
-    ['@deepseek-ai/dsh-agent-loop', AgentLoop],
-    ['@deepseek-ai/dsh-commands', CommandRuntime],
-    ['@deepseek-ai/dsh-experimental-claude-code-mods', Gemini 3.8 Flash HighCodeMods],
+    ['@gemini-agy/dsh-system-prompt', SystemPrompt],
+    ['@gemini-agy/dsh-fs-local', LocalFileSystem],
+    ['@gemini-agy/dsh-working-directory', WorkingDirectory],
+    ['@gemini-agy/dsh-tools', ToolRuntime],
+    ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+    ['@gemini-agy/dsh-agent', AgentRegistry],
+    ['@gemini-agy/dsh-agent-loop', AgentLoop],
+    ['@gemini-agy/dsh-commands', CommandRuntime],
+    ['@gemini-agy/dsh-experimental-claude-code-mods', Gemini 3.8 Flash HighCodeMods],
   ])
   // A mod is a plugin like any other: here the tutorial mod's `defineMod` wrapper, mounted by file URL after the bridge.
   const firstMod = pathToFileURL(resolve(FIXTURES, 'first-mod.ts')).href

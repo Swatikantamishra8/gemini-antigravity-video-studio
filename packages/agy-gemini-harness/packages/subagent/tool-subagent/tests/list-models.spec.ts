@@ -1,30 +1,30 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
+import AgentRegistry from '@gemini-agy/dsh-agent'
 import { mountWorkingDirectoryFixture } from '../../subagent/tests/working-directory-fixture.ts'
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { type ToolCallId,
   LlmAdapter, type ReasoningEffortId,
-} from '@deepseek-ai/dsh-llm'
+} from '@gemini-agy/dsh-llm'
 import type {
   GenerateOptions,
   LlmModelInfo,
   LlmResolvedModelInfo,
   StreamChunk,
-} from '@deepseek-ai/dsh-llm'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+} from '@gemini-agy/dsh-llm'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import type { SessionId } from '@gemini-agy/dsh-session'
 import * as tool from '../src/index.ts'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
 import SubagentModelSelectionConfig from '../src/model-selection-settings.ts'
 import { modelSelectionSetupAgent, ownContext, setup, testToolSignal, text } from './harness.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 class CatalogAdapter extends LlmAdapter {
   constructor(private readonly empty = false) {

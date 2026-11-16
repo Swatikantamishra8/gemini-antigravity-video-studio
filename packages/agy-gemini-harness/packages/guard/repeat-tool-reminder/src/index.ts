@@ -3,23 +3,23 @@
  * with logged model context without vetoing or rewriting calls. Configuration
  * and chain semantics live in the package README; rationale lives in the
  * repeat-tool-reminder Agent Note.
- * @module @deepseek-ai/dsh-repeat-tool-reminder
+ * @module @gemini-agy/dsh-repeat-tool-reminder
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent, PreStepDecision } from '@gemini-agy/dsh-agent'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'repeat-tool-reminder': { kind: 'repeat-tool-reminder' } & ContextFormed
   }
 }
 
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
-import type { UserMessage } from '@deepseek-ai/dsh-session'
-import type { PostToolDecision, ToolExecution } from '@deepseek-ai/dsh-tools'
+import type { MessageSource } from '@gemini-agy/dsh-llm'
+import type { UserMessage } from '@gemini-agy/dsh-session'
+import type { PostToolDecision, ToolExecution } from '@gemini-agy/dsh-tools'
 
 export const name = 'repeat-tool-reminder'
 

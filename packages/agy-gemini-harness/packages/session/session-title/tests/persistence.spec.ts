@@ -1,15 +1,15 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionTitleService, { foldSessionTitle } from '@deepseek-ai/dsh-session-title'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import SessionTitleService, { foldSessionTitle } from '@gemini-agy/dsh-session-title'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const CONFIG = {
   fallbackMaxWords: 5,

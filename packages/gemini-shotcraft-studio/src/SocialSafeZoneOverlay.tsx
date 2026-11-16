@@ -1,8 +1,18 @@
 import React from 'react';
 import { useVideoConfig } from 'remotion';
 
+export type PlatformSafeZone =
+  | 'shorts'
+  | 'tiktok'
+  | 'reels'
+  | 'youtube'
+  | 'facebook'
+  | 'instagram-feed'
+  | 'linkedin'
+  | 'all';
+
 export interface SocialSafeZoneOverlayProps {
-  platform?: 'shorts' | 'tiktok' | 'reels' | 'youtube' | 'all';
+  platform?: PlatformSafeZone;
   visible?: boolean;
 }
 
@@ -19,7 +29,64 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
   if (!visible) return null;
 
   const isVertical = height > width;
+  const isSquare = Math.abs(height - width) < 10;
 
+  // Render Square / Feed Layout (1:1)
+  if (isSquare || platform === 'instagram-feed') {
+    return (
+      <div style={{ position: 'absolute', top: 0, left: 0, width, height, pointerEvents: 'none', zIndex: 100 }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: '8%',
+            left: '8%',
+            right: '8%',
+            bottom: '8%',
+            border: '2px dashed rgba(225, 48, 108, 0.8)',
+            borderRadius: 8,
+            boxShadow: '0 0 10px rgba(225, 48, 108, 0.2)'
+          }}
+        >
+          <span style={{ fontSize: 13, color: '#e1306c', padding: 10, display: 'inline-block' }}>
+            INSTAGRAM FEED 1:1 SAFE ZONE (84%)
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  // Render Facebook 4:5 Vertical Feed Layout
+  if (platform === 'facebook' && isVertical) {
+    return (
+      <div style={{ position: 'absolute', top: 0, left: 0, width, height, pointerEvents: 'none', zIndex: 100 }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '10%', background: 'rgba(24, 119, 242, 0.15)', borderBottom: '2px dashed #1877f2' }}>
+          <span style={{ fontSize: 12, color: '#1877f2', padding: 8, display: 'inline-block' }}>FACEBOOK HEADER (10%)</span>
+        </div>
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '15%', background: 'rgba(24, 119, 242, 0.15)', borderTop: '2px dashed #1877f2' }}>
+          <span style={{ fontSize: 12, color: '#1877f2', padding: 8, display: 'inline-block' }}>FACEBOOK ENGAGEMENT BAR (15%)</span>
+        </div>
+        <div style={{ position: 'absolute', top: '10%', left: '5%', right: '5%', bottom: '15%', border: '2px solid #1877f2' }}>
+          <span style={{ fontSize: 14, color: '#1877f2', padding: 10, display: 'inline-block' }}>FB 4:5 CONTENT SAFE HOTSPOT</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Render LinkedIn Layout
+  if (platform === 'linkedin') {
+    return (
+      <div style={{ position: 'absolute', top: 0, left: 0, width, height, pointerEvents: 'none', zIndex: 100 }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '12%', background: 'rgba(10, 102, 194, 0.15)', borderBottom: '2px dashed #0a66c2' }}>
+          <span style={{ fontSize: 12, color: '#0a66c2', padding: 8, display: 'inline-block' }}>LINKEDIN NAV BAR (12%)</span>
+        </div>
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '18%', background: 'rgba(10, 102, 194, 0.15)', borderTop: '2px dashed #0a66c2' }}>
+          <span style={{ fontSize: 12, color: '#0a66c2', padding: 8, display: 'inline-block' }}>LINKEDIN CTA & ACTIONS (18%)</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Standard 9:16 Shorts / Reels / TikTok Layout
   return (
     <div
       style={{
@@ -34,7 +101,7 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
     >
       {isVertical ? (
         <>
-          {/* Top header safe margin (search & audio tags) */}
+          {/* Top header safe margin */}
           <div
             style={{
               position: 'absolute',
@@ -51,7 +118,7 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
             </span>
           </div>
 
-          {/* Right sidebar UI safe margin (like, comment, share, remix) */}
+          {/* Right sidebar UI */}
           <div
             style={{
               position: 'absolute',
@@ -68,7 +135,7 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
             </span>
           </div>
 
-          {/* Bottom description and sound disc safe margin */}
+          {/* Bottom description */}
           <div
             style={{
               position: 'absolute',
@@ -85,7 +152,7 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
             </span>
           </div>
 
-          {/* 9:16 Center Safe Zone */}
+          {/* Recommended hotspot */}
           <div
             style={{
               position: 'absolute',
@@ -104,7 +171,7 @@ export const SocialSafeZoneOverlay: React.FC<SocialSafeZoneOverlayProps> = ({
           </div>
         </>
       ) : (
-        /* 16:9 Landscape Safe Margin (Title & Safe Framing) */
+        /* 16:9 Landscape Safe Margin */
         <div
           style={{
             position: 'absolute',

@@ -2,12 +2,12 @@
  * Opt-in timed `ask_user_question` tool definition.
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import { defineTool, ToolArgsError, ToolContextUnavailableError, type ToolExecution } from '@deepseek-ai/dsh-tools'
-import { TIMED_WAIT_PARAMETER } from '@deepseek-ai/dsh-user-questions'
+import type { Context } from '@gemini-agy/cordis'
+import { defineTool, ToolArgsError, ToolContextUnavailableError, type ToolExecution } from '@gemini-agy/dsh-tools'
+import { TIMED_WAIT_PARAMETER } from '@gemini-agy/dsh-user-questions'
 import type {
   AskUserQuestionAnswer, AskUserQuestionRequestEvent,
-} from '@deepseek-ai/dsh-user-questions/types'
+} from '@gemini-agy/dsh-user-questions/types'
 
 function validateTimeout(timeout: number): number {
   if (timeout !== -1 && (!Number.isInteger(timeout) || timeout < 1 || timeout > 2_147_483)) {

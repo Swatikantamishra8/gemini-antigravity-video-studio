@@ -2,7 +2,7 @@
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
-import type { SubprocessHandle, SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
+import type { SubprocessHandle, SubprocessRuntime } from '@gemini-agy/dsh-subprocess'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { nativeExecutablePath, nativeHostArchitecture, prepareNativeExecutable, type NativeArchitecture } from '../src/native-build.ts'
 
@@ -18,7 +18,7 @@ async function fixture(source: boolean, architecture: NativeArchitecture = 'x64'
     await mkdir(dirname(path), { recursive: true })
     await writeFile(path, 'helper', { mode: 0o755 })
   }
-  if (source) await writeFile(join(root, 'package.json'), JSON.stringify({ name: '@deepseek-ai/dsh-root' }))
+  if (source) await writeFile(join(root, 'package.json'), JSON.stringify({ name: '@gemini-agy/dsh-root' }))
   const handle = {
     stdin: undefined, stdout: undefined, stderr: undefined, control: undefined, collected: {},
     done: Promise.resolve({ exitCode, signal: null }), terminate: vi.fn(), waitForExit: vi.fn(async () => true),

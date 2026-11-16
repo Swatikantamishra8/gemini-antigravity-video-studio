@@ -3,17 +3,17 @@
 import {
   isAppendSurfaceEvent,
   SessionLogOffset,
-} from '@deepseek-ai/dsh-session'
+} from '@gemini-agy/dsh-session'
 import type {
   SessionEvent,
   SessionHeader,
   SessionId,
   SessionLogOffset as SessionLogOffsetType,
   SessionSeqCursor,
-} from '@deepseek-ai/dsh-session'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import type {} from '@deepseek-ai/dsh-subagent'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+} from '@gemini-agy/dsh-session'
+import type { SessionObservation } from '@gemini-agy/dsh-session-query'
+import type {} from '@gemini-agy/dsh-subagent'
+import { RemoteError } from '@gemini-agy/dsh-typert-protocol'
 import type {
   SessionAddress,
   SessionEventEntry,

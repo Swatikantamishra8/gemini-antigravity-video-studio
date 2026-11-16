@@ -3,18 +3,18 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus } from '@deepseek-ai/dsh-agent'
-import CommandRuntime from '@deepseek-ai/dsh-commands'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import * as CommandFeedback from '@deepseek-ai/dsh-command-feedback'
-import { getOrCreateAnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent, AgentStatus } from '@gemini-agy/dsh-agent'
+import CommandRuntime from '@gemini-agy/dsh-commands'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import * as CommandFeedback from '@gemini-agy/dsh-command-feedback'
+import { getOrCreateAnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
+import { unsupportedModel, unsupportedInbox } from '@gemini-agy/dsh-agent-loop-testkit'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 let root: string | undefined
 let context: Context | undefined
@@ -59,12 +59,12 @@ describe('/feedback real Loader composition through cordis.yml', () => {
     vi.stubEnv('DSH_HOME', root)
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-session-projection'",
-      "- name: '@deepseek-ai/dsh-agent'",
-      "- name: '@deepseek-ai/dsh-session-projection'",
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-commands'",
-      "- name: '@deepseek-ai/dsh-command-feedback'",
+      "- name: '@gemini-agy/dsh-session-projection'",
+      "- name: '@gemini-agy/dsh-agent'",
+      "- name: '@gemini-agy/dsh-session-projection'",
+      "- name: '@gemini-agy/dsh-session'",
+      "- name: '@gemini-agy/dsh-commands'",
+      "- name: '@gemini-agy/dsh-command-feedback'",
       '',
     ].join('\n'))
 
@@ -73,12 +73,12 @@ describe('/feedback real Loader composition through cordis.yml', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-      ['@deepseek-ai/dsh-agent', AgentRegistry],
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-commands', CommandRuntime],
-      ['@deepseek-ai/dsh-command-feedback', CommandFeedback],
+      ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+      ['@gemini-agy/dsh-agent', AgentRegistry],
+      ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+      ['@gemini-agy/dsh-session', SessionStore],
+      ['@gemini-agy/dsh-commands', CommandRuntime],
+      ['@gemini-agy/dsh-command-feedback', CommandFeedback],
     ])
     context.loader.internal = {
       version: 'v2',

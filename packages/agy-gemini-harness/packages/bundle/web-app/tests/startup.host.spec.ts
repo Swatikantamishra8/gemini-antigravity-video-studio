@@ -1,10 +1,10 @@
 /** WebApp collects provider entry URLs and owns browser handoff. */
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import * as AppBoot from '@deepseek-ai/dsh-app-boot'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import * as AppBoot from '@gemini-agy/dsh-app-boot'
 import { afterEach, expect, it, onTestFinished, vi } from 'vitest'
-import { createLaunchEnvironmentSnapshot, DSH_LAUNCH_ENVIRONMENT_KEY } from '@deepseek-ai/dsh-launch-environment'
-import type { WebServer } from '@deepseek-ai/dsh-host-webserver'
+import { createLaunchEnvironmentSnapshot, DSH_LAUNCH_ENVIRONMENT_KEY } from '@gemini-agy/dsh-launch-environment'
+import type { WebServer } from '@gemini-agy/dsh-host-webserver'
 import { apply, type Config, internals } from '../src/index.ts'
 
 const originalOpen = internals.openBrowser

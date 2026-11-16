@@ -1,30 +1,30 @@
 /** Real Loader composition preserves retrievable source text outside the bounded preview. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import { agentEvents, type Agent } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import * as systemPromptPlugin from '@deepseek-ai/dsh-system-prompt'
-import * as toolsPlugin from '@deepseek-ai/dsh-tools'
-import * as fsPlugin from '@deepseek-ai/dsh-fs-local'
-import * as toolFsPlugin from '@deepseek-ai/dsh-tool-fs'
-import * as sessionPlugin from '@deepseek-ai/dsh-session'
-import * as sessionProjectionPlugin from '@deepseek-ai/dsh-session-projection'
-import * as workingDirectoryPlugin from '@deepseek-ai/dsh-working-directory'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import * as queryPlugin from '@deepseek-ai/dsh-session-query-sqlite'
-import * as referencePlugin from '@deepseek-ai/dsh-session-reference'
-import * as spillPlugin from '@deepseek-ai/dsh-spill-local'
-import { sessionDir } from '@deepseek-ai/dsh-spill-local'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import { agentEvents, type Agent } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
+import * as systemPromptPlugin from '@gemini-agy/dsh-system-prompt'
+import * as toolsPlugin from '@gemini-agy/dsh-tools'
+import * as fsPlugin from '@gemini-agy/dsh-fs-local'
+import * as toolFsPlugin from '@gemini-agy/dsh-tool-fs'
+import * as sessionPlugin from '@gemini-agy/dsh-session'
+import * as sessionProjectionPlugin from '@gemini-agy/dsh-session-projection'
+import * as workingDirectoryPlugin from '@gemini-agy/dsh-working-directory'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import * as queryPlugin from '@gemini-agy/dsh-session-query-sqlite'
+import * as referencePlugin from '@gemini-agy/dsh-session-reference'
+import * as spillPlugin from '@gemini-agy/dsh-spill-local'
+import { sessionDir } from '@gemini-agy/dsh-spill-local'
 import * as sourcePlugin from './fixtures/source-session.ts'
 
 let context: Context | undefined
@@ -49,17 +49,17 @@ describe('session-reference real Loader composition', () => {
     await ctx.plugin(Loader)
     ctx.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', sessionPlugin],
-      ['@deepseek-ai/dsh-session-projection', sessionProjectionPlugin],
-      ['@deepseek-ai/dsh-working-directory', workingDirectoryPlugin],
-      ['@deepseek-ai/dsh-system-prompt', systemPromptPlugin],
-      ['@deepseek-ai/dsh-tools', toolsPlugin],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-      ['@deepseek-ai/dsh-fs-local', fsPlugin],
-      ['@deepseek-ai/dsh-tool-fs', toolFsPlugin],
-      ['@deepseek-ai/dsh-session-query-sqlite', queryPlugin],
-      ['@deepseek-ai/dsh-session-reference', referencePlugin],
-      ['@deepseek-ai/dsh-spill-local', spillPlugin],
+      ['@gemini-agy/dsh-session', sessionPlugin],
+      ['@gemini-agy/dsh-session-projection', sessionProjectionPlugin],
+      ['@gemini-agy/dsh-working-directory', workingDirectoryPlugin],
+      ['@gemini-agy/dsh-system-prompt', systemPromptPlugin],
+      ['@gemini-agy/dsh-tools', toolsPlugin],
+      ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+      ['@gemini-agy/dsh-fs-local', fsPlugin],
+      ['@gemini-agy/dsh-tool-fs', toolFsPlugin],
+      ['@gemini-agy/dsh-session-query-sqlite', queryPlugin],
+      ['@gemini-agy/dsh-session-reference', referencePlugin],
+      ['@gemini-agy/dsh-spill-local', spillPlugin],
       ['./source-session.ts', sourcePlugin],
     ])
     ctx.loader.internal = {

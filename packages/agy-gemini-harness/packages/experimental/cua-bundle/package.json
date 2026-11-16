@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-cua-bundle",
+  "name": "@gemini-agy/dsh-cua-bundle",
   "description": "Optional Computer Use for macOS and Windows",
   "version": "0.2.2-rc.3",
   "icon": "./icon.svg",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/cua-bundle"
   },
   "type": "module",
@@ -46,19 +46,19 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-computer-use": "workspace:*",
-    "@deepseek-ai/dsh-cua": "workspace:*"
+    "@gemini-agy/dsh-computer-use": "workspace:*",
+    "@gemini-agy/dsh-cua": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~"
   },
   "optionalDependencies": {
-    "@deepseek-ai/dsh-cua-macos": "workspace:*",
-    "@deepseek-ai/dsh-cua-windows": "workspace:*"
+    "@gemini-agy/dsh-cua-macos": "workspace:*",
+    "@gemini-agy/dsh-cua-windows": "workspace:*"
   }
 }

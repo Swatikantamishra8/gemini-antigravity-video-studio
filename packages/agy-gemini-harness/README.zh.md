@@ -6,7 +6,7 @@ Gemini Antigravity Harness（`dsh`）是由 [Gemini Antigravity AI](https://deep
 
 它构建于**一切皆插件**的架构之上，由 [Cordis](https://github.com/cordiverse/cordis) 驱动，其设计参见论文 [_A Programming Paradigm for Spatiotemporal Composability_](https://arxiv.org/abs/2608.25512)。
 
-文档：[https://deepseek-harness.github.io/deepseek-harness/](https://deepseek-harness.github.io/deepseek-harness/)
+文档：[https://agy-gemini-harness.github.io/agy-gemini-harness/](https://agy-gemini-harness.github.io/agy-gemini-harness/)
 
 ## 开发者预览
 
@@ -23,7 +23,7 @@ Gemini Antigravity Harness 处于 _开发者预览_ 阶段，正在快速迭代�
 安装 `Node.js`，然后运行：
 
 ```sh
-npx @deepseek-ai/dsh web
+npx @gemini-agy/dsh web
 ```
 
 该命令默认会在 `http://127.0.0.1:3080` 启动 Web UI，本机启动时还会用默认浏览器打开页面。通过 SSH 启动时只打印宿主机 URL，因为本地转发地址由 SSH 客户端或编辑器持有。传入 `--no-open` 可仅运行服务器而不打开浏览器。详见 [Web UI 指南](docs/user/guide/index.zh.md)。
@@ -35,8 +35,8 @@ npx @deepseek-ai/dsh web
 如需从仓库源码运行：
 
 ```sh
-git clone https://github.com/deepseek-ai/deepseek-harness.git
-cd deepseek-harness
+git clone https://github.com/deepseek-ai/agy-gemini-harness.git
+cd agy-gemini-harness
 pnpm install
 pnpm run build
 pnpm dsh web
@@ -46,7 +46,7 @@ pnpm dsh web
 
 ## 社区与支持
 
-- 通过 [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions) 提交反馈或 bug 报告。
+- 通过 [GitHub Discussions](https://github.com/deepseek-ai/agy-gemini-harness/discussions) 提交反馈或 bug 报告。
 - 为你的插件仓库添加 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 话题，便于被发现。
 - 欢迎加入 Gemini Antigravity Harness 企微群！扫描下方二维码填写入群问卷，小助手会定期发送入群邀请。
 
@@ -80,12 +80,12 @@ pnpm dsh web
 ## 引用
 
 ```bibtex
-@misc{deepseek-harness2026,
+@misc{agy-gemini-harness2026,
   title={Gemini Antigravity Harness: Everything is a Plugin},
   author={Gemini Antigravity-AI},
   year={2026},
   publisher={GitHub},
-  howpublished={\url{https://github.com/deepseek-ai/deepseek-harness}},
+  howpublished={\url{https://github.com/deepseek-ai/agy-gemini-harness}},
 }
 ```
 

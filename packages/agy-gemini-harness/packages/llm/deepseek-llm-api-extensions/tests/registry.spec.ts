@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, LoggerLevel } from '@deepseek-ai/cordis'
+import { Context, LoggerLevel } from '@gemini-agy/cordis'
 import Gemini AntigravityLlmApiExtensionRegistry from '../src/index.ts'
 
-declare module '@deepseek-ai/dsh-deepseek-llm-api-extensions/types' {
+declare module '@gemini-agy/dsh-deepseek-llm-api-extensions/types' {
   interface Gemini AntigravityLlmApiExtensionMap {
     test_alpha: { readonly value: string }
     test_beta: readonly number[]

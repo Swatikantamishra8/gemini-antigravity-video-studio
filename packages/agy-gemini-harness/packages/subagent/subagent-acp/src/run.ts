@@ -2,7 +2,7 @@
  * Fresh-process ACP subagent client. Drives one child session and owns cancellation and
  * quiescent disposal.
  *
- * @module @deepseek-ai/dsh-subagent-acp/run
+ * @module @gemini-agy/dsh-subagent-acp/run
  */
 
 import { randomUUID } from 'node:crypto'
@@ -16,12 +16,12 @@ import {
   type StopReason,
   type ToolKind,
 } from '@agentclientprotocol/sdk'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { AssistantOutputFold, settleRunResult, subprocessRunHandle } from '@deepseek-ai/dsh-subagent'
-import type { SubagentResult, SubagentRun, SubagentStartRequest, SubagentStopReason } from '@deepseek-ai/dsh-subagent'
-import type { SubprocessHandle, SubprocessOutcome, SubprocessSpawnSpec } from '@deepseek-ai/dsh-subprocess'
+import type { ContentBlock } from '@gemini-agy/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { AssistantOutputFold, settleRunResult, subprocessRunHandle } from '@gemini-agy/dsh-subagent'
+import type { SubagentResult, SubagentRun, SubagentStartRequest, SubagentStopReason } from '@gemini-agy/dsh-subagent'
+import type { SubprocessHandle, SubprocessOutcome, SubprocessSpawnSpec } from '@gemini-agy/dsh-subprocess'
 
 /** Fixed response to child permission requests: reject by default, or select the first allow option. */
 export type PermissionPolicy = 'allow' | 'reject'
@@ -417,7 +417,7 @@ export async function startAcpRun(request: SubagentStartRequest, spec: AcpRunSpe
   const flags = { cancelled: false }
   let latestPermission: AcpPermissionDecision | undefined
 
-  const clientApp = createAcpClientApp({ name: 'deepseek-harness-subagent-acp' })
+  const clientApp = createAcpClientApp({ name: 'agy-gemini-harness-subagent-acp' })
     .onNotification(methods.client.session.update, ({ params }) => {
       const update = params.update
       if (update.sessionUpdate === 'agent_message_chunk') {

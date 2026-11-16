@@ -8,26 +8,26 @@
  * @module
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
 // Type-only: activate the `ctx.get('subprocess')` Context declaration.
-import type {} from '@deepseek-ai/dsh-subprocess'
-import type { CommandDefinition } from '@deepseek-ai/dsh-commands'
-import type { FileSystem, FsTarget } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, Message } from '@deepseek-ai/dsh-llm'
-import { scopeOf } from '@deepseek-ai/dsh-scope'
-import type { WorkingDirectoryService } from '@deepseek-ai/dsh-working-directory'
-import type {} from '@deepseek-ai/dsh-token-meter'
-import { defineDomain, domainTable } from '@deepseek-ai/dsh-storage-domain'
-import type { Domain } from '@deepseek-ai/dsh-storage-domain'
-import { assertObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import type { ToolDefinition, ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import type { AskUserQuestionOption } from '@deepseek-ai/dsh-user-questions'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type {} from '@gemini-agy/dsh-subprocess'
+import type { CommandDefinition } from '@gemini-agy/dsh-commands'
+import type { FileSystem, FsTarget } from '@gemini-agy/dsh-fs'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { HarnessError } from '@gemini-agy/dsh-error'
+import { createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, Message } from '@gemini-agy/dsh-llm'
+import { scopeOf } from '@gemini-agy/dsh-scope'
+import type { WorkingDirectoryService } from '@gemini-agy/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-token-meter'
+import { defineDomain, domainTable } from '@gemini-agy/dsh-storage-domain'
+import type { Domain } from '@gemini-agy/dsh-storage-domain'
+import { assertObjectJsonSchema } from '@gemini-agy/dsh-tools'
+import type { ToolDefinition, ToolExecutionResult } from '@gemini-agy/dsh-tools'
+import type { AskUserQuestionOption } from '@gemini-agy/dsh-user-questions'
+import { randomUUID } from '@gemini-agy/dsh-util-crypto'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import { record, requireString, stringify } from './values.ts'
 import { z as zod } from 'zod'
 import type { LoadedMod } from './chain.ts'
@@ -44,7 +44,7 @@ export interface AgentBinding {
 }
 
 /** The mods API version string `$.session.version()` reports. */
-export const MODS_API_VERSION: SessionVersion = Object.freeze({ version: 'claude-code-mods/0.1', engine: 'deepseek-harness' })
+export const MODS_API_VERSION: SessionVersion = Object.freeze({ version: 'claude-code-mods/0.1', engine: 'agy-gemini-harness' })
 
 /** Largest file `$.fs.read` returns and `$.fs.write` accepts, Gemini 3.8 Flash High Code's own limit. */
 export const FS_MAX_BYTES = 4 * 1024 * 1024

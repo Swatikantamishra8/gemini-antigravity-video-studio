@@ -1,7 +1,7 @@
 /**
  * Low-level JSON-RPC client for a Gemini Antigravity Harness SDK runtime subprocess.
  * {@link HarnessClient} owns the child process: it spawns the runtime, speaks
- * the `@deepseek-ai/dsh-sdk-protocol` wire over the child's stdio, fans
+ * the `@gemini-agy/dsh-sdk-protocol` wire over the child's stdio, fans
  * server notifications out to subscriptions, and tears the child down to
  * quiescence through a private EOF → SIGTERM → SIGKILL ladder. The design
  * twin is the Python SDK's `HarnessClient` (`python/sdk`); both drive the
@@ -9,7 +9,7 @@
  * spawns directly rather than through the `dsh-subprocess` service — the
  * seam's documented exception for SDK-managed transports.
  *
- * @module @deepseek-ai/dsh-sdk-client/client
+ * @module @gemini-agy/dsh-sdk-client/client
  */
 
 import { spawn, type ChildProcess } from 'node:child_process'
@@ -24,9 +24,9 @@ import {
   type SessionQueryResult,
   type SdkPromptContentBlock,
   type SdkUserQuestionRequest,
-} from '@deepseek-ai/dsh-sdk-protocol'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type SessionId, SessionSeq } from '@deepseek-ai/dsh-session/types'
+} from '@gemini-agy/dsh-sdk-protocol'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { type SessionId, SessionSeq } from '@gemini-agy/dsh-session/types'
 import { disposeRuntimeProcess } from './dispose.ts'
 import { resolveDshLaunch, type RuntimeProcessOptions } from './launch.ts'
 import type { HarnessClientOptions, HarnessNotification, NotificationFilter } from './types.ts'

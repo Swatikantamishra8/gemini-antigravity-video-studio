@@ -4,24 +4,24 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, it, onTestFinished } from 'vitest'
-import type { Context } from '@deepseek-ai/cordis'
-import { parseEntryYaml } from '@deepseek-ai/cordis-plugin-include'
-import Timer from '@deepseek-ai/cordis-plugin-timer'
-import { boot, initProfile, loadProfileDirectory, readProfilePatches, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import PluginManager from '@deepseek-ai/dsh-plugin-manager'
-import Sessions from '@deepseek-ai/dsh-session'
-import Projections from '@deepseek-ai/dsh-session-projection'
-import Agents from '@deepseek-ai/dsh-agent'
-import Llm from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import Tools from '@deepseek-ai/dsh-tools'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import Skills from '@deepseek-ai/dsh-skill'
-import Access from '@deepseek-ai/dsh-api-remote-access'
-import * as ActionCards from '@deepseek-ai/dsh-action-cards'
-import * as Pages from '@deepseek-ai/dsh-creation-recommendations'
-import * as Plugins from '@deepseek-ai/dsh-plugin-recommendations'
+import type { Context } from '@gemini-agy/cordis'
+import { parseEntryYaml } from '@gemini-agy/cordis-plugin-include'
+import Timer from '@gemini-agy/cordis-plugin-timer'
+import { boot, initProfile, loadProfileDirectory, readProfilePatches, type ProfileContext } from '@gemini-agy/dsh-app-boot'
+import Hmr from '@gemini-agy/dsh-hmr'
+import PluginManager from '@gemini-agy/dsh-plugin-manager'
+import Sessions from '@gemini-agy/dsh-session'
+import Projections from '@gemini-agy/dsh-session-projection'
+import Agents from '@gemini-agy/dsh-agent'
+import Llm from '@gemini-agy/dsh-llm'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import Tools from '@gemini-agy/dsh-tools'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
+import Skills from '@gemini-agy/dsh-skill'
+import Access from '@gemini-agy/dsh-api-remote-access'
+import * as ActionCards from '@gemini-agy/dsh-action-cards'
+import * as Pages from '@gemini-agy/dsh-creation-recommendations'
+import * as Plugins from '@gemini-agy/dsh-plugin-recommendations'
 
 interface Row { readonly id: string; readonly name: string }
 
@@ -41,24 +41,24 @@ function browserRow(): object {
 
 /** Source modules standing in for the row packages, which the Loader would otherwise import from their built lib. */
 const MODULES: Readonly<Record<string, object>> = {
-  '@deepseek-ai/dsh-action-cards': ActionCards,
-  '@deepseek-ai/dsh-client-ui-action-cards': browserRow(),
-  '@deepseek-ai/dsh-creation-recommendations': Pages,
-  '@deepseek-ai/dsh-client-ui-creation-recommendations': browserRow(),
-  '@deepseek-ai/dsh-plugin-recommendations': Plugins,
-  '@deepseek-ai/dsh-client-ui-plugin-recommendations': browserRow(),
+  '@gemini-agy/dsh-action-cards': ActionCards,
+  '@gemini-agy/dsh-client-ui-action-cards': browserRow(),
+  '@gemini-agy/dsh-creation-recommendations': Pages,
+  '@gemini-agy/dsh-client-ui-creation-recommendations': browserRow(),
+  '@gemini-agy/dsh-plugin-recommendations': Plugins,
+  '@gemini-agy/dsh-client-ui-plugin-recommendations': browserRow(),
 }
 
 it('publishes one layer inserting the card service, the card display and both features with their card bodies', () => {
   expect(manifest.publishConfig.access).toBe('public')
   expect(manifest.dsh.bundle.patch).toBe('./cordis.patch.yml')
   expect(patch).toEqual([{ insert: [
-    { id: 'action-cards', name: '@deepseek-ai/dsh-action-cards' },
-    { id: 'client-ui-action-cards', name: '@deepseek-ai/dsh-client-ui-action-cards' },
-    { id: 'creation-recommendations', name: '@deepseek-ai/dsh-creation-recommendations' },
-    { id: 'client-ui-creation-recommendations', name: '@deepseek-ai/dsh-client-ui-creation-recommendations' },
-    { id: 'plugin-recommendations', name: '@deepseek-ai/dsh-plugin-recommendations' },
-    { id: 'client-ui-plugin-recommendations', name: '@deepseek-ai/dsh-client-ui-plugin-recommendations' },
+    { id: 'action-cards', name: '@gemini-agy/dsh-action-cards' },
+    { id: 'client-ui-action-cards', name: '@gemini-agy/dsh-client-ui-action-cards' },
+    { id: 'creation-recommendations', name: '@gemini-agy/dsh-creation-recommendations' },
+    { id: 'client-ui-creation-recommendations', name: '@gemini-agy/dsh-client-ui-creation-recommendations' },
+    { id: 'plugin-recommendations', name: '@gemini-agy/dsh-plugin-recommendations' },
+    { id: 'client-ui-plugin-recommendations', name: '@gemini-agy/dsh-client-ui-plugin-recommendations' },
   ] }])
   expect(Object.keys(manifest.dependencies).sort()).toEqual(rows.map(row => row.name).sort())
 })

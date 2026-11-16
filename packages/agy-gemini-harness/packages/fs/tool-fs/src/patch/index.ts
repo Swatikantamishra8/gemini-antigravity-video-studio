@@ -1,7 +1,7 @@
 /** Internal patch executor; tool registration and persisted result metadata are owned by its caller. */
-import type { Context } from '@deepseek-ai/cordis'
-import { PatchParseError } from '@deepseek-ai/dsh-fs-patch'
-import type { ToolExecution } from '@deepseek-ai/dsh-tools'
+import type { Context } from '@gemini-agy/cordis'
+import { PatchParseError } from '@gemini-agy/dsh-fs-patch'
+import type { ToolExecution } from '@gemini-agy/dsh-tools'
 import type { FsSandboxController } from '../sandbox.ts'
 import { commitPatch } from './execute.ts'
 import { planPatch } from './plan.ts'

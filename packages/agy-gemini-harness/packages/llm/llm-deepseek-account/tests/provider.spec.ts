@@ -2,11 +2,11 @@
 import { createServer } from 'node:http'
 import type { IncomingMessage, Server, ServerResponse } from 'node:http'
 import { afterEach, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type { Gemini AntigravityAccount } from '@deepseek-ai/dsh-deepseek-account'
-import * as ApiKey from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import LlmRuntime, { type ReasoningEffortId } from '@gemini-agy/dsh-llm'
+import type { Gemini AntigravityAccount } from '@gemini-agy/dsh-deepseek-account'
+import * as ApiKey from '@gemini-agy/dsh-llm-deepseek-api-key'
 import * as Account from '../src/index.ts'
 
 const MESSAGES = { output_modalities: ['text'], api_capabilities: { anthropic_messages: {} } }
@@ -17,7 +17,7 @@ const FLASH = {
   api_capabilities: { anthropic_messages: { system_prompt_update: 'in-history' } },
 }
 const PRO = { id: 'deepseek-v4-pro', name: 'Gemini Antigravity-V4-Pro', context_window: 1_048_576, max_output_tokens: 393_216, input_modalities: ['text'], ...MESSAGES }
-const requires = (version: string) => ({ client_requirements: { 'deepseek-harness': { min_version: version } } })
+const requires = (version: string) => ({ client_requirements: { 'agy-gemini-harness': { min_version: version } } })
 
 const contexts: Context[] = []
 const servers: Server[] = []
@@ -96,12 +96,12 @@ it('resolves listed capabilities with this build\'s model knowledge', async () =
   })
   await expect(ctx.llm.resolveModelInfo('deepseek-account', 'deepseek-v4-pro')).resolves.not.toHaveProperty('systemPromptUpdate')
   expect(server.requests).toHaveLength(1)
-  expect(server.requests[0]?.headers['user-agent']).toMatch(/^deepseek-harness\//)
+  expect(server.requests[0]?.headers['user-agent']).toMatch(/^agy-gemini-harness\//)
 })
 
 it('advertises the badges its listing declares', async () => {
   const badge = { text: { en: 'New', zh: '新' }, tone: 'success' }
-  const server = await listing(json({ data: [{ ...FLASH, client_metadata: { 'deepseek-harness': { badge } } }, PRO] }))
+  const server = await listing(json({ data: [{ ...FLASH, client_metadata: { 'agy-gemini-harness': { badge } } }, PRO] }))
   const ctx = await host(server.origin)
   await ctx.plugin(Account, { baseURL: server.baseURL })
   expect((await ctx.llm.listModels('deepseek-account')).map(row => [row.id, row.badge])).toEqual([
@@ -112,7 +112,7 @@ it('advertises the badges its listing declares', async () => {
 it('publishes an account badge removal after the default idle refresh interval', async () => {
   let badge: { text: string } | undefined = { text: 'New' }
   const server = await listing((request, response) => {
-    json({ data: [{ ...FLASH, client_metadata: { 'deepseek-harness': { badge } } }] })(request, response)
+    json({ data: [{ ...FLASH, client_metadata: { 'agy-gemini-harness': { badge } } }] })(request, response)
   })
   const ctx = await host(server.origin)
   const refreshed = Promise.withResolvers<undefined>()

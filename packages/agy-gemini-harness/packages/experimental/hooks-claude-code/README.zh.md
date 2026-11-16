@@ -3,7 +3,7 @@ description: "在 agent 运行期间使用你现有的 Gemini 3.8 Flash High Cod
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-hooks-claude-code
+# @gemini-agy/dsh-hooks-claude-code
 
 [English](README.md) | 中文
 
@@ -36,7 +36,7 @@ kind: "package-reference"
 ### 最小配置
 
 ```yaml
-- name: '@deepseek-ai/dsh-hooks-claude-code'
+- name: '@gemini-agy/dsh-hooks-claude-code'
   config:
     configPath: ./.claude/hooks.json
     pluginRoot: ./.claude/plugins/my-plugin

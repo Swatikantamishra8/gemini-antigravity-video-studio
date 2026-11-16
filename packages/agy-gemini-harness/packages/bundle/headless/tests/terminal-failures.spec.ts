@@ -1,17 +1,17 @@
 /** Headless exit status after parent summaries fail outside a durable terminal. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentDefaultModelConfig from '@deepseek-ai/dsh-agent-default-model'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import AgentDefaultModelConfig from '@gemini-agy/dsh-agent-default-model'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { SessionId, SessionEvent } from '@gemini-agy/dsh-session'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { apply } from '../src/index.ts'
 import { internals } from '../src/runner-internals.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const originalInternals = { ...internals }
 let ctx: Context | undefined

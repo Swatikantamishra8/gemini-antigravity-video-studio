@@ -1,5 +1,5 @@
-import { createUserMessage, createMessage } from '@deepseek-ai/dsh-llm'
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
+import { createUserMessage, createMessage } from '@gemini-agy/dsh-llm'
+import type { MessageSource } from '@gemini-agy/dsh-llm'
 /**
  * Derived-message cache contract against a scratch oracle: project new nodes
  * once, rebuild on surface replacements, return fresh arrays over shared
@@ -7,8 +7,8 @@ import type { MessageSource } from '@deepseek-ai/dsh-llm'
  */
 
 import { describe, expect, it } from 'vitest'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 type CheckpointSource = Extract<MessageSource, { readonly kind: 'compact-checkpoint' }>
 

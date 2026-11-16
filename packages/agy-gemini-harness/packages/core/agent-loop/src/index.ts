@@ -2,14 +2,14 @@
  * Concrete agent-loop plugin: creates scoped ReactLoopAgents, publishes them
  * through the agent/session registries, and owns their ordered teardown.
  *
- * @module @deepseek-ai/dsh-agent-loop
+ * @module @gemini-agy/dsh-agent-loop
  */
-import type { Volatile } from '@deepseek-ai/cosmokit'
+import type { Volatile } from '@gemini-agy/cosmokit'
 
-import { Context, FiberState, Service } from '@deepseek-ai/cordis'
+import { Context, FiberState, Service } from '@gemini-agy/cordis'
 import { randomUUID } from 'node:crypto'
-import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import z from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   Agent,
   AgentFactory,
@@ -22,16 +22,16 @@ import type {
   ModelSelection,
   ModelSelectionProjectionState,
   InboxState,
-} from '@deepseek-ai/dsh-agent'
-import { modelSelectionProjectionDefinition } from '@deepseek-ai/dsh-agent'
-import { errorChain, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import { interruptedTurnClosers, SessionLogOffset, SessionPreparation } from '@deepseek-ai/dsh-session'
-import type { Session, SessionHeader, SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-tools'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import { SessionPersistenceNotFoundError } from '@deepseek-ai/dsh-session-persistence'
-import type { SessionHandle, SessionPersistence } from '@deepseek-ai/dsh-session-persistence'
+} from '@gemini-agy/dsh-agent'
+import { modelSelectionProjectionDefinition } from '@gemini-agy/dsh-agent'
+import { errorChain, type ReasoningEffortId } from '@gemini-agy/dsh-llm'
+import { interruptedTurnClosers, SessionLogOffset, SessionPreparation } from '@gemini-agy/dsh-session'
+import type { Session, SessionHeader, SessionId } from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import type {} from '@gemini-agy/dsh-tools'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import { SessionPersistenceNotFoundError } from '@gemini-agy/dsh-session-persistence'
+import type { SessionHandle, SessionPersistence } from '@gemini-agy/dsh-session-persistence'
 import { ReactLoopAgent } from './agent.ts'
 import { inboxProjectionDefinition } from './inbox.ts'
 import { DEFAULT_MAX_PARALLEL_TOOL_CALLS } from './constants.ts'
@@ -172,7 +172,7 @@ interface AgentInitializationOptions {
   readonly signal?: AbortSignal | undefined
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     agentLoop: AgentLoop
     /**

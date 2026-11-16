@@ -7,16 +7,16 @@ import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { Context } from '@deepseek-ai/cordis'
-import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import type { Gemini AntigravityAccount } from '@deepseek-ai/dsh-deepseek-account'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import * as Account from '@deepseek-ai/dsh-llm-deepseek-account'
-import * as Official from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as webApiPlugin from '@deepseek-ai/dsh-web-deepseek-api'
+import type { Context } from '@gemini-agy/cordis'
+import type { ModuleLoaderV2 } from '@gemini-agy/cordis-plugin-loader'
+import { boot } from '@gemini-agy/dsh-app-boot'
+import type { Gemini AntigravityAccount } from '@gemini-agy/dsh-deepseek-account'
+import { createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
+import LlmRuntime from '@gemini-agy/dsh-llm'
+import * as Account from '@gemini-agy/dsh-llm-deepseek-account'
+import * as Official from '@gemini-agy/dsh-llm-deepseek-api-key'
+import WebRuntime from '@gemini-agy/dsh-web'
+import * as webApiPlugin from '@gemini-agy/dsh-web-deepseek-api'
 
 const cleanups: Array<() => Promise<void>> = []
 
@@ -26,11 +26,11 @@ afterEach(async () => {
 })
 
 const MODULES = new Map<string, unknown>([
-  ['@deepseek-ai/dsh-llm', LlmRuntime],
-  ['@deepseek-ai/dsh-llm-deepseek-api-key', Official],
-  ['@deepseek-ai/dsh-llm-deepseek-account', Account],
-  ['@deepseek-ai/dsh-web', WebRuntime],
-  ['@deepseek-ai/dsh-web-deepseek-api', webApiPlugin],
+  ['@gemini-agy/dsh-llm', LlmRuntime],
+  ['@gemini-agy/dsh-llm-deepseek-api-key', Official],
+  ['@gemini-agy/dsh-llm-deepseek-account', Account],
+  ['@gemini-agy/dsh-web', WebRuntime],
+  ['@gemini-agy/dsh-web-deepseek-api', webApiPlugin],
 ])
 
 /** One dispatched Search or Fetch API request. */
@@ -63,11 +63,11 @@ async function bootComposition(web: Record<string, unknown>, environment: Record
   })
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, JSON.stringify([
-    { id: 'llm', name: '@deepseek-ai/dsh-llm' },
-    { id: 'llm-deepseek', name: '@deepseek-ai/dsh-llm-deepseek-api-key' },
-    { id: 'llm-deepseek-account', name: '@deepseek-ai/dsh-llm-deepseek-account' },
-    { id: 'web', name: '@deepseek-ai/dsh-web', config: { searchProvider: 'deepseek-search-api', fetchProvider: 'deepseek-fetch-api' } },
-    { id: 'web-deepseek-api', name: '@deepseek-ai/dsh-web-deepseek-api', config: web },
+    { id: 'llm', name: '@gemini-agy/dsh-llm' },
+    { id: 'llm-deepseek', name: '@gemini-agy/dsh-llm-deepseek-api-key' },
+    { id: 'llm-deepseek-account', name: '@gemini-agy/dsh-llm-deepseek-account' },
+    { id: 'web', name: '@gemini-agy/dsh-web', config: { searchProvider: 'deepseek-search-api', fetchProvider: 'deepseek-fetch-api' } },
+    { id: 'web-deepseek-api', name: '@gemini-agy/dsh-web-deepseek-api', config: web },
   ]))
   const ctx: Context = await boot('web-deepseek-api-composition', configPath, [], (host) => {
     const modules: ModuleLoaderV2 = {

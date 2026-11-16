@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-renderer",
+  "name": "@gemini-agy/dsh-client-ui-renderer",
   "description": "Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/client/ui-renderer"
   },
   "type": "module",
@@ -28,7 +28,7 @@
   },
   "dsh": {
     "client": {
-      "inject": ["@deepseek-ai/dsh-client-modules"],
+      "inject": ["@gemini-agy/dsh-client-modules"],
       "platform": "web",
       "immediately": true
     }
@@ -39,18 +39,18 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-modules": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-client-modules": "workspace:*",
     "@types/use-sync-external-store": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-sync-external-store": "1.6.0",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*"
+    "@gemini-agy/dsh-package-manifest": "workspace:*"
   },
   "files": [
     "locale/*.json",

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-fs-observation-policy",
+  "name": "@gemini-agy/dsh-fs-observation-policy",
   "description": "File-context policy plugin for the Gemini Antigravity Harness — observed-state, read-before-edit, and version-guarded write/edit added over the ctx.fs provider seam through the fs/* event gate (no service API)",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/fs/fs-observation-policy"
   },
   "type": "module",
@@ -32,13 +32,13 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

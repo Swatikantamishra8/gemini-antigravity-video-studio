@@ -7,9 +7,9 @@
  */
 import { useCallback } from 'react'
 import type { ReactNode } from 'react'
-import type { FactoryComponentPropsOf } from '@deepseek-ai/dsh-client-ui-slots'
-import type { UseSidebarRightTabInfo } from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import { IconFolderCloseRegular, IconFolderOpenRegular, Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
+import type { FactoryComponentPropsOf } from '@gemini-agy/dsh-client-ui-slots'
+import type { UseSidebarRightTabInfo } from '@gemini-agy/dsh-client-ui-sidebar-right/client'
+import { IconFolderCloseRegular, IconFolderOpenRegular, Tooltip } from '@gemini-agy/dsh-client-ui-primitives'
 import type { FilesInjected } from './face.ts'
 import type { createFilesStore } from './store.ts'
 import type {} from './locales.ts'
@@ -20,7 +20,7 @@ export interface NavigatorToggleInput {
   readonly useTabInfo: UseSidebarRightTabInfo
 }
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface SlotFactoryMap {
     /** Show or hide the pane's workspace tree; absent without a working directory. */
     'sidebar.files.navigator.toggle': {

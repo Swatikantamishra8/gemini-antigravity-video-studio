@@ -11,16 +11,16 @@
  */
 
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { createMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { StreamChunk, TokenUsage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as SessionStatsPlugin from '@deepseek-ai/dsh-session-stats'
-import { sessionStatsProjectionDefinition } from '@deepseek-ai/dsh-session-stats/src/projection.ts'
-import type { SessionStatsProjection } from '@deepseek-ai/dsh-session-stats/types'
+import { Context } from '@gemini-agy/cordis'
+import { createMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { StreamChunk, TokenUsage } from '@gemini-agy/dsh-llm'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import type { Session, SessionEvent } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import * as SessionStatsPlugin from '@gemini-agy/dsh-session-stats'
+import { sessionStatsProjectionDefinition } from '@gemini-agy/dsh-session-stats/src/projection.ts'
+import type { SessionStatsProjection } from '@gemini-agy/dsh-session-stats/types'
 
 async function harness(withStatsPlugin: boolean): Promise<{ ctx: Context; session: Session }> {
   const ctx = new Context()

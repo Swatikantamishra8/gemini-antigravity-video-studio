@@ -1,14 +1,14 @@
-/** Verbatim content-addressed local file storage. @module @deepseek-ai/dsh-attachment-local/file-store */
+/** Verbatim content-addressed local file storage. @module @gemini-agy/dsh-attachment-local/file-store */
 
 import { createHash } from 'node:crypto'
 import { createReadStream } from 'node:fs'
 import { join } from 'node:path'
-import { AttachmentError } from '@deepseek-ai/dsh-attachment'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { AttachmentError } from '@gemini-agy/dsh-attachment'
+import type { AttachmentId } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   FileAttachmentRef, SaveFileAttachment, SaveFileStreamAttachment,
-} from '@deepseek-ai/dsh-attachment'
+} from '@gemini-agy/dsh-attachment'
 import {
   publishImmutableAlias, publishImmutableObject, publishImmutableObjectStream,
 } from './store.ts'

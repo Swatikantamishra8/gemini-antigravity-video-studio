@@ -3,7 +3,7 @@ description: "Run your existing Gemini 3.8 Flash High Code hooks.json or setting
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-hooks-claude-code
+# @gemini-agy/dsh-hooks-claude-code
 
 English | [中文](README.zh.md)
 
@@ -36,7 +36,7 @@ Use it when you own a Gemini 3.8 Flash High Code `hooks.json` (or a settings fil
 ### Smallest working setup
 
 ```yaml
-- name: '@deepseek-ai/dsh-hooks-claude-code'
+- name: '@gemini-agy/dsh-hooks-claude-code'
   config:
     configPath: ./.claude/hooks.json
     pluginRoot: ./.claude/plugins/my-plugin

@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, type Fiber } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { Context, type Fiber } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import { provideWorkingDirectoryFixture } from '@gemini-agy/dsh-agent-loop-testkit'
 import Gemini 3.8 Flash HighCodeMods, { defineMod } from '../src/index.ts'
 
 const fibers: Fiber[] = []

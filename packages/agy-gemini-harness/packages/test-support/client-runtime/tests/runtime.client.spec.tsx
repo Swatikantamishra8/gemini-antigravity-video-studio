@@ -1,5 +1,5 @@
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { AttachmentId } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
 // @vitest-environment jsdom
 /**
  * SlotTestRuntime behavior: root declaration + rendering, session
@@ -9,20 +9,20 @@ import { brandString } from '@deepseek-ai/dsh-brand'
  * stack — this suite is the fixture the migrated feature specs rely on.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { stubConfigForm } from '../src/config-form.ts'
 import { act, cleanup } from '@testing-library/react'
 import { useSyncExternalStore } from 'react'
-import { createSnapshotStore, defineStore } from '@deepseek-ai/dsh-client-store'
-import { createScope, type SessionReference } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { WorkspaceId } from '@deepseek-ai/dsh-api-workspace-controller/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { createSnapshotStore, defineStore } from '@gemini-agy/dsh-client-store'
+import { createScope, type SessionReference } from '@gemini-agy/dsh-api-session-controller/client'
+import type { WorkspaceId } from '@gemini-agy/dsh-api-workspace-controller/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import type {
   GlobalStandardProps, PropsRenderSlots, SessionStandardProps, SlotRendererHost,
-} from '@deepseek-ai/dsh-client-ui-slots'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
+} from '@gemini-agy/dsh-client-ui-slots'
+import { SlotTestRuntime } from '@gemini-agy/dsh-client-test-runtime'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface SlotMap {
     'trt.panel': { kind: 'single'; scope: 'root'; owner: { label?: string } }
     'trt.chat': { kind: 'single'; scope: 'session' }

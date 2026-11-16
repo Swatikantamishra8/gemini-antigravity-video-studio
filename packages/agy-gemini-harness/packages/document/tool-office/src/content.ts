@@ -1,12 +1,12 @@
 /**
  * Canonical Office tool results and their model-facing content.
- * @module @deepseek-ai/dsh-tool-office/content
+ * @module @gemini-agy/dsh-tool-office/content
  */
 
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { AttachmentId, ImageAttachmentRef, ImageMediaType } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { OfficeConversionFormat, OfficeRecalculationFormat } from '@deepseek-ai/dsh-office-kit'
+import type { ContentBlock } from '@gemini-agy/dsh-llm'
+import type { AttachmentId, ImageAttachmentRef, ImageMediaType } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { OfficeConversionFormat, OfficeRecalculationFormat } from '@gemini-agy/dsh-office-kit'
 
 /**
  * One rendered image and the document location it shows. The attachment fields are those of the stored reference;

@@ -1,13 +1,13 @@
 /** Request header contributions reach the provider without crossing call lifetimes. */
 
 import { afterEach, expect, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { userAgent } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import LlmRuntime, { userAgent } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
 import * as PiAi from '../src/index.ts'
 import { assemble } from './assemble.ts'
 import { closeMockServers, mockServer, textEvents } from './mock-server.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 afterEach(async () => {
   await closeMockServers()

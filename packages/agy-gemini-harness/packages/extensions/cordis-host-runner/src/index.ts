@@ -1,23 +1,23 @@
 /**
  * Dynamic Cordis Plugin service: immutable package definitions, one active run
  * per Plugin, human-approved Client activation, and Host/Client invocation.
- * @module @deepseek-ai/dsh-cordis-host-runner
+ * @module @gemini-agy/dsh-cordis-host-runner
  */
 
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { Fiber } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { Fiber } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'cordis-host-runner': { kind: 'cordis-host-runner' }
   }
 }
 
-import { TypertRemoteService, Remote } from '@deepseek-ai/dsh-typert-protocol'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import { TypertRemoteService, Remote } from '@gemini-agy/dsh-typert-protocol'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import { isPlugin, normalizeHandler } from './guard.ts'
 import { CordisInspectRegistryService } from './inspect-registry.ts'
 import { missingServices, startHostHalf } from './lifecycle.ts'
@@ -95,7 +95,7 @@ export {
   brandCordisDynamicPluginRunId as CordisDynamicPluginRunId,
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Process-local dynamic Plugin registry and lifecycle service. */
     dynamicCordisRunner: DynamicCordisRunnerService

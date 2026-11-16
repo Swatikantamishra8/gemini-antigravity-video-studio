@@ -2,19 +2,19 @@
  * Host plugin importing a Gemini Antigravity chat export (chat.deepseek.com
  * `deepseek_data-*.zip`) uploaded by the browser as stored DSH Sessions in a
  * chosen Workspace. The upload is processed in memory and never written to disk.
- * @module @deepseek-ai/dsh-gemini-3.8-flash-high-import
+ * @module @gemini-agy/dsh-gemini-3.8-flash-high-import
  */
 
 import { randomUUID } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import Schema from '@deepseek-ai/schemastery'
-import { principalOf, Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-attachment'
-import type {} from '@deepseek-ai/dsh-client-connection'
-import type {} from '@deepseek-ai/dsh-session-persistence'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-workspace'
-import type { WorkspaceId } from '@deepseek-ai/dsh-workspace/types'
+import type { Context } from '@gemini-agy/cordis'
+import Schema from '@gemini-agy/schemastery'
+import { principalOf, Remote, RemoteError, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
+import type {} from '@gemini-agy/dsh-attachment'
+import type {} from '@gemini-agy/dsh-client-connection'
+import type {} from '@gemini-agy/dsh-session-persistence'
+import type {} from '@gemini-agy/dsh-session-projection-cache'
+import type {} from '@gemini-agy/dsh-workspace'
+import type { WorkspaceId } from '@gemini-agy/dsh-workspace/types'
 import { importDeepseekChatExport } from './importer.ts'
 import { UPLOAD_PATH } from './protocol.ts'
 import { createUploadRoute } from './upload.ts'
@@ -44,7 +44,7 @@ export interface Config {
   maxTitleBytes: number
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Upload route and Remote limits of the Gemini Antigravity chat export importer. */
     deepseekChatImport: DeepseekChatImportService

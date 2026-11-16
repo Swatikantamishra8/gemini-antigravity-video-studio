@@ -1,9 +1,9 @@
 /** Empty POSIX filesystem fixture whose execution coordinates differ from the Harness host. */
 import { posix } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { FileSystem, FsError, type FsTargetKey, type FsVersion, type FsTarget, type FsInfo } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import schema from '@deepseek-ai/schemastery'
+import { Context } from '@gemini-agy/cordis'
+import { FileSystem, FsError, type FsTargetKey, type FsVersion, type FsTarget, type FsInfo } from '@gemini-agy/dsh-fs'
+import { brandString } from '@gemini-agy/dsh-brand'
+import schema from '@gemini-agy/schemastery'
 
 /** Deployment coordinates for the deterministic provider. */
 interface Config { root: string }

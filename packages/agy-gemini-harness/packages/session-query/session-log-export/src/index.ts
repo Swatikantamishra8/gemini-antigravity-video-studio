@@ -1,12 +1,12 @@
 /** Session export command and Host-owned ZIP download and Markdown copy routes. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { CommandDefinitionId } from '@deepseek-ai/dsh-commands/types'
-import Schema from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type {} from '@deepseek-ai/dsh-attachment'
-import type { CommandResult } from '@deepseek-ai/dsh-commands'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { Context } from '@gemini-agy/cordis'
+import type { CommandDefinitionId } from '@gemini-agy/dsh-commands/types'
+import Schema from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type {} from '@gemini-agy/dsh-attachment'
+import type { CommandResult } from '@gemini-agy/dsh-commands'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import {
   DEFAULT_SESSION_LOG_COMPRESSION_LEVEL,
   flushLiveSessionLog,
@@ -79,7 +79,7 @@ const REQUESTED: CommandResult = {
  */
 export function apply(ctx: Context, config: Config = {}): void {
   ctx.effect(() => ctx.commands.register({
-    definitionId: brandString<CommandDefinitionId>('@deepseek-ai/dsh-session-log-export'),
+    definitionId: brandString<CommandDefinitionId>('@gemini-agy/dsh-session-log-export'),
     name: 'export',
     description: 'Download this Session log as a ZIP archive',
     handler: invocation => Promise.resolve(invocation.rawInput.trim() === ''

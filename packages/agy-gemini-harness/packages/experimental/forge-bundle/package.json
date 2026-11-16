@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-forge-bundle",
+  "name": "@gemini-agy/dsh-experimental-forge-bundle",
   "description": "Experimental change request panel and worktree option for Sessions in Git repositories",
   "version": "0.2.2-rc.3",
   "icon": "./icon.svg",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/forge-bundle"
   },
   "type": "module",
@@ -37,18 +37,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-experimental-client-ui-forge": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge-github": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge-session": "workspace:*",
-    "@deepseek-ai/dsh-experimental-tool-worktree": "workspace:*",
-    "@deepseek-ai/dsh-experimental-worktree": "workspace:*"
+    "@gemini-agy/dsh-experimental-client-ui-forge": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge-github": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge-session": "workspace:*",
+    "@gemini-agy/dsh-experimental-tool-worktree": "workspace:*",
+    "@gemini-agy/dsh-experimental-worktree": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dsh": {
     "bundle": {

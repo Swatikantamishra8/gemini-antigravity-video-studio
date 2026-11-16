@@ -1,33 +1,33 @@
-import { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { ToolExecutionPipeline } from '@gemini-agy/dsh-tools/pipeline'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { afterAll, afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus, Inbox } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
-import GoalService from '@deepseek-ai/dsh-goal'
-import type { GoalRef } from '@deepseek-ai/dsh-goal'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import AgentRegistry, { agentEvents } from '@gemini-agy/dsh-agent'
+import type { Agent, AgentStatus, Inbox } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { GoalId } from '@gemini-agy/dsh-goal/types'
+import GoalService from '@gemini-agy/dsh-goal'
+import type { GoalRef } from '@gemini-agy/dsh-goal'
+import type { ToolCallId } from '@gemini-agy/dsh-llm/types'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { MessageSource } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
 import SessionStore, {
   SESSION_FORMAT_VERSION,
   Session,
   type SessionId,
   SessionLogOffset,
-} from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import * as toolGoal from '@deepseek-ai/dsh-tool-goal'
-import { unsupportedModel, createInboxStub } from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import type { ToolExecutionResult } from '@gemini-agy/dsh-tools'
+import * as toolGoal from '@gemini-agy/dsh-tool-goal'
+import { unsupportedModel, createInboxStub } from '@gemini-agy/dsh-agent-loop-testkit'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

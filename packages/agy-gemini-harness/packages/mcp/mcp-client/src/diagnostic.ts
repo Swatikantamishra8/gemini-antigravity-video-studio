@@ -4,7 +4,7 @@
  */
 
 import { ProtocolError, SdkError, SdkErrorCode } from '@modelcontextprotocol/client'
-import { HarnessError } from '@deepseek-ai/dsh-error'
+import { HarnessError } from '@gemini-agy/dsh-error'
 
 /**
  * Every {@link McpLocalError} code:

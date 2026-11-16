@@ -9,19 +9,19 @@ export interface ProfileTemplate {
 /** The shipped profile templates auto-initialized on first use, by name. */
 export const PROFILE_TEMPLATES: Record<string, ProfileTemplate> = {
   acp: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-acp-app'],
+    bundles: ['@gemini-agy/dsh-base', '@gemini-agy/dsh-acp-app'],
   },
   web: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'],
+    bundles: ['@gemini-agy/dsh-base', '@gemini-agy/dsh-web-app'],
   },
   headless: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-headless'],
+    bundles: ['@gemini-agy/dsh-base', '@gemini-agy/dsh-headless'],
   },
   sdk: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-sdk-app'],
+    bundles: ['@gemini-agy/dsh-base', '@gemini-agy/dsh-sdk-app'],
   },
   'sdk-minimal': {
-    bundles: ['@deepseek-ai/dsh-sdk-minimal'],
+    bundles: ['@gemini-agy/dsh-sdk-minimal'],
   },
 }
 
@@ -30,19 +30,19 @@ export const PROFILE_TEMPLATES: Record<string, ProfileTemplate> = {
  * match with the {@link PROFILE_TEMPLATES} entry of the same name and leaves every other list untouched.
  */
 export const INSTALLATION_OWNED_PROFILE_TUPLES: Readonly<Record<string, readonly string[]>> = {
-  headless: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app', '@deepseek-ai/dsh-headless'],
+  headless: ['@gemini-agy/dsh-base', '@gemini-agy/dsh-web-app', '@gemini-agy/dsh-headless'],
 }
 
 /** Bundles an earlier release shipped and the installation no longer carries; app-boot removes them from profiles. */
 export const RETIRED_BUNDLES: ReadonlySet<string> = new Set([
   // The Web composition mounts Schedule itself
   // ([upgrade guide](../../../../docs/upgrade-guide/v0.2.0-rc.2/schedule-bundle-retired/guide.md)).
-  '@deepseek-ai/dsh-experimental-schedule-bundle',
-  '@deepseek-ai/dsh-experimental-agent-team-profile',
+  '@gemini-agy/dsh-experimental-schedule-bundle',
+  '@gemini-agy/dsh-experimental-agent-team-profile',
 ])
 
 /** The bundle list a `dsh plugin` init uses for a name with no shipped template. */
-export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@deepseek-ai/dsh-base']
+export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@gemini-agy/dsh-base']
 
 /**
  * The bundles the dsh installation ships for a person to switch on: each a
@@ -54,28 +54,28 @@ export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@deepseek-ai/dsh-bas
  * [admission](../../../../.agents/notes/implemented/architecture/2026-09-21-experimental-capabilities-as-optional-bundles.md)).
  */
 export const OPTIONAL_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-personalized-recommendations',
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-cua-mcp',
-  '@deepseek-ai/dsh-timeline',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-experimental-terminal-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-experimental-liveshare',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
-  '@deepseek-ai/dsh-experimental-forge-bundle',
-  '@deepseek-ai/dsh-gemini-3.8-flash-high-import',
+  '@gemini-agy/dsh-personalized-recommendations',
+  '@gemini-agy/dsh-cua-bundle',
+  '@gemini-agy/dsh-cua-mcp',
+  '@gemini-agy/dsh-timeline',
+  '@gemini-agy/dsh-experimental-session-search',
+  '@gemini-agy/dsh-experimental-ralph-bundle',
+  '@gemini-agy/dsh-experimental-terminal-bundle',
+  '@gemini-agy/dsh-experimental-badge-skill-bundle',
+  '@gemini-agy/dsh-experimental-session-titles-bundle',
+  '@gemini-agy/dsh-experimental-voice-input-bundle',
+  '@gemini-agy/dsh-experimental-cot-translation-bundle',
+  '@gemini-agy/dsh-experimental-auto-review',
+  '@gemini-agy/dsh-experimental-inspector-profile',
+  '@gemini-agy/dsh-experimental-liveshare',
+  '@gemini-agy/dsh-experimental-plugin-market-bundle',
+  '@gemini-agy/dsh-experimental-tool-worktree',
+  '@gemini-agy/dsh-experimental-forge-bundle',
+  '@gemini-agy/dsh-gemini-3.8-flash-high-import',
 ]
 
 /** Public DSH release members available through the ordinary on-demand bundle installer. */
 export const ON_DEMAND_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-subagent-claude-code',
-  '@deepseek-ai/dsh-subagent-codex',
+  '@gemini-agy/dsh-subagent-claude-code',
+  '@gemini-agy/dsh-subagent-codex',
 ]

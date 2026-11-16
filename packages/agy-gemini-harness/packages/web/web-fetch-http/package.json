@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-web-fetch-http",
+  "name": "@gemini-agy/dsh-web-fetch-http",
   "description": "Anonymous HTTP(S) fetch provider for the Gemini Antigravity Harness web capability seam (ctx.web)",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/web/web-fetch-http"
   },
   "type": "module",
@@ -32,18 +32,18 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/dsh-web": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/schemastery": "workspace:~",
     "undici": "8.11.2"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-web": "workspace:*",
-    "@deepseek-ai/dsh-http-proxy": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/dsh-web": "workspace:*",
+    "@gemini-agy/dsh-http-proxy": "workspace:*"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-sdk-app",
+  "name": "@gemini-agy/dsh-sdk-app",
   "description": "The dsh SDK profile bundle: stdio JSON-RPC serving and process lifecycle over dsh-base",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/bundle/sdk-app"
   },
   "type": "module",
@@ -39,30 +39,30 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-office-kit": "workspace:*",
-    "@deepseek-ai/dsh-sdk-jsonrpc-server": "workspace:*",
-    "@deepseek-ai/dsh-tool-office": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/dsh-cmdline": "workspace:*",
+    "@gemini-agy/dsh-office-kit": "workspace:*",
+    "@gemini-agy/dsh-sdk-jsonrpc-server": "workspace:*",
+    "@gemini-agy/dsh-tool-office": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
     "commander": "^15.0.0",
-    "@deepseek-ai/dsh-skill-office": "workspace:*",
-    "@deepseek-ai/dsh-tool-workspace-dependencies": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-file-upload": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
-    "@deepseek-ai/dsh-schedule": "workspace:*",
-    "@deepseek-ai/dsh-time-context": "workspace:*",
-    "@deepseek-ai/dsh-tool-schedule": "workspace:*",
-    "@deepseek-ai/dsh-tool-ask-user": "workspace:*",
-    "@deepseek-ai/dsh-tool-present": "workspace:*",
-    "@deepseek-ai/dsh-file-reference-local": "workspace:*",
-    "@deepseek-ai/dsh-deliverable-file-references": "workspace:*"
+    "@gemini-agy/dsh-skill-office": "workspace:*",
+    "@gemini-agy/dsh-tool-workspace-dependencies": "workspace:*",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-client-file-upload": "workspace:*",
+    "@gemini-agy/dsh-workspace": "workspace:*",
+    "@gemini-agy/dsh-schedule": "workspace:*",
+    "@gemini-agy/dsh-time-context": "workspace:*",
+    "@gemini-agy/dsh-tool-schedule": "workspace:*",
+    "@gemini-agy/dsh-tool-ask-user": "workspace:*",
+    "@gemini-agy/dsh-tool-present": "workspace:*",
+    "@gemini-agy/dsh-file-reference-local": "workspace:*",
+    "@gemini-agy/dsh-deliverable-file-references": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

@@ -1,17 +1,17 @@
 /**
  * Durable session skill catalog and model-facing `skill` loader tool.
  *
- * @module @deepseek-ai/dsh-tool-skill
+ * @module @gemini-agy/dsh-tool-skill
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-working-directory'
 import { createHash } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { defineTool, ToolArgsError } from '@deepseek-ai/dsh-tools'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionSeq, type UserMessage } from '@deepseek-ai/dsh-session'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent, PreStepDecision } from '@gemini-agy/dsh-agent'
+import { defineTool, ToolArgsError } from '@gemini-agy/dsh-tools'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import { SessionSeq, type UserMessage } from '@gemini-agy/dsh-session'
 import {
   escapeText,
   isModelInvocable,
@@ -21,7 +21,7 @@ import {
   SkillError,
   type SkillInvocationSource,
   type SkillSummary,
-} from '@deepseek-ai/dsh-skill'
+} from '@gemini-agy/dsh-skill'
 
 export const name = 'tool-skill'
 export const inject = ['agents', 'tools', 'skills', 'workingDirectory']
@@ -44,7 +44,7 @@ export interface SkillCatalogSource {
   readonly entries: readonly { readonly name: string; readonly description: string }[]
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'skill-catalog': SkillCatalogSource
   }

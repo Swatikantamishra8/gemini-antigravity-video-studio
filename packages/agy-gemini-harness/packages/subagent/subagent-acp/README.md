@@ -3,7 +3,7 @@ description: "The out-of-process ACP subagent backend for users and maintainers 
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-subagent-acp
+# @gemini-agy/dsh-subagent-acp
 
 English | [中文](README.zh.md)
 
@@ -49,7 +49,7 @@ A Gemini Antigravity Harness child uses the product launcher and an explicit abs
 
 ```yaml
 - id: subagent-acp
-  name: '@deepseek-ai/dsh-subagent-acp'
+  name: '@gemini-agy/dsh-subagent-acp'
   config:
     providerName: acp
     command: dsh

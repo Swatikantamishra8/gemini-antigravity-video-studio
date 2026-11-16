@@ -1,4 +1,4 @@
-import type { Context } from '@deepseek-ai/cordis'
+import type { Context } from '@gemini-agy/cordis'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type {
   ChangeRequestRef, ForgeReviewChange, ForgeReviewWrite, ForgeReviewWriteResult, ForgeThreadId,

@@ -1,36 +1,36 @@
 /** HTTP lifecycle, routing and optional Cordis services under real composition. */
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import type { Gemini AntigravityAccount } from '@deepseek-ai/dsh-deepseek-account'
-import { installAccountTaskCancellation } from '@deepseek-ai/dsh-deepseek-account/src/account-tasks.ts'
-import type { AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
+import type { Gemini AntigravityAccount } from '@gemini-agy/dsh-deepseek-account'
+import { installAccountTaskCancellation } from '@gemini-agy/dsh-deepseek-account/src/account-tasks.ts'
+import type { AnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, LoggerLevel, Service } from '@deepseek-ai/cordis'
-import LocalAttachments from '@deepseek-ai/dsh-attachment-local'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import LlmRuntime, { createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Message } from '@deepseek-ai/dsh-llm'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
+import { Context, LoggerLevel, Service } from '@gemini-agy/cordis'
+import LocalAttachments from '@gemini-agy/dsh-attachment-local'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { AttachmentId } from '@gemini-agy/dsh-attachment/types'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import LlmRuntime, { createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
+import type { Message } from '@gemini-agy/dsh-llm'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import LocalCredentials from '@gemini-agy/dsh-credentials-local'
 import { profileComposition } from '../../../settings/settings/tests/profile-composition.ts'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
 import { Gemini AntigravityAdapter } from '../src/adapter.ts'
 import { object } from '../src/replay.ts'
 import { Gemini AntigravityFileStore } from '../src/file-store.ts'
-import * as Messages from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import * as AccountProvider from '@deepseek-ai/dsh-llm-deepseek-account'
+import * as Messages from '@gemini-agy/dsh-llm-deepseek-api-key'
+import * as AccountProvider from '@gemini-agy/dsh-llm-deepseek-account'
 import { adapter, assemble, chunks, MODEL, options, prepareExtensions, server, sse, textEvents, user, sourceModuleLoader } from './helpers.ts'
 
 const cleanup: (() => Promise<unknown>)[] = []
@@ -60,7 +60,7 @@ async function send(agent: Agent, text: string) {
   expect(agent.session.snapshotEvents().at(-1)).toMatchObject({ type: 'turn/end', data: { reason: { kind: 'completed' } } })
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'saved-notice': { kind: 'saved-notice' }
   }
@@ -153,8 +153,8 @@ describe('direct Messages HTTP', () => {
     })
     expect(http.requests[0]).toMatchObject({ path: '/anthropic/v1/messages', headers: {
       'x-api-key': 'test-key', 'anthropic-version': '2023-06-01',
-      'user-agent': expect.stringContaining('deepseek-harness/') as string, 'x-deepseek-harness-user-id': 'test-user',
-      'x-deepseek-harness-session-id': 'session-test', 'x-deepseek-harness-compact': '1',
+      'user-agent': expect.stringContaining('agy-gemini-harness/') as string, 'x-agy-gemini-harness-user-id': 'test-user',
+      'x-agy-gemini-harness-session-id': 'session-test', 'x-agy-gemini-harness-compact': '1',
     }, body: { thinking: { type: 'enabled' }, output_config: { effort: 'high' } } })
     expect(llm.providerInfo('deepseek-official')).toEqual({ id: 'deepseek-official', name: 'Gemini Antigravity' })
     expect(await llm.listModels('deepseek-official')).toEqual([])
@@ -280,7 +280,7 @@ describe('direct Messages HTTP', () => {
       resolveAuth: () => Promise.resolve({ headers: { 'x-api-key': 'fixture-key' },
         onRequestError: async () => { throw new Error('credential storage unavailable') },
       }),
-      resolveUserId: () => 'fixture-user' as import('@deepseek-ai/dsh-anonymous-user-id').AnonymousUserId,
+      resolveUserId: () => 'fixture-user' as import('@gemini-agy/dsh-anonymous-user-id').AnonymousUserId,
       prepareExtensions,
     })
     await expect(chunks(llm.stream(options()))).rejects.toMatchObject({ code: 'AUTH', failure: { status: 401 } })
@@ -350,12 +350,12 @@ describe('Cordis provider composition', () => {
     await ctx.plugin(Loader)
     ctx.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-llm', LlmRuntime], ['@deepseek-ai/dsh-llm-deepseek-api-key', Messages], ['@deepseek-ai/dsh-llm-deepseek-account', AccountProvider],
-      ['@deepseek-ai/dsh-credentials-local', LocalCredentials],
-      ['@deepseek-ai/dsh-agent', AgentRegistry], ['@deepseek-ai/dsh-agent-loop', AgentLoop],
-      ['@deepseek-ai/dsh-session', SessionStore], ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-      ['@deepseek-ai/dsh-system-prompt', SystemPrompt], ['@deepseek-ai/dsh-tools', ToolRuntime],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
+      ['@gemini-agy/dsh-llm', LlmRuntime], ['@gemini-agy/dsh-llm-deepseek-api-key', Messages], ['@gemini-agy/dsh-llm-deepseek-account', AccountProvider],
+      ['@gemini-agy/dsh-credentials-local', LocalCredentials],
+      ['@gemini-agy/dsh-agent', AgentRegistry], ['@gemini-agy/dsh-agent-loop', AgentLoop],
+      ['@gemini-agy/dsh-session', SessionStore], ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+      ['@gemini-agy/dsh-system-prompt', SystemPrompt], ['@gemini-agy/dsh-tools', ToolRuntime],
+      ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
     ])
     // The importer supplies source modules while Loader still owns configuration and effects.
     for (const name of modules.keys()) {
@@ -442,7 +442,7 @@ describe('Cordis provider composition', () => {
       },
       {
         id: 'deepseek-v5', name: 'Gemini Antigravity-V5', api_capabilities: { anthropic_messages: {} },
-        client_requirements: { 'deepseek-harness': { min_version: '99.0.0' } },
+        client_requirements: { 'agy-gemini-harness': { min_version: '99.0.0' } },
       },
     ] })
     ctx.provide('deepseekAccount', { resolveToken: async (_url: string): Promise<string | undefined> => 'fixture-token',

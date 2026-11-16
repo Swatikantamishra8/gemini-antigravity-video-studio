@@ -1,19 +1,19 @@
-import { modelSelectionProjectionDefinition } from '@deepseek-ai/dsh-agent'
+import { modelSelectionProjectionDefinition } from '@gemini-agy/dsh-agent'
 /** Request immutability through the real loop, including adopted restore graphs. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createAssistantMessage, createUserMessage, isAgentLoopRequest } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, ToolSchema } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SessionLogOffset, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-import * as values from '@deepseek-ai/dsh-util-values'
+import { Context } from '@gemini-agy/cordis'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import { createAssistantMessage, createUserMessage, isAgentLoopRequest } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, ToolSchema } from '@gemini-agy/dsh-llm'
+import { Session, type SessionId, SessionLogOffset, SESSION_FORMAT_VERSION } from '@gemini-agy/dsh-session'
+import * as values from '@gemini-agy/dsh-util-values'
 import { inboxProjectionDefinition } from '../src/inbox.ts'
 import { ReactLoopAgent } from '../src/agent.ts'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const cleanups: (() => Promise<void>)[] = []
 afterEach(async () => {

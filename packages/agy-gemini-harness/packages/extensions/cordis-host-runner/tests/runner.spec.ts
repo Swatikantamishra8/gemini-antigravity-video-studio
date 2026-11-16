@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   ApprovalRequestId as ApprovalRequestIdType, CordisDynamicPluginId,
 } from '../src/types.ts'

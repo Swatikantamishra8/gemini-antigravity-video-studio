@@ -1,23 +1,23 @@
 import { describe, expect, expectTypeOf, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import BasicCompactionEngine from '@deepseek-ai/dsh-compaction-basic'
-import type { BasicCompactionConfig } from '@deepseek-ai/dsh-compaction-basic'
-import { selectCompactableRange } from '@deepseek-ai/dsh-compaction-basic/src/region.ts'
-import { answeredRouteProjectionDefinition } from '@deepseek-ai/dsh-compaction-basic/src/answered-route.ts'
-import { frameSummary } from '@deepseek-ai/dsh-compaction-basic/src/summarizer.ts'
-import type { SummarizationInput, SummaryResult } from '@deepseek-ai/dsh-compaction-basic/src/summarizer.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
-import { toolPairingBalancedAfter, toolPairingBalancedBefore } from '@deepseek-ai/dsh-compaction'
+import { Context } from '@gemini-agy/cordis'
+import type { AttachmentId } from '@gemini-agy/dsh-attachment/types'
+import BasicCompactionEngine from '@gemini-agy/dsh-compaction-basic'
+import type { BasicCompactionConfig } from '@gemini-agy/dsh-compaction-basic'
+import { selectCompactableRange } from '@gemini-agy/dsh-compaction-basic/src/region.ts'
+import { answeredRouteProjectionDefinition } from '@gemini-agy/dsh-compaction-basic/src/answered-route.ts'
+import { frameSummary } from '@gemini-agy/dsh-compaction-basic/src/summarizer.ts'
+import type { SummarizationInput, SummaryResult } from '@gemini-agy/dsh-compaction-basic/src/summarizer.ts'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { CompactionId } from '@gemini-agy/dsh-compaction/types'
+import { toolPairingBalancedAfter, toolPairingBalancedBefore } from '@gemini-agy/dsh-compaction'
 import {
   resolveCompactSpec,
   resolveConfig,
   resolveTargetPolicy,
-} from '@deepseek-ai/dsh-compaction-basic/src/config.ts'
-import type { CompactionResult } from '@deepseek-ai/dsh-compaction'
-import LlmRuntime, { createUserMessage, type ToolCallId, CONTEXT_WINDOW_EXCEEDED_CODE, createSystemMessage, createToolResultMessage, LlmAdapter , createMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+} from '@gemini-agy/dsh-compaction-basic/src/config.ts'
+import type { CompactionResult } from '@gemini-agy/dsh-compaction'
+import LlmRuntime, { createUserMessage, type ToolCallId, CONTEXT_WINDOW_EXCEEDED_CODE, createSystemMessage, createToolResultMessage, LlmAdapter , createMessage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
 import type {
   ContentBlock,
   GenerateOptions,
@@ -27,15 +27,15 @@ import type {
   Message,
   StreamChunk,
   TokenUsage,
-} from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionCheckpoint } from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
-import { agentEvents, type Agent, type RequestErrorAction } from '@deepseek-ai/dsh-agent'
-import ToolResultPruner from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+} from '@gemini-agy/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionLogOffset, SessionSeq } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import type { ProjectionCheckpoint } from '@gemini-agy/dsh-session-projection'
+import TokenMeter from '@gemini-agy/dsh-token-meter'
+import { agentEvents, type Agent, type RequestErrorAction } from '@gemini-agy/dsh-agent'
+import ToolResultPruner from '@gemini-agy/dsh-compaction-tool-result-pruner'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

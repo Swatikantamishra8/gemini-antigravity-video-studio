@@ -3,18 +3,18 @@
  * the service constructor, as the job and Agent registries install their own
  * archive-admission families, so it holds for every Session the Workspace archives.
  */
-import type { Context } from '@deepseek-ai/cordis'
-import type { Session, SessionHeader, SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-query'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import type {} from '@deepseek-ai/dsh-workspace'
+import type { Context } from '@gemini-agy/cordis'
+import type { Session, SessionHeader, SessionId } from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-session-projection-cache'
+import type {} from '@gemini-agy/dsh-session-query'
+import type {} from '@gemini-agy/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-workspace'
 import type { WorktreeProjectionState } from './projection.ts'
 import type { CreatedWorktree, WorktreeCleanup, WorktreeCreation } from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Events {
     /**
      * A cleanup attempt changed state. Fires once at admission with

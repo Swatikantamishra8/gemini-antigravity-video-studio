@@ -2,11 +2,11 @@ import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, sep } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import SkillRegistry from '@deepseek-ai/dsh-skill'
-import * as SkillOffice from '@deepseek-ai/dsh-skill-office'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import SkillRegistry from '@gemini-agy/dsh-skill'
+import * as SkillOffice from '@gemini-agy/dsh-skill-office'
 import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('node:fs/promises', async (importOriginal) => {
@@ -74,8 +74,8 @@ describe('bundled Office skills', () => {
       await cp(assets, external, { recursive: true })
       const configPath = join(root, 'cordis.yml')
       await writeFile(configPath, [
-        "- name: '@deepseek-ai/dsh-skill'",
-        "- name: '@deepseek-ai/dsh-skill-office'",
+        "- name: '@gemini-agy/dsh-skill'",
+        "- name: '@gemini-agy/dsh-skill-office'",
         '  config:',
         `    assetRoot: ${JSON.stringify(external)}`,
         '',
@@ -84,8 +84,8 @@ describe('bundled Office skills', () => {
       await ctx.plugin(Loader)
       ctx.loader.builtins.include = Include
       const modules = new Map<string, unknown>([
-        ['@deepseek-ai/dsh-skill', SkillRegistry],
-        ['@deepseek-ai/dsh-skill-office', SkillOffice],
+        ['@gemini-agy/dsh-skill', SkillRegistry],
+        ['@gemini-agy/dsh-skill-office', SkillOffice],
       ])
       ctx.loader.internal = {
         version: 'v2',

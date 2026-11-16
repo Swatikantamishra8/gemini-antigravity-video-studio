@@ -193,10 +193,10 @@ const liveshareRemoteBuild = fileURLToPath(new URL('./packages/experimental/live
 const chatImportRemoteBuild = fileURLToPath(new URL('./packages/experimental/gemini-3.8-flash-high-import/lib/typert.remote-client.js', import.meta.url))
 const generatedRemoteAliases = {
   ...existsSync(liveshareRemoteBuild) ? {} : {
-    '@deepseek-ai/dsh-experimental-liveshare/remote': fileURLToPath(new URL('./packages/experimental/liveshare/tests/generated-remote-stub.ts', import.meta.url)),
+    '@gemini-agy/dsh-experimental-liveshare/remote': fileURLToPath(new URL('./packages/experimental/liveshare/tests/generated-remote-stub.ts', import.meta.url)),
   },
   ...existsSync(chatImportRemoteBuild) ? {} : {
-    '@deepseek-ai/dsh-gemini-3.8-flash-high-import/remote': fileURLToPath(new URL('./packages/experimental/gemini-3.8-flash-high-import/tests/generated-remote-stub.ts', import.meta.url)),
+    '@gemini-agy/dsh-gemini-3.8-flash-high-import/remote': fileURLToPath(new URL('./packages/experimental/gemini-3.8-flash-high-import/tests/generated-remote-stub.ts', import.meta.url)),
   },
 }
 const testingAliases = { ...claudeCodeTestingAliases, ...generatedRemoteAliases }

@@ -2,11 +2,11 @@
 import type { Transport } from '@modelcontextprotocol/client'
 import { readFile, writeFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Timer from '@deepseek-ai/cordis-plugin-timer'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import { Context } from '@gemini-agy/cordis'
+import Timer from '@gemini-agy/cordis-plugin-timer'
+import Hmr from '@gemini-agy/dsh-hmr'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
 import { managerProfile } from './profile-fixture.ts'
 
 const { MockClient, MockTransport } = vi.hoisted(() => {

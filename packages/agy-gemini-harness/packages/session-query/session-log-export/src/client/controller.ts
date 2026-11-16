@@ -1,7 +1,7 @@
 /** Browser download operations and FIFO modal state shared by menu actions and `/export`. */
 
-import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { createSnapshotStore, type SnapshotStore } from '@gemini-agy/dsh-client-store'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import { SESSION_LOG_EXPORT_ROUTE } from '../routes.ts'
 
 /** Download phases presented by the shared modal. */

@@ -1,12 +1,12 @@
 /** Child LLM route selection for the subagent tool. */
 
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
-import type { LlmRuntime } from '@deepseek-ai/dsh-llm'
-import type { AgentOptions } from '@deepseek-ai/dsh-agent'
-import { SubagentError } from '@deepseek-ai/dsh-subagent'
-import { ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import z from '@deepseek-ai/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ReasoningEffortId } from '@gemini-agy/dsh-llm/types'
+import type { LlmRuntime } from '@gemini-agy/dsh-llm'
+import type { AgentOptions } from '@gemini-agy/dsh-agent'
+import { SubagentError } from '@gemini-agy/dsh-subagent'
+import { ToolArgsError, ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
+import z from '@gemini-agy/schemastery'
 
 /** One exact child LLM route authorized by a user setting. */
 export interface AllowedModelRoute {

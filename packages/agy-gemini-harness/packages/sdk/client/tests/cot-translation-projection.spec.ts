@@ -2,11 +2,11 @@
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import SessionStore, { appendPluginRecord, type SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type ReasoningEffortId, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-experimental-translator/types'
+import { Context } from '@gemini-agy/cordis'
+import SessionStore, { appendPluginRecord, type SessionId, type SessionEvent } from '@gemini-agy/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { type ReasoningEffortId, createUserMessage } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/dsh-experimental-translator/types'
 import { createProcessGemini AntigravityHarness } from '../src/api.ts'
 
 const expectedPath = fileURLToPath(new URL('./expected/cot-translation-projection.json', import.meta.url))

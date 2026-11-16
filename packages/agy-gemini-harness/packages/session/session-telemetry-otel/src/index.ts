@@ -5,15 +5,15 @@
  * Session-log reporter. This plugin owns resource identity and an outer
  * shutdown deadline; the reporter owns byte-bounded SDK delivery.
  *
- * @module @deepseek-ai/dsh-session-telemetry-otel
+ * @module @gemini-agy/dsh-session-telemetry-otel
  */
 
 import { createRequire } from 'node:module'
-import z from '@deepseek-ai/schemastery'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-command-feedback'
-import type {} from '@deepseek-ai/dsh-message-feedback'
-import { Session, type SessionEvent } from '@deepseek-ai/dsh-session'
+import z from '@gemini-agy/schemastery'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-command-feedback'
+import type {} from '@gemini-agy/dsh-message-feedback'
+import { Session, type SessionEvent } from '@gemini-agy/dsh-session'
 import {
   SessionTelemetryBackend,
   SessionTelemetryCoordinator,
@@ -21,10 +21,10 @@ import {
   type SessionTelemetryRecord,
   type SessionTelemetrySeverity,
   type SessionTelemetrySharingStatus,
-} from '@deepseek-ai/dsh-session-telemetry'
-import { APP_IDENTITY } from '@deepseek-ai/dsh-llm'
-import { getOrCreateAnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
-import type { LogExporterOptions, SessionLogProcessorOptions, SessionLogReporter } from '@deepseek-ai/dsh-otel'
+} from '@gemini-agy/dsh-session-telemetry'
+import { APP_IDENTITY } from '@gemini-agy/dsh-llm'
+import { getOrCreateAnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
+import type { LogExporterOptions, SessionLogProcessorOptions, SessionLogReporter } from '@gemini-agy/dsh-otel'
 import { SeverityNumber } from '@opentelemetry/api-logs'
 
 /** Session-sharing policy selected by {@link Config.mode}. */
@@ -188,7 +188,7 @@ export class OpenTelemetrySessionBackend extends SessionTelemetryBackend {
     this.shutdownTimeoutMillis = shutdownTimeoutMillis
     const { version } = createRequire(import.meta.url)('../package.json') as { version: string }
     const reporter = ctx.otel.createSessionLogReporter({
-      scope: { name: '@deepseek-ai/dsh-session-telemetry-otel', version },
+      scope: { name: '@gemini-agy/dsh-session-telemetry-otel', version },
       exporter: { ...config.exporter, url },
       ...(config.processor === undefined ? {} : { processor: config.processor }),
       ...(config.maxRequestBytes === undefined ? {} : { maxRequestBytes: config.maxRequestBytes }),

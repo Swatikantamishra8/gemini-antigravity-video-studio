@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-forge-session",
+  "name": "@gemini-agy/dsh-experimental-forge-session",
   "description": "Binds change requests to the Session that created, pushed, or tracked them",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -31,65 +31,65 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/forge-session"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/dsh-util-values": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
     "shell-quote": "^1.12.0",
     "zod": "4.6.6"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-shell-env": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*",
+    "@gemini-agy/dsh-shell": "workspace:*",
+    "@gemini-agy/dsh-shell-env": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-sandbox-policy": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-bash-local": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge-github": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-shell-env": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-bash": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*",
-    "@deepseek-ai/dsh-ptc-runtime-node": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-agent-loop": "workspace:*",
+    "@gemini-agy/dsh-bash-local": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge-github": "workspace:*",
+    "@gemini-agy/dsh-fs-local": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*",
+    "@gemini-agy/dsh-shell-env": "workspace:*",
+    "@gemini-agy/dsh-subprocess-local": "workspace:*",
+    "@gemini-agy/dsh-system-prompt": "workspace:*",
+    "@gemini-agy/dsh-tool-bash": "workspace:*",
+    "@gemini-agy/dsh-tool-executor-native": "workspace:*",
+    "@gemini-agy/dsh-tools": "workspace:*",
+    "@gemini-agy/dsh-working-directory": "workspace:*",
+    "@gemini-agy/dsh-shell": "workspace:*",
+    "@gemini-agy/dsh-sandbox-policy": "workspace:*",
+    "@gemini-agy/dsh-tool-executor-ptc": "workspace:*",
+    "@gemini-agy/dsh-ptc-runtime-node": "workspace:*",
+    "@gemini-agy/dsh-sandbox-local": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-shell": {
+    "@gemini-agy/dsh-shell": {
       "optional": true
     },
-    "@deepseek-ai/dsh-shell-env": {
+    "@gemini-agy/dsh-shell-env": {
       "optional": true
     },
-    "@deepseek-ai/dsh-tools": {
+    "@gemini-agy/dsh-tools": {
       "optional": true
     },
-    "@deepseek-ai/dsh-sandbox-policy": {
+    "@gemini-agy/dsh-sandbox-policy": {
       "optional": true
     }
   }

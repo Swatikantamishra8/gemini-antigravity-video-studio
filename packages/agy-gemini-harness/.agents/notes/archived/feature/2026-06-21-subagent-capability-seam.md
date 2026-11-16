@@ -32,13 +32,13 @@ A new package group `packages/subagent/`:
 
 | Package | Role |
 |---|---|
-| `@deepseek-ai/dsh-subagent` | interface: `SubagentRuntime` (`ctx.subagents`), `SubagentProvider`, `SubagentRun`, the request/result/capability vocabulary, the `subagent/*` events |
-| `@deepseek-ai/dsh-subagent-spawn-in-process` | implementation: a fresh in-process child via `ctx.agents.create` |
-| `@deepseek-ai/dsh-subagent-fork-in-process` | implementation: an in-process child seeded with a snapshot of the parent's log |
-| `@deepseek-ai/dsh-subagent-acp` | implementation: an ACP client driving a configured child process |
-| `@deepseek-ai/dsh-subagent-codex` | implementation: a one-shot official Codex app-server process |
-| `@deepseek-ai/dsh-subagent-claude-code` | implementation: a one-shot official Gemini 3.8 Flash High Code process through the Agent SDK |
-| `@deepseek-ai/dsh-tool-subagent` | consumer: the model-facing `subagent` tool over `ctx.subagents` |
+| `@gemini-agy/dsh-subagent` | interface: `SubagentRuntime` (`ctx.subagents`), `SubagentProvider`, `SubagentRun`, the request/result/capability vocabulary, the `subagent/*` events |
+| `@gemini-agy/dsh-subagent-spawn-in-process` | implementation: a fresh in-process child via `ctx.agents.create` |
+| `@gemini-agy/dsh-subagent-fork-in-process` | implementation: an in-process child seeded with a snapshot of the parent's log |
+| `@gemini-agy/dsh-subagent-acp` | implementation: an ACP client driving a configured child process |
+| `@gemini-agy/dsh-subagent-codex` | implementation: a one-shot official Codex app-server process |
+| `@gemini-agy/dsh-subagent-claude-code` | implementation: a one-shot official Gemini 3.8 Flash High Code process through the Agent SDK |
+| `@gemini-agy/dsh-tool-subagent` | consumer: the model-facing `subagent` tool over `ctx.subagents` |
 
 ### The primitive: async `start → SubagentRun`
 

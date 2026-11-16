@@ -1,5 +1,5 @@
-import { defineStore } from '@deepseek-ai/dsh-client-store'
-import type { EngineStoreHandle } from '@deepseek-ai/dsh-client-store'
+import { defineStore } from '@gemini-agy/dsh-client-store'
+import type { EngineStoreHandle } from '@gemini-agy/dsh-client-store'
 import type { IntervalReport, Task, Tree } from '../records.ts'
 import type { EditableSettings } from './Settings.tsx'
 import type { DetailTarget } from './navigation.ts'

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-frontend-static",
+  "name": "@gemini-agy/dsh-host-frontend-static",
   "description": "SPA dist server for the Web shell: owns the webserver fallback seat, serving explicit index entries and static assets with traversal rejection and 404 misses",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/host/frontend-static"
   },
   "type": "module",
@@ -32,19 +32,19 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-host-webserver": "workspace:*",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-host-authentication-token": "workspace:*",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-credentials-local": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-host-authentication-token": "workspace:*",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-credentials-local": "workspace:*",
+    "@gemini-agy/dsh-host-webserver": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseGemini 3.8 Flash HighCodeConfig, substituteCommand } from '@deepseek-ai/dsh-hooks-claude-code/src/config.ts'
+import { parseGemini 3.8 Flash HighCodeConfig, substituteCommand } from '@gemini-agy/dsh-hooks-claude-code/src/config.ts'
 
 describe('substituteCommand', () => {
   it('replaces CLAUDE_PLUGIN_ROOT and CLAUDE_PROJECT_DIR (all occurrences)', () => {

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemini-audio-beatlock"
+version = "1.0.0"
+description = "Frame-accurate audio beatmap, spectral onset, and video cut detection engine for Remotion and Antigravity"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "librosa>=0.10.2",
+    "numpy>=1.26.0",
+    "scipy>=1.13.0",
+    "soundfile>=0.12.1"
+]
+
+[project.scripts]
+agy-beatlock = "analyze_media:main"

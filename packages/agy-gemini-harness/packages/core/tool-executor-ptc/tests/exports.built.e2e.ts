@@ -10,11 +10,11 @@ const factoryBundle = fileURLToPath(new URL('../lib/run-code.js', import.meta.ur
 const execFileAsync = promisify(execFile)
 const probe = String.raw`
 import assert from 'node:assert/strict'
-import { Context } from '@deepseek-ai/cordis'
-import * as ptc from '@deepseek-ai/dsh-tool-executor-ptc'
-import { createRunCodeTool, RunCodeConfig } from '@deepseek-ai/dsh-tool-executor-ptc/run-code'
-import Tools, { defineTool } from '@deepseek-ai/dsh-tools'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
+import { Context } from '@gemini-agy/cordis'
+import * as ptc from '@gemini-agy/dsh-tool-executor-ptc'
+import { createRunCodeTool, RunCodeConfig } from '@gemini-agy/dsh-tool-executor-ptc/run-code'
+import Tools, { defineTool } from '@gemini-agy/dsh-tools'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
 
 assert.equal(Object.hasOwn(ptc, 'createRunCodeTool'), false)
 assert.equal(Object.hasOwn(ptc, 'jsonSchemaToPy'), false)

@@ -1,11 +1,11 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-entry-customization",
+  "name": "@gemini-agy/dsh-client-ui-entry-customization",
   "version": "0.2.2-rc.3",
   "description": "Customize plugin entries in the left sidebar, conversation views, and right sidebar, and quickly create new plugins.",
   "publishConfig": { "access": "public" },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/client/ui-entry-customization"
   },
   "type": "module",
@@ -28,21 +28,21 @@
     "src"
   ],
   "license": "MIT",
-  "peerDependencies": { "@deepseek-ai/cordis": "workspace:~" },
+  "peerDependencies": { "@gemini-agy/cordis": "workspace:~" },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-product-analytics": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-sidebar-right": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-workspace": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-client-locale": "workspace:*",
+    "@gemini-agy/dsh-client-product-analytics": "workspace:*",
+    "@gemini-agy/dsh-client-store": "workspace:*",
+    "@gemini-agy/dsh-client-ui-sidebar": "workspace:*",
+    "@gemini-agy/dsh-client-ui-conversation": "workspace:*",
+    "@gemini-agy/dsh-client-ui-sidebar-right": "workspace:*",
+    "@gemini-agy/dsh-client-ui-plugin-manager": "workspace:*",
+    "@gemini-agy/dsh-client-ui-workspace": "workspace:*",
+    "@gemini-agy/dsh-client-ui-primitives": "workspace:*",
+    "@gemini-agy/dsh-client-ui-renderer": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*",
     "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -52,9 +52,9 @@
     "client": {
       "platform": "web",
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-plugin-manager",
-        "@deepseek-ai/dsh-client-ui-workspace"
+        "@gemini-agy/dsh-client-locale",
+        "@gemini-agy/dsh-client-ui-plugin-manager",
+        "@gemini-agy/dsh-client-ui-workspace"
       ]
     }
   },

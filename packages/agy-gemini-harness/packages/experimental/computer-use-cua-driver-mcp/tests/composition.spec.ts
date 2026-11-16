@@ -1,26 +1,26 @@
 /** Loader composition with a real stdio child and a scripted external model. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, FiberState } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import ComputerUse from '@deepseek-ai/dsh-computer-use'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ComputerUseProviderName } from '@deepseek-ai/dsh-computer-use/types'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import LlmRuntime, { LlmAdapter, type ToolCallId, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalAttachmentStore from '@deepseek-ai/dsh-attachment-local'
+import { Context, FiberState } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import ComputerUse from '@gemini-agy/dsh-computer-use'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ComputerUseProviderName } from '@gemini-agy/dsh-computer-use/types'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import LlmRuntime, { LlmAdapter, type ToolCallId, createUserMessage } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@gemini-agy/dsh-llm'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import LocalAttachmentStore from '@gemini-agy/dsh-attachment-local'
 import * as Provider from '../src/index.ts'
 
 const TOOL = 'mcp__cua-driver-mcp__screenshot'
@@ -63,33 +63,33 @@ async function load(mode?: string): Promise<{ ctx: Context; root: string; model:
   roots.push(root)
   const model = new ScreenshotModel()
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-computer-use', ComputerUse],
-    ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-    ['@deepseek-ai/dsh-tools', ToolRuntime],
-    ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-agent', AgentRegistry],
-    ['@deepseek-ai/dsh-agent-loop', AgentLoop],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
+    ['@gemini-agy/dsh-computer-use', ComputerUse],
+    ['@gemini-agy/dsh-system-prompt', SystemPrompt],
+    ['@gemini-agy/dsh-tools', ToolRuntime],
+    ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+    ['@gemini-agy/dsh-llm', LlmRuntime],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-agent', AgentRegistry],
+    ['@gemini-agy/dsh-agent-loop', AgentLoop],
+    ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
 
-    ['@deepseek-ai/dsh-attachment-local', LocalAttachmentStore],
+    ['@gemini-agy/dsh-attachment-local', LocalAttachmentStore],
     ['@fixture/model', { inject: ['llm'], apply(ctx: Context) { ctx.effect(() => ctx.llm.registerAdapter(['fixture'], model)) } }],
-    ['@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp', Provider],
+    ['@gemini-agy/dsh-experimental-computer-use-cua-driver-mcp', Provider],
   ])
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, JSON.stringify([...modules.keys()].map(name => ({
-    id: name === '@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp' ? 'computer-use-driver' : undefined,
+    id: name === '@gemini-agy/dsh-experimental-computer-use-cua-driver-mcp' ? 'computer-use-driver' : undefined,
     name,
-    config: name === '@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp'
+    config: name === '@gemini-agy/dsh-experimental-computer-use-cua-driver-mcp'
       ? {
         command: process.execPath,
         args: [fixture, root, ...(mode === undefined ? [] : [mode])],
         reconnect: { initialDelayMs: 20, maxDelayMs: 40, maxAttempts: 2 },
       }
-      : name === '@deepseek-ai/dsh-attachment-local'
+      : name === '@gemini-agy/dsh-attachment-local'
         ? { dshHome: root }
-        : name === '@deepseek-ai/dsh-agent-loop' ? { agents: [] } : {},
+        : name === '@gemini-agy/dsh-agent-loop' ? { agents: [] } : {},
   }))))
   const ctx = new Context()
   contexts.push(ctx)

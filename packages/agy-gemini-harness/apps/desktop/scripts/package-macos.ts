@@ -13,7 +13,7 @@ import {
 import {
   desktopUpdateMetadataFilename,
   resolveDesktopAutoUpdateConfig,
-} from '@deepseek-ai/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
+} from '@gemini-agy/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
 import { verifyMacOSAppUpdateConfig } from './macos-app-update-config.mjs'
 import { verifyMacOSNotarizedApplication, verifyMacOSSignature } from './verify-macos-signature.mjs'
 
@@ -110,7 +110,7 @@ export async function packageMacOSArtifacts(
     await verifyMacOSAppUpdateConfig(dmgApp, update)
     apple.verifySignature(zipApp, expected)
     apple.verifySignature(dmgApp, expected)
-    const base = `deepseek-harness-${version}-mac-${arch}`
+    const base = `agy-gemini-harness-${version}-mac-${arch}`
     const artifacts = [
       [dmgOutput, `${base}.dmg`],
       [zipOutput, `${base}.zip`],

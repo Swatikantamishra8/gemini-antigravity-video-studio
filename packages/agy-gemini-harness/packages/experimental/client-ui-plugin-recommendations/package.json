@@ -7,11 +7,11 @@
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "license": "MIT",
-  "name": "@deepseek-ai/dsh-client-ui-plugin-recommendations",
+  "name": "@gemini-agy/dsh-client-ui-plugin-recommendations",
   "description": "Official plugin card body with catalog text and enabling",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/client-ui-plugin-recommendations"
   },
   "exports": {
@@ -31,35 +31,35 @@
     "client": {
       "platform": "web",
       "inject": [
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-plugin-manager",
-        "@deepseek-ai/dsh-client-ui-action-cards"
+        "@gemini-agy/dsh-api-remotes",
+        "@gemini-agy/dsh-client-locale",
+        "@gemini-agy/dsh-client-ui-plugin-manager",
+        "@gemini-agy/dsh-client-ui-action-cards"
       ]
     }
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-api-remotes": "workspace:*",
+    "@gemini-agy/dsh-client-locale": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-client-ui-primitives": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-plugin-recommendations": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-action-cards": "workspace:*",
-    "@deepseek-ai/dsh-action-cards": "workspace:*",
+    "@gemini-agy/dsh-plugin-recommendations": "workspace:*",
+    "@gemini-agy/dsh-client-store": "workspace:*",
+    "@gemini-agy/dsh-client-ui-plugin-manager": "workspace:*",
+    "@gemini-agy/dsh-typert-protocol": "workspace:*",
+    "@gemini-agy/dsh-package-manifest": "workspace:*",
+    "@gemini-agy/dsh-client-ui-action-cards": "workspace:*",
+    "@gemini-agy/dsh-action-cards": "workspace:*",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*"
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*"
   },
   "files": [
     "locale/*.json",

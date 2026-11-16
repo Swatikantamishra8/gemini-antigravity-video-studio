@@ -3,13 +3,13 @@ import {
   RemoteStream,
   RemoteStreamCarrierError,
   type RemoteStreamOptions,
-} from '@deepseek-ai/dsh-api-gateway/client'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import { streamHandle } from '@deepseek-ai/dsh-remote-mock'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { LlmAttemptId } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session/types'
-import type { RemoteResult, RemoteStreamHandle } from '@deepseek-ai/dsh-typert-protocol'
+} from '@gemini-agy/dsh-api-gateway/client'
+import { RemoteError } from '@gemini-agy/dsh-typert-protocol'
+import { streamHandle } from '@gemini-agy/dsh-remote-mock'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { LlmAttemptId } from '@gemini-agy/dsh-llm'
+import { SESSION_FORMAT_VERSION } from '@gemini-agy/dsh-session/types'
+import type { RemoteResult, RemoteStreamHandle } from '@gemini-agy/dsh-typert-protocol'
 import {
   createSessionControlStream,
   SessionEventStream,

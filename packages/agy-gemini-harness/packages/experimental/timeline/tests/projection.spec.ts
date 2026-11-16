@@ -1,4 +1,4 @@
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import Sessions, {
   appendPluginRecord,
   pluginRecordOf,
@@ -6,9 +6,9 @@ import Sessions, {
   SessionId,
   SessionLogOffset,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import Projections from '@deepseek-ai/dsh-session-projection'
+} from '@gemini-agy/dsh-session'
+import type { SessionEvent } from '@gemini-agy/dsh-session'
+import Projections from '@gemini-agy/dsh-session-projection'
 import { describe, expect, it } from 'vitest'
 import { createProjection, foldRecord, registerProjection } from '../src/projection.ts'
 import { annotationSchema, failureRecordSchema, reportSchema, treeSchema } from '../src/records.ts'

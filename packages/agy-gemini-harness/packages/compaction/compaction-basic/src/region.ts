@@ -2,26 +2,26 @@
  * Surface retention selection and the shared log-recorded compaction
  * transaction for automatic open-turn and manual idle-session compaction.
  *
- * @module @deepseek-ai/dsh-compaction-basic/region
+ * @module @gemini-agy/dsh-compaction-basic/region
  */
 
 import { randomUUID } from 'node:crypto'
 import { isDeepStrictEqual } from 'node:util'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { CompactionId } from '@gemini-agy/dsh-compaction/types'
 import {
   ManualCompactionError,
   compactCheckpointSource,
   toolPairingBalancedAfter,
   toolPairingBalancedBefore,
-} from '@deepseek-ai/dsh-compaction'
-import type { CompactionResult } from '@deepseek-ai/dsh-compaction'
-import type { CommandId } from '@deepseek-ai/dsh-commands/types'
-import { createUserMessage, errorChain } from '@deepseek-ai/dsh-llm'
-import type { Message, UserMessage } from '@deepseek-ai/dsh-llm'
-import type { TokenMeasurement, TokenMeter } from '@deepseek-ai/dsh-token-meter'
-import { SessionSeq, type Session, type SessionEvent } from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+} from '@gemini-agy/dsh-compaction'
+import type { CompactionResult } from '@gemini-agy/dsh-compaction'
+import type { CommandId } from '@gemini-agy/dsh-commands/types'
+import { createUserMessage, errorChain } from '@gemini-agy/dsh-llm'
+import type { Message, UserMessage } from '@gemini-agy/dsh-llm'
+import type { TokenMeasurement, TokenMeter } from '@gemini-agy/dsh-token-meter'
+import { SessionSeq, type Session, type SessionEvent } from '@gemini-agy/dsh-session'
+import type { Agent } from '@gemini-agy/dsh-agent'
 import { frameSummary } from './summarizer.ts'
 import type { SummarizationInput, SummaryResult } from './summarizer.ts'
 interface RegionDependencies {

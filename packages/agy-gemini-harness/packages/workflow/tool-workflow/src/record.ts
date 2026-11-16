@@ -5,12 +5,12 @@
  * model's `job_output` never renders — and keeps the job's live progress
  * line on the current phase. Appends against a settled job log and drop
  * inside the registry, so a straggling event after settlement is harmless.
- * @module @deepseek-ai/dsh-tool-workflow/record
+ * @module @gemini-agy/dsh-tool-workflow/record
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { JobHandle } from '@deepseek-ai/dsh-jobs'
-import type { WorkflowRunId } from '@deepseek-ai/dsh-workflow/types'
+import type { Context } from '@gemini-agy/cordis'
+import type { JobHandle } from '@gemini-agy/dsh-jobs'
+import type { WorkflowRunId } from '@gemini-agy/dsh-workflow/types'
 
 /** Job-ring taps for the background runs the tool tracks. */
 export interface WorkflowRecordMirror {

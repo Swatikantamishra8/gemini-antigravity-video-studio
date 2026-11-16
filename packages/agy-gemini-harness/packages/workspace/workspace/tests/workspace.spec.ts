@@ -1,18 +1,18 @@
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type { z } from 'zod'
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
 import { mkdir, mkdtemp, realpath, rm, symlink, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { basename, join, relative } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import Storage from '@deepseek-ai/dsh-storage'
-import type { StorageBackend } from '@deepseek-ai/dsh-storage'
-import { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
-import type { DomainChanged } from '@deepseek-ai/dsh-storage-domain'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionPersistenceRevision } from '@deepseek-ai/dsh-session-persistence'
-import type { SessionPersistenceSnapshot } from '@deepseek-ai/dsh-session-persistence'
+import { Context } from '@gemini-agy/cordis'
+import Storage from '@gemini-agy/dsh-storage'
+import type { StorageBackend } from '@gemini-agy/dsh-storage'
+import { DomainFacility } from '@gemini-agy/dsh-storage-domain'
+import type { DomainChanged } from '@gemini-agy/dsh-storage-domain'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@gemini-agy/dsh-session'
+import type { SessionHeader } from '@gemini-agy/dsh-session'
+import type { SessionPersistenceRevision } from '@gemini-agy/dsh-session-persistence'
+import type { SessionPersistenceSnapshot } from '@gemini-agy/dsh-session-persistence'
 import { MemoryMediaPool, MemoryStorageBackend } from '../../../storage/storage-domain/tests/helpers/memory-backend.ts'
 import WorkspaceRegistry, {
   type WorkspaceId,
@@ -1540,7 +1540,7 @@ describe('first-use Workspace preparation', () => {
 })
 
 // The registry knows no family: the providers merge theirs, and this suite merges its own.
-declare module '@deepseek-ai/dsh-workspace/types' {
+declare module '@gemini-agy/dsh-workspace/types' {
   interface SessionActivityKindMap {
     probe: true
     'probe-items': true

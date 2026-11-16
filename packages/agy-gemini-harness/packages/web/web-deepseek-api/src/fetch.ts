@@ -1,9 +1,9 @@
 /**
  * Gemini Antigravity Fetch API provider: page Markdown through one direct request, without
  * a model request.
- * @module @deepseek-ai/dsh-web-deepseek-api/fetch
+ * @module @gemini-agy/dsh-web-deepseek-api/fetch
  */
-import type { WebFetchProvider, WebFetchRequest, WebFetchResult } from '@deepseek-ai/dsh-web'
+import type { WebFetchProvider, WebFetchRequest, WebFetchResult } from '@gemini-agy/dsh-web'
 import {
   dispatchGemini AntigravityWeb, hasGemini AntigravityWebCredential, invalidResponse, isRecord,
   type Gemini AntigravityWebAuth, type Gemini AntigravityWebGuidance,

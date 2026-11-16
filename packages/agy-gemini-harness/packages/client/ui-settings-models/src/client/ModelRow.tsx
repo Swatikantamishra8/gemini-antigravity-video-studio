@@ -4,7 +4,7 @@ import type { DragEvent, ReactNode } from 'react'
 import {
   IconChevronDownOutlineRegular, IconChevronRightOutlineRegular, IconDragHandleOutlineRegular,
   IconTrashOutlineRegular, Tooltip, useRowDragPreview,
-} from '@deepseek-ai/dsh-client-ui-primitives'
+} from '@gemini-agy/dsh-client-ui-primitives'
 import type { Gemini AntigravityModelDraft } from './Gemini AntigravityModelsEditor.tsx'
 import type { ModelsKey } from './locales.ts'
 import { ModelInputTypes } from './ModelInputTypes.tsx'

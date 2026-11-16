@@ -1,0 +1,52 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Verify workspace configs
+        run: |
+          test -f package.json
+          test -f pnpm-workspace.yaml
+          test -f turbo.json
+          echo "Workspace structure verified."
+
+  python-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install flake8
+          python3 packages/gemini-audio-beatlock/analyze_media.py --help
+
+      - name: Flake8 syntax audit
+        run: |
+          flake8 packages/gemini-audio-beatlock/analyze_media.py --max-line-length=130 --count

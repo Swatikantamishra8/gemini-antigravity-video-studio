@@ -1,8 +1,8 @@
 /** Plan text and resource identities derived from logged native or PTC calls. */
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/client'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { SessionAddress } from '@deepseek-ai/dsh-api-session-controller/types'
+import type {} from '@gemini-agy/dsh-tool-executor-ptc/client'
+import type { ToolCallId } from '@gemini-agy/dsh-llm/types'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { SessionAddress } from '@gemini-agy/dsh-api-session-controller/types'
 
 /** Complete Markdown and the heading displayed by a plan preview. */
 export interface PlanDocument {

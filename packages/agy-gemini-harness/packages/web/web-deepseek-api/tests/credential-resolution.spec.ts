@@ -4,23 +4,23 @@
  * operation would send.
  */
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, FiberState } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { Gemini AntigravityAccount } from '@deepseek-ai/dsh-deepseek-account'
-import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as webApiPlugin from '@deepseek-ai/dsh-web-deepseek-api'
+import { Context, FiberState } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { Gemini AntigravityAccount } from '@gemini-agy/dsh-deepseek-account'
+import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import WebRuntime from '@gemini-agy/dsh-web'
+import * as webApiPlugin from '@gemini-agy/dsh-web-deepseek-api'
 import { provideRoutes, type RouteRow } from './routes.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** A value the API-key route resolver throws instead of resolving; undefined lets it resolve normally. */
 const resolverThrow = vi.hoisted(() => ({ value: undefined as string | undefined }))
 
-vi.mock('@deepseek-ai/dsh-llm-deepseek-api-key', async (importOriginal) => {
-  const original = await importOriginal<typeof import('@deepseek-ai/dsh-llm-deepseek-api-key')>()
+vi.mock('@gemini-agy/dsh-llm-deepseek-api-key', async (importOriginal) => {
+  const original = await importOriginal<typeof import('@gemini-agy/dsh-llm-deepseek-api-key')>()
   return {
     ...original,
     resolveAdapterOptions: (...args: Parameters<typeof original.resolveAdapterOptions>) => {

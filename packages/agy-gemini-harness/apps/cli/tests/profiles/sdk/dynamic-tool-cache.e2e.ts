@@ -4,9 +4,9 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { lastAssistantStreamChunk, type RetryPolicyConfig, type TokenUsage } from '@deepseek-ai/dsh-llm'
-import { Gemini AntigravityHarness } from '@deepseek-ai/dsh-sdk-client'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
+import { lastAssistantStreamChunk, type RetryPolicyConfig, type TokenUsage } from '@gemini-agy/dsh-llm'
+import { Gemini AntigravityHarness } from '@gemini-agy/dsh-sdk-client'
+import type { SessionEvent } from '@gemini-agy/dsh-session'
 import { describe, expect, it, onTestFinished } from 'vitest'
 
 const fixturePath = fileURLToPath(new URL('./fixtures/dynamic-tool-cache.mjs', import.meta.url))

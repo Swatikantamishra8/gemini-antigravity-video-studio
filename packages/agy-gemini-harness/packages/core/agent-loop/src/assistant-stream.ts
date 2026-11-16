@@ -1,6 +1,6 @@
 /** Process-local assistant attempt framing and durable stream accumulation. */
 
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import {
   AssistantStreamAccumulator,
   BlockAssembler,
@@ -11,9 +11,9 @@ import {
   type ReplayEnvelope,
   type StreamChunk,
   type TokenUsage,
-} from '@deepseek-ai/dsh-llm'
-import type { AssistantStreamFrame } from '@deepseek-ai/dsh-agent'
-import type { SessionEventMap, SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
+} from '@gemini-agy/dsh-llm'
+import type { AssistantStreamFrame } from '@gemini-agy/dsh-agent'
+import type { SessionEventMap, SessionId, SessionSeq } from '@gemini-agy/dsh-session'
 
 /** Folds one model attempt into one compact stream plus ordered transient frames. */
 export class AssistantStreamAttempt {

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-forge-github",
+  "name": "@gemini-agy/dsh-experimental-forge-github",
   "description": "GitHub provider for the experimental forge registry, read through the GitHub CLI on the host",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -28,25 +28,25 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/forge-github"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/dsh-util-values": "workspace:*",
     "execa": "^10.0.1",
     "zod": "4.6.6"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-experimental-forge": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-experimental-forge": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-experimental-forge": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*"
   }
 }

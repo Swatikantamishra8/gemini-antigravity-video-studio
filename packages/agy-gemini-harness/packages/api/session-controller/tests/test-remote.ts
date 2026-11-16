@@ -1,16 +1,16 @@
 /** Test-only direct Remote face over the Session Controller's internal controllers. */
 import type { SessionControllerInternals } from '../src/index.ts'
 
-import { SessionLogOffset } from '@deepseek-ai/dsh-session'
-import { Service, type Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ModelSelection as AgentModelSelection } from '@deepseek-ai/dsh-agent'
+import { SessionLogOffset } from '@gemini-agy/dsh-session'
+import { Service, type Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ModelSelection as AgentModelSelection } from '@gemini-agy/dsh-agent'
 import type {
   AdmittedPromptContentPart,
   AttachmentAdmissionPart,
   ImageAttachmentLimits,
-} from '@deepseek-ai/dsh-attachment'
-import type { SessionEvent, SessionHeader, SessionId } from '@deepseek-ai/dsh-session'
+} from '@gemini-agy/dsh-attachment'
+import type { SessionEvent, SessionHeader, SessionId } from '@gemini-agy/dsh-session'
 import type { SessionProjectionsValue } from '../src/types.ts'
 import {
   SessionPersistenceNotFoundError,
@@ -23,16 +23,16 @@ import {
   type SessionPersistenceOpenOptions,
   type SessionPersistenceSnapshot,
   type SessionPersistenceStatOptions,
-} from '@deepseek-ai/dsh-session-persistence'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
+} from '@gemini-agy/dsh-session-persistence'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SessionQueryEngine from '@gemini-agy/dsh-session-query'
 import { vi } from 'vitest'
 import {
   RemoteError,
   remoteErrorOf,
   type RemoteResult,
-} from '@deepseek-ai/dsh-typert-protocol'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
+} from '@gemini-agy/dsh-typert-protocol'
+import RemoteAccessService from '@gemini-agy/dsh-api-remote-access'
 import SessionController from '../src/index.ts'
 import type {
   ModelCatalog,

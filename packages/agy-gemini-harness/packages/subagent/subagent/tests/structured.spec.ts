@@ -1,21 +1,21 @@
-import { executeToolFixture, executeModelToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture, executeModelToolFixture } from '@gemini-agy/dsh-tool-testkit'
 import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId, type ContentBlock, type GenerateOptions } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createUserMessage, type ToolCallId, type ContentBlock, type GenerateOptions } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import type {} from '@gemini-agy/dsh-system-prompt'
 import SubagentRuntime, {
   type SubagentStartRequest,
   type SubagentActivation,
   type SubagentResult,
-} from '@deepseek-ai/dsh-subagent'
-import type { ObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import { RUN_CODE_NAME } from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+} from '@gemini-agy/dsh-subagent'
+import type { ObjectJsonSchema } from '@gemini-agy/dsh-tools'
+import { RUN_CODE_NAME } from '@gemini-agy/dsh-tools'
+import { defineContentToolFixture } from '@gemini-agy/dsh-tool-testkit'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { TestSessionQuery } from './test-session-query.ts'
 import { mountLocalActivations, startTestActivation } from './local-activation.ts'
@@ -57,7 +57,7 @@ async function setup(script: Script, options: SetupOptions = {}) {
     ctx.provide('ptcRuntime', {
       language: 'typescript',
       isolation: 'test',
-      resolve: (request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest) => ({ ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: 120_000 }),
+      resolve: (request: import('@gemini-agy/dsh-ptc-runtime').PtcRunRequest) => ({ ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: 120_000 }),
       run: options.codeRun ?? (() => Promise.resolve({ output: [] })),
     } as never)
   }

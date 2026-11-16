@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-web",
+  "name": "@gemini-agy/dsh-web",
   "description": "Abstract web access capability seam (ctx.web) for the Gemini Antigravity Harness — search/fetch provider registry, registration-order-independent selection, request/result vocabulary, and the WebError taxonomy",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/web/web"
   },
   "type": "module",
@@ -50,16 +50,16 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@gemini-agy/dsh-package-manifest": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
+    "@gemini-agy/dsh-typert-protocol": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

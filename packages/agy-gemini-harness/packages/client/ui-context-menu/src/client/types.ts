@@ -1,8 +1,8 @@
 /** Client menu contributions and explicit gesture targets. */
-import type { ShortcutCommandId } from '@deepseek-ai/dsh-client-shortcuts/client'
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { PaneId, TabRecord } from '@deepseek-ai/dsh-client-ui-dockkit'
+import type { ShortcutCommandId } from '@gemini-agy/dsh-client-shortcuts/client'
+import type { ObservableSnapshot } from '@gemini-agy/dsh-client-store'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { PaneId, TabRecord } from '@gemini-agy/dsh-client-ui-dockkit'
 import type { HTMLAttributes } from 'react'
 
 /** DOM handlers bound to an explicit object; existing handlers can prevent menu activation. */

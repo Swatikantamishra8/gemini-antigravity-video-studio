@@ -1,7 +1,7 @@
-/** Typed Office tool failures. @module @deepseek-ai/dsh-tool-office/src/error */
+/** Typed Office tool failures. @module @gemini-agy/dsh-tool-office/src/error */
 
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import type { OfficeKitErrorCode } from '@deepseek-ai/dsh-office-kit'
+import { HarnessError } from '@gemini-agy/dsh-error'
+import type { OfficeKitErrorCode } from '@gemini-agy/dsh-office-kit'
 
 /**
  * Every Office tool failure this package classifies itself:

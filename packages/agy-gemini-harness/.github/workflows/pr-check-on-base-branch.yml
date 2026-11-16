@@ -23,7 +23,7 @@ jobs:
           node-version: '24'
           package-manager-cache: false
 
-      - uses: deepseek-harness/deepseek-harness-check@master
+      - uses: agy-gemini-harness/agy-gemini-harness-check@master
         with:
           check: recheck
           base-branch: ${{ github.ref_name }}

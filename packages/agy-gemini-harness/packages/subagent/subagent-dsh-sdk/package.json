@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-subagent-dsh-sdk",
+  "name": "@gemini-agy/dsh-subagent-dsh-sdk",
   "description": "Out-of-process SDK subagent backend: drives a child Gemini Antigravity Harness runtime subprocess over stdio JSON-RPC through the TypeScript SDK client",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/subagent/subagent-dsh-sdk"
   },
   "type": "module",
@@ -32,38 +32,38 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sdk-client": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-sdk-client": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-subagent": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-instructions": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-sdk-client": "workspace:*",
-    "@deepseek-ai/dsh-sdk-protocol": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-skill-filesystem": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-subagent": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-agent": "workspace:*",
+    "@gemini-agy/dsh-agent-instructions": "workspace:*",
+    "@gemini-agy/dsh-app-boot": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/dsh-llm-deepseek": "workspace:*",
+    "@gemini-agy/dsh-llm-deepseek-api-key": "workspace:*",
+    "@gemini-agy/dsh-loader-smoke": "workspace:*",
+    "@gemini-agy/dsh-sdk-client": "workspace:*",
+    "@gemini-agy/dsh-sdk-protocol": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-session-checkpoint-policy": "workspace:*",
+    "@gemini-agy/dsh-session-persistence-jsonl": "workspace:*",
+    "@gemini-agy/dsh-session-projection": "workspace:*",
+    "@gemini-agy/dsh-skill-filesystem": "workspace:*",
+    "@gemini-agy/dsh-subagent": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-system-prompt": "workspace:*",
+    "@gemini-agy/dsh-tool-subagent": "workspace:*"
   }
 }

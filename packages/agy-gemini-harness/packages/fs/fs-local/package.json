@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-fs-local",
+  "name": "@gemini-agy/dsh-fs-local",
   "description": "Local-filesystem implementation of the Gemini Antigravity Harness filesystem seam (ctx.fs)",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/fs/fs-local"
   },
   "type": "module",
@@ -32,19 +32,19 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-brand": "workspace:*",
     "chokidar": "5.0.0",
     "koffi": "3.1.1",
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-fs-patch": "workspace:*"
+    "@gemini-agy/schemastery": "workspace:~",
+    "@gemini-agy/dsh-fs-patch": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-llm": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

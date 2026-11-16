@@ -1,8 +1,8 @@
 /** Provider-owned connection readiness and model admission on the shared Gemini Antigravity adapter. */
 import { afterEach, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { LlmError } from '@deepseek-ai/dsh-llm'
-import type { AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import { Context } from '@gemini-agy/cordis'
+import LlmRuntime, { LlmError } from '@gemini-agy/dsh-llm'
+import type { AnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
 import { Gemini AntigravityAdapter, registerGemini AntigravityProvider, resolveAdapterOptions } from '../src/index.ts'
 import type { Gemini AntigravityAdapterOptions, Gemini AntigravityCatalogModel } from '../src/index.ts'
 import { options as request, prepareExtensions } from './helpers.ts'

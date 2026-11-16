@@ -1,9 +1,9 @@
 /** A declarative preset row in an ordinary Cordis composition. */
-import { Context, Service } from '@deepseek-ai/cordis'
-import { EntryGroup } from '@deepseek-ai/cordis-plugin-loader'
-import z from '@deepseek-ai/schemastery'
-import type { PresetDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import type {} from '@deepseek-ai/dsh-agent-preset-registry'
+import { Context, Service } from '@gemini-agy/cordis'
+import { EntryGroup } from '@gemini-agy/cordis-plugin-loader'
+import z from '@gemini-agy/schemastery'
+import type { PresetDefinition } from '@gemini-agy/dsh-agent-preset-registry'
+import type {} from '@gemini-agy/dsh-agent-preset-registry'
 
 /** Definition submitted to the preset registry. */
 export type Config = PresetDefinition

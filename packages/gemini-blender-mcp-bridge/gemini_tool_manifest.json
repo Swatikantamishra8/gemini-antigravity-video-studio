@@ -1,0 +1,64 @@
+{
+  "tools": [
+    {
+      "name": "blender_create_primitive",
+      "description": "Create a 3D primitive geometry in Blender headless scene",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "type": {
+            "type": "STRING",
+            "enum": ["cube", "sphere", "cylinder", "plane", "cone", "torus"],
+            "description": "Type of 3D primitive to spawn"
+          },
+          "location": {
+            "type": "ARRAY",
+            "items": { "type": "NUMBER" },
+            "description": "3D coordinates [x, y, z]"
+          },
+          "scale": {
+            "type": "ARRAY",
+            "items": { "type": "NUMBER" },
+            "description": "3D scale factors [sx, sy, sz]"
+          }
+        },
+        "required": ["type"]
+      }
+    },
+    {
+      "name": "blender_assign_material",
+      "description": "Assign PBR standard material parameters to an existing Blender object",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "object_name": { "type": "STRING", "description": "Target object name in scene" },
+          "base_color": {
+            "type": "ARRAY",
+            "items": { "type": "NUMBER" },
+            "description": "RGBA color values [r, g, b, a] from 0.0 to 1.0"
+          },
+          "metallic": { "type": "NUMBER", "description": "Metallic reflectivity factor (0.0 - 1.0)" },
+          "roughness": { "type": "NUMBER", "description": "Surface roughness factor (0.0 - 1.0)" },
+          "emission_color": {
+            "type": "ARRAY",
+            "items": { "type": "NUMBER" },
+            "description": "RGB emission glow values"
+          }
+        },
+        "required": ["object_name"]
+      }
+    },
+    {
+      "name": "blender_export_gltf",
+      "description": "Export the assembled Blender 3D scene directly to glTF/GLB binary for Remotion 3D physics stage",
+      "parameters": {
+        "type": "OBJECT",
+        "properties": {
+          "filepath": { "type": "STRING", "description": "Destination file path ending in .glb or .gltf" },
+          "export_materials": { "type": "BOOLEAN", "description": "Whether to bundle materials and textures" }
+        },
+        "required": ["filepath"]
+      }
+    }
+  ]
+}

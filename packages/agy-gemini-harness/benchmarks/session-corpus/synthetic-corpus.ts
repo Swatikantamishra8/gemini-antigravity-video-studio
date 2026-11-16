@@ -2,12 +2,12 @@
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
-import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm/assistant-stream'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { MessageId, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionEventMap, SessionEventType, SessionHeader } from '@deepseek-ai/dsh-session'
+import { AssistantStreamAccumulator } from '@gemini-agy/dsh-llm/assistant-stream'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { MessageId, ToolCallId } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, StreamChunk } from '@gemini-agy/dsh-llm'
+import { SESSION_FORMAT_VERSION, type SessionId } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionEventMap, SessionEventType, SessionHeader } from '@gemini-agy/dsh-session'
 import {
   eventLines,
   generationLogPath,

@@ -1,4 +1,4 @@
-import type { GenerateOptions } from '@deepseek-ai/dsh-llm'
+import type { GenerateOptions } from '@gemini-agy/dsh-llm'
 import { expect } from 'vitest'
 
 /**

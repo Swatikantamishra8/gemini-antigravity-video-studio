@@ -1,15 +1,15 @@
 /** Windows provider registration through the Loader without an interactive desktop. */
-import { Context } from '@deepseek-ai/cordis'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import ComputerUseRegistry from '@deepseek-ai/dsh-computer-use'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SubprocessLocal from '@deepseek-ai/dsh-subprocess-local'
+import { Context } from '@gemini-agy/cordis'
+import Include from '@gemini-agy/cordis-plugin-include'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@gemini-agy/dsh-agent-loop-testkit'
+import ComputerUseRegistry from '@gemini-agy/dsh-computer-use'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import SubprocessLocal from '@gemini-agy/dsh-subprocess-local'
 import { expect, it, onTestFinished } from 'vitest'
 import * as WindowsProvider from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 it.skipIf(process.platform !== 'win32')('loads the Windows provider and rejects a numeric window ID before native dispatch', async () => {
   const ctx = new Context()

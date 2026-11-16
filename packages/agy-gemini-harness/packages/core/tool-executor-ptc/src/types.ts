@@ -1,12 +1,12 @@
 /**
  * Client-safe PTC dispatch events and message-source declarations.
  *
- * @module @deepseek-ai/dsh-tool-executor-ptc/types
+ * @module @gemini-agy/dsh-tool-executor-ptc/types
  */
 
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm/types'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { ToolCallId } from '@gemini-agy/dsh-llm/types'
+import type { ContentBlock } from '@gemini-agy/dsh-llm/types'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 
 /** Payload recorded when one nested PTC mode Tool dispatch starts. */
 export interface PtcDispatchStartEventData {
@@ -27,7 +27,7 @@ export interface PtcDispatchEventData extends PtcDispatchStartEventData {
   error?: { name: string; code: string; reason?: string }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@gemini-agy/dsh-session/types' {
   interface SessionEventMap {
     /**
      * One sub-dispatch STARTING inside a `run_code` program: the parent
@@ -62,7 +62,7 @@ declare module '@deepseek-ai/dsh-session/types' {
   }
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     /** PTC context, including deferred subcall images and host environment-reset notices. */
     'ptc-mode': { kind: 'ptc-mode' }

@@ -1,10 +1,10 @@
 /** Independent Session snapshots and passive event subscriptions. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import { SessionLogOffset, SessionSeq, isAppendSurfaceEvent } from '@deepseek-ai/dsh-session'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { RemoteError, remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@gemini-agy/cordis'
+import { SessionLogOffset, SessionSeq, isAppendSurfaceEvent } from '@gemini-agy/dsh-session'
+import type { SessionId, SessionEvent } from '@gemini-agy/dsh-session'
+import type { SessionObservation } from '@gemini-agy/dsh-session-query'
+import { RemoteError, remoteErrorOf } from '@gemini-agy/dsh-typert-protocol'
 import {
   DEFAULT_MAX_MESSAGES, paginate, pageRecords, entryFor, addressId,
   validateHistoryWindow, validateAddress, rejectNotFound,

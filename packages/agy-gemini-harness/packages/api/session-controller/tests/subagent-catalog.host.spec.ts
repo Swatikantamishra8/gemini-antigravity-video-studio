@@ -1,18 +1,18 @@
-import { Context } from '@deepseek-ai/cordis'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SessionStore, { SESSION_FORMAT_VERSION, SessionSeq, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
+import { Context } from '@gemini-agy/cordis'
+import { provideWorkingDirectoryFixture } from '@gemini-agy/dsh-agent-loop-testkit'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import SessionStore, { SESSION_FORMAT_VERSION, SessionSeq, type SessionId } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionHeader } from '@gemini-agy/dsh-session'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   createSessionTestController,
   installSessionReadTestServices,
   testSessionPersistence,
 } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const defaults = {
   defaultModelSelection: () => ({ provider: 'fixture', model: 'fixture-model' }),

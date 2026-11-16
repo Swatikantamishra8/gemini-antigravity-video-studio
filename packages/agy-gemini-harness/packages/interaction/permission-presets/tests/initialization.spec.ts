@@ -1,12 +1,12 @@
 /** Permission admission must finish before Agent creation completes. */
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import PermissionPresetService, { AUTO_PRESET } from '@deepseek-ai/dsh-permission-presets'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
+import { Context } from '@gemini-agy/cordis'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import PermissionPresetService, { AUTO_PRESET } from '@gemini-agy/dsh-permission-presets'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import ApprovalService from '@gemini-agy/dsh-user-approval'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 async function setup() {
   const ctx = new Context()

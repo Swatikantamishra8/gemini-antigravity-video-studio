@@ -4,27 +4,27 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { performance } from 'node:perf_hooks'
 import { scheduler } from 'node:timers/promises'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { agentPresetProjectionDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
-import type SessionController from '@deepseek-ai/dsh-api-session-controller'
-import { currentSessionMessageProjections } from '@deepseek-ai/dsh-session-format-catalog/message-projections'
-import { Session, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionProjectionCache, { checkpointRecord, projectionCacheDomainSpec } from '@deepseek-ai/dsh-session-projection-cache'
-import type { CheckpointRecord } from '@deepseek-ai/dsh-session-projection-cache'
-import SqliteSessionQueryEngine from '@deepseek-ai/dsh-session-query-sqlite'
-import * as SessionStatsPlugin from '@deepseek-ai/dsh-session-stats'
-import SessionTitleService from '@deepseek-ai/dsh-session-title'
-import * as SessionTurnOutlinePlugin from '@deepseek-ai/dsh-session-turn-outline'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import type { KvTable } from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
+import { Context } from '@gemini-agy/cordis'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import { agentPresetProjectionDefinition } from '@gemini-agy/dsh-agent-preset-registry'
+import RemoteAccessService from '@gemini-agy/dsh-api-remote-access'
+import type SessionController from '@gemini-agy/dsh-api-session-controller'
+import { currentSessionMessageProjections } from '@gemini-agy/dsh-session-format-catalog/message-projections'
+import { Session, SessionLogOffset } from '@gemini-agy/dsh-session'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import SessionProjectionCache, { checkpointRecord, projectionCacheDomainSpec } from '@gemini-agy/dsh-session-projection-cache'
+import type { CheckpointRecord } from '@gemini-agy/dsh-session-projection-cache'
+import SqliteSessionQueryEngine from '@gemini-agy/dsh-session-query-sqlite'
+import * as SessionStatsPlugin from '@gemini-agy/dsh-session-stats'
+import SessionTitleService from '@gemini-agy/dsh-session-title'
+import * as SessionTurnOutlinePlugin from '@gemini-agy/dsh-session-turn-outline'
+import Storage from '@gemini-agy/dsh-storage'
+import * as StorageDomain from '@gemini-agy/dsh-storage-domain'
+import type { KvTable } from '@gemini-agy/dsh-storage-domain'
+import * as StorageJson from '@gemini-agy/dsh-storage-json'
+import TokenMeter from '@gemini-agy/dsh-token-meter'
 import { assertBuiltBenchmarkRuntime } from '../support/built-worker.ts'
 import { serializeRecord } from '../../packages/storage/storage-json/src/format.ts'
 import { ANCHOR_COUNT } from './corpus-shape.ts'
@@ -360,10 +360,10 @@ async function measureFork(root: string, ranks: readonly number[]): Promise<Fork
 }
 
 assertBuiltBenchmarkRuntime(import.meta.url, Object.fromEntries([
-  '@deepseek-ai/dsh-api-session-controller',
-  '@deepseek-ai/dsh-session-persistence-jsonl',
-  '@deepseek-ai/dsh-session-query-sqlite',
-  '@deepseek-ai/dsh-session-projection-cache',
+  '@gemini-agy/dsh-api-session-controller',
+  '@gemini-agy/dsh-session-persistence-jsonl',
+  '@gemini-agy/dsh-session-query-sqlite',
+  '@gemini-agy/dsh-session-projection-cache',
 ].map(name => [name, import.meta.resolve(name)])))
 
 const USAGE = 'usage: session-corpus.worker.js <root> <anchors anchors...|seed name count|list count|search|fork ranks...>'

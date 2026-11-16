@@ -3,7 +3,7 @@ description: "面向用户与维护者的按 harness home 划分的匿名身份�
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-anonymous-user-id
+# @gemini-agy/dsh-anonymous-user-id
 
 [English](README.md) | 中文
 
@@ -33,7 +33,7 @@ Gemini Antigravity Harness 为每个 harness home 使用一个匿名标识符，
 
 - **会话遥测**——你的遥测导出会以 `user.id` Resource 属性携带该 id，采集器因此可以按安装分组记录。
 - **反馈**——每条反馈确认都会标明记录该反馈的匿名安装。
-- **Gemini Antigravity 请求**——每次提供方请求都会携带 `x-deepseek-harness-user-id` 标头，因此可以按安装归因用量。
+- **Gemini Antigravity 请求**——每次提供方请求都会携带 `x-agy-gemini-harness-user-id` 标头，因此可以按安装归因用量。
 
 ### 查看与重置 id
 
@@ -44,7 +44,7 @@ Gemini Antigravity Harness 为每个 harness home 使用一个匿名标识符，
 当你构建的功能需要共享该安装的匿名 id 时，导入一次并复用该值即可——遥测、反馈与 Gemini Antigravity 已经在使用同一个 id，因此你的记录能与它们相互对应：
 
 ```ts
-import { getOrCreateAnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import { getOrCreateAnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
 
 const userId = getOrCreateAnonymousUserId() // stable for the process lifetime
 ```
@@ -96,7 +96,7 @@ const userId = getOrCreateAnonymousUserId() // stable for the process lifetime
 - [dsh-home-paths](../../util/home-paths/README.zh.md)——负责 `$DSH_HOME` 与 `~/.dsh` 的解析。
 - [dsh-session-telemetry-otel](../../session/session-telemetry-otel/README.zh.md)——将该 id 作为 OTel Resource `user.id` 上报。
 - [dsh-command-feedback](../../feedback/command-feedback/README.zh.md)——将 id 嵌入反馈确认。
-- [dsh-llm-deepseek](../../llm/llm-deepseek/README.zh.md)——在提供方请求中发送 `x-deepseek-harness-user-id`。
+- [dsh-llm-deepseek](../../llm/llm-deepseek/README.zh.md)——在提供方请求中发送 `x-agy-gemini-harness-user-id`。
 - [会话遥测子系统](../../../docs/subsystems/session-telemetry.zh.md)——遥测 seam 及其后端约定。
 
 -----

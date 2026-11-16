@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /** Inspect the public Gemini 3.8 Flash High Code provider composition without invoking the product. */
 
-import { resolveConfigPath } from '@deepseek-ai/dsh-app-boot'
-import type {} from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-tools'
+import { resolveConfigPath } from '@gemini-agy/dsh-app-boot'
+import type {} from '@gemini-agy/dsh-subagent'
+import type {} from '@gemini-agy/dsh-tools'
 import { bootProductionProfile } from '../../../../../test-support/loader-smoke/tests/fixtures/production-profile.ts'
 
 const configPath = process.argv[2]

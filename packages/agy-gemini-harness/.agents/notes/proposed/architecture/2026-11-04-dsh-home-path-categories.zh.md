@@ -24,7 +24,7 @@ Status: proposed
 
 ### 路径辅助函数
 
-`@deepseek-ai/dsh-home-paths` 中的 [`dshPath(category, ...segments)`](../../../../packages/util/home-paths/src/index.ts) 返回 `<home>/<category>/<segments>`，不创建目录；`dshPath({ category, dshHome }, ...segments)` 基于显式配置的 home 解析路径。Loader `!!js` 配置表达式在 `dshHomePath` 之外也可以使用同一个函数。home 下的新路径使用 `dshPath`，并把负责方的目录名作为第一个路径段传入，该目录名通常是去掉 `@deepseek-ai/dsh-` 前缀的包名。`dshHomePath` 继续用于现有的顶层条目，`dshCachePath` 等同于 `dshPath('cache', ...)`。
+`@gemini-agy/dsh-home-paths` 中的 [`dshPath(category, ...segments)`](../../../../packages/util/home-paths/src/index.ts) 返回 `<home>/<category>/<segments>`，不创建目录；`dshPath({ category, dshHome }, ...segments)` 基于显式配置的 home 解析路径。Loader `!!js` 配置表达式在 `dshHomePath` 之外也可以使用同一个函数。home 下的新路径使用 `dshPath`，并把负责方的目录名作为第一个路径段传入，该目录名通常是去掉 `@gemini-agy/dsh-` 前缀的包名。`dshHomePath` 继续用于现有的顶层条目，`dshCachePath` 等同于 `dshPath('cache', ...)`。
 
 ### 约定的顶层条目
 
@@ -62,7 +62,7 @@ profile 目录内的文件，例如 `node_modules/`、`pnpm-lock.yaml`、`compat
 
 ### home 之外
 
-以下位置不在本提案范围内：`~/.agents`（`DSH_AGENTS_HOME`），与其他 agent 工具共享；Electron 的 `userData` 和 `logs`，由 Electron 管理；Python SDK 资源缓存 `~/.cache/deepseek-harness/resources`（`DSH_RESOURCE_CACHE`），在多个 home 之间共享；操作系统临时目录下的 spill 和子进程输出目录；以及开发者或发布脚本的状态，例如 `~/.dsh-desktop-signing`。
+以下位置不在本提案范围内：`~/.agents`（`DSH_AGENTS_HOME`），与其他 agent 工具共享；Electron 的 `userData` 和 `logs`，由 Electron 管理；Python SDK 资源缓存 `~/.cache/agy-gemini-harness/resources`（`DSH_RESOURCE_CACHE`），在多个 home 之间共享；操作系统临时目录下的 spill 和子进程输出目录；以及开发者或发布脚本的状态，例如 `~/.dsh-desktop-signing`。
 
 ## 备选方案
 

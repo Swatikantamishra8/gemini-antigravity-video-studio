@@ -8,307 +8,307 @@ The dsh-base bundle patch shared by the web, headless, sdk, and acp profiles; th
 ```mermaid
 flowchart LR
   cfg["packages/bundle/base/cordis.patch.yml<br/>cordis.yml"]
-  plugin_dsh_base_tool_plugin_manager["tool-plugin-manager<br/>@deepseek-ai/dsh-plugin-manager/tools"]
+  plugin_dsh_base_tool_plugin_manager["tool-plugin-manager<br/>@gemini-agy/dsh-plugin-manager/tools"]
   cfg --> plugin_dsh_base_tool_plugin_manager
-  plugin_dsh_base_plugin_manager["plugin-manager<br/>@deepseek-ai/dsh-plugin-manager"]
+  plugin_dsh_base_plugin_manager["plugin-manager<br/>@gemini-agy/dsh-plugin-manager"]
   cfg --> plugin_dsh_base_plugin_manager
-  plugin_dsh_base_timer["timer<br/>@deepseek-ai/cordis-plugin-timer"]
+  plugin_dsh_base_timer["timer<br/>@gemini-agy/cordis-plugin-timer"]
   cfg --> plugin_dsh_base_timer
-  plugin_dsh_base_hmr["hmr<br/>@deepseek-ai/dsh-hmr"]
+  plugin_dsh_base_hmr["hmr<br/>@gemini-agy/dsh-hmr"]
   cfg --> plugin_dsh_base_hmr
-  plugin_dsh_base_llm["llm<br/>@deepseek-ai/dsh-llm"]
+  plugin_dsh_base_llm["llm<br/>@gemini-agy/dsh-llm"]
   cfg --> plugin_dsh_base_llm
-  plugin_dsh_base_deepseek_llm_api_extensions["deepseek-llm-api-extensions<br/>@deepseek-ai/dsh-deepseek-llm-api-extensions"]
+  plugin_dsh_base_deepseek_llm_api_extensions["deepseek-llm-api-extensions<br/>@gemini-agy/dsh-deepseek-llm-api-extensions"]
   cfg --> plugin_dsh_base_deepseek_llm_api_extensions
-  plugin_dsh_base_session["session<br/>@deepseek-ai/dsh-session"]
+  plugin_dsh_base_session["session<br/>@gemini-agy/dsh-session"]
   cfg --> plugin_dsh_base_session
-  plugin_dsh_base_session_log_deepseek["session-log-deepseek<br/>@deepseek-ai/dsh-session-log-deepseek"]
+  plugin_dsh_base_session_log_deepseek["session-log-deepseek<br/>@gemini-agy/dsh-session-log-deepseek"]
   cfg --> plugin_dsh_base_session_log_deepseek
-  plugin_dsh_base_typert["typert<br/>@deepseek-ai/dsh-typert-registry"]
+  plugin_dsh_base_typert["typert<br/>@gemini-agy/dsh-typert-registry"]
   cfg --> plugin_dsh_base_typert
-  plugin_dsh_base_typert_loader["typert-loader<br/>@deepseek-ai/dsh-typert-loader"]
+  plugin_dsh_base_typert_loader["typert-loader<br/>@gemini-agy/dsh-typert-loader"]
   cfg --> plugin_dsh_base_typert_loader
-  plugin_dsh_base_typert_gateway["typert-gateway<br/>@deepseek-ai/dsh-api-gateway"]
+  plugin_dsh_base_typert_gateway["typert-gateway<br/>@gemini-agy/dsh-api-gateway"]
   cfg --> plugin_dsh_base_typert_gateway
-  plugin_dsh_base_remote_access["remote-access<br/>@deepseek-ai/dsh-api-remote-access"]
+  plugin_dsh_base_remote_access["remote-access<br/>@gemini-agy/dsh-api-remote-access"]
   cfg --> plugin_dsh_base_remote_access
-  plugin_dsh_base_session_title["session-title<br/>@deepseek-ai/dsh-session-title"]
+  plugin_dsh_base_session_title["session-title<br/>@gemini-agy/dsh-session-title"]
   cfg --> plugin_dsh_base_session_title
-  plugin_dsh_base_session_title_llm["session-title-llm<br/>@deepseek-ai/dsh-session-title-first-prompt-llm"]
+  plugin_dsh_base_session_title_llm["session-title-llm<br/>@gemini-agy/dsh-session-title-first-prompt-llm"]
   cfg --> plugin_dsh_base_session_title_llm
-  plugin_dsh_base_user_questions["user-questions<br/>@deepseek-ai/dsh-user-questions"]
+  plugin_dsh_base_user_questions["user-questions<br/>@gemini-agy/dsh-user-questions"]
   cfg --> plugin_dsh_base_user_questions
-  plugin_dsh_base_agent["agent<br/>@deepseek-ai/dsh-agent"]
+  plugin_dsh_base_agent["agent<br/>@gemini-agy/dsh-agent"]
   cfg --> plugin_dsh_base_agent
-  plugin_dsh_base_plugin_package_inventory_deepseek["plugin-package-inventory-deepseek<br/>@deepseek-ai/dsh-plugin-package-inventory-deepseek"]
+  plugin_dsh_base_plugin_package_inventory_deepseek["plugin-package-inventory-deepseek<br/>@gemini-agy/dsh-plugin-package-inventory-deepseek"]
   cfg --> plugin_dsh_base_plugin_package_inventory_deepseek
-  plugin_dsh_base_agent_default_model["agent-default-model<br/>@deepseek-ai/dsh-agent-default-model"]
+  plugin_dsh_base_agent_default_model["agent-default-model<br/>@gemini-agy/dsh-agent-default-model"]
   cfg --> plugin_dsh_base_agent_default_model
-  plugin_dsh_base_jobs["jobs<br/>@deepseek-ai/dsh-jobs-local"]
+  plugin_dsh_base_jobs["jobs<br/>@gemini-agy/dsh-jobs-local"]
   cfg --> plugin_dsh_base_jobs
-  plugin_dsh_base_llm_retry["llm-retry<br/>@deepseek-ai/dsh-llm-retry"]
+  plugin_dsh_base_llm_retry["llm-retry<br/>@gemini-agy/dsh-llm-retry"]
   cfg --> plugin_dsh_base_llm_retry
-  plugin_dsh_base_config_editor["config-editor<br/>@deepseek-ai/dsh-config-editor"]
+  plugin_dsh_base_config_editor["config-editor<br/>@gemini-agy/dsh-config-editor"]
   cfg --> plugin_dsh_base_config_editor
-  plugin_dsh_base_settings["settings<br/>@deepseek-ai/dsh-settings"]
+  plugin_dsh_base_settings["settings<br/>@gemini-agy/dsh-settings"]
   cfg --> plugin_dsh_base_settings
-  plugin_dsh_base_authorization["authorization<br/>@deepseek-ai/dsh-authorization"]
+  plugin_dsh_base_authorization["authorization<br/>@gemini-agy/dsh-authorization"]
   cfg --> plugin_dsh_base_authorization
-  plugin_dsh_base_deepseek_account["deepseek-account<br/>@deepseek-ai/dsh-deepseek-account"]
+  plugin_dsh_base_deepseek_account["deepseek-account<br/>@gemini-agy/dsh-deepseek-account"]
   cfg --> plugin_dsh_base_deepseek_account
-  plugin_dsh_base_credentials["credentials<br/>@deepseek-ai/dsh-credentials-local"]
+  plugin_dsh_base_credentials["credentials<br/>@gemini-agy/dsh-credentials-local"]
   cfg --> plugin_dsh_base_credentials
-  plugin_dsh_base_llm_pi_ai["llm-pi-ai<br/>@deepseek-ai/dsh-llm-pi-ai"]
+  plugin_dsh_base_llm_pi_ai["llm-pi-ai<br/>@gemini-agy/dsh-llm-pi-ai"]
   cfg --> plugin_dsh_base_llm_pi_ai
-  plugin_dsh_base_session_persistence_jsonl["session-persistence-jsonl<br/>@deepseek-ai/dsh-session-persistence-jsonl"]
+  plugin_dsh_base_session_persistence_jsonl["session-persistence-jsonl<br/>@gemini-agy/dsh-session-persistence-jsonl"]
   cfg --> plugin_dsh_base_session_persistence_jsonl
-  plugin_dsh_base_attachment_local["attachment-local<br/>@deepseek-ai/dsh-attachment-local"]
+  plugin_dsh_base_attachment_local["attachment-local<br/>@gemini-agy/dsh-attachment-local"]
   cfg --> plugin_dsh_base_attachment_local
-  plugin_dsh_base_session_query_sqlite["session-query-sqlite<br/>@deepseek-ai/dsh-session-query-sqlite"]
+  plugin_dsh_base_session_query_sqlite["session-query-sqlite<br/>@gemini-agy/dsh-session-query-sqlite"]
   cfg --> plugin_dsh_base_session_query_sqlite
-  plugin_dsh_base_working_directory["working-directory<br/>@deepseek-ai/dsh-working-directory"]
+  plugin_dsh_base_working_directory["working-directory<br/>@gemini-agy/dsh-working-directory"]
   cfg --> plugin_dsh_base_working_directory
-  plugin_dsh_base_tool_working_directory["tool-working-directory<br/>@deepseek-ai/dsh-tool-working-directory"]
+  plugin_dsh_base_tool_working_directory["tool-working-directory<br/>@gemini-agy/dsh-tool-working-directory"]
   cfg --> plugin_dsh_base_tool_working_directory
-  plugin_dsh_base_session_projection["session-projection<br/>@deepseek-ai/dsh-session-projection"]
+  plugin_dsh_base_session_projection["session-projection<br/>@gemini-agy/dsh-session-projection"]
   cfg --> plugin_dsh_base_session_projection
-  plugin_dsh_base_storage["storage<br/>@deepseek-ai/dsh-storage"]
+  plugin_dsh_base_storage["storage<br/>@gemini-agy/dsh-storage"]
   cfg --> plugin_dsh_base_storage
-  plugin_dsh_base_storage_json["storage-json<br/>@deepseek-ai/dsh-storage-json"]
+  plugin_dsh_base_storage_json["storage-json<br/>@gemini-agy/dsh-storage-json"]
   cfg --> plugin_dsh_base_storage_json
-  plugin_dsh_base_storage_domain["storage-domain<br/>@deepseek-ai/dsh-storage-domain"]
+  plugin_dsh_base_storage_domain["storage-domain<br/>@gemini-agy/dsh-storage-domain"]
   cfg --> plugin_dsh_base_storage_domain
-  plugin_dsh_base_session_projection_cache["session-projection-cache<br/>@deepseek-ai/dsh-session-projection-cache"]
+  plugin_dsh_base_session_projection_cache["session-projection-cache<br/>@gemini-agy/dsh-session-projection-cache"]
   cfg --> plugin_dsh_base_session_projection_cache
-  plugin_dsh_base_otel["otel<br/>@deepseek-ai/dsh-otel"]
+  plugin_dsh_base_otel["otel<br/>@gemini-agy/dsh-otel"]
   cfg --> plugin_dsh_base_otel
-  plugin_dsh_base_session_telemetry_otel["session-telemetry-otel<br/>@deepseek-ai/dsh-session-telemetry-otel"]
+  plugin_dsh_base_session_telemetry_otel["session-telemetry-otel<br/>@gemini-agy/dsh-session-telemetry-otel"]
   cfg --> plugin_dsh_base_session_telemetry_otel
-  plugin_dsh_base_subprocess["subprocess<br/>@deepseek-ai/dsh-subprocess-local"]
+  plugin_dsh_base_subprocess["subprocess<br/>@gemini-agy/dsh-subprocess-local"]
   cfg --> plugin_dsh_base_subprocess
-  plugin_dsh_base_sandbox["sandbox<br/>@deepseek-ai/dsh-sandbox-local"]
+  plugin_dsh_base_sandbox["sandbox<br/>@gemini-agy/dsh-sandbox-local"]
   cfg --> plugin_dsh_base_sandbox
-  plugin_dsh_base_sandbox_policy["sandbox-policy<br/>@deepseek-ai/dsh-sandbox-policy"]
+  plugin_dsh_base_sandbox_policy["sandbox-policy<br/>@gemini-agy/dsh-sandbox-policy"]
   cfg --> plugin_dsh_base_sandbox_policy
-  plugin_dsh_base_bash_sandbox["bash-sandbox<br/>@deepseek-ai/dsh-bash-sandbox"]
+  plugin_dsh_base_bash_sandbox["bash-sandbox<br/>@gemini-agy/dsh-bash-sandbox"]
   cfg --> plugin_dsh_base_bash_sandbox
-  plugin_dsh_base_pwsh_sandbox["pwsh-sandbox<br/>@deepseek-ai/dsh-pwsh-sandbox"]
+  plugin_dsh_base_pwsh_sandbox["pwsh-sandbox<br/>@gemini-agy/dsh-pwsh-sandbox"]
   cfg --> plugin_dsh_base_pwsh_sandbox
-  plugin_dsh_base_approval["approval<br/>@deepseek-ai/dsh-user-approval"]
+  plugin_dsh_base_approval["approval<br/>@gemini-agy/dsh-user-approval"]
   cfg --> plugin_dsh_base_approval
-  plugin_dsh_base_permission["permission<br/>@deepseek-ai/dsh-permission-presets"]
+  plugin_dsh_base_permission["permission<br/>@gemini-agy/dsh-permission-presets"]
   cfg --> plugin_dsh_base_permission
-  plugin_dsh_base_shell_env["shell-env<br/>@deepseek-ai/dsh-shell-env"]
+  plugin_dsh_base_shell_env["shell-env<br/>@gemini-agy/dsh-shell-env"]
   cfg --> plugin_dsh_base_shell_env
-  plugin_dsh_base_tool_bash["tool-bash<br/>@deepseek-ai/dsh-tool-bash"]
+  plugin_dsh_base_tool_bash["tool-bash<br/>@gemini-agy/dsh-tool-bash"]
   cfg --> plugin_dsh_base_tool_bash
-  plugin_dsh_base_tool_pwsh["tool-pwsh<br/>@deepseek-ai/dsh-tool-pwsh"]
+  plugin_dsh_base_tool_pwsh["tool-pwsh<br/>@gemini-agy/dsh-tool-pwsh"]
   cfg --> plugin_dsh_base_tool_pwsh
-  plugin_dsh_base_tool_jobs["tool-jobs<br/>@deepseek-ai/dsh-tool-jobs"]
+  plugin_dsh_base_tool_jobs["tool-jobs<br/>@gemini-agy/dsh-tool-jobs"]
   cfg --> plugin_dsh_base_tool_jobs
-  plugin_dsh_base_fs_observation_policy["fs-observation-policy<br/>@deepseek-ai/dsh-fs-observation-policy"]
+  plugin_dsh_base_fs_observation_policy["fs-observation-policy<br/>@gemini-agy/dsh-fs-observation-policy"]
   cfg --> plugin_dsh_base_fs_observation_policy
-  plugin_dsh_base_tool_fs["tool-fs<br/>@deepseek-ai/dsh-tool-fs"]
+  plugin_dsh_base_tool_fs["tool-fs<br/>@gemini-agy/dsh-tool-fs"]
   cfg --> plugin_dsh_base_tool_fs
-  plugin_dsh_base_tool_fs_search["tool-fs-search<br/>@deepseek-ai/dsh-tool-fs-search"]
+  plugin_dsh_base_tool_fs_search["tool-fs-search<br/>@gemini-agy/dsh-tool-fs-search"]
   cfg --> plugin_dsh_base_tool_fs_search
-  plugin_dsh_base_agent_instructions["agent-instructions<br/>@deepseek-ai/dsh-agent-instructions"]
+  plugin_dsh_base_agent_instructions["agent-instructions<br/>@gemini-agy/dsh-agent-instructions"]
   cfg --> plugin_dsh_base_agent_instructions
-  plugin_dsh_base_skill["skill<br/>@deepseek-ai/dsh-skill"]
+  plugin_dsh_base_skill["skill<br/>@gemini-agy/dsh-skill"]
   cfg --> plugin_dsh_base_skill
-  plugin_dsh_base_skill_filesystem["skill-filesystem<br/>@deepseek-ai/dsh-skill-filesystem"]
+  plugin_dsh_base_skill_filesystem["skill-filesystem<br/>@gemini-agy/dsh-skill-filesystem"]
   cfg --> plugin_dsh_base_skill_filesystem
-  plugin_dsh_base_tool_skill["tool-skill<br/>@deepseek-ai/dsh-tool-skill"]
+  plugin_dsh_base_tool_skill["tool-skill<br/>@gemini-agy/dsh-tool-skill"]
   cfg --> plugin_dsh_base_tool_skill
-  plugin_dsh_base_commands["commands<br/>@deepseek-ai/dsh-commands"]
+  plugin_dsh_base_commands["commands<br/>@gemini-agy/dsh-commands"]
   cfg --> plugin_dsh_base_commands
-  plugin_dsh_base_command_feedback["command-feedback<br/>@deepseek-ai/dsh-command-feedback"]
+  plugin_dsh_base_command_feedback["command-feedback<br/>@gemini-agy/dsh-command-feedback"]
   cfg --> plugin_dsh_base_command_feedback
-  plugin_dsh_base_goal["goal<br/>@deepseek-ai/dsh-goal"]
+  plugin_dsh_base_goal["goal<br/>@gemini-agy/dsh-goal"]
   cfg --> plugin_dsh_base_goal
-  plugin_dsh_base_goal_round_driver["goal-round-driver<br/>@deepseek-ai/dsh-goal-round-driver"]
+  plugin_dsh_base_goal_round_driver["goal-round-driver<br/>@gemini-agy/dsh-goal-round-driver"]
   cfg --> plugin_dsh_base_goal_round_driver
-  plugin_dsh_base_command_goal["command-goal<br/>@deepseek-ai/dsh-command-goal"]
+  plugin_dsh_base_command_goal["command-goal<br/>@gemini-agy/dsh-command-goal"]
   cfg --> plugin_dsh_base_command_goal
-  plugin_dsh_base_plan_mode["plan-mode<br/>@deepseek-ai/dsh-plan-mode"]
+  plugin_dsh_base_plan_mode["plan-mode<br/>@gemini-agy/dsh-plan-mode"]
   cfg --> plugin_dsh_base_plan_mode
-  plugin_dsh_base_token_meter["token-meter<br/>@deepseek-ai/dsh-token-meter"]
+  plugin_dsh_base_token_meter["token-meter<br/>@gemini-agy/dsh-token-meter"]
   cfg --> plugin_dsh_base_token_meter
-  plugin_dsh_base_compaction_basic["compaction-basic<br/>@deepseek-ai/dsh-compaction-basic"]
+  plugin_dsh_base_compaction_basic["compaction-basic<br/>@gemini-agy/dsh-compaction-basic"]
   cfg --> plugin_dsh_base_compaction_basic
-  plugin_dsh_base_command_compact["command-compact<br/>@deepseek-ai/dsh-command-compact"]
+  plugin_dsh_base_command_compact["command-compact<br/>@gemini-agy/dsh-command-compact"]
   cfg --> plugin_dsh_base_command_compact
-  plugin_dsh_base_subagent["subagent<br/>@deepseek-ai/dsh-subagent"]
+  plugin_dsh_base_subagent["subagent<br/>@gemini-agy/dsh-subagent"]
   cfg --> plugin_dsh_base_subagent
-  plugin_dsh_base_agent_team["agent-team<br/>@deepseek-ai/dsh-agent-team"]
+  plugin_dsh_base_agent_team["agent-team<br/>@gemini-agy/dsh-agent-team"]
   cfg --> plugin_dsh_base_agent_team
-  plugin_dsh_base_tool_agent_team["tool-agent-team<br/>@deepseek-ai/dsh-tool-agent-team"]
+  plugin_dsh_base_tool_agent_team["tool-agent-team<br/>@gemini-agy/dsh-tool-agent-team"]
   cfg --> plugin_dsh_base_tool_agent_team
-  plugin_dsh_base_subagent_spawn_in_process["subagent-spawn-in-process<br/>@deepseek-ai/dsh-subagent-spawn-in-process"]
+  plugin_dsh_base_subagent_spawn_in_process["subagent-spawn-in-process<br/>@gemini-agy/dsh-subagent-spawn-in-process"]
   cfg --> plugin_dsh_base_subagent_spawn_in_process
-  plugin_dsh_base_subagent_fork_in_process["subagent-fork-in-process<br/>@deepseek-ai/dsh-subagent-fork-in-process"]
+  plugin_dsh_base_subagent_fork_in_process["subagent-fork-in-process<br/>@gemini-agy/dsh-subagent-fork-in-process"]
   cfg --> plugin_dsh_base_subagent_fork_in_process
-  plugin_dsh_base_tool_subagent_control["tool-subagent-control<br/>@deepseek-ai/dsh-tool-subagent-control"]
+  plugin_dsh_base_tool_subagent_control["tool-subagent-control<br/>@gemini-agy/dsh-tool-subagent-control"]
   cfg --> plugin_dsh_base_tool_subagent_control
-  plugin_dsh_base_tool_subagent["tool-subagent<br/>@deepseek-ai/dsh-tool-subagent"]
+  plugin_dsh_base_tool_subagent["tool-subagent<br/>@gemini-agy/dsh-tool-subagent"]
   cfg --> plugin_dsh_base_tool_subagent
-  plugin_dsh_base_tool_subagent_fork["tool-subagent-fork<br/>@deepseek-ai/dsh-tool-subagent"]
+  plugin_dsh_base_tool_subagent_fork["tool-subagent-fork<br/>@gemini-agy/dsh-tool-subagent"]
   cfg --> plugin_dsh_base_tool_subagent_fork
-  plugin_dsh_base_ptc_runtime["ptc-runtime<br/>@deepseek-ai/dsh-ptc-runtime-node"]
+  plugin_dsh_base_ptc_runtime["ptc-runtime<br/>@gemini-agy/dsh-ptc-runtime-node"]
   cfg --> plugin_dsh_base_ptc_runtime
-  plugin_dsh_base_workflow_ptc["workflow-ptc<br/>@deepseek-ai/dsh-workflow-ptc"]
+  plugin_dsh_base_workflow_ptc["workflow-ptc<br/>@gemini-agy/dsh-workflow-ptc"]
   cfg --> plugin_dsh_base_workflow_ptc
-  plugin_dsh_base_tool_workflow["tool-workflow<br/>@deepseek-ai/dsh-tool-workflow"]
+  plugin_dsh_base_tool_workflow["tool-workflow<br/>@gemini-agy/dsh-tool-workflow"]
   cfg --> plugin_dsh_base_tool_workflow
-  plugin_dsh_base_timeout_policy["timeout-policy<br/>@deepseek-ai/dsh-tool-call-timeout-policy"]
+  plugin_dsh_base_timeout_policy["timeout-policy<br/>@gemini-agy/dsh-tool-call-timeout-policy"]
   cfg --> plugin_dsh_base_timeout_policy
-  plugin_dsh_base_spill_local["spill-local<br/>@deepseek-ai/dsh-spill-local"]
+  plugin_dsh_base_spill_local["spill-local<br/>@gemini-agy/dsh-spill-local"]
   cfg --> plugin_dsh_base_spill_local
-  plugin_dsh_base_spill_policy["spill-policy<br/>@deepseek-ai/dsh-spill-policy"]
+  plugin_dsh_base_spill_policy["spill-policy<br/>@gemini-agy/dsh-spill-policy"]
   cfg --> plugin_dsh_base_spill_policy
-  plugin_dsh_base_session_checkpoint_policy["session-checkpoint-policy<br/>@deepseek-ai/dsh-session-checkpoint-policy"]
+  plugin_dsh_base_session_checkpoint_policy["session-checkpoint-policy<br/>@gemini-agy/dsh-session-checkpoint-policy"]
   cfg --> plugin_dsh_base_session_checkpoint_policy
-  plugin_dsh_base_tool_result_pruner["tool-result-pruner<br/>@deepseek-ai/dsh-compaction-tool-result-pruner"]
+  plugin_dsh_base_tool_result_pruner["tool-result-pruner<br/>@gemini-agy/dsh-compaction-tool-result-pruner"]
   cfg --> plugin_dsh_base_tool_result_pruner
-  plugin_dsh_base_image_offload["image-offload<br/>@deepseek-ai/dsh-compaction-image-offload"]
+  plugin_dsh_base_image_offload["image-offload<br/>@gemini-agy/dsh-compaction-image-offload"]
   cfg --> plugin_dsh_base_image_offload
-  plugin_dsh_base_tool_todo["tool-todo<br/>@deepseek-ai/dsh-tool-todo"]
+  plugin_dsh_base_tool_todo["tool-todo<br/>@gemini-agy/dsh-tool-todo"]
   cfg --> plugin_dsh_base_tool_todo
-  plugin_dsh_base_tool_goal["tool-goal<br/>@deepseek-ai/dsh-tool-goal"]
+  plugin_dsh_base_tool_goal["tool-goal<br/>@gemini-agy/dsh-tool-goal"]
   cfg --> plugin_dsh_base_tool_goal
-  plugin_dsh_base_repeat_tool_reminder["repeat-tool-reminder<br/>@deepseek-ai/dsh-repeat-tool-reminder"]
+  plugin_dsh_base_repeat_tool_reminder["repeat-tool-reminder<br/>@gemini-agy/dsh-repeat-tool-reminder"]
   cfg --> plugin_dsh_base_repeat_tool_reminder
-  plugin_dsh_base_web["web<br/>@deepseek-ai/dsh-web"]
+  plugin_dsh_base_web["web<br/>@gemini-agy/dsh-web"]
   cfg --> plugin_dsh_base_web
-  plugin_dsh_base_web_search_deepseek["web-search-deepseek<br/>@deepseek-ai/dsh-web-search-deepseek"]
+  plugin_dsh_base_web_search_deepseek["web-search-deepseek<br/>@gemini-agy/dsh-web-search-deepseek"]
   cfg --> plugin_dsh_base_web_search_deepseek
-  plugin_dsh_base_web_deepseek_api["web-deepseek-api<br/>@deepseek-ai/dsh-web-deepseek-api"]
+  plugin_dsh_base_web_deepseek_api["web-deepseek-api<br/>@gemini-agy/dsh-web-deepseek-api"]
   cfg --> plugin_dsh_base_web_deepseek_api
-  plugin_dsh_base_web_fetch_http["web-fetch-http<br/>@deepseek-ai/dsh-web-fetch-http"]
+  plugin_dsh_base_web_fetch_http["web-fetch-http<br/>@gemini-agy/dsh-web-fetch-http"]
   cfg --> plugin_dsh_base_web_fetch_http
-  plugin_dsh_base_tool_web["tool-web<br/>@deepseek-ai/dsh-tool-web"]
+  plugin_dsh_base_tool_web["tool-web<br/>@gemini-agy/dsh-tool-web"]
   cfg --> plugin_dsh_base_tool_web
-  plugin_dsh_base_mcp_resources["mcp-resources<br/>@deepseek-ai/dsh-mcp-resources"]
+  plugin_dsh_base_mcp_resources["mcp-resources<br/>@gemini-agy/dsh-mcp-resources"]
   cfg --> plugin_dsh_base_mcp_resources
-  plugin_dsh_base_tools["tools<br/>@deepseek-ai/dsh-tools"]
+  plugin_dsh_base_tools["tools<br/>@gemini-agy/dsh-tools"]
   cfg --> plugin_dsh_base_tools
-  plugin_dsh_base_tool_executor_native["tool-executor-native<br/>@deepseek-ai/dsh-tool-executor-native"]
+  plugin_dsh_base_tool_executor_native["tool-executor-native<br/>@gemini-agy/dsh-tool-executor-native"]
   cfg --> plugin_dsh_base_tool_executor_native
-  plugin_dsh_base_tool_executor_ptc["tool-executor-ptc<br/>@deepseek-ai/dsh-tool-executor-ptc"]
+  plugin_dsh_base_tool_executor_ptc["tool-executor-ptc<br/>@gemini-agy/dsh-tool-executor-ptc"]
   cfg --> plugin_dsh_base_tool_executor_ptc
-  plugin_dsh_base_system_prompt["system-prompt<br/>@deepseek-ai/dsh-system-prompt"]
+  plugin_dsh_base_system_prompt["system-prompt<br/>@gemini-agy/dsh-system-prompt"]
   cfg --> plugin_dsh_base_system_prompt
-  plugin_dsh_base_agent_loop["agent-loop<br/>@deepseek-ai/dsh-agent-loop"]
+  plugin_dsh_base_agent_loop["agent-loop<br/>@gemini-agy/dsh-agent-loop"]
   cfg --> plugin_dsh_base_agent_loop
-  plugin_dsh_base_fs_sandbox["fs-sandbox<br/>@deepseek-ai/dsh-fs-sandbox"]
+  plugin_dsh_base_fs_sandbox["fs-sandbox<br/>@gemini-agy/dsh-fs-sandbox"]
   cfg --> plugin_dsh_base_fs_sandbox
-  plugin_dsh_base_llm_deepseek["llm-deepseek<br/>@deepseek-ai/dsh-llm-deepseek-api-key"]
+  plugin_dsh_base_llm_deepseek["llm-deepseek<br/>@gemini-agy/dsh-llm-deepseek-api-key"]
   cfg --> plugin_dsh_base_llm_deepseek
-  plugin_dsh_base_llm_deepseek_account["llm-deepseek-account<br/>@deepseek-ai/dsh-llm-deepseek-account"]
+  plugin_dsh_base_llm_deepseek_account["llm-deepseek-account<br/>@gemini-agy/dsh-llm-deepseek-account"]
   cfg --> plugin_dsh_base_llm_deepseek_account
 ```
 
 | Plugin id | Package / module |
 | --- | --- |
-| `tool-plugin-manager` | `@deepseek-ai/dsh-plugin-manager/tools` |
-| `plugin-manager` | `@deepseek-ai/dsh-plugin-manager` |
-| `timer` | `@deepseek-ai/cordis-plugin-timer` |
-| `hmr` | `@deepseek-ai/dsh-hmr` |
-| `llm` | `@deepseek-ai/dsh-llm` |
-| `deepseek-llm-api-extensions` | `@deepseek-ai/dsh-deepseek-llm-api-extensions` |
-| `session` | `@deepseek-ai/dsh-session` |
-| `session-log-deepseek` | `@deepseek-ai/dsh-session-log-deepseek` |
-| `typert` | `@deepseek-ai/dsh-typert-registry` |
-| `typert-loader` | `@deepseek-ai/dsh-typert-loader` |
-| `typert-gateway` | `@deepseek-ai/dsh-api-gateway` |
-| `remote-access` | `@deepseek-ai/dsh-api-remote-access` |
-| `session-title` | `@deepseek-ai/dsh-session-title` |
-| `session-title-llm` | `@deepseek-ai/dsh-session-title-first-prompt-llm` |
-| `user-questions` | `@deepseek-ai/dsh-user-questions` |
-| `agent` | `@deepseek-ai/dsh-agent` |
-| `plugin-package-inventory-deepseek` | `@deepseek-ai/dsh-plugin-package-inventory-deepseek` |
-| `agent-default-model` | `@deepseek-ai/dsh-agent-default-model` |
-| `jobs` | `@deepseek-ai/dsh-jobs-local` |
-| `llm-retry` | `@deepseek-ai/dsh-llm-retry` |
-| `config-editor` | `@deepseek-ai/dsh-config-editor` |
-| `settings` | `@deepseek-ai/dsh-settings` |
-| `authorization` | `@deepseek-ai/dsh-authorization` |
-| `deepseek-account` | `@deepseek-ai/dsh-deepseek-account` |
-| `credentials` | `@deepseek-ai/dsh-credentials-local` |
-| `llm-pi-ai` | `@deepseek-ai/dsh-llm-pi-ai` |
-| `session-persistence-jsonl` | `@deepseek-ai/dsh-session-persistence-jsonl` |
-| `attachment-local` | `@deepseek-ai/dsh-attachment-local` |
-| `session-query-sqlite` | `@deepseek-ai/dsh-session-query-sqlite` |
-| `working-directory` | `@deepseek-ai/dsh-working-directory` |
-| `tool-working-directory` | `@deepseek-ai/dsh-tool-working-directory` |
-| `session-projection` | `@deepseek-ai/dsh-session-projection` |
-| `storage` | `@deepseek-ai/dsh-storage` |
-| `storage-json` | `@deepseek-ai/dsh-storage-json` |
-| `storage-domain` | `@deepseek-ai/dsh-storage-domain` |
-| `session-projection-cache` | `@deepseek-ai/dsh-session-projection-cache` |
-| `otel` | `@deepseek-ai/dsh-otel` |
-| `session-telemetry-otel` | `@deepseek-ai/dsh-session-telemetry-otel` |
-| `subprocess` | `@deepseek-ai/dsh-subprocess-local` |
-| `sandbox` | `@deepseek-ai/dsh-sandbox-local` |
-| `sandbox-policy` | `@deepseek-ai/dsh-sandbox-policy` |
-| `bash-sandbox` | `@deepseek-ai/dsh-bash-sandbox` |
-| `pwsh-sandbox` | `@deepseek-ai/dsh-pwsh-sandbox` |
-| `approval` | `@deepseek-ai/dsh-user-approval` |
-| `permission` | `@deepseek-ai/dsh-permission-presets` |
-| `shell-env` | `@deepseek-ai/dsh-shell-env` |
-| `tool-bash` | `@deepseek-ai/dsh-tool-bash` |
-| `tool-pwsh` | `@deepseek-ai/dsh-tool-pwsh` |
-| `tool-jobs` | `@deepseek-ai/dsh-tool-jobs` |
-| `fs-observation-policy` | `@deepseek-ai/dsh-fs-observation-policy` |
-| `tool-fs` | `@deepseek-ai/dsh-tool-fs` |
-| `tool-fs-search` | `@deepseek-ai/dsh-tool-fs-search` |
-| `agent-instructions` | `@deepseek-ai/dsh-agent-instructions` |
-| `skill` | `@deepseek-ai/dsh-skill` |
-| `skill-filesystem` | `@deepseek-ai/dsh-skill-filesystem` |
-| `tool-skill` | `@deepseek-ai/dsh-tool-skill` |
-| `commands` | `@deepseek-ai/dsh-commands` |
-| `command-feedback` | `@deepseek-ai/dsh-command-feedback` |
-| `goal` | `@deepseek-ai/dsh-goal` |
-| `goal-round-driver` | `@deepseek-ai/dsh-goal-round-driver` |
-| `command-goal` | `@deepseek-ai/dsh-command-goal` |
-| `plan-mode` | `@deepseek-ai/dsh-plan-mode` |
-| `token-meter` | `@deepseek-ai/dsh-token-meter` |
-| `compaction-basic` | `@deepseek-ai/dsh-compaction-basic` |
-| `command-compact` | `@deepseek-ai/dsh-command-compact` |
-| `subagent` | `@deepseek-ai/dsh-subagent` |
-| `agent-team` | `@deepseek-ai/dsh-agent-team` |
-| `tool-agent-team` | `@deepseek-ai/dsh-tool-agent-team` |
-| `subagent-spawn-in-process` | `@deepseek-ai/dsh-subagent-spawn-in-process` |
-| `subagent-fork-in-process` | `@deepseek-ai/dsh-subagent-fork-in-process` |
-| `tool-subagent-control` | `@deepseek-ai/dsh-tool-subagent-control` |
-| `tool-subagent` | `@deepseek-ai/dsh-tool-subagent` |
-| `tool-subagent-fork` | `@deepseek-ai/dsh-tool-subagent` |
-| `ptc-runtime` | `@deepseek-ai/dsh-ptc-runtime-node` |
-| `workflow-ptc` | `@deepseek-ai/dsh-workflow-ptc` |
-| `tool-workflow` | `@deepseek-ai/dsh-tool-workflow` |
-| `timeout-policy` | `@deepseek-ai/dsh-tool-call-timeout-policy` |
-| `spill-local` | `@deepseek-ai/dsh-spill-local` |
-| `spill-policy` | `@deepseek-ai/dsh-spill-policy` |
-| `session-checkpoint-policy` | `@deepseek-ai/dsh-session-checkpoint-policy` |
-| `tool-result-pruner` | `@deepseek-ai/dsh-compaction-tool-result-pruner` |
-| `image-offload` | `@deepseek-ai/dsh-compaction-image-offload` |
-| `tool-todo` | `@deepseek-ai/dsh-tool-todo` |
-| `tool-goal` | `@deepseek-ai/dsh-tool-goal` |
-| `repeat-tool-reminder` | `@deepseek-ai/dsh-repeat-tool-reminder` |
-| `web` | `@deepseek-ai/dsh-web` |
-| `web-search-deepseek` | `@deepseek-ai/dsh-web-search-deepseek` |
-| `web-deepseek-api` | `@deepseek-ai/dsh-web-deepseek-api` |
-| `web-fetch-http` | `@deepseek-ai/dsh-web-fetch-http` |
-| `tool-web` | `@deepseek-ai/dsh-tool-web` |
-| `mcp-resources` | `@deepseek-ai/dsh-mcp-resources` |
-| `tools` | `@deepseek-ai/dsh-tools` |
-| `tool-executor-native` | `@deepseek-ai/dsh-tool-executor-native` |
-| `tool-executor-ptc` | `@deepseek-ai/dsh-tool-executor-ptc` |
-| `system-prompt` | `@deepseek-ai/dsh-system-prompt` |
-| `agent-loop` | `@deepseek-ai/dsh-agent-loop` |
-| `fs-sandbox` | `@deepseek-ai/dsh-fs-sandbox` |
-| `llm-deepseek` | `@deepseek-ai/dsh-llm-deepseek-api-key` |
-| `llm-deepseek-account` | `@deepseek-ai/dsh-llm-deepseek-account` |
+| `tool-plugin-manager` | `@gemini-agy/dsh-plugin-manager/tools` |
+| `plugin-manager` | `@gemini-agy/dsh-plugin-manager` |
+| `timer` | `@gemini-agy/cordis-plugin-timer` |
+| `hmr` | `@gemini-agy/dsh-hmr` |
+| `llm` | `@gemini-agy/dsh-llm` |
+| `deepseek-llm-api-extensions` | `@gemini-agy/dsh-deepseek-llm-api-extensions` |
+| `session` | `@gemini-agy/dsh-session` |
+| `session-log-deepseek` | `@gemini-agy/dsh-session-log-deepseek` |
+| `typert` | `@gemini-agy/dsh-typert-registry` |
+| `typert-loader` | `@gemini-agy/dsh-typert-loader` |
+| `typert-gateway` | `@gemini-agy/dsh-api-gateway` |
+| `remote-access` | `@gemini-agy/dsh-api-remote-access` |
+| `session-title` | `@gemini-agy/dsh-session-title` |
+| `session-title-llm` | `@gemini-agy/dsh-session-title-first-prompt-llm` |
+| `user-questions` | `@gemini-agy/dsh-user-questions` |
+| `agent` | `@gemini-agy/dsh-agent` |
+| `plugin-package-inventory-deepseek` | `@gemini-agy/dsh-plugin-package-inventory-deepseek` |
+| `agent-default-model` | `@gemini-agy/dsh-agent-default-model` |
+| `jobs` | `@gemini-agy/dsh-jobs-local` |
+| `llm-retry` | `@gemini-agy/dsh-llm-retry` |
+| `config-editor` | `@gemini-agy/dsh-config-editor` |
+| `settings` | `@gemini-agy/dsh-settings` |
+| `authorization` | `@gemini-agy/dsh-authorization` |
+| `deepseek-account` | `@gemini-agy/dsh-deepseek-account` |
+| `credentials` | `@gemini-agy/dsh-credentials-local` |
+| `llm-pi-ai` | `@gemini-agy/dsh-llm-pi-ai` |
+| `session-persistence-jsonl` | `@gemini-agy/dsh-session-persistence-jsonl` |
+| `attachment-local` | `@gemini-agy/dsh-attachment-local` |
+| `session-query-sqlite` | `@gemini-agy/dsh-session-query-sqlite` |
+| `working-directory` | `@gemini-agy/dsh-working-directory` |
+| `tool-working-directory` | `@gemini-agy/dsh-tool-working-directory` |
+| `session-projection` | `@gemini-agy/dsh-session-projection` |
+| `storage` | `@gemini-agy/dsh-storage` |
+| `storage-json` | `@gemini-agy/dsh-storage-json` |
+| `storage-domain` | `@gemini-agy/dsh-storage-domain` |
+| `session-projection-cache` | `@gemini-agy/dsh-session-projection-cache` |
+| `otel` | `@gemini-agy/dsh-otel` |
+| `session-telemetry-otel` | `@gemini-agy/dsh-session-telemetry-otel` |
+| `subprocess` | `@gemini-agy/dsh-subprocess-local` |
+| `sandbox` | `@gemini-agy/dsh-sandbox-local` |
+| `sandbox-policy` | `@gemini-agy/dsh-sandbox-policy` |
+| `bash-sandbox` | `@gemini-agy/dsh-bash-sandbox` |
+| `pwsh-sandbox` | `@gemini-agy/dsh-pwsh-sandbox` |
+| `approval` | `@gemini-agy/dsh-user-approval` |
+| `permission` | `@gemini-agy/dsh-permission-presets` |
+| `shell-env` | `@gemini-agy/dsh-shell-env` |
+| `tool-bash` | `@gemini-agy/dsh-tool-bash` |
+| `tool-pwsh` | `@gemini-agy/dsh-tool-pwsh` |
+| `tool-jobs` | `@gemini-agy/dsh-tool-jobs` |
+| `fs-observation-policy` | `@gemini-agy/dsh-fs-observation-policy` |
+| `tool-fs` | `@gemini-agy/dsh-tool-fs` |
+| `tool-fs-search` | `@gemini-agy/dsh-tool-fs-search` |
+| `agent-instructions` | `@gemini-agy/dsh-agent-instructions` |
+| `skill` | `@gemini-agy/dsh-skill` |
+| `skill-filesystem` | `@gemini-agy/dsh-skill-filesystem` |
+| `tool-skill` | `@gemini-agy/dsh-tool-skill` |
+| `commands` | `@gemini-agy/dsh-commands` |
+| `command-feedback` | `@gemini-agy/dsh-command-feedback` |
+| `goal` | `@gemini-agy/dsh-goal` |
+| `goal-round-driver` | `@gemini-agy/dsh-goal-round-driver` |
+| `command-goal` | `@gemini-agy/dsh-command-goal` |
+| `plan-mode` | `@gemini-agy/dsh-plan-mode` |
+| `token-meter` | `@gemini-agy/dsh-token-meter` |
+| `compaction-basic` | `@gemini-agy/dsh-compaction-basic` |
+| `command-compact` | `@gemini-agy/dsh-command-compact` |
+| `subagent` | `@gemini-agy/dsh-subagent` |
+| `agent-team` | `@gemini-agy/dsh-agent-team` |
+| `tool-agent-team` | `@gemini-agy/dsh-tool-agent-team` |
+| `subagent-spawn-in-process` | `@gemini-agy/dsh-subagent-spawn-in-process` |
+| `subagent-fork-in-process` | `@gemini-agy/dsh-subagent-fork-in-process` |
+| `tool-subagent-control` | `@gemini-agy/dsh-tool-subagent-control` |
+| `tool-subagent` | `@gemini-agy/dsh-tool-subagent` |
+| `tool-subagent-fork` | `@gemini-agy/dsh-tool-subagent` |
+| `ptc-runtime` | `@gemini-agy/dsh-ptc-runtime-node` |
+| `workflow-ptc` | `@gemini-agy/dsh-workflow-ptc` |
+| `tool-workflow` | `@gemini-agy/dsh-tool-workflow` |
+| `timeout-policy` | `@gemini-agy/dsh-tool-call-timeout-policy` |
+| `spill-local` | `@gemini-agy/dsh-spill-local` |
+| `spill-policy` | `@gemini-agy/dsh-spill-policy` |
+| `session-checkpoint-policy` | `@gemini-agy/dsh-session-checkpoint-policy` |
+| `tool-result-pruner` | `@gemini-agy/dsh-compaction-tool-result-pruner` |
+| `image-offload` | `@gemini-agy/dsh-compaction-image-offload` |
+| `tool-todo` | `@gemini-agy/dsh-tool-todo` |
+| `tool-goal` | `@gemini-agy/dsh-tool-goal` |
+| `repeat-tool-reminder` | `@gemini-agy/dsh-repeat-tool-reminder` |
+| `web` | `@gemini-agy/dsh-web` |
+| `web-search-deepseek` | `@gemini-agy/dsh-web-search-deepseek` |
+| `web-deepseek-api` | `@gemini-agy/dsh-web-deepseek-api` |
+| `web-fetch-http` | `@gemini-agy/dsh-web-fetch-http` |
+| `tool-web` | `@gemini-agy/dsh-tool-web` |
+| `mcp-resources` | `@gemini-agy/dsh-mcp-resources` |
+| `tools` | `@gemini-agy/dsh-tools` |
+| `tool-executor-native` | `@gemini-agy/dsh-tool-executor-native` |
+| `tool-executor-ptc` | `@gemini-agy/dsh-tool-executor-ptc` |
+| `system-prompt` | `@gemini-agy/dsh-system-prompt` |
+| `agent-loop` | `@gemini-agy/dsh-agent-loop` |
+| `fs-sandbox` | `@gemini-agy/dsh-fs-sandbox` |
+| `llm-deepseek` | `@gemini-agy/dsh-llm-deepseek-api-key` |
+| `llm-deepseek-account` | `@gemini-agy/dsh-llm-deepseek-account` |
 
 Source config: [`packages/bundle/base/cordis.patch.yml`](../../packages/bundle/base/cordis.patch.yml).
 

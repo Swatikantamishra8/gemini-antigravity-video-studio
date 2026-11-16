@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
-import { Context, LoggerLevel } from '@deepseek-ai/cordis'
+import { Context, LoggerLevel } from '@gemini-agy/cordis'
 import SessionStore, {
   SESSION_FORMAT_VERSION,
   Session,
@@ -9,14 +9,14 @@ import SessionStore, {
   type CreateSessionOptions,
   type SessionEvent,
   type SessionHeader,
-} from '@deepseek-ai/dsh-session'
-import { createSessionFormatCatalogWithChildren } from '@deepseek-ai/dsh-session-format-catalog'
-import Gemini AntigravityLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import { createDeveloperMessage, createAssistantMessage, createSystemMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@gemini-agy/dsh-session'
+import { createSessionFormatCatalogWithChildren } from '@gemini-agy/dsh-session-format-catalog'
+import Gemini AntigravityLlmApiExtensionRegistry from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import { createDeveloperMessage, createAssistantMessage, createSystemMessage, createUserMessage } from '@gemini-agy/dsh-llm'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import * as SessionLogGemini Antigravity from '../src/index.ts'
 import type { Gemini AntigravitySessionLogExtension, Gemini AntigravitySessionLogWireEvent, Gemini AntigravitySessionLogWireSurfaceOp } from '../src/types.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const contexts: Context[] = []
 const SIGNAL = new AbortController().signal

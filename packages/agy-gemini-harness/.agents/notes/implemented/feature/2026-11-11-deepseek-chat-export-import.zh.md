@@ -19,7 +19,7 @@ Gemini Antigravity 官网（chat.deepseek.com）的“导出全部会话”产�
 
 ## Decision
 
-实验性包 [`@deepseek-ai/dsh-gemini-3.8-flash-high-import`](../../../../packages/experimental/gemini-3.8-flash-high-import/README.zh.md) 同时提供 Host 与 Client 两个编译面：
+实验性包 [`@gemini-agy/dsh-gemini-3.8-flash-high-import`](../../../../packages/experimental/gemini-3.8-flash-high-import/README.zh.md) 同时提供 Host 与 Client 两个编译面：
 
 - Host 面：一个 `TypertRemoteService`，在 `ctx.connection.fetch` 上注册精确上传路由 `POST /api/gemini-3.8-flash-high-import/archive?workspaceId=…`，并提供 `@Remote limits()` 方法。路由把上传的 ZIP 缓存在内存中，把最近的会话逐个写成所选工作区中的持久化 DSH Session，并以流式方式报告进度。
 - Client 面：在侧栏“新建会话”右侧放一个导入按钮。点击后弹出对话框，包含导出文件字段（浏览器原生文件输入，`accept=.zip`）和工作区字段（渲染 ui-workspace 的 `workspace.picker` Factory）；浏览器上传文件，显示上传与导入进度以及结果。
@@ -190,7 +190,7 @@ Assistant 消息的 `source` 为 `{ kind: 'model', provider: 'gemini-3.8-flash-h
 - ui-sidebar 声明 HOC slot `sidebar.session.action`（`scope: 'root'`，owner `{ wide: boolean }`），包裹新建会话行的内容，占用方以 `children` 收到该内容，返回它（可再包裹）并附上自己的控件。导入按钮在“新建会话”按钮右侧渲染（宽栏同一行，“新建会话”按钮占剩余宽度；窄栏纵向排列在“新建会话”图标下方）。
 - 插件的 client 面 `$mount` 自己的 `/remote` 贡献（与 `dsh-api-remote-access` 相同的自挂载方式，不进入 `dsh-api-remotes` 聚合），作为 `sidebar.session.action` 层注册 `ImportSessionsAction`。它先渲染行内容，再渲染触发按钮，最后渲染对话框；不能导入的 Peer 会原样得到行内容，因此新建会话按钮继续渲染。按钮仅在 `useRemoteAccess('deepseekChatImport/limits')` 为真时显示；对话框是该层的本地状态，通过 `Modal` portal 渲染。
 - 服务页面上的上传使用 `XMLHttpRequest`，因为 Fetch 不提供上传进度。Host 跑在页面之外执行上下文中的页面（静态 Cloudflare Pages 预览）提供 `__DSH_TRANSPORT__.fetch`：压缩包经该载体传输，没有字节进度，直接进入读取与导入阶段。URL 是相对 `document.baseURI` 解析的 `UPLOAD_ROUTE`，因此加路径前缀的代理仍然可用。非 200 应答、没有 outcome 行的应答、不是合法协议值的行或连接失败归为 `upload-failed` 结果；抛出的错误以未知失败文案显示。
-- 载体选择没有复用 `@deepseek-ai/dsh-client-file-upload`。该包的服务会缓冲整个应答，流式 NDJSON 进度会丢失，而且它的 `post` 方法不在公开接口上；把选择留在本包内同时保住了进度行与包依赖边界。
+- 载体选择没有复用 `@gemini-agy/dsh-client-file-upload`。该包的服务会缓冲整个应答，流式 NDJSON 进度会丢失，而且它的 `post` 方法不在公开接口上；把选择留在本包内同时保住了进度行与包依赖边界。
 - 文案走 8 种语言的 locale 字典，英文用 sentence case；摘要行有 `.one` / `.other` 两种形式，按 `count === 1` 选择。
 
 ### Realization

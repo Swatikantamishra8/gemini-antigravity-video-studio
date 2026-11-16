@@ -1,11 +1,11 @@
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createToolResultMessage, createUserMessage, type ToolCallId, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type { Message, ToolSchema } from '@deepseek-ai/dsh-llm'
-import * as LlmPiAi from '@deepseek-ai/dsh-llm-pi-ai'
-import type { PiAiProviderProfile } from '@deepseek-ai/dsh-llm-pi-ai'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import LlmRuntime, { createToolResultMessage, createUserMessage, type ToolCallId, type ReasoningEffortId } from '@gemini-agy/dsh-llm'
+import type { Message, ToolSchema } from '@gemini-agy/dsh-llm'
+import * as LlmPiAi from '@gemini-agy/dsh-llm-pi-ai'
+import type { PiAiProviderProfile } from '@gemini-agy/dsh-llm-pi-ai'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
 import { assemble, type AssembledResult } from './assemble.ts'
 
 /**

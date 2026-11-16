@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-directory-picker-auto",
+  "name": "@gemini-agy/dsh-host-directory-picker-auto",
   "description": "Adaptive chooser of the directory-picker seam: resolves the host situation at boot and mounts the native or browse backend for the Gemini Antigravity Harness web GUI host",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/host/directory-picker-auto"
   },
   "type": "module",
@@ -32,28 +32,28 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-directory-picker-browse": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-directory-picker-native": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker-browse": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker-native": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-client-ui-directory-picker-browse": "workspace:*",
+    "@gemini-agy/dsh-client-ui-directory-picker-native": "workspace:*",
+    "@gemini-agy/dsh-host-directory-picker-browse": "workspace:*",
+    "@gemini-agy/dsh-host-directory-picker-native": "workspace:*",
+    "@gemini-agy/dsh-host-webserver": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-directory-picker-browse": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-directory-picker-native": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker-browse": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker-native": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-client-ui-directory-picker-browse": "workspace:*",
+    "@gemini-agy/dsh-client-ui-directory-picker-native": "workspace:*",
+    "@gemini-agy/dsh-host-directory-picker": "workspace:*",
+    "@gemini-agy/dsh-host-directory-picker-browse": "workspace:*",
+    "@gemini-agy/dsh-host-directory-picker-native": "workspace:*",
+    "@gemini-agy/dsh-host-webserver": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-launch-environment": "workspace:*"
+    "@gemini-agy/dsh-launch-environment": "workspace:*"
   }
 }

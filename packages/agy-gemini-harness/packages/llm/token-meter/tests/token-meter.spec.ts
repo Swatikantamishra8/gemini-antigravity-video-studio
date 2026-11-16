@@ -1,16 +1,16 @@
 import { describe, expect, expectTypeOf, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { AssistantStreamAccumulator, createAssistantMessage, createUserMessage, createSystemMessage, type ToolCallId, createMessage } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, Message, TokenUsage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionSeq, canonicalHeader } from '@deepseek-ai/dsh-session'
-import type { EpochHeader, SessionEvent, SessionSeq as SessionSeqType } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
-import type { TokenMeasurement, TokenMeterConfig } from '@deepseek-ai/dsh-token-meter'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { AssistantStreamAccumulator, createAssistantMessage, createUserMessage, createSystemMessage, type ToolCallId, createMessage } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, Message, TokenUsage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionSeq, canonicalHeader } from '@gemini-agy/dsh-session'
+import type { EpochHeader, SessionEvent, SessionSeq as SessionSeqType } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import TokenMeter from '@gemini-agy/dsh-token-meter'
+import type { TokenMeasurement, TokenMeterConfig } from '@gemini-agy/dsh-token-meter'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

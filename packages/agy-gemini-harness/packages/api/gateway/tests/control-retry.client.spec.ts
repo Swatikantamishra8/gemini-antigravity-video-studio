@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import type { ConnectionHandle } from '@deepseek-ai/dsh-api-remotes/client'
+import { RemoteError } from '@gemini-agy/dsh-typert-protocol'
+import type { ConnectionHandle } from '@gemini-agy/dsh-api-remotes/client'
 import {
   RemoteStreamCarrierError,
   RemoteStream,

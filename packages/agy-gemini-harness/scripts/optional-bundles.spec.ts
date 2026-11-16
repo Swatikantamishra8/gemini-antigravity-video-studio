@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os'
 import { dirname, join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { describe, expect, it, onTestFinished } from 'vitest'
-import type { EntryOptions } from '@deepseek-ai/cordis-plugin-loader'
+import type { EntryOptions } from '@gemini-agy/cordis-plugin-loader'
 import { loadOverlayPatches } from '../packages/boot/app-boot/src/index.ts'
 import { readPluginMeta } from '../packages/boot/app-boot/src/package-meta.ts'
 import { bundlePatchPaths, composeEntries, initProfile, readProfileManifest } from '../packages/boot/app-boot/src/profile.ts'
@@ -33,14 +33,14 @@ function bundle(name: string): { dir: string; patches: ReturnType<typeof loadOve
 }
 
 /** Optional bundles that compose a profile of their own; the plugin page hides them, the Host inventory still reports them. */
-const STANDALONE_PROFILE_BUNDLES: readonly string[] = ['@deepseek-ai/dsh-cua-mcp']
+const STANDALONE_PROFILE_BUNDLES: readonly string[] = ['@gemini-agy/dsh-cua-mcp']
 
 const lightweight = [
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-experimental-terminal-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
+  '@gemini-agy/dsh-experimental-session-search',
+  '@gemini-agy/dsh-experimental-ralph-bundle',
+  '@gemini-agy/dsh-experimental-terminal-bundle',
+  '@gemini-agy/dsh-experimental-badge-skill-bundle',
+  '@gemini-agy/dsh-experimental-session-titles-bundle',
 ]
 
 function presetRows(entries: EntryOptions[], id: string): EntryOptions[] {
@@ -64,7 +64,7 @@ function profileLayers(surface: 'web' | 'desktop'): ReturnType<typeof loadOverla
 }
 
 describe.each(['web', 'desktop'] as const)('%s optional bundle overrides', (surface) => {
-  const selectedNames = ['@deepseek-ai/dsh-experimental-badge-skill-bundle', '@deepseek-ai/dsh-experimental-ralph-bundle']
+  const selectedNames = ['@gemini-agy/dsh-experimental-badge-skill-bundle', '@gemini-agy/dsh-experimental-ralph-bundle']
 
   it('keeps established selectors for later configuration and disabled overrides', () => {
     const shipped = profileLayers(surface)
@@ -75,9 +75,9 @@ describe.each(['web', 'desktop'] as const)('%s optional bundle overrides', (surf
       { id: 'tool-ralph', config, disabled: true },
     ]], warning => warnings.push(warning))
     expect(warnings).toEqual([])
-    expect(entries.find(row => row.id === 'skill-badge')).toMatchObject({ name: '@deepseek-ai/dsh-skill-badge', disabled: true })
+    expect(entries.find(row => row.id === 'skill-badge')).toMatchObject({ name: '@gemini-agy/dsh-skill-badge', disabled: true })
     expect(flattenRows(entries).find(row => row.id === 'tool-ralph'))
-      .toMatchObject({ name: '@deepseek-ai/dsh-tool-ralph', config, disabled: true })
+      .toMatchObject({ name: '@gemini-agy/dsh-tool-ralph', config, disabled: true })
     expect(entries.find(row => row.id === 'optional-ralph')?.isolate).toEqual({ workflowEngine: true })
   })
 
@@ -97,20 +97,20 @@ describe.each(['web', 'desktop'] as const)('%s optional bundle overrides', (surf
 
 describe('optional bundles', () => {
   it('admits Computer Use on macOS and native Windows Hosts', () => {
-    expect(bundles.get('@deepseek-ai/dsh-cua-bundle')?.manifest.dsh?.bundle?.platforms).toEqual(['darwin', 'win32'])
+    expect(bundles.get('@gemini-agy/dsh-cua-bundle')?.manifest.dsh?.bundle?.platforms).toEqual(['darwin', 'win32'])
   })
-  const shipped = ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'].map(name => bundle(name).patches)
+  const shipped = ['@gemini-agy/dsh-base', '@gemini-agy/dsh-web-app'].map(name => bundle(name).patches)
 
   it('ships at least one bundle switched off', () => {
     expect(OPTIONAL_BUNDLES.length).toBeGreaterThan(0)
   })
 
   it('keeps the Inspector out of the default plugin list', () => {
-    expect(OPTIONAL_BUNDLES).not.toContain('@deepseek-ai/dsh-experimental-inspector')
+    expect(OPTIONAL_BUNDLES).not.toContain('@gemini-agy/dsh-experimental-inspector')
   })
 
   it.each(['web', 'desktop'] as const)('requires explicit selection of Timeline on %s', (surface) => {
-    const name = '@deepseek-ai/dsh-timeline'
+    const name = '@gemini-agy/dsh-timeline'
     const layers = profileLayers(surface)
     expect(OPTIONAL_BUNDLES).toContain(name)
     expect(flattenRows(composeEntries(layers)).some(row => row.name === name)).toBe(false)
@@ -162,39 +162,39 @@ describe('optional bundles', () => {
   })
 
   it('retains the standalone worktree bundle for explicit profiles', () => {
-    const name = '@deepseek-ai/dsh-experimental-tool-worktree'
+    const name = '@gemini-agy/dsh-experimental-tool-worktree'
     expect(OPTIONAL_BUNDLES).toContain(name)
     for (const template of Object.values(PROFILE_TEMPLATES)) expect(template.bundles).not.toContain(name)
     const rows = composeEntries([...shipped, bundle(name).patches])
-    for (const moduleName of [name, '@deepseek-ai/dsh-experimental-worktree']) {
+    for (const moduleName of [name, '@gemini-agy/dsh-experimental-worktree']) {
       expect(composeEntries(shipped).some(row => row.name === moduleName)).toBe(false)
       expect(rows.filter(row => row.name === moduleName && row.disabled !== true)).toHaveLength(1)
     }
   })
 
   it('offers the forge panel and model worktree tool together over one worktree service', () => {
-    const name = '@deepseek-ai/dsh-experimental-forge-bundle'
+    const name = '@gemini-agy/dsh-experimental-forge-bundle'
     expect(OPTIONAL_BUNDLES).toContain(name)
     for (const template of Object.values(PROFILE_TEMPLATES)) expect(template.bundles).not.toContain(name)
     const rows = flattenRows(composeEntries([...shipped, bundle(name).patches]))
     for (const moduleName of [
-      '@deepseek-ai/dsh-experimental-forge',
-      '@deepseek-ai/dsh-experimental-forge-github',
-      '@deepseek-ai/dsh-experimental-forge-session',
-      '@deepseek-ai/dsh-experimental-client-ui-forge',
-      '@deepseek-ai/dsh-experimental-tool-worktree',
+      '@gemini-agy/dsh-experimental-forge',
+      '@gemini-agy/dsh-experimental-forge-github',
+      '@gemini-agy/dsh-experimental-forge-session',
+      '@gemini-agy/dsh-experimental-client-ui-forge',
+      '@gemini-agy/dsh-experimental-tool-worktree',
     ]) {
       expect(flattenRows(composeEntries(shipped)).some(row => row.name === moduleName)).toBe(false)
       expect(rows.filter(row => row.name === moduleName && row.disabled !== true)).toHaveLength(1)
     }
     expect(composeEntries([...shipped, bundle(name).patches]).some(row => row.name === 'cordis:group' && row.id === 'optional-forge-panel')).toBe(false)
-    expect(rows.filter(row => row.name === '@deepseek-ai/dsh-experimental-worktree')).toHaveLength(1)
+    expect(rows.filter(row => row.name === '@gemini-agy/dsh-experimental-worktree')).toHaveLength(1)
   })
 
   it('keeps the existing tool and panel row overrides addressable in the unified bundle', () => {
     const config = { directory: '.agents/custom-worktrees' }
     const warnings: string[] = []
-    const composed = composeEntries([...shipped, bundle('@deepseek-ai/dsh-experimental-forge-bundle').patches, [
+    const composed = composeEntries([...shipped, bundle('@gemini-agy/dsh-experimental-forge-bundle').patches, [
       { id: 'worktree', config },
       { id: 'tool-worktree', disabled: true },
       { id: 'forge-panel', disabled: true },
@@ -233,21 +233,21 @@ describe('optional bundles', () => {
     const composed = composeEntries([...shipped, ...lightweight.map(name => bundle(name).patches)])
     const names = flattenRows(composed).map(row => row.name)
     for (const name of [
-      '@deepseek-ai/dsh-tool-session-query',
-      '@deepseek-ai/dsh-tool-ralph', '@deepseek-ai/dsh-tool-terminal',
+      '@gemini-agy/dsh-tool-session-query',
+      '@gemini-agy/dsh-tool-ralph', '@gemini-agy/dsh-tool-terminal',
     ]) expect(names).toContain(name)
     expect(composed.find(row => row.id === 'optional-ralph')?.isolate).toEqual({ workflowEngine: true })
     expect(composed.find(row => row.id === 'optional-persistent-terminals')?.isolate).toEqual({ terminals: true })
     const search = composed.find(row => row.id === 'optional-session-search')
     expect(search?.isolate).toEqual({ sessionQuery: true })
     expect(search?.config).toEqual([
-      { id: 'optional-session-query-sqlite', name: '@deepseek-ai/dsh-session-query-sqlite', config: { path: ':memory:', openAt: 'first-search' } },
-      { id: 'optional-tool-session-query', name: '@deepseek-ai/dsh-tool-session-query' },
+      { id: 'optional-session-query-sqlite', name: '@gemini-agy/dsh-session-query-sqlite', config: { path: ':memory:', openAt: 'first-search' } },
+      { id: 'optional-tool-session-query', name: '@gemini-agy/dsh-tool-session-query' },
     ])
     expect(composed.find(row => row.id === 'session-query-sqlite')?.config).toEqual({ path: ':memory:', openAt: 'never' })
     expect(composed.find(row => row.id === 'session-title-llm')?.disabled).toBe(true)
     expect(composed.find(row => row.id === 'optional-session-title-all-prompts')?.name)
-      .toBe('@deepseek-ai/dsh-session-title-all-prompts-llm')
+      .toBe('@gemini-agy/dsh-session-title-all-prompts-llm')
   })
 
   it('delivers the Schedule service and task page without a Host clock row', () => {
@@ -255,8 +255,8 @@ describe('optional bundles', () => {
     // The delivered composition carries the Host Schedule service and its task
     // page enabled; the clock stays preset-level, so no Host row declares it.
     for (const row of [
-      { id: 'schedule', name: '@deepseek-ai/dsh-schedule' },
-      { id: 'ui-schedule', name: '@deepseek-ai/dsh-client-ui-schedule' },
+      { id: 'schedule', name: '@gemini-agy/dsh-schedule' },
+      { id: 'ui-schedule', name: '@gemini-agy/dsh-client-ui-schedule' },
     ]) {
       expect(composed.filter(entry => entry.id === row.id && entry.name === row.name && entry.disabled !== true))
         .toHaveLength(1)
@@ -284,8 +284,8 @@ describe('optional bundles', () => {
     for (const id of ['preset-standard', 'preset-cordis', 'preset-ptc']) {
       const plugins = presetPlugins(id)
       for (const plugin of [
-        { id: 'time-context', name: '@deepseek-ai/dsh-time-context' },
-        { id: 'tool-schedule', name: '@deepseek-ai/dsh-tool-schedule' },
+        { id: 'time-context', name: '@gemini-agy/dsh-time-context' },
+        { id: 'tool-schedule', name: '@gemini-agy/dsh-tool-schedule' },
       ]) {
         const matches = plugins.filter(row => row.id === plugin.id && row.name === plugin.name)
         expect(matches).toHaveLength(1)
@@ -298,8 +298,8 @@ describe('optional bundles', () => {
       }
     }
     // `minimal` declares neither, so it composes no clock reading and no reminder tool.
-    expect(presetPlugins('preset-minimal').some(row => row.name === '@deepseek-ai/dsh-time-context'
-      || row.name === '@deepseek-ai/dsh-tool-schedule')).toBe(false)
+    expect(presetPlugins('preset-minimal').some(row => row.name === '@gemini-agy/dsh-time-context'
+      || row.name === '@gemini-agy/dsh-tool-schedule')).toBe(false)
   })
 
   it.each(OPTIONAL_BUNDLES)('%s resolves a title, description, and icon in both shipped languages', (name) => {

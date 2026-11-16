@@ -1,8 +1,8 @@
 /** Card and waterfall settlement edges the composer and plugin specs do not reach. */
 import { describe, expect, it, vi } from 'vitest'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
 import { createWaterfallRequest, PendingQuestion } from '../src/client/contract/slots.ts'
 
 const SID = 's1' as SessionId

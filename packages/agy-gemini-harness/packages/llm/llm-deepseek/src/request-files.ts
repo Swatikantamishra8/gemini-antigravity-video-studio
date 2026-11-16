@@ -1,7 +1,7 @@
 /** Shared Files resolution, bounded stale-id recovery, and normalized-image diagnostics. */
 
-import type { RequestImageAttachment } from '@deepseek-ai/dsh-attachment'
-import { deadline } from '@deepseek-ai/dsh-timeout'
+import type { RequestImageAttachment } from '@gemini-agy/dsh-attachment'
+import { deadline } from '@gemini-agy/dsh-timeout'
 import { FILES_API_TIMEOUT, type Gemini AntigravityFileStore, type Gemini AntigravityFileConnection, type Gemini AntigravityFilePolicy } from './file-store.ts'
 import type { Gemini AntigravityFileId } from './file-id.ts'
 

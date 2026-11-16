@@ -20,7 +20,7 @@ Gemini Antigravity Search 与 Fetch API（`web-deepseek-api`）过去只在 `dee
 1. 要禁用新增的账号回退，在 `web-deepseek-api` 行把两个能力都设为 `api-key`；也可以在**插件 > 内置插件配置 > 网页搜索与获取**中，选中相应的 Gemini Antigravity API 后选择 **Gemini Antigravity API Key**：
 
    ```yaml
-   - name: '@deepseek-ai/dsh-web-deepseek-api'
+   - name: '@gemini-agy/dsh-web-deepseek-api'
      config:
        searchBilling: api-key
        fetchBilling: api-key

@@ -5,12 +5,12 @@ import {
   IconCloseOutlineRegular,
   IconRightUpOutlineRegular,
   Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type { ObservableSnapshot, PropsStore } from '@deepseek-ai/dsh-client-store'
-import type { ConfigFormSnapshot } from '@deepseek-ai/dsh-client-ui-settings/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session/client'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import type { ObservableSnapshot, PropsStore } from '@gemini-agy/dsh-client-store'
+import type { ConfigFormSnapshot } from '@gemini-agy/dsh-client-ui-settings/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
+import type {} from '@gemini-agy/dsh-client-ui-session/client'
 import type { Config } from '../config.ts'
 import type { Tree } from '../records.ts'
 import { measureAll } from '../tasks.ts'

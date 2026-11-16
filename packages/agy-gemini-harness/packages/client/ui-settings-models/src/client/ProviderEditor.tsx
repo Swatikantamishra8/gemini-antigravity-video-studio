@@ -23,9 +23,9 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { CredentialInfo, LlmNativeAuth, SettingsNamespaceView, SettingsPathOpView } from '@deepseek-ai/dsh-api-remotes/client'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import { Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
+import type { CredentialInfo, LlmNativeAuth, SettingsNamespaceView, SettingsPathOpView } from '@gemini-agy/dsh-api-remotes/client'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
+import { Tooltip } from '@gemini-agy/dsh-client-ui-primitives'
 import {
   Gemini AntigravityModelsEditor, modelDrafts, validateGemini AntigravityModels,
 } from './Gemini AntigravityModelsEditor.tsx'

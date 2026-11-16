@@ -1,6 +1,6 @@
 /** Validate and capture the binding names available to one program. */
-import { PtcImage, RESERVED_BINDING_WORDS, PtcRuntimeError, RESERVED_BINDING_GLOBALS, RESERVED_ERROR_MEMBERS } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcBindingFunction, PtcBindingNamespace, PtcJsonValue, PtcProgramFormat, PtcRunRequest } from '@deepseek-ai/dsh-ptc-runtime'
+import { PtcImage, RESERVED_BINDING_WORDS, PtcRuntimeError, RESERVED_BINDING_GLOBALS, RESERVED_ERROR_MEMBERS } from '@gemini-agy/dsh-ptc-runtime'
+import type { PtcBindingFunction, PtcBindingNamespace, PtcJsonValue, PtcProgramFormat, PtcRunRequest } from '@gemini-agy/dsh-ptc-runtime'
 import { snapshotPtcJsonValue, encodePtcJsonWire, type PtcJsonWire, type PtcImageWire } from './json-wire.ts'
 import { RESERVED_PREFIX } from './evaluators/scoped-repl.ts'
 const IDENTIFIER = /^[A-Za-z_$][A-Za-z0-9_$]*$/

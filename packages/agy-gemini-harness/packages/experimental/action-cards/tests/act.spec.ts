@@ -1,8 +1,8 @@
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { z } from 'zod'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import type { Agent } from '@gemini-agy/dsh-agent'
 import type { ActionCardProposalOf, ActionCardResult } from '../src/index.ts'
 import { ACTION, callId, fixture, proposal, type TestDetails } from './fixture.ts'
 

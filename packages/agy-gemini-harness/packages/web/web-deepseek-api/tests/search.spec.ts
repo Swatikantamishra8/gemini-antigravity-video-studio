@@ -1,18 +1,18 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { Session } from '@deepseek-ai/dsh-session'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { Session } from '@gemini-agy/dsh-session'
+import WebRuntime from '@gemini-agy/dsh-web'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
 import {
   Gemini AntigravitySearchApiProvider,
   DEEPSEEK_WEB_API_BASE_URL,
   mapSearchResponse,
   type Gemini AntigravitySearchApiOptions,
-} from '@deepseek-ai/dsh-web-deepseek-api'
-import * as webApiPlugin from '@deepseek-ai/dsh-web-deepseek-api'
-import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
+} from '@gemini-agy/dsh-web-deepseek-api'
+import * as webApiPlugin from '@gemini-agy/dsh-web-deepseek-api'
+import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
 import { customGuidance } from './guidance.ts'
 
 /** Construct the provider over a fixed options value; production passes a live thunk. */

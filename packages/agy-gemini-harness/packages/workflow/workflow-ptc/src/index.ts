@@ -1,21 +1,21 @@
 /**
  * Workflow orchestration through the shared sandboxed Node PTC executor.
  * The VM supplies script helpers; the process applies the calling Session's file policy.
- * @module @deepseek-ai/dsh-workflow-ptc
+ * @module @gemini-agy/dsh-workflow-ptc
  */
 
 import { randomUUID } from 'node:crypto'
 import { availableParallelism } from 'node:os'
 import * as vm from 'node:vm'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-ptc-runtime'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { WorkflowRunId } from '@deepseek-ai/dsh-workflow/types'
-import WorkflowEngine, { WorkflowError } from '@deepseek-ai/dsh-workflow'
-import type { WorkflowRun, WorkflowRunInfo, WorkflowStartRequest } from '@deepseek-ai/dsh-workflow'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-ptc-runtime'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import type {} from '@gemini-agy/dsh-working-directory'
+import z from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { WorkflowRunId } from '@gemini-agy/dsh-workflow/types'
+import WorkflowEngine, { WorkflowError } from '@gemini-agy/dsh-workflow'
+import type { WorkflowRun, WorkflowRunInfo, WorkflowStartRequest } from '@gemini-agy/dsh-workflow'
 import { PtcWorkflowRun } from './host.ts'
 import { validateMeta } from './meta.ts'
 import type { WorkerInit, WorkerLimits } from './types.ts'

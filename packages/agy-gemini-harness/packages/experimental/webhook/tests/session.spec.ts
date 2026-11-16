@@ -1,7 +1,7 @@
-import type { Context } from '@deepseek-ai/cordis'
-import type { AgentOptions } from '@deepseek-ai/dsh-agent'
+import type { Context } from '@gemini-agy/cordis'
+import type { AgentOptions } from '@gemini-agy/dsh-agent'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   WebhookDeliveryId,
   WebhookRuleId,

@@ -3,7 +3,7 @@ description: "Read the Session’s current directory or enter an existing direct
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-tool-working-directory
+# @gemini-agy/dsh-tool-working-directory
 
 English | [中文](README.zh.md)
 
@@ -28,7 +28,7 @@ Read the Session’s current directory or enter an existing directory with the s
 Mount alongside `tools` and `workingDirectory`. Call `working_directory({})` to read or `working_directory({ cd: "src" })` to change directory. The tool has no configuration fields. A call without a calling Agent fails with `ToolContextUnavailableError` (`TOOL_CONTEXT_UNAVAILABLE`), an empty `cd` with `ToolArgsError` (`INVALID_ARGS`), and a missing directory with the service's `WorkingDirectoryError` codes.
 
 ```yaml
-- name: '@deepseek-ai/dsh-tool-working-directory'
+- name: '@gemini-agy/dsh-tool-working-directory'
 ```
 
 -----

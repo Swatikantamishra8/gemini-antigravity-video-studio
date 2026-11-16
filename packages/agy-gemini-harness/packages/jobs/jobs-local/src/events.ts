@@ -1,14 +1,14 @@
 /**
  * Event routing for the local registry: subscriptions file by filter, and
  * every commit dispatches once to each matching listener with containment.
- * @module @deepseek-ai/dsh-jobs-local/events
+ * @module @gemini-agy/dsh-jobs-local/events
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { AnonymousEntries, ScopedLayers, scopeOf } from '@deepseek-ai/dsh-scope'
-import type { ScopeLayer } from '@deepseek-ai/dsh-scope'
-import type { JobEvent, JobEventFilter, JobEventListener } from '@deepseek-ai/dsh-jobs'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { AnonymousEntries, ScopedLayers, scopeOf } from '@gemini-agy/dsh-scope'
+import type { ScopeLayer } from '@gemini-agy/dsh-scope'
+import type { JobEvent, JobEventFilter, JobEventListener } from '@gemini-agy/dsh-jobs'
 
 /** One registered listener and the filter it declared. */
 interface Subscription {

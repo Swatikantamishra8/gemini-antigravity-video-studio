@@ -1,9 +1,9 @@
 /** Assistant stream baselines and per-connection subscriptions. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import { SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionId } from '@deepseek-ai/dsh-session'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { Context } from '@gemini-agy/cordis'
+import { SessionSeq } from '@gemini-agy/dsh-session'
+import type { Session, SessionId } from '@gemini-agy/dsh-session'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import { SessionAssistantStreamAccumulator } from '../assistant-stream.ts'
 import type { SessionAssistantStreamBaseline, SessionAssistantStreamFrame } from '../types.ts'
 import { ListenerBuffer } from './listener.ts'

@@ -8,8 +8,8 @@
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { expect, it, onTestFailed } from 'vitest'
-import { LlmAdapter, type GenerateOptions, type StreamChunk } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-agent-default-model'
+import { LlmAdapter, type GenerateOptions, type StreamChunk } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/dsh-agent-default-model'
 import { launchWebScaffold, watchConsole, type WebScaffold } from '../tests/scaffold.ts'
 import {
   connectFreshWorkspace, newEnglishPage, saveFailureShot, writeComposerDraft,

@@ -3,7 +3,7 @@ description: "The web access service (ctx.web): how deployments and plugin autho
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-web
+# @gemini-agy/dsh-web
 
 English | [中文](README.zh.md)
 
@@ -36,11 +36,11 @@ Choose the service when a plugin or tool must search or fetch without hard-codin
 Load the service and let a single mounted backend auto-select, or pin a provider id with `searchProvider`/`fetchProvider`. The environment variables `$DSH_WEB_SEARCH_PROVIDER` and `$DSH_WEB_FETCH_PROVIDER` feed the same fields and are not a separate priority chain. Both backends below register a fetch provider, so the example pins `fetchProvider: http`.
 
 ```yaml
-- name: '@deepseek-ai/dsh-web'
+- name: '@gemini-agy/dsh-web'
   config:
     fetchProvider: http
-- name: '@deepseek-ai/dsh-web-deepseek-api'
-- name: '@deepseek-ai/dsh-web-fetch-http'
+- name: '@gemini-agy/dsh-web-deepseek-api'
+- name: '@gemini-agy/dsh-web-fetch-http'
 ```
 
 | Field | Default | Meaning |

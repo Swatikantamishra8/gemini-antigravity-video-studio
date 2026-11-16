@@ -1,15 +1,15 @@
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import * as Spawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import * as Spawn from '@gemini-agy/dsh-subagent-spawn-in-process'
 import PtcWorkflowEngine from '../src/index.ts'
 import { mountPtcRuntime } from './setup.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 let ctx: Context | undefined
 

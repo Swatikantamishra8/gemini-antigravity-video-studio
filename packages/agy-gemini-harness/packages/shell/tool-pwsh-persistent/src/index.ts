@@ -2,18 +2,18 @@
    the PowerShell counterpart shares the session registry, polling loop, and reset contract by design. */
 /**
  * Model-facing persistent `pwsh` tool over the owner-scoped PTY seam.
- * @module @deepseek-ai/dsh-tool-pwsh-persistent
+ * @module @gemini-agy/dsh-tool-pwsh-persistent
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-working-directory'
 import { randomUUID } from 'node:crypto'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { truncateWithoutSplittingSurrogatePair } from '@deepseek-ai/dsh-output-retention'
-import type { TerminalReadResult, TerminalSessionId } from '@deepseek-ai/dsh-terminal'
-import { deadline, timeoutOf } from '@deepseek-ai/dsh-timeout'
-import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { truncateWithoutSplittingSurrogatePair } from '@gemini-agy/dsh-output-retention'
+import type { TerminalReadResult, TerminalSessionId } from '@gemini-agy/dsh-terminal'
+import { deadline, timeoutOf } from '@gemini-agy/dsh-timeout'
+import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
 
 // TODO: Replace the file-search advice; arbitrary command output need not come from a searchable file.
 const TRUNCATED_MESSAGE = '<response clipped><NOTE>To save on context only part of this file has been shown to you. You should retry this tool after you have searched inside the file with Select-String in order to find the line numbers of what you are looking for.</NOTE>'

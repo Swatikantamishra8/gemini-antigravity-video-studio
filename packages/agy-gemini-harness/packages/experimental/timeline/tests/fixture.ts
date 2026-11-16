@@ -2,19 +2,19 @@
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage, isAgentLoopRequest, LlmAdapter, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { LlmModelReasoningInfo } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { pluginRecordOf, SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
+import { Context } from '@gemini-agy/cordis'
+import { createUserMessage, isAgentLoopRequest, LlmAdapter, ToolCallId } from '@gemini-agy/dsh-llm'
+import type { LlmModelReasoningInfo } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@gemini-agy/dsh-llm'
+import { pluginRecordOf, SessionId } from '@gemini-agy/dsh-session'
+import type { SessionEvent } from '@gemini-agy/dsh-session'
+import { defineTool } from '@gemini-agy/dsh-tools'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as Jsonl from '@deepseek-ai/dsh-session-persistence-jsonl'
-import type {} from '@deepseek-ai/dsh-session-persistence'
+} from '@gemini-agy/dsh-agent-loop-testkit'
+import * as Jsonl from '@gemini-agy/dsh-session-persistence-jsonl'
+import type {} from '@gemini-agy/dsh-session-persistence'
 import * as Timeline from '../src/index.ts'
 
 export const textOutput = {

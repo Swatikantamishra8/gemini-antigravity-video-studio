@@ -1,24 +1,24 @@
 /**
  * Stagehand browser tools with one native browser runtime per live Session.
- * @module @deepseek-ai/dsh-experimental-browser-use-stagehand-native
+ * @module @gemini-agy/dsh-experimental-browser-use-stagehand-native
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import Schema from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { BrowserUseProviderName } from '@deepseek-ai/dsh-browser-use/types'
-import { SessionResources } from '@deepseek-ai/dsh-experimental-browser-use-runtime'
-import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client'
+import type { Context } from '@gemini-agy/cordis'
+import Schema from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { BrowserUseProviderName } from '@gemini-agy/dsh-browser-use/types'
+import { SessionResources } from '@gemini-agy/dsh-experimental-browser-use-runtime'
+import { createMcpToolDefinition } from '@gemini-agy/dsh-mcp-client'
 import { z } from 'zod'
 import { browserInputs, stagehandModelSchema } from './native.ts'
 import { StagehandDrainError } from './error.ts'
 import type { BrowserMethod, NativeBrowserRuntime, StagehandModelConfig } from './native.ts'
 import { openBrowserWorker } from './worker-client.ts'
 import { launchChromium } from './launch.ts'
-import type {} from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-browser-use'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import { ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
+import type {} from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-browser-use'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import { ToolArgsError, ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
 
 export { StagehandDrainError, StagehandError, type StagehandErrorCode } from './error.ts'
 

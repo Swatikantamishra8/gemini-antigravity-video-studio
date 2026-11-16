@@ -91,14 +91,14 @@ export function apply(ctx) {
     { env: environment, timeout: 120_000, windowsHide: true })
     const inputs = ['docx', 'xlsx', 'pptx'].map(extension => ({ extension,
       bytes: readFileSync(join(home, `input.${extension}`)).toString('base64') }))
-    const cordis = runtime.sharedPackages.find(entry => entry.name === '@deepseek-ai/cordis')
+    const cordis = runtime.sharedPackages.find(entry => entry.name === '@gemini-agy/cordis')
     if (cordis === undefined) throw new Error('desktop runtime: missing shared Cordis package')
     writeFileSync(join(plugin, 'package.json'), JSON.stringify({
       name: pluginName, version: '1.0.0', type: 'module', exports: './index.js',
-      peerDependencies: { '@deepseek-ai/cordis': cordis.version }, dsh: { bundle: { patch: './bundle.yml' } },
+      peerDependencies: { '@gemini-agy/cordis': cordis.version }, dsh: { bundle: { patch: './bundle.yml' } },
     }))
     writeFileSync(join(plugin, 'index.js'), `
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { inspect } from 'node:util'
 import { readFile } from 'node:fs/promises'
 export function apply(ctx) {

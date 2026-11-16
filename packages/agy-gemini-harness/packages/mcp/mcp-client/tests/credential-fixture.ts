@@ -1,9 +1,9 @@
 /** In-memory credential references for template tests; record operations are unexpected. */
 
-import { CredentialProvider } from '@deepseek-ai/dsh-credentials'
+import { CredentialProvider } from '@gemini-agy/dsh-credentials'
 import type {
   CredentialInfo, CredentialRecord, CredentialRecordEntry, CredentialRecordInfo, CredentialRef, ResolvedCredential,
-} from '@deepseek-ai/dsh-credentials'
+} from '@gemini-agy/dsh-credentials'
 
 /** Resolves references from {@link TestCredentials.values}; every other operation throws. */
 export class TestCredentials extends CredentialProvider {

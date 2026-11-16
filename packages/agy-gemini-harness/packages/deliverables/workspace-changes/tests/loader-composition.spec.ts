@@ -8,15 +8,15 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import * as WorkspaceChangesPlugin from '@deepseek-ai/dsh-workspace-changes'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import LocalSubprocessRuntime from '@gemini-agy/dsh-subprocess-local'
+import LocalFileSystem from '@gemini-agy/dsh-fs-local'
+import * as WorkspaceChangesPlugin from '@gemini-agy/dsh-workspace-changes'
 import { changes, endTurn, git, startTurn, toolCall } from './support.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 let root: string | undefined
 let context: Context | undefined
@@ -33,10 +33,10 @@ describe('real Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-workspace-changes-loader-'))
     const cwd = join(root, 'ws')
     await writeFile(join(root, 'cordis.yml'), [
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-subprocess-local'",
-      "- name: '@deepseek-ai/dsh-fs-local'",
-      "- name: '@deepseek-ai/dsh-workspace-changes'",
+      "- name: '@gemini-agy/dsh-session'",
+      "- name: '@gemini-agy/dsh-subprocess-local'",
+      "- name: '@gemini-agy/dsh-fs-local'",
+      "- name: '@gemini-agy/dsh-workspace-changes'",
       '',
     ].join('\n'))
     context = new Context()
@@ -44,10 +44,10 @@ describe('real Loader composition', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-      ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-      ['@deepseek-ai/dsh-workspace-changes', WorkspaceChangesPlugin],
+      ['@gemini-agy/dsh-session', SessionStore],
+      ['@gemini-agy/dsh-subprocess-local', LocalSubprocessRuntime],
+      ['@gemini-agy/dsh-fs-local', LocalFileSystem],
+      ['@gemini-agy/dsh-workspace-changes', WorkspaceChangesPlugin],
     ])
     context.loader.internal = {
       version: 'v2',

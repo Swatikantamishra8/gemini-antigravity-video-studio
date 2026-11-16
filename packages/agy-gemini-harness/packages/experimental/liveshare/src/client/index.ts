@@ -9,15 +9,15 @@
  * action, because that action and its dialogs address every share-management call through it.
  */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import liveshareSharesRemote from '@deepseek-ai/dsh-experimental-liveshare/remote'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session/client'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import liveshareSharesRemote from '@gemini-agy/dsh-experimental-liveshare/remote'
+import type {} from '@gemini-agy/dsh-api-remotes/client'
+import type {} from '@gemini-agy/dsh-client-locale/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
+import type {} from '@gemini-agy/dsh-client-ui-renderer/client'
+import type {} from '@gemini-agy/dsh-client-ui-session/client'
+import type {} from '@gemini-agy/dsh-client-ui-workspace/client'
 import { LIVESHARE_VIEWER_GLOBAL } from '../viewer-channel.ts'
 import { LiveshareShareAction } from './ShareAction.tsx'
 import type { OwnerShares } from './owner-shares.ts'
@@ -32,7 +32,7 @@ import * as viewerSession from './viewer-session-plugin.ts'
 import * as viewerSessionRow from './viewer-session-row.tsx'
 import * as viewerSharePath from './viewer-share-path.tsx'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     liveshare: LiveshareKey
   }

@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import type {
   SessionListState, SessionProjectionMap, SessionSummary,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { WorkspaceId, WorkspaceView } from '@deepseek-ai/dsh-api-workspace-controller/client'
-import type { SessionStatus, SessionStatusSnapshot } from '@deepseek-ai/dsh-client-ui-session-status/client'
-import type { SessionPendingInteraction } from '@deepseek-ai/dsh-client-ui-session/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import type { SessionProjectionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
+} from '@gemini-agy/dsh-api-session-controller/client'
+import type { WorkspaceId, WorkspaceView } from '@gemini-agy/dsh-api-workspace-controller/client'
+import type { SessionStatus, SessionStatusSnapshot } from '@gemini-agy/dsh-client-ui-session-status/client'
+import type { SessionPendingInteraction } from '@gemini-agy/dsh-client-ui-session/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
+import type { SessionProjectionSnapshot } from '@gemini-agy/dsh-api-session-controller/client'
 import {
   type ArchivedFilter,
   deriveFlat, deriveGroups, deriveSearchResults, orderByRecency, sessionSearchIndex, owningGroupKey, owningParentFolder,

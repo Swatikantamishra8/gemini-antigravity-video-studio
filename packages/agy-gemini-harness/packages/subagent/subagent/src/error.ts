@@ -1,10 +1,10 @@
 /**
  * Typed failures shared by subagent service and provider operations.
  *
- * @module @deepseek-ai/dsh-subagent
+ * @module @gemini-agy/dsh-subagent
  */
 
-import { HarnessError } from '@deepseek-ai/dsh-llm'
+import { HarnessError } from '@gemini-agy/dsh-llm'
 
 /**
  * Every machine-routable subagent failure. Each code names one condition;

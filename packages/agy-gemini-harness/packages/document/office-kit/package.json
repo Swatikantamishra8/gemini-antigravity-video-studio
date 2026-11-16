@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-office-kit",
+  "name": "@gemini-agy/dsh-office-kit",
   "description": "Shared Office rendering, conversion, and recalculation with bounded queues and caching",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -11,7 +11,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/document/office-kit"
   },
   "exports": {
@@ -50,22 +50,22 @@
     "src"
   ],
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/cordis-plugin-include": "workspace:~",
+    "@gemini-agy/dsh-api-workspace-files": "workspace:*",
+    "@gemini-agy/dsh-fs": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/libreoffice-kit": "0.2.3",
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@gemini-agy/libreoffice-kit": "0.2.3",
+    "@gemini-agy/schemastery": "workspace:~",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-typert-protocol": "workspace:*",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-home-paths": "workspace:*"
+    "@gemini-agy/dsh-home-paths": "workspace:*"
   }
 }

@@ -24,7 +24,7 @@ There is no `runtime` category, the XDG kind for sockets and pid files, because 
 
 ### Path helper
 
-[`dshPath(category, ...segments)`](../../../../packages/util/home-paths/src/index.ts) in `@deepseek-ai/dsh-home-paths` returns `<home>/<category>/<segments>` without creating directories; `dshPath({ category, dshHome }, ...segments)` resolves an explicit configured home. Loader `!!js` config expressions receive the same function beside `dshHomePath`. A new path under the home uses `dshPath` and passes its owner's directory name, normally the package name without the `@deepseek-ai/dsh-` prefix, as the first segment. `dshHomePath` remains for the existing top-level entries, and `dshCachePath` is `dshPath('cache', ...)`.
+[`dshPath(category, ...segments)`](../../../../packages/util/home-paths/src/index.ts) in `@gemini-agy/dsh-home-paths` returns `<home>/<category>/<segments>` without creating directories; `dshPath({ category, dshHome }, ...segments)` resolves an explicit configured home. Loader `!!js` config expressions receive the same function beside `dshHomePath`. A new path under the home uses `dshPath` and passes its owner's directory name, normally the package name without the `@gemini-agy/dsh-` prefix, as the first segment. `dshHomePath` remains for the existing top-level entries, and `dshCachePath` is `dshPath('cache', ...)`.
 
 ### Conventional top-level entries
 
@@ -62,7 +62,7 @@ These entries have no user-facing convention. Each row names the category it bel
 
 ### Outside the home
 
-These locations are out of scope: `~/.agents` (`DSH_AGENTS_HOME`), shared with other agent tools; Electron `userData` and `logs`, managed by Electron; the Python SDK resource cache `~/.cache/deepseek-harness/resources` (`DSH_RESOURCE_CACHE`), shared across homes; spill and subprocess output directories under the operating-system temporary directory; and developer or release script state such as `~/.dsh-desktop-signing`.
+These locations are out of scope: `~/.agents` (`DSH_AGENTS_HOME`), shared with other agent tools; Electron `userData` and `logs`, managed by Electron; the Python SDK resource cache `~/.cache/agy-gemini-harness/resources` (`DSH_RESOURCE_CACHE`), shared across homes; spill and subprocess output directories under the operating-system temporary directory; and developer or release script state such as `~/.dsh-desktop-signing`.
 
 ## Alternatives considered
 

@@ -1,20 +1,20 @@
 /**
  * Persistent shell PTY backend over the subprocess terminal primitive, shared
  * sandbox policy, bounded output, and provider-owned session cleanup.
- * @module @deepseek-ai/dsh-terminal-bash
+ * @module @gemini-agy/dsh-terminal-bash
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import { TerminalBackendCleanupError, TerminalError } from '@deepseek-ai/dsh-terminal'
-import type { TerminalBackend, TerminalBackendSpawnSpec, TerminalSendOperation } from '@deepseek-ai/dsh-terminal'
-import { SubprocessError } from '@deepseek-ai/dsh-subprocess'
-import type { SubprocessTerminalHandle, SubprocessTerminalSpawnSpec } from '@deepseek-ai/dsh-subprocess'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import { ENCODING_PREAMBLE } from '@deepseek-ai/dsh-pwsh-local'
+import type {} from '@gemini-agy/dsh-working-directory'
+import { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { Session, SessionEvent } from '@gemini-agy/dsh-session'
+import { TerminalBackendCleanupError, TerminalError } from '@gemini-agy/dsh-terminal'
+import type { TerminalBackend, TerminalBackendSpawnSpec, TerminalSendOperation } from '@gemini-agy/dsh-terminal'
+import { SubprocessError } from '@gemini-agy/dsh-subprocess'
+import type { SubprocessTerminalHandle, SubprocessTerminalSpawnSpec } from '@gemini-agy/dsh-subprocess'
+import type { SandboxExecutionPolicy } from '@gemini-agy/dsh-sandbox'
+import type {} from '@gemini-agy/dsh-sandbox-policy'
+import { ENCODING_PREAMBLE } from '@gemini-agy/dsh-pwsh-local'
 import { type Config, type ResolvedConfig, resolveConfig, type ShellDialect, validateConfig } from './config.ts'
 import { LocalPtySession } from './session.ts'
 import { CONTROLLED_PROMPT } from './sanitize.ts'

@@ -3,12 +3,12 @@
  * dialog controller, plus the routing between them. A message target puts a
  * selected judgment through the message controller; the Session target records
  * through the `sessionFeedback` Remote.
- * @module @deepseek-ai/dsh-client-ui-message-feedback/client/surface
+ * @module @gemini-agy/dsh-client-ui-message-feedback/client/surface
  */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { FeedbackRecord } from '@deepseek-ai/dsh-command-feedback/types'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { FeedbackRecord } from '@gemini-agy/dsh-command-feedback/types'
 import { MessageFeedbackController, describe, type MessageFeedbackActionResult } from './controller.ts'
 import { FeedbackDialogController } from './dialog.ts'
 

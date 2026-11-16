@@ -1,5 +1,5 @@
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-settings'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-settings'
 import { TimelineError } from './error.ts'
 import { Config, liveConfig } from './config.ts'
 import type { PluginConfig } from './config.ts'

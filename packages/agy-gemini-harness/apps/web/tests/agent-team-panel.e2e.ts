@@ -5,11 +5,11 @@ import { join } from 'node:path'
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed, onTestFinished, vi } from 'vitest'
-import type {} from '@deepseek-ai/dsh-agent-team'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CommandId } from '@deepseek-ai/dsh-commands/types'
-import { createMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
+import type {} from '@gemini-agy/dsh-agent-team'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { CommandId } from '@gemini-agy/dsh-commands/types'
+import { createMessage, createUserMessage } from '@gemini-agy/dsh-llm'
 import {
   acknowledgeReloadConnectionLoss, assertFixtureInventory, captureStableAria, compareOrRefreshGolden,
   launchWebScaffold, watchConsole, webSnapshotMode, type WebScaffold,

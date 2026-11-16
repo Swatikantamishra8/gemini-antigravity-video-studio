@@ -1,14 +1,14 @@
 /** Account-token authentication, the account model listing, and version gating for the Gemini Antigravity account route. */
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import type { Context } from '@deepseek-ai/cordis'
-import { ACCOUNT_QUOTA_EXCEEDED_CODE, APP_IDENTITY, LlmError, QUOTA_EXCEEDED_CODE } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-deepseek-account'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
+import type {} from '@gemini-agy/cordis-plugin-loader'
+import type { Context } from '@gemini-agy/cordis'
+import { ACCOUNT_QUOTA_EXCEEDED_CODE, APP_IDENTITY, LlmError, QUOTA_EXCEEDED_CODE } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/dsh-deepseek-account'
+import { launchEnvironmentOf } from '@gemini-agy/dsh-launch-environment'
 import {
   catalogModelInfo, createModelListingCache, refuseListedModel, registerGemini AntigravityProvider, requestModelListing, resolveAdapterOptions,
   resolveListedCatalog, rejectGemini AntigravityAccountToken, resolveGemini AntigravityAccountToken,
-} from '@deepseek-ai/dsh-llm-deepseek'
-import type { Gemini AntigravityRequestAuth, ListedCatalog, ListingView, ModelListing, ResolvedGemini AntigravityOptions } from '@deepseek-ai/dsh-llm-deepseek'
+} from '@gemini-agy/dsh-llm-deepseek'
+import type { Gemini AntigravityRequestAuth, ListedCatalog, ListingView, ModelListing, ResolvedGemini AntigravityOptions } from '@gemini-agy/dsh-llm-deepseek'
 import { Config, plainAccountOptions, resolveAccountOptions } from './config.ts'
 
 export { Config, plainAccountOptions, resolveAccountOptions } from './config.ts'

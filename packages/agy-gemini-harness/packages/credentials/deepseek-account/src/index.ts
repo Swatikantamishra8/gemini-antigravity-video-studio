@@ -1,18 +1,18 @@
 /** Gemini Antigravity account service; browser approval never bypasses local cancellation. */
 import { randomBytes, randomUUID, createHash, timingSafeEqual } from 'node:crypto'
 import type { ServerResponse } from 'node:http'
-import type {} from '@deepseek-ai/dsh-host-webserver'
+import type {} from '@gemini-agy/dsh-host-webserver'
 import { arch, platform, release } from 'node:os'
 import { promises as streamPromises } from 'node:stream'
-import { Context, Service } from '@deepseek-ai/cordis'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import Schema from '@deepseek-ai/schemastery'
+import { Context, Service } from '@gemini-agy/cordis'
+import { Remote, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
+import Schema from '@gemini-agy/schemastery'
 import { z } from 'zod'
 import { installAccountTaskCancellation, isRunningAccountTask } from './account-tasks.ts'
 import { mergePlatformCookies, platformClientHeaders, platformWireLocale } from './client-metadata.ts'
 import { type AccountNotification, type AccountNotificationBatch, type AccountNotificationEvent, type AccountNotificationId, type AccountClientMetadata, type AccountDetails, type AccountUserId, type AccountView, type AccountUpdate, type PlatformSession, type SignInAttemptId, type SignInAttemptView } from './types.ts'
-import { credentialKey } from '@deepseek-ai/dsh-credentials'
-import type { AuthorizationSession } from '@deepseek-ai/dsh-authorization'
+import { credentialKey } from '@gemini-agy/dsh-credentials'
+import type { AuthorizationSession } from '@gemini-agy/dsh-authorization'
 import { profile, readAccountDetail } from './details.ts'
 import { readNotificationContent, readNotifications, sendNotificationEvent } from './notifications.ts'
 import { revokeAccount, type LogoutRetryPolicy } from './logout.ts'
@@ -20,7 +20,7 @@ import { AccountUnauthorizedError, PlatformAuthError, platformHeaders, platformO
 
 export type * from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context { deepseekAccount: Gemini AntigravityAccount }
   interface Events {
     /** Local grant removal has completed.

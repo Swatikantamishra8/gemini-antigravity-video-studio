@@ -1,11 +1,11 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
 import { describe, expect, expectTypeOf, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import TerminalSessionService, { TerminalBackendCleanupError, TerminalError, type TerminalSessionId } from '@deepseek-ai/dsh-terminal'
-import { HarnessError } from '@deepseek-ai/dsh-error'
+import { Context } from '@gemini-agy/cordis'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import TerminalSessionService, { TerminalBackendCleanupError, TerminalError, type TerminalSessionId } from '@gemini-agy/dsh-terminal'
+import { HarnessError } from '@gemini-agy/dsh-error'
 import type {
   TerminalBackend,
   TerminalBackendSession,
@@ -15,9 +15,9 @@ import type {
   TerminalSessionId as TerminalSessionIdType,
   TerminalSessionStatus,
   TerminalSignal,
-} from '@deepseek-ai/dsh-terminal'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@gemini-agy/dsh-terminal'
+import { unsupportedModel, unsupportedInbox } from '@gemini-agy/dsh-agent-loop-testkit'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const agentScopeDisposers = new WeakMap<Agent, () => Promise<void>>()
 const ptyServiceDisposers = new WeakMap<Context, () => Promise<void>>()

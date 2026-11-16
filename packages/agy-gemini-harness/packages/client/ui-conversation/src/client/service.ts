@@ -7,25 +7,25 @@
  * through one property read; assignment through the tracker proxy and `#`
  * private fields bypass that rebinding.
  */
-import { Service } from '@deepseek-ai/cordis'
-import type { Context } from '@deepseek-ai/cordis'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
+import { Service } from '@gemini-agy/cordis'
+import type { Context } from '@gemini-agy/cordis'
+import { randomUUID } from '@gemini-agy/dsh-util-crypto'
 // Type-only imports: a plugin-to-plugin value import is a bundle purity
 // error, so scope resolution goes through the sessions service (scopeOf
 // method) instead of the standalone helper.
 import type {
   ISessions, PendingSubmissionRetirement, SessionFace,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-file-upload/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { FileAttachmentRef, ImageMediaType } from '@deepseek-ai/dsh-attachment'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { SnapshotStore } from '@deepseek-ai/dsh-client-store'
+} from '@gemini-agy/dsh-api-session-controller/client'
+import type {} from '@gemini-agy/dsh-client-file-upload/client'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { FileAttachmentRef, ImageMediaType } from '@gemini-agy/dsh-attachment'
+import { createSnapshotStore } from '@gemini-agy/dsh-client-store'
+import type { SnapshotStore } from '@gemini-agy/dsh-client-store'
 import type {
   ComposerAttachment, ComposerFileAttachment, ComposerImageAttachment, DraftFileUpload,
 } from './contract/slots.ts'
-import type { QueueAction } from '@deepseek-ai/dsh-api-session-controller/types'
-import type { MessageId } from '@deepseek-ai/dsh-llm/types'
+import type { QueueAction } from '@gemini-agy/dsh-api-session-controller/types'
+import type { MessageId } from '@gemini-agy/dsh-llm/types'
 import type { ComposerBlocks } from './contract/composer-blocks.ts'
 import type {
   DraftAttachmentId, DraftAttachmentSerializationResult, SessionInputResolver, SubmitAttachment, SubmitOutcome,

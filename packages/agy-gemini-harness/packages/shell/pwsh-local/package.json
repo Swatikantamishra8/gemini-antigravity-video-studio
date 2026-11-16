@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-pwsh-local",
+  "name": "@gemini-agy/dsh-pwsh-local",
   "description": "Local PowerShell implementation of the Gemini Antigravity Harness bash executor seam",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/shell/pwsh-local"
   },
   "type": "module",
@@ -32,19 +32,19 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-shell": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/dsh-shell": "workspace:*",
+    "@gemini-agy/dsh-subprocess": "workspace:*",
+    "@gemini-agy/dsh-subprocess-local": "workspace:*",
+    "@gemini-agy/dsh-timeout": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~"
   }
 }

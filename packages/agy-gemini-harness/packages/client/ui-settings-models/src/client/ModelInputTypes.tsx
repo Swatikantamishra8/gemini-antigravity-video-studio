@@ -1,7 +1,7 @@
 /** Input-type declarations shared by the Gemini Antigravity and pi-ai catalog editors. */
 
 import type { ReactNode } from 'react'
-import { Checkbox } from '@deepseek-ai/dsh-client-ui-primitives'
+import { Checkbox } from '@gemini-agy/dsh-client-ui-primitives'
 import type { Gemini AntigravityModelDraft } from './Gemini AntigravityModelsEditor.tsx'
 import type { ModelsKey } from './locales.ts'
 import styles from './ModelsSection.module.css'

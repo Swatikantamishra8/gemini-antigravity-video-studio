@@ -19,19 +19,19 @@
  * reads session state once at each operation boundary; executors and providers
  * remain session-free.
  *
- * @module @deepseek-ai/dsh-sandbox-policy
+ * @module @gemini-agy/dsh-sandbox-policy
  */
 
 import { isAbsolute } from 'node:path'
-import { Context, Service } from '@deepseek-ai/cordis'
+import { Context, Service } from '@gemini-agy/cordis'
 import { z as zod } from 'zod'
-import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { SandboxInvalidRootError } from '@deepseek-ai/dsh-sandbox'
-import type { SandboxExecutionPolicy, SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import z from '@gemini-agy/schemastery'
+import type {} from '@gemini-agy/dsh-agent'
+import { SandboxInvalidRootError } from '@gemini-agy/dsh-sandbox'
+import type { SandboxExecutionPolicy, SandboxMode } from '@gemini-agy/dsh-sandbox'
+import type { Session } from '@gemini-agy/dsh-session'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-system-prompt'
 
 export { SANDBOX_MODES, setSandboxMode } from './session-mode.ts'
 
@@ -79,7 +79,7 @@ function renderPolicyContext(policy: SandboxExecutionPolicy): string {
   }
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     sandboxPolicy: SandboxPolicyService
   }

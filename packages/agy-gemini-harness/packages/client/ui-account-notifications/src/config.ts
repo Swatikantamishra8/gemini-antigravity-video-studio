@@ -1,5 +1,5 @@
 /** Public polling configuration shared by the notification Host and Client halves. */
-import Schema from '@deepseek-ai/schemastery'
+import Schema from '@gemini-agy/schemastery'
 
 /** Initial polling interval before the server supplies its next delay. */
 export interface Config {

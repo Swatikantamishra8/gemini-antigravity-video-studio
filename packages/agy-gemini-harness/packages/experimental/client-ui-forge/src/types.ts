@@ -1,9 +1,9 @@
 /** Browser-safe panel state, the worktree request record, Remote error codes, and Host configuration of the forge panel. */
 
-import type {} from '@deepseek-ai/dsh-typert-protocol'
-import type { Branded } from '@deepseek-ai/dsh-brand'
-import type { ChangeRequestRef, ChangeRequestSnapshot, ForgeCommit, ForgeReadiness, ForgeRepository } from '@deepseek-ai/dsh-experimental-forge/types'
-import type { SessionChangeRequest } from '@deepseek-ai/dsh-experimental-forge-session/types'
+import type {} from '@gemini-agy/dsh-typert-protocol'
+import type { Branded } from '@gemini-agy/dsh-brand'
+import type { ChangeRequestRef, ChangeRequestSnapshot, ForgeCommit, ForgeReadiness, ForgeRepository } from '@gemini-agy/dsh-experimental-forge/types'
+import type { SessionChangeRequest } from '@gemini-agy/dsh-experimental-forge-session/types'
 
 /** Git facts for the checkout that contains the Session's current directory. */
 export interface ForgeCheckout {
@@ -533,7 +533,7 @@ export interface Config {
   maxAnnotationsPerFile?: number
 }
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@gemini-agy/dsh-typert-protocol' {
   interface RemoteErrorDetailsMap {
     /** No registered provider serves the change request URL. */
     'forgePanel/unrecognized-url': Record<string, never>
@@ -608,14 +608,14 @@ declare module '@deepseek-ai/dsh-typert-protocol' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@gemini-agy/dsh-session/types' {
   interface PluginRecordMap {
     /** A request, withdrawal, or creation of the worktree a Session starts in. */
     'plugin:client-ui-forge/worktree': WorktreeRecord
   }
 }
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@gemini-agy/dsh-session-projection/types' {
   interface SessionProjectionMap {
     /** The worktree the panel created for the Session while the Session works in it, else null. */
     forgeWorktree: ForgeSessionWorktree | null

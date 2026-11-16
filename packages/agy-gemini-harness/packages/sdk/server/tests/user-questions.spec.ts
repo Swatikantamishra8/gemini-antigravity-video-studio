@@ -1,16 +1,16 @@
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import UserQuestions from '@deepseek-ai/dsh-user-questions'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { JsonRpcTransportPeer } from '@deepseek-ai/dsh-sdk-protocol'
+import { Context } from '@gemini-agy/cordis'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import UserQuestions from '@gemini-agy/dsh-user-questions'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import type { JsonRpcTransportPeer } from '@gemini-agy/dsh-sdk-protocol'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { HarnessSdkJsonRpcServer } from '../src/server.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const questions = [{ id: 'format', question: 'Which format?', options: [{ label: 'CSV' }, { label: 'JSON' }] }]
 const answer = { answers: [{ id: 'format', selected: ['CSV'], custom: 'include a header' }] }

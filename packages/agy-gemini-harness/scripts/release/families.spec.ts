@@ -49,99 +49,99 @@ describe('release families', () => {
     expect(members
       .filter(member => member.directory.startsWith('packages/experimental/'))
       .map(member => member.name)).toEqual([
-      '@deepseek-ai/dsh-action-cards',
-      '@deepseek-ai/dsh-experimental-api-speech-to-text',
-      '@deepseek-ai/dsh-experimental-auto-review',
-      '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-      '@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp',
-      '@deepseek-ai/dsh-experimental-browser-use-playwright-mcp',
-      '@deepseek-ai/dsh-experimental-browser-use-runtime',
-      '@deepseek-ai/dsh-experimental-browser-use-stagehand-native',
-      '@deepseek-ai/dsh-experimental-claude-code-mods',
-      '@deepseek-ai/dsh-client-ui-action-cards',
-      '@deepseek-ai/dsh-experimental-client-ui-claude-code-mods',
-      '@deepseek-ai/dsh-experimental-client-ui-cot-translation',
-      '@deepseek-ai/dsh-client-ui-creation-recommendations',
-      '@deepseek-ai/dsh-experimental-client-ui-forge',
-      '@deepseek-ai/dsh-client-ui-plugin-recommendations',
-      '@deepseek-ai/dsh-experimental-client-ui-stats',
-      '@deepseek-ai/dsh-experimental-client-ui-voice-input',
-      '@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp',
-      '@deepseek-ai/dsh-experimental-computer-use-cua-driver-native',
-      '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-      '@deepseek-ai/dsh-creation-recommendations',
-      '@deepseek-ai/dsh-cua-bundle',
-      '@deepseek-ai/dsh-cua-macos',
-      '@deepseek-ai/dsh-cua-mcp',
-      '@deepseek-ai/dsh-cua-windows',
-      '@deepseek-ai/dsh-cua',
-      '@deepseek-ai/dsh-gemini-3.8-flash-high-import',
-      '@deepseek-ai/dsh-experimental-forge-bundle',
-      '@deepseek-ai/dsh-experimental-forge-github',
-      '@deepseek-ai/dsh-experimental-forge-session',
-      '@deepseek-ai/dsh-experimental-forge',
-      '@deepseek-ai/dsh-hook-protocol',
-      '@deepseek-ai/dsh-hooks-claude-code',
-      '@deepseek-ai/dsh-hooks-codex',
-      '@deepseek-ai/dsh-experimental-inspector-profile',
-      '@deepseek-ai/dsh-experimental-inspector',
-      '@deepseek-ai/dsh-experimental-liveshare-protocol',
-      '@deepseek-ai/dsh-experimental-liveshare',
-      '@deepseek-ai/dsh-personalized-recommendations',
-      '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-      '@deepseek-ai/dsh-plugin-recommendations',
-      '@deepseek-ai/dsh-experimental-ralph-bundle',
-      '@deepseek-ai/dsh-experimental-session-inspector',
-      '@deepseek-ai/dsh-experimental-session-search',
-      '@deepseek-ai/dsh-session-title-all-prompts-llm',
-      '@deepseek-ai/dsh-experimental-session-titles-bundle',
-      '@deepseek-ai/dsh-skill-badge',
-      '@deepseek-ai/dsh-experimental-speech-to-text-sensevoice',
-      '@deepseek-ai/dsh-experimental-speech-to-text',
-      '@deepseek-ai/dsh-experimental-subagent-oar',
-      '@deepseek-ai/dsh-experimental-terminal-bundle',
-      '@deepseek-ai/dsh-terminal-panel',
-      '@deepseek-ai/dsh-timeline',
-      '@deepseek-ai/dsh-tool-ralph',
-      '@deepseek-ai/dsh-tool-session-query',
-      '@deepseek-ai/dsh-experimental-tool-subagent-oar',
-      '@deepseek-ai/dsh-tool-terminal',
-      '@deepseek-ai/dsh-experimental-tool-worktree',
-      '@deepseek-ai/dsh-experimental-translator',
-      '@deepseek-ai/dsh-experimental-voice-input-bundle',
-      '@deepseek-ai/dsh-webhook-github',
-      '@deepseek-ai/dsh-webhook',
-      '@deepseek-ai/dsh-experimental-webworker-packer',
-      '@deepseek-ai/dsh-experimental-webworker-runtime',
-      '@deepseek-ai/dsh-experimental-worktree',
+      '@gemini-agy/dsh-action-cards',
+      '@gemini-agy/dsh-experimental-api-speech-to-text',
+      '@gemini-agy/dsh-experimental-auto-review',
+      '@gemini-agy/dsh-experimental-badge-skill-bundle',
+      '@gemini-agy/dsh-experimental-browser-use-chrome-devtools-mcp',
+      '@gemini-agy/dsh-experimental-browser-use-playwright-mcp',
+      '@gemini-agy/dsh-experimental-browser-use-runtime',
+      '@gemini-agy/dsh-experimental-browser-use-stagehand-native',
+      '@gemini-agy/dsh-experimental-claude-code-mods',
+      '@gemini-agy/dsh-client-ui-action-cards',
+      '@gemini-agy/dsh-experimental-client-ui-claude-code-mods',
+      '@gemini-agy/dsh-experimental-client-ui-cot-translation',
+      '@gemini-agy/dsh-client-ui-creation-recommendations',
+      '@gemini-agy/dsh-experimental-client-ui-forge',
+      '@gemini-agy/dsh-client-ui-plugin-recommendations',
+      '@gemini-agy/dsh-experimental-client-ui-stats',
+      '@gemini-agy/dsh-experimental-client-ui-voice-input',
+      '@gemini-agy/dsh-experimental-computer-use-cua-driver-mcp',
+      '@gemini-agy/dsh-experimental-computer-use-cua-driver-native',
+      '@gemini-agy/dsh-experimental-cot-translation-bundle',
+      '@gemini-agy/dsh-creation-recommendations',
+      '@gemini-agy/dsh-cua-bundle',
+      '@gemini-agy/dsh-cua-macos',
+      '@gemini-agy/dsh-cua-mcp',
+      '@gemini-agy/dsh-cua-windows',
+      '@gemini-agy/dsh-cua',
+      '@gemini-agy/dsh-gemini-3.8-flash-high-import',
+      '@gemini-agy/dsh-experimental-forge-bundle',
+      '@gemini-agy/dsh-experimental-forge-github',
+      '@gemini-agy/dsh-experimental-forge-session',
+      '@gemini-agy/dsh-experimental-forge',
+      '@gemini-agy/dsh-hook-protocol',
+      '@gemini-agy/dsh-hooks-claude-code',
+      '@gemini-agy/dsh-hooks-codex',
+      '@gemini-agy/dsh-experimental-inspector-profile',
+      '@gemini-agy/dsh-experimental-inspector',
+      '@gemini-agy/dsh-experimental-liveshare-protocol',
+      '@gemini-agy/dsh-experimental-liveshare',
+      '@gemini-agy/dsh-personalized-recommendations',
+      '@gemini-agy/dsh-experimental-plugin-market-bundle',
+      '@gemini-agy/dsh-plugin-recommendations',
+      '@gemini-agy/dsh-experimental-ralph-bundle',
+      '@gemini-agy/dsh-experimental-session-inspector',
+      '@gemini-agy/dsh-experimental-session-search',
+      '@gemini-agy/dsh-session-title-all-prompts-llm',
+      '@gemini-agy/dsh-experimental-session-titles-bundle',
+      '@gemini-agy/dsh-skill-badge',
+      '@gemini-agy/dsh-experimental-speech-to-text-sensevoice',
+      '@gemini-agy/dsh-experimental-speech-to-text',
+      '@gemini-agy/dsh-experimental-subagent-oar',
+      '@gemini-agy/dsh-experimental-terminal-bundle',
+      '@gemini-agy/dsh-terminal-panel',
+      '@gemini-agy/dsh-timeline',
+      '@gemini-agy/dsh-tool-ralph',
+      '@gemini-agy/dsh-tool-session-query',
+      '@gemini-agy/dsh-experimental-tool-subagent-oar',
+      '@gemini-agy/dsh-tool-terminal',
+      '@gemini-agy/dsh-experimental-tool-worktree',
+      '@gemini-agy/dsh-experimental-translator',
+      '@gemini-agy/dsh-experimental-voice-input-bundle',
+      '@gemini-agy/dsh-webhook-github',
+      '@gemini-agy/dsh-webhook',
+      '@gemini-agy/dsh-experimental-webworker-packer',
+      '@gemini-agy/dsh-experimental-webworker-runtime',
+      '@gemini-agy/dsh-experimental-worktree',
     ])
   })
 
   it('excludes private applications from the publish set', () => {
     const root = mkdtempSync(join(tmpdir(), 'dsh-release-private-'))
     roots.push(root)
-    write(join(root, 'apps/public/package.json'), '{"name":"@deepseek-ai/dsh-public","version":"0.0.1"}\n')
-    write(join(root, 'apps/private/package.json'), '{"name":"@deepseek-ai/dsh-private","version":"0.0.1","private":true}\n')
+    write(join(root, 'apps/public/package.json'), '{"name":"@gemini-agy/dsh-public","version":"0.0.1"}\n')
+    write(join(root, 'apps/private/package.json'), '{"name":"@gemini-agy/dsh-private","version":"0.0.1","private":true}\n')
 
-    expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual(['@deepseek-ai/dsh-public'])
+    expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual(['@gemini-agy/dsh-public'])
   })
 
   it('publishes unlisted experimental packages while retaining private exclusions', () => {
     const root = mkdtempSync(join(tmpdir(), 'dsh-release-experimental-'))
     roots.push(root)
     write(join(root, 'packages/experimental/prototype/package.json'), JSON.stringify({
-      name: '@deepseek-ai/dsh-experimental-prototype',
+      name: '@gemini-agy/dsh-experimental-prototype',
       version: '0.0.1',
       publishConfig: { access: 'public' },
     }))
     write(join(root, 'packages/experimental/inspector/package.json'), JSON.stringify({
-      name: '@deepseek-ai/dsh-experimental-inspector',
+      name: '@gemini-agy/dsh-experimental-inspector',
       version: '0.0.1',
       private: true,
     }))
 
     expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-experimental-prototype',
+      '@gemini-agy/dsh-experimental-prototype',
     ])
   })
 
@@ -154,7 +154,7 @@ describe('release families', () => {
     write(join(root, 'packages/core/unselected/package.json'), '{"version":"0.0.1"}\n')
 
     const dsh = releaseFamily('dsh')
-    const published = member('packages/core/published', '@deepseek-ai/dsh-published')
+    const published = member('packages/core/published', '@gemini-agy/dsh-published')
     const { planned } = planShared(dsh, root, [published], '0.0.2')
 
     expect(planned.map(entry => ({ path: entry.manifestPath, tag: entry.tag }))).toEqual([
@@ -173,7 +173,7 @@ describe('release families', () => {
       write(join(root, 'package.json'), '{"version":"0.0.1"}\n')
 
       const dsh = releaseFamily('dsh')
-      const published = member('packages/core/published', '@deepseek-ai/dsh-published')
+      const published = member('packages/core/published', '@gemini-agy/dsh-published')
       const plan = planShared(dsh, root, [published], version)
 
       expect(plan.version).toBe(version)
@@ -184,8 +184,8 @@ describe('release families', () => {
   it('names one tag for the whole dsh family and one per vendored package', () => {
     const dsh = releaseFamily('dsh')
     const vendor = releaseFamily('vendor')
-    const cli = member('apps/cli', '@deepseek-ai/dsh')
-    const cordis = { ...member('vendor/cordis', '@deepseek-ai/cordis'), version: '4.0.1' }
+    const cli = member('apps/cli', '@gemini-agy/dsh')
+    const cordis = { ...member('vendor/cordis', '@gemini-agy/cordis'), version: '4.0.1' }
 
     expect(dsh.tagFor(cli)).toBe('dsh-v0.0.1')
     expect(vendor.tagFor(cordis)).toBe('vendor-cordis-v4.0.1')
@@ -209,7 +209,7 @@ describe('release families', () => {
 
   it('rejects a family whose members disagree on the shared version', () => {
     const dsh = releaseFamily('dsh')
-    const members = [member('apps/cli', '@deepseek-ai/dsh'), { ...member('apps/web', '@deepseek-ai/dsh-web-frontend'), version: '0.0.2' }]
+    const members = [member('apps/cli', '@gemini-agy/dsh'), { ...member('apps/web', '@gemini-agy/dsh-web-frontend'), version: '0.0.2' }]
 
     expect(() => { dsh.verifyVersions(members) }).toThrow(/must share one version/)
     expect(() => { dsh.verifyVersions([members[0]!]) }).not.toThrow()
@@ -218,8 +218,8 @@ describe('release families', () => {
   it('accepts independent vendored versions and rejects an unpublishable one', () => {
     const vendor = releaseFamily('vendor')
     const members = [
-      { ...member('vendor/cordis', '@deepseek-ai/cordis'), version: '4.0.1' },
-      { ...member('vendor/cosmokit', '@deepseek-ai/cosmokit'), version: '1.8.2' },
+      { ...member('vendor/cordis', '@gemini-agy/cordis'), version: '4.0.1' },
+      { ...member('vendor/cosmokit', '@gemini-agy/cosmokit'), version: '1.8.2' },
     ]
 
     expect(() => { vendor.verifyVersions(members) }).not.toThrow()
@@ -248,20 +248,20 @@ describe('release families', () => {
   it('publishes a dependency before its consumer, and orders ties by name', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', { dependencies: { '@deepseek-ai/dsh-library': 'workspace:^' } }),
-      member('packages/a/library', '@deepseek-ai/dsh-library'),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/consumer', '@gemini-agy/dsh-consumer', { dependencies: { '@gemini-agy/dsh-library': 'workspace:^' } }),
+      member('packages/a/library', '@gemini-agy/dsh-library'),
+      member('packages/a/zebra', '@gemini-agy/dsh-zebra'),
     ]
 
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-library',
-      '@deepseek-ai/dsh-consumer',
-      '@deepseek-ai/dsh-zebra',
+      '@gemini-agy/dsh-library',
+      '@gemini-agy/dsh-consumer',
+      '@gemini-agy/dsh-zebra',
     ])
   })
 
   it('publishes on-demand catalog members before dsh without adding installed dependencies', () => {
-    const dsh = member('apps/cli', '@deepseek-ai/dsh')
+    const dsh = member('apps/cli', '@gemini-agy/dsh')
     const providers = ON_DEMAND_BUNDLES.map(name => member(`packages/subagent/${name}`, name))
     const plan = releaseFamily('dsh').publishOrder([dsh, ...providers])
     expect(plan.order.map(entry => entry.name)).toEqual([...ON_DEMAND_BUNDLES.toSorted(), dsh.name])
@@ -270,14 +270,14 @@ describe('release families', () => {
   })
 
   it('rejects an advertised provider missing from the public release family', () => {
-    expect(() => releaseFamily('dsh').publishOrder([member('apps/cli', '@deepseek-ai/dsh')]))
+    expect(() => releaseFamily('dsh').publishOrder([member('apps/cli', '@gemini-agy/dsh')]))
       .toThrow('Official catalog prerequisite')
   })
 
   it('keeps catalog prerequisites ahead of a dsh peer declaration', () => {
-    const dsh = member('apps/cli', '@deepseek-ai/dsh')
+    const dsh = member('apps/cli', '@gemini-agy/dsh')
     const providers = ON_DEMAND_BUNDLES.map(name => member(`packages/subagent/${name}`, name, {
-      peerDependencies: { '@deepseek-ai/dsh': 'workspace:*' },
+      peerDependencies: { '@gemini-agy/dsh': 'workspace:*' },
     }))
     const plan = releaseFamily('dsh').publishOrder([dsh, ...providers])
     expect(plan.order.map(entry => entry.name)).toEqual([...ON_DEMAND_BUNDLES.toSorted(), dsh.name])
@@ -286,31 +286,31 @@ describe('release families', () => {
 
   it.each(['dependencies', 'optionalDependencies', 'peerDependencies'])(
     'requires exact packed DSH %s while preserving external ranges', (section) => {
-      const pkg = member('packages/example/provider', '@deepseek-ai/dsh-provider')
+      const pkg = member('packages/example/provider', '@gemini-agy/dsh-provider')
       const family = releaseFamily('dsh')
-      const manifest = { name: pkg.name, version: pkg.version, [section]: { '@deepseek-ai/dsh-tools': pkg.version, external: '^4.0.0' } }
+      const manifest = { name: pkg.name, version: pkg.version, [section]: { '@gemini-agy/dsh-tools': pkg.version, external: '^4.0.0' } }
       expect(() => { family.validatePackedManifest(pkg, manifest) }).not.toThrow()
       for (const range of ['workspace:*', '^0.0.1', '~0.0.1', '0.0.2', '*']) {
-        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@deepseek-ai/dsh-tools': range } }) })
-          .toThrow(`packed ${section}.@deepseek-ai/dsh-tools must equal`)
+        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@gemini-agy/dsh-tools': range } }) })
+          .toThrow(`packed ${section}.@gemini-agy/dsh-tools must equal`)
       }
     },
   )
 
   it('checks packed identities and preserves independent vendor versions', () => {
-    const pkg = member('vendor/example', '@deepseek-ai/example')
+    const pkg = member('vendor/example', '@gemini-agy/example')
     const family = releaseFamily('vendor')
-    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: pkg.version, dependencies: { '@deepseek-ai/dsh-tools': '^4.0.0' } }) })
+    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: pkg.version, dependencies: { '@gemini-agy/dsh-tools': '^4.0.0' } }) })
       .not.toThrow()
-    expect(() => { family.validatePackedManifest(pkg, { name: '@deepseek-ai/other', version: pkg.version }) }).toThrow('packed identity')
+    expect(() => { family.validatePackedManifest(pkg, { name: '@gemini-agy/other', version: pkg.version }) }).toThrow('packed identity')
     expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: '0.0.2' }) }).toThrow('packed identity')
   })
 
   it('reports a runtime dependency cycle instead of emitting an arbitrary order', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/left', '@deepseek-ai/dsh-left', { dependencies: { '@deepseek-ai/dsh-right': 'workspace:^' } }),
-      member('packages/a/right', '@deepseek-ai/dsh-right', { dependencies: { '@deepseek-ai/dsh-left': 'workspace:^' } }),
+      member('packages/a/left', '@gemini-agy/dsh-left', { dependencies: { '@gemini-agy/dsh-right': 'workspace:^' } }),
+      member('packages/a/right', '@gemini-agy/dsh-right', { dependencies: { '@gemini-agy/dsh-left': 'workspace:^' } }),
     ]
 
     expect(() => { dsh.publishOrder(members) }).toThrow(/dependency cycle/)
@@ -319,44 +319,44 @@ describe('release families', () => {
   it('publishes a peer before its consumer', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', { peerDependencies: { '@deepseek-ai/dsh-zebra': 'workspace:^' } }),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/consumer', '@gemini-agy/dsh-consumer', { peerDependencies: { '@gemini-agy/dsh-zebra': 'workspace:^' } }),
+      member('packages/a/zebra', '@gemini-agy/dsh-zebra'),
     ]
 
     // Name order alone would place the consumer first; the peer edge moves it.
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-zebra',
-      '@deepseek-ai/dsh-consumer',
+      '@gemini-agy/dsh-zebra',
+      '@gemini-agy/dsh-consumer',
     ])
   })
 
   it('orders around a peer cycle rather than refusing to publish, and reports the edge it dropped', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/left', '@deepseek-ai/dsh-left', { peerDependencies: { '@deepseek-ai/dsh-right': 'workspace:^' } }),
-      member('packages/a/right', '@deepseek-ai/dsh-right', { peerDependencies: { '@deepseek-ai/dsh-left': 'workspace:^' } }),
+      member('packages/a/left', '@gemini-agy/dsh-left', { peerDependencies: { '@gemini-agy/dsh-right': 'workspace:^' } }),
+      member('packages/a/right', '@gemini-agy/dsh-right', { peerDependencies: { '@gemini-agy/dsh-left': 'workspace:^' } }),
     ]
 
     // Sibling packages declare each other as peers, and npm treats an unmet peer
     // as a warning, so this pair has to publish rather than fail the release.
     const plan = dsh.publishOrder(members)
     expect(plan.order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-right',
-      '@deepseek-ai/dsh-left',
+      '@gemini-agy/dsh-right',
+      '@gemini-agy/dsh-left',
     ])
     // One of the two edges has to give, and which one it is belongs in the log.
     expect(plan.droppedPeerEdges).toEqual([
-      { consumer: '@deepseek-ai/dsh-right', peer: '@deepseek-ai/dsh-left' },
+      { consumer: '@gemini-agy/dsh-right', peer: '@gemini-agy/dsh-left' },
     ])
   })
 
   it('honours an install edge even when a peer cycle surrounds it', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/base', '@deepseek-ai/dsh-base', { peerDependencies: { '@deepseek-ai/dsh-consumer': 'workspace:^' } }),
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', {
-        dependencies: { '@deepseek-ai/dsh-base': 'workspace:^' },
-        peerDependencies: { '@deepseek-ai/dsh-base': 'workspace:^' },
+      member('packages/a/base', '@gemini-agy/dsh-base', { peerDependencies: { '@gemini-agy/dsh-consumer': 'workspace:^' } }),
+      member('packages/a/consumer', '@gemini-agy/dsh-consumer', {
+        dependencies: { '@gemini-agy/dsh-base': 'workspace:^' },
+        peerDependencies: { '@gemini-agy/dsh-base': 'workspace:^' },
       }),
     ]
 
@@ -364,20 +364,20 @@ describe('release families', () => {
     // would reverse it is the one dropped.
     const plan = dsh.publishOrder(members)
     expect(plan.order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-base',
-      '@deepseek-ai/dsh-consumer',
+      '@gemini-agy/dsh-base',
+      '@gemini-agy/dsh-consumer',
     ])
     expect(plan.droppedPeerEdges).toEqual([
-      { consumer: '@deepseek-ai/dsh-base', peer: '@deepseek-ai/dsh-consumer' },
+      { consumer: '@gemini-agy/dsh-base', peer: '@gemini-agy/dsh-consumer' },
     ])
   })
 
   it('refuses an order that would publish a consumer before a dependency it installs', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/alpha', '@deepseek-ai/dsh-alpha', { peerDependencies: { '@deepseek-ai/dsh-bravo': 'workspace:^' } }),
-      member('packages/a/bravo', '@deepseek-ai/dsh-bravo', { peerDependencies: { '@deepseek-ai/dsh-charlie': 'workspace:^' } }),
-      member('packages/a/charlie', '@deepseek-ai/dsh-charlie', { dependencies: { '@deepseek-ai/dsh-alpha': 'workspace:^' } }),
+      member('packages/a/alpha', '@gemini-agy/dsh-alpha', { peerDependencies: { '@gemini-agy/dsh-bravo': 'workspace:^' } }),
+      member('packages/a/bravo', '@gemini-agy/dsh-bravo', { peerDependencies: { '@gemini-agy/dsh-charlie': 'workspace:^' } }),
+      member('packages/a/charlie', '@gemini-agy/dsh-charlie', { dependencies: { '@gemini-agy/dsh-alpha': 'workspace:^' } }),
     ]
 
     // A cycle of two peer edges closed by one install edge: dropping a peer edge
@@ -390,23 +390,23 @@ describe('release families', () => {
   it('ignores devDependencies when ordering', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/alpha', '@deepseek-ai/dsh-alpha', { devDependencies: { '@deepseek-ai/dsh-zebra': 'workspace:^' } }),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/alpha', '@gemini-agy/dsh-alpha', { devDependencies: { '@gemini-agy/dsh-zebra': 'workspace:^' } }),
+      member('packages/a/zebra', '@gemini-agy/dsh-zebra'),
     ]
 
     // A dev dependency is absent from the published package, so it must not move
     // the consumer behind it.
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-alpha',
-      '@deepseek-ai/dsh-zebra',
+      '@gemini-agy/dsh-alpha',
+      '@gemini-agy/dsh-zebra',
     ])
   })
 
   it('accepts the harness payload and keeps upstream payloads for vendored packages', () => {
     const dsh = releaseFamily('dsh')
     const vendor = releaseFamily('vendor')
-    const harness = member('packages/a/library', '@deepseek-ai/dsh-library')
-    const vendored = member('vendor/cordis', '@deepseek-ai/cordis')
+    const harness = member('packages/a/library', '@gemini-agy/dsh-library')
+    const vendored = member('vendor/cordis', '@gemini-agy/cordis')
 
     expect(() => { dsh.validatePayload(harness, ['package/lib/index.js', 'package/lib/index.js.map', 'package/src/index.ts']) }).not.toThrow()
     expect(() => { vendor.validatePayload(vendored, ['package/lib/index.js', 'package/src/index.ts']) }).not.toThrow()
@@ -415,7 +415,7 @@ describe('release families', () => {
 
   it('requires the installed package payload the staging hook supplies', () => {
     const dsh = releaseFamily('dsh')
-    const installed = member('apps/cli', '@deepseek-ai/dsh')
+    const installed = member('apps/cli', '@gemini-agy/dsh')
 
     expect(() => { dsh.validatePayload(installed, ['package/lib/index.js', 'package/src/bin.ts']) })
       .toThrow(/@deepseek-ai\/dsh packed no documentation/)
@@ -429,7 +429,7 @@ describe('release families', () => {
   })
 
   it('drives the installed entry only for the family that publishes one', () => {
-    expect(releaseFamily('dsh').installedEntry).toEqual({ packageName: '@deepseek-ai/dsh', binPath: 'lib/bin.js' })
+    expect(releaseFamily('dsh').installedEntry).toEqual({ packageName: '@gemini-agy/dsh', binPath: 'lib/bin.js' })
     expect(releaseFamily('vendor').installedEntry).toBeUndefined()
   })
 
@@ -490,10 +490,10 @@ describe('version precedence', () => {
 })
 
 describe('payload change judgement', () => {
-  const sourceShipping = member('vendor/cosmokit', '@deepseek-ai/cosmokit', {
+  const sourceShipping = member('vendor/cosmokit', '@gemini-agy/cosmokit', {
     files: ['lib/index.js', 'lib/types/**/*.d.ts', 'src'],
   })
-  const buildOutputOnly = member('vendor/cordis', '@deepseek-ai/cordis', {
+  const buildOutputOnly = member('vendor/cordis', '@gemini-agy/cordis', {
     files: ['lib/index.js', 'lib/types/**/*.d.ts', 'bin.js'],
   })
 
@@ -518,7 +518,7 @@ describe('payload change judgement', () => {
     // unnecessary patch bump, while under-reporting fails the next publish on a
     // version whose bytes moved.
     expect(reachesPayload(sourceShipping, 'vendor/cosmokit/README.i18n.yaml')).toBe(true)
-    expect(reachesPayload(member('packages/a/library', '@deepseek-ai/dsh-library', { files: ['lib/index.js'] }),
+    expect(reachesPayload(member('packages/a/library', '@gemini-agy/dsh-library', { files: ['lib/index.js'] }),
       'packages/a/library/tests/library.spec.ts')).toBe(false)
   })
 })

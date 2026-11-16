@@ -13,9 +13,9 @@ import type {
   SDKResultMessage,
   SpawnOptions,
 } from '@anthropic-ai/claude-agent-sdk'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { parseEntryYaml } from '@deepseek-ai/cordis-plugin-include'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import { parseEntryYaml } from '@gemini-agy/cordis-plugin-include'
 import {
   afterEach,
   beforeEach,
@@ -25,17 +25,17 @@ import {
   type Mock,
   vi,
 } from 'vitest'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { ContentBlock } from '@gemini-agy/dsh-llm'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
 import type {
   SubprocessHandle,
   SubprocessOutcome,
   SubprocessSpawnSpec,
-} from '@deepseek-ai/dsh-subprocess'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+} from '@gemini-agy/dsh-subprocess'
+import LocalSubprocessRuntime from '@gemini-agy/dsh-subprocess-local'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
 import * as claudeCode from '../src/index.ts'
 import {
   claudeSpawnSpec,
@@ -361,7 +361,7 @@ describe('task admission and package contracts', () => {
       '^1.31.0',
     )
     expect(manifest.dependencies).toHaveProperty('zod', '4.6.6')
-    expect(manifest.dependencies).not.toHaveProperty('@deepseek-ai/dsh-subagent-codex')
+    expect(manifest.dependencies).not.toHaveProperty('@gemini-agy/dsh-subagent-codex')
 
     const sdkRoot = dirname(fileURLToPath(
       import.meta.resolve('@anthropic-ai/claude-agent-sdk'),
@@ -394,12 +394,12 @@ describe('task admission and package contracts', () => {
 
     const parsed = parseEntryYaml(readFileSync(resolve(root, manifest.dsh!.bundle!.patch!), 'utf8'))
     expect(parsed).toEqual([{ insert: [
-      { id: 'subagent-claude-code', name: '@deepseek-ai/dsh-subagent-claude-code' },
-      { id: 'tool-subagent-claude-code', name: '@deepseek-ai/dsh-tool-subagent', config: {
+      { id: 'subagent-claude-code', name: '@gemini-agy/dsh-subagent-claude-code' },
+      { id: 'tool-subagent-claude-code', name: '@gemini-agy/dsh-tool-subagent', config: {
         provider: 'claude-code', toolName: 'subagent_claude_code', maxDepth: 'provider-managed',
       } },
     ] }])
-    expect(manifest.dependencies).toHaveProperty('@deepseek-ai/dsh-tool-subagent', 'workspace:*')
+    expect(manifest.dependencies).toHaveProperty('@gemini-agy/dsh-tool-subagent', 'workspace:*')
   })
 
   it('preserves text sequences and rejects empty, blank, and non-text tasks', () => {

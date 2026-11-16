@@ -19,8 +19,8 @@ Connection 插件提供独立嵌套服务 `connection.authentication`。Provider
 下面的完整函数插件示例由 Host 提供可信进程内验证器和 principal。其中 `Config.verify` 是示例的应用输入，不是新 DSH API，也不代替具体凭据算法的实现。
 
 ```ts
-import type { Context } from '@deepseek-ai/cordis'
-import type { ConnectionTrustRequest, Principal } from '@deepseek-ai/dsh-client-connection'
+import type { Context } from '@gemini-agy/cordis'
+import type { ConnectionTrustRequest, Principal } from '@gemini-agy/dsh-client-connection'
 
 export const name = 'example-authentication'
 export const inject = ['connection', 'connection.authentication']
@@ -51,8 +51,8 @@ export function apply(ctx: Context, config: Config): void {
 下面的示例注册普通业务 handler。Host 提供 `Config.upgrade`，即业务已有的协议实现，并非另一个框架操作。HTTP 中的断言对应此路由的 `required` 策略；公共 handler 类型同时支持没有 Peer 的匿名路由。
 
 ```ts
-import type { Context } from '@deepseek-ai/cordis'
-import type { WebUpgradeRoute } from '@deepseek-ai/dsh-host-webserver'
+import type { Context } from '@gemini-agy/cordis'
+import type { WebUpgradeRoute } from '@gemini-agy/dsh-host-webserver'
 
 export const name = 'example-protected-routes'
 export const inject = ['webServer']

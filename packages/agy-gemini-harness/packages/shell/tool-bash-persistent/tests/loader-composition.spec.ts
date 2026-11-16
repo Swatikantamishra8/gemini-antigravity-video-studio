@@ -1,29 +1,29 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@gemini-agy/dsh-agent-loop-testkit'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import TerminalSessionService from '@deepseek-ai/dsh-terminal'
-import * as TerminalLocal from '@deepseek-ai/dsh-terminal-bash'
-import SandboxProvider from '@deepseek-ai/dsh-sandbox'
-import type { ConfinedArgv, SandboxPolicy } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import * as ToolBashPersistent from '@deepseek-ai/dsh-tool-bash-persistent'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@gemini-agy/dsh-session'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import TerminalSessionService from '@gemini-agy/dsh-terminal'
+import * as TerminalLocal from '@gemini-agy/dsh-terminal-bash'
+import SandboxProvider from '@gemini-agy/dsh-sandbox'
+import type { ConfinedArgv, SandboxPolicy } from '@gemini-agy/dsh-sandbox'
+import SandboxPolicyService from '@gemini-agy/dsh-sandbox-policy'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import LocalSubprocessRuntime from '@gemini-agy/dsh-subprocess-local'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
+import * as ToolBashPersistent from '@gemini-agy/dsh-tool-bash-persistent'
 
 let root: string | undefined
 let context: Context | undefined
@@ -78,19 +78,19 @@ suite('persistent Bash through a real cordis.yml Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-persistent-bash-loader-'))
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-agent'",
-      "- name: '@deepseek-ai/dsh-system-prompt'",
-      "- name: '@deepseek-ai/dsh-tools'",
-      "- name: '@deepseek-ai/dsh-tool-executor-native'",
-      "- name: '@deepseek-ai/dsh-terminal'",
-      "- name: '@deepseek-ai/dsh-test-sandbox'",
-      "- name: '@deepseek-ai/dsh-session-projection'",
-      "- name: '@deepseek-ai/dsh-sandbox-policy'",
+      "- name: '@gemini-agy/dsh-agent'",
+      "- name: '@gemini-agy/dsh-system-prompt'",
+      "- name: '@gemini-agy/dsh-tools'",
+      "- name: '@gemini-agy/dsh-tool-executor-native'",
+      "- name: '@gemini-agy/dsh-terminal'",
+      "- name: '@gemini-agy/dsh-test-sandbox'",
+      "- name: '@gemini-agy/dsh-session-projection'",
+      "- name: '@gemini-agy/dsh-sandbox-policy'",
       '  config:',
       '    mode: danger-full-access',
       `    workspaceRoot: ${JSON.stringify(root)}`,
-      "- name: '@deepseek-ai/dsh-subprocess-local'",
-      "- name: '@deepseek-ai/dsh-terminal-bash'",
+      "- name: '@gemini-agy/dsh-subprocess-local'",
+      "- name: '@gemini-agy/dsh-terminal-bash'",
       '  config:',
       '    pollIntervalMs: 10',
       '    exactProbeAfterMs: 20',
@@ -102,7 +102,7 @@ suite('persistent Bash through a real cordis.yml Loader composition', () => {
       '    scrollbackLines: 20000',
       '    timeoutMs: 2000',
       '    disposeGraceMs: 500',
-      "- name: '@deepseek-ai/dsh-tool-bash-persistent'",
+      "- name: '@gemini-agy/dsh-tool-bash-persistent'",
       '  config:',
       '    timeoutMs: 5000',
       '',
@@ -115,17 +115,17 @@ suite('persistent Bash through a real cordis.yml Loader composition', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-agent', AgentRegistry],
-      ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-      ['@deepseek-ai/dsh-tools', ToolRuntime],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-      ['@deepseek-ai/dsh-terminal', TerminalSessionService],
-      ['@deepseek-ai/dsh-test-sandbox', PassthroughSandbox],
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-      ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-      ['@deepseek-ai/dsh-terminal-bash', TerminalLocal],
-      ['@deepseek-ai/dsh-tool-bash-persistent', ToolBashPersistent],
+      ['@gemini-agy/dsh-agent', AgentRegistry],
+      ['@gemini-agy/dsh-system-prompt', SystemPrompt],
+      ['@gemini-agy/dsh-tools', ToolRuntime],
+      ['@gemini-agy/dsh-tool-executor-native', NativeToolExecutor],
+      ['@gemini-agy/dsh-terminal', TerminalSessionService],
+      ['@gemini-agy/dsh-test-sandbox', PassthroughSandbox],
+      ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+      ['@gemini-agy/dsh-sandbox-policy', SandboxPolicyService],
+      ['@gemini-agy/dsh-subprocess-local', LocalSubprocessRuntime],
+      ['@gemini-agy/dsh-terminal-bash', TerminalLocal],
+      ['@gemini-agy/dsh-tool-bash-persistent', ToolBashPersistent],
     ])
     context.loader.internal = {
       version: 'v2',

@@ -3,12 +3,12 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import LocalCredentialProvider from '@deepseek-ai/dsh-credentials-local'
-import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as webApiPlugin from '@deepseek-ai/dsh-web-deepseek-api'
+import { Context } from '@gemini-agy/cordis'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import LocalCredentialProvider from '@gemini-agy/dsh-credentials-local'
+import { DSH_LAUNCH_ENVIRONMENT_KEY, createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
+import WebRuntime from '@gemini-agy/dsh-web'
+import * as webApiPlugin from '@gemini-agy/dsh-web-deepseek-api'
 
 /** Stub the Search API and read back the bearer credential of every dispatched request. */
 function captureAuthorization(): () => (string | null)[] {

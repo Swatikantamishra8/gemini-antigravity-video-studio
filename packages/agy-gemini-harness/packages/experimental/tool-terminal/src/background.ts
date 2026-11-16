@@ -2,11 +2,11 @@
  * Generic-job adaptation for background terminal sends: the registry pull
  * source over the backend's consuming send reader.
  *
- * @module @deepseek-ai/dsh-tool-terminal/background
+ * @module @gemini-agy/dsh-tool-terminal/background
  */
 
-import type { JobOutputSource } from '@deepseek-ai/dsh-jobs'
-import type { TerminalSendOperation } from '@deepseek-ai/dsh-terminal'
+import type { JobOutputSource } from '@gemini-agy/dsh-jobs'
+import type { TerminalSendOperation } from '@gemini-agy/dsh-terminal'
 import { renderSendRead } from './render.ts'
 
 /**

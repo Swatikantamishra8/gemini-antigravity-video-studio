@@ -3,7 +3,7 @@ description: "MCP server manager for deployments, plugins, and management surfac
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-mcp-manager
+# @gemini-agy/dsh-mcp-manager
 
 English | [中文](README.zh.md)
 
@@ -37,7 +37,7 @@ One `cordis.yml` row mounts the manager; `servers` in its config is optional and
 
 ```yaml
 - id: mcp
-  name: '@deepseek-ai/dsh-mcp-manager'
+  name: '@gemini-agy/dsh-mcp-manager'
   inject: [credentials]
   config:
     servers:
@@ -86,8 +86,8 @@ Settings writes persist through ConfigEditor with revision checks; Loader update
 A plugin that integrates an MCP service registers its server instead of writing configuration:
 
 ```ts
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-mcp-manager'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-mcp-manager'
 
 export const name = 'example-app'
 export const inject = ['mcpManager']

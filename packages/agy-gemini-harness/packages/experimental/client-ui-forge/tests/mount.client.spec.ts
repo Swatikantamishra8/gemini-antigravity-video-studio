@@ -4,19 +4,19 @@
  * actions and their notices, the changes view, and unload.
  */
 import assert from 'node:assert/strict'
-import { Context, Service } from '@deepseek-ai/cordis'
-import type { RemoteHostFacts } from '@deepseek-ai/dsh-api-remotes/client'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { stubConfigForm } from '@deepseek-ai/dsh-client-test-runtime'
-import type { QuoteSummary } from '@deepseek-ai/dsh-client-ui-primitives'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type { SidebarRightTabDefinition, TabId } from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
+import { Context, Service } from '@gemini-agy/cordis'
+import type { RemoteHostFacts } from '@gemini-agy/dsh-api-remotes/client'
+import { LocaleRuntime } from '@gemini-agy/dsh-client-locale/client'
+import { stubConfigForm } from '@gemini-agy/dsh-client-test-runtime'
+import type { QuoteSummary } from '@gemini-agy/dsh-client-ui-primitives'
+import { SlotRegistry } from '@gemini-agy/dsh-client-ui-renderer/client'
+import type { SidebarRightTabDefinition, TabId } from '@gemini-agy/dsh-client-ui-sidebar-right/client'
 import type {
   ChangeRequestReviewer, ChangeRequestSnapshot, ForgeCommitList, ForgeRerunRequest, ForgeReviewData, ForgeReviewerCandidate,
   ForgeReviewRequest, ForgeReviewResult, ForgeReviewWrite, ForgeReviewWriteResult, ForgeThreadId, ForgeViewedFiles, ForgeViewedRequest,
-} from '@deepseek-ai/dsh-experimental-forge/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { RemoteError, type RemoteResult, type TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
+} from '@gemini-agy/dsh-experimental-forge/types'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import { RemoteError, type RemoteResult, type TypertRemoteContribution } from '@gemini-agy/dsh-typert-protocol'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { ActionToast } from '../src/client/ActionToast.tsx'
 import { CHANGES_ID, CHANGES_KIND } from '../src/client/changes-address.ts'
@@ -37,16 +37,16 @@ import { WorktreeProgress, type WorktreeProgressInjected } from '../src/client/W
 import { WorktreeSettings } from '../src/client/WorktreeSettings.tsx'
 import type { WorktreeSettingsInjected, WorktreeSettings as WorktreeSettingsFields } from '../src/client/worktree-settings-form.ts'
 import { WorktreeToggle, type WorktreeToggleInjected } from '../src/client/WorktreeToggle.tsx'
-import type { WorktreeCleanup } from '@deepseek-ai/dsh-experimental-worktree/types'
+import type { WorktreeCleanup } from '@gemini-agy/dsh-experimental-worktree/types'
 import type {
   ForgeBaseBranches, ForgeBranches, ForgeChangeRequestDiff, ForgeChangeRequestStatesFrame, ForgeExtensionState, ForgeLensFrame,
   ForgeLensRequest,
   ForgeCommitRange, ForgeLocalCommits, ForgeLocalDiff, ForgeLocalScope, ForgePanelState,
 } from '../src/types.ts'
 import { entry, listState, ready, snapshot, unserved } from './client-fixtures.client.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
-const REMOTE: TypertRemoteContribution = { package: '@deepseek-ai/dsh-experimental-client-ui-forge', descriptors: [] }
+const REMOTE: TypertRemoteContribution = { package: '@gemini-agy/dsh-experimental-client-ui-forge', descriptors: [] }
 const S1 = brandString<SessionId>('s1')
 const S2 = brandString<SessionId>('s2')
 const BRANCHES: ForgeBranches = { current: 'main', branches: ['main', 'release'] }

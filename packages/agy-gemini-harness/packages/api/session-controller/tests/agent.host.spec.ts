@@ -1,23 +1,23 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { agentPresetProjectionDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import { SessionAlreadyOwnedError } from '@deepseek-ai/dsh-session-persistence'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { agentPresetProjectionDefinition } from '@gemini-agy/dsh-agent-preset-registry'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@gemini-agy/dsh-session'
+import type { SessionHeader } from '@gemini-agy/dsh-session'
+import { SessionAlreadyOwnedError } from '@gemini-agy/dsh-session-persistence'
+import type { SessionObservation } from '@gemini-agy/dsh-session-query'
+import TypertRegistry from '@gemini-agy/dsh-typert-registry'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   ApiSessionAgentController,
   ApiSessionCwdConflict,
 } from '../src/agent.ts'
 import { installSessionReadTestServices, testSessionPersistence } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const roots: Context[] = []
 

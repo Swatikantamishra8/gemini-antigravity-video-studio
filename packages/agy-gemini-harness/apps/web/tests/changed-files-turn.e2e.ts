@@ -6,10 +6,10 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { chromium, type Browser, type Page } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFinished } from 'vitest'
-import type {} from '@deepseek-ai/dsh-workspace-changes'
-import type { ChangesSummary } from '@deepseek-ai/dsh-client-ui-deliverables/src/changes.ts'
-import { deriveReplayScript, parseSessionLog } from '@deepseek-ai/dsh-llm-replay'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+import type {} from '@gemini-agy/dsh-workspace-changes'
+import type { ChangesSummary } from '@gemini-agy/dsh-client-ui-deliverables/src/changes.ts'
+import { deriveReplayScript, parseSessionLog } from '@gemini-agy/dsh-llm-replay'
+import { PartialArguments } from '@gemini-agy/dsh-util-values'
 import {
   assertFinalWorkspaceSnapshot, captureExpandedTurnProcessAria, compareOrRefreshGolden,
   fixtureUserPrompts, launchWebScaffold, recordFixture, watchConsole,

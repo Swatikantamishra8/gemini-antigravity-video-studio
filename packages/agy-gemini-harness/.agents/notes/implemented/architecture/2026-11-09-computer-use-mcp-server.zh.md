@@ -10,7 +10,7 @@ Computer Use 的训练数据应来自多个 agent harness，而不只是 DSH 会
 
 ## 决策
 
-`@deepseek-ai/dsh-cua-mcp` 是 `OPTIONAL_BUNDLES` 中的实验性组合包：它在空 profile 根上用一次 insert 组成独立的 `cua-mcp` profile。只选它这一个组合包的 profile manifest 就是全部安装步骤：启动器加载已存在的 manifest 时不查 `PROFILE_TEMPLATES`，而安装本身已自带该组合包，因此不涉及 pnpm 或 registry。这是唯一的 MCP 应用路径；没有包 bin 或 SDK 逃逸，该组合包不进入 `PROFILE_TEMPLATES`，因为模板不能引用实验包。
+`@gemini-agy/dsh-cua-mcp` 是 `OPTIONAL_BUNDLES` 中的实验性组合包：它在空 profile 根上用一次 insert 组成独立的 `cua-mcp` profile。只选它这一个组合包的 profile manifest 就是全部安装步骤：启动器加载已存在的 manifest 时不查 `PROFILE_TEMPLATES`，而安装本身已自带该组合包，因此不涉及 pnpm 或 registry。这是唯一的 MCP 应用路径；没有包 bin 或 SDK 逃逸，该组合包不进入 `PROFILE_TEMPLATES`，因为模板不能引用实验包。
 
 服务器运行在 profile 进程内，带着连接的 Agent、不经模型步骤地调用 `ctx.tools.execute`。一个 stdio 连接拥有一个 Agent：在 stdio 传输打开之前创建，stdin EOF 时销毁。每次程序调用都作为该 Agent 的维护活动运行，因此 Agent 销毁时会取消进行中的调用，并等它及其嵌套调用结算之后才关闭 Session。Agent 归属已经决定了保留的程序进程、本机连接和会话级授权，因此连接生命周期与状态生命周期重合。空的默认 preset `cua-mcp` 不组合任何面向模型的条目；该 Agent 不使用 `agentPreset` 指定的 preset，因此提供方为它提供 `cua_run_code`。该 Agent 在专用工作区中工作，即 `DSH_CUA_WORKSPACE`，未设置时为 Harness home 下的 `cua-mcp/workspace`：Agent 的工作目录就是其程序的 `workspace-write` 根，而客户端启动服务器的目录可能是 `/`。
 

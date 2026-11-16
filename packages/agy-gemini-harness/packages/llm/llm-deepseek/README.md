@@ -3,7 +3,7 @@ description: "Configure Gemini Antigravity Messages, reasoning, and image input.
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-llm-deepseek
+# @gemini-agy/dsh-llm-deepseek
 
 English | [中文](README.zh.md)
 
@@ -39,7 +39,7 @@ Choose this adapter for Gemini Antigravity's official API or a Messages-compatib
 ### Minimal configuration
 
 ```yaml
-- name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+- name: '@gemini-agy/dsh-llm-deepseek-api-key'
   config:
     apiKeyEnv: DEEPSEEK_API_KEY  # credential reference, resolved per request
     reasoningEffort: high        # optional; off | low | high | max

@@ -1,13 +1,13 @@
 /**
  * Model-visible messages owned by continuable-subagent orchestration.
  *
- * @module @deepseek-ai/dsh-subagent/continuation-messages
+ * @module @gemini-agy/dsh-subagent/continuation-messages
  */
 
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { boundContextSummary, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { boundContextSummary, createUserMessage } from '@gemini-agy/dsh-llm'
+import type { ContentBlock } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
 import type { SubagentResult } from './types.ts'
 
 /** Durable attribution for one model-authored message between Agents. */
@@ -38,7 +38,7 @@ export interface SubagentSettledMessageSource {
   readonly senderSessionId: SessionId
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'agent-message': AgentMessageSource
     'subagent-settled': SubagentSettledMessageSource

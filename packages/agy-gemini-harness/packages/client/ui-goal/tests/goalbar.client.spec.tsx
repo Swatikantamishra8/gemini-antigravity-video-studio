@@ -2,9 +2,9 @@
 
 import { act, cleanup, createEvent, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { GoalSnapshot } from '@deepseek-ai/dsh-goal/client'
-import { makeTranslate, RemoteError } from '@deepseek-ai/dsh-client-test-runtime'
-import { zh as commonZh } from '@deepseek-ai/dsh-client-locale/src/locales/zh.ts'
+import type { GoalSnapshot } from '@gemini-agy/dsh-goal/client'
+import { makeTranslate, RemoteError } from '@gemini-agy/dsh-client-test-runtime'
+import { zh as commonZh } from '@gemini-agy/dsh-client-locale/src/locales/zh.ts'
 import { GoalBar } from '../src/client/GoalBar.tsx'
 import type { GoalActionResult, GoalBarActions } from '../src/client/slots.ts'
 import { zh } from '../src/client/locales.ts'

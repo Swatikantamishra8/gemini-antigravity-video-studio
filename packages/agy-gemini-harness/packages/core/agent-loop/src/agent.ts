@@ -17,26 +17,26 @@ import type {
   InboxState,
   PreStepDecision,
   RequestErrorAction,
-} from '@deepseek-ai/dsh-agent'
-import { AgentModel, agentEvents, assembleContextFor } from '@deepseek-ai/dsh-agent'
-import type { GenerateOptions, LlmCallConfig, Message, PreparedLlmCall } from '@deepseek-ai/dsh-llm'
+} from '@gemini-agy/dsh-agent'
+import { AgentModel, agentEvents, assembleContextFor } from '@gemini-agy/dsh-agent'
+import type { GenerateOptions, LlmCallConfig, Message, PreparedLlmCall } from '@gemini-agy/dsh-llm'
 import {
   LlmError,
   createAssistantMessage,
   createDeveloperMessage,
   errorChain,
   markAgentLoopRequest,
-} from '@deepseek-ai/dsh-llm'
-import { assertNever, deepFreeze } from '@deepseek-ai/dsh-util-values'
-import type { Scope } from '@deepseek-ai/dsh-scope'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import type { EpochHeader, RequestContext, Session, SessionId, SessionSeq, TurnEndReason, UserMessage } from '@deepseek-ai/dsh-session'
-import { canonicalHeader, headerEquals, ToolCallRecovery } from '@deepseek-ai/dsh-session'
-import { renderContextSections, renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import type { PromptAssembly } from '@deepseek-ai/dsh-system-prompt'
-import { ToolActivationError, ToolBatchExecutionError } from '@deepseek-ai/dsh-tools'
-import type { ResolvedToolSet } from '@deepseek-ai/dsh-tools'
-import type { Context } from '@deepseek-ai/cordis'
+} from '@gemini-agy/dsh-llm'
+import { assertNever, deepFreeze } from '@gemini-agy/dsh-util-values'
+import type { Scope } from '@gemini-agy/dsh-scope'
+import { createScope } from '@gemini-agy/dsh-scope'
+import type { EpochHeader, RequestContext, Session, SessionId, SessionSeq, TurnEndReason, UserMessage } from '@gemini-agy/dsh-session'
+import { canonicalHeader, headerEquals, ToolCallRecovery } from '@gemini-agy/dsh-session'
+import { renderContextSections, renderPrompt } from '@gemini-agy/dsh-system-prompt'
+import type { PromptAssembly } from '@gemini-agy/dsh-system-prompt'
+import { ToolActivationError, ToolBatchExecutionError } from '@gemini-agy/dsh-tools'
+import type { ResolvedToolSet } from '@gemini-agy/dsh-tools'
+import type { Context } from '@gemini-agy/cordis'
 import { ReactLoopInbox } from './inbox.ts'
 import { RuntimeContextProjection } from './runtime-context.ts'
 import { AssistantStreamAttempt } from './assistant-stream.ts'

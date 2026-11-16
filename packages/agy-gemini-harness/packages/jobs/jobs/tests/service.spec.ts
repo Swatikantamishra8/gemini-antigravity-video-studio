@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { type JobId, JobRegistry } from '@deepseek-ai/dsh-jobs'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Context } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { type JobId, JobRegistry } from '@gemini-agy/dsh-jobs'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   JobEvent, JobEventFilter, JobEventListener, JobHooks, JobOutputSource, JobOutputRead, JobRead, JobSpec, JobView,
-} from '@deepseek-ai/dsh-jobs'
+} from '@gemini-agy/dsh-jobs'
 
 /** Compile-time probe: does `Shape` carry a `Key` member? */
 type HasKey<Shape, Key extends string> = Key extends keyof Shape ? true : false
@@ -13,7 +13,7 @@ type HasKey<Shape, Key extends string> = Key extends keyof Shape ? true : false
 /**
  * Minimal concrete registry: one canned row. The Service Definition owns the
  * contract only (ids, caller-scoped operations, the event stream); the registry
- * behavior suite lives with `@deepseek-ai/dsh-jobs-local`.
+ * behavior suite lives with `@gemini-agy/dsh-jobs-local`.
  */
 class StubJobRegistry extends JobRegistry {
   readonly subscriptions: { filter: JobEventFilter; listener: JobEventListener }[] = []

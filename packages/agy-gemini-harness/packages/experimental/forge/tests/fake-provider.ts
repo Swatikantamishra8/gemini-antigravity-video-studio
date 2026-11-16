@@ -1,5 +1,5 @@
-import { Context } from '@deepseek-ai/cordis'
-import type { Fiber } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
+import type { Fiber } from '@gemini-agy/cordis'
 import ForgeService, { changeRequestKey } from '../src/index.ts'
 import type { Config } from '../src/index.ts'
 import type {

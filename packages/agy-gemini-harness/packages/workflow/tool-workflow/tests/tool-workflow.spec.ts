@@ -1,32 +1,32 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { createInboxStub, unsupportedModel, provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
+import { createInboxStub, unsupportedModel, provideWorkingDirectoryFixture } from '@gemini-agy/dsh-agent-loop-testkit'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionResult, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { WorkflowRunId } from '@deepseek-ai/dsh-workflow/types'
-import { WorkflowEngine } from '@deepseek-ai/dsh-workflow'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@gemini-agy/dsh-tools'
+import type { ToolExecutionResult, ToolExecutionToken } from '@gemini-agy/dsh-tools'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { WorkflowRunId } from '@gemini-agy/dsh-workflow/types'
+import { WorkflowEngine } from '@gemini-agy/dsh-workflow'
 import type {
   WorkflowAgentEndInfo, WorkflowAgentInfo, WorkflowResult, WorkflowRun,
   WorkflowStartRequest,
-} from '@deepseek-ai/dsh-workflow'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import type { JobId } from '@deepseek-ai/dsh-jobs'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as ToolTasks from '@deepseek-ai/dsh-tool-jobs'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import PtcWorkflowEngine from '@deepseek-ai/dsh-workflow-ptc'
+} from '@gemini-agy/dsh-workflow'
+import type { ToolCallId } from '@gemini-agy/dsh-llm/types'
+import type { JobId } from '@gemini-agy/dsh-jobs'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import LocalJobRegistry from '@gemini-agy/dsh-jobs-local'
+import * as ToolTasks from '@gemini-agy/dsh-tool-jobs'
+import SubagentRuntime from '@gemini-agy/dsh-subagent'
+import PtcWorkflowEngine from '@gemini-agy/dsh-workflow-ptc'
 import { mountWorkflowRuntime } from '../../workflow-ptc/tests/setup.ts'
 import * as toolWorkflow from '../src/index.ts'
 import type {} from '../src/types.ts'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
 
 const testToolSignal = new AbortController().signal
 
@@ -629,7 +629,7 @@ describe('dsh-tool-workflow', () => {
       const result = await execute(ctx, { script: SCRIPT, meta: META, run_in_background: true }, { agent: parent })
       expect(result.isError).toBe(true)
       expect((result.content[0] as { text: string }).text)
-        .toContain('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+        .toContain('background jobs unavailable: load @gemini-agy/dsh-jobs and @gemini-agy/dsh-tool-jobs')
       expect(result.error?.info).toEqual({ name: 'ToolContextUnavailableError', code: 'TOOL_CONTEXT_UNAVAILABLE' })
     })
 

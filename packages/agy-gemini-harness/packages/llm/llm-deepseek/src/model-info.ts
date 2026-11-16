@@ -1,7 +1,7 @@
 /** Protocol-independent model capabilities and reasoning choices. */
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
-import type { LlmModelBadge, LlmModelInfo, LlmResolvedModelInfo } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ReasoningEffortId } from '@gemini-agy/dsh-llm/types'
+import type { LlmModelBadge, LlmModelInfo, LlmResolvedModelInfo } from '@gemini-agy/dsh-llm'
 import type { Gemini AntigravityCatalogModel, Gemini AntigravityConnectionOptions } from './types.ts'
 
 const OFF_REASONING_EFFORT = brandString<ReasoningEffortId>('off')

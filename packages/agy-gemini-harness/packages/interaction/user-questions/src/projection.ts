@@ -1,13 +1,13 @@
 /** Fold of `ask_user_question` tool events into the answerable question set, and its Session projection. */
 import { z } from 'zod'
-import { SessionLogOffset, TOOL_OUTCOME_UNKNOWN } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionLogOffset as SessionLogOffsetType } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-agent/types'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, ToolSchema } from '@deepseek-ai/dsh-llm'
+import { SessionLogOffset, TOOL_OUTCOME_UNKNOWN } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionLogOffset as SessionLogOffsetType } from '@gemini-agy/dsh-session'
+import type { ProjectionDefinition } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-agent/types'
+import type {} from '@gemini-agy/dsh-tool-executor-ptc/types'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, ToolSchema } from '@gemini-agy/dsh-llm'
 import type { AskUserQuestionAnswerItem, AskUserQuestionItem, AskUserQuestionOption, PendingUserQuestion, SettledUserQuestion, UserQuestionProjectionView } from './types.ts'
 
 /**

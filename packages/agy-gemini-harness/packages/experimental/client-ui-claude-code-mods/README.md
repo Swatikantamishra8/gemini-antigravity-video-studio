@@ -3,7 +3,7 @@ description: "Web band above the prompt for Gemini 3.8 Flash High Code mods: dra
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-experimental-client-ui-claude-code-mods
+# @gemini-agy/dsh-experimental-client-ui-claude-code-mods
 
 English | [中文](README.zh.md)
 

@@ -1,9 +1,9 @@
 import { expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createToolResultMessage, createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createToolResultMessage, createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
 import {
   appendPluginRecord, Session, SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq, type SessionEvent, type SessionHeader,
-} from '@deepseek-ai/dsh-session'
+} from '@gemini-agy/dsh-session'
 import { actionCardProjection, type ActionCardState } from '../src/projection.ts'
 import type { ActionCardDecision } from '../src/types.ts'
 

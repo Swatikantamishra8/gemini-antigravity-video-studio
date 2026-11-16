@@ -1,28 +1,28 @@
 import { MESSAGES_RESPONSE } from './messages-response.ts'
 import { mountWorkingDirectoryFixture } from '../../../subagent/subagent/tests/working-directory-fixture.ts'
-import { createUserMessage, LlmAdapter, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
+import { createUserMessage, LlmAdapter, type ReasoningEffortId } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@gemini-agy/dsh-llm'
 import { createServer } from 'node:http'
 import type { IncomingMessage, Server, ServerResponse } from 'node:http'
 import { mkdtemp, mkdir, realpath, rm } from 'node:fs/promises'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
+import { Context } from '@gemini-agy/cordis'
+import { scopeTarget } from '@gemini-agy/dsh-scope'
 import { randomUUID } from 'node:crypto'
-import AgentRegistry, { type Agent, type AgentHandle } from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies, unsupportedInbox, unsupportedModel } from '@deepseek-ai/dsh-agent-loop-testkit'
+import AgentRegistry, { type Agent, type AgentHandle } from '@gemini-agy/dsh-agent'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies, unsupportedInbox, unsupportedModel } from '@gemini-agy/dsh-agent-loop-testkit'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 
-import SessionStore, { Session, type SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import SubagentRuntime, { type SubagentRunId, type SubagentStartRequest, type SubagentRun, type SubagentResult, type SubagentRunEndInfo } from '@deepseek-ai/dsh-subagent'
-import type { JsonRpcTransportPeer } from '@deepseek-ai/dsh-sdk-protocol'
+import SessionStore, { Session, type SessionId, type SessionEvent } from '@gemini-agy/dsh-session'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
+import { brandString } from '@gemini-agy/dsh-brand'
+import SubagentRuntime, { type SubagentRunId, type SubagentStartRequest, type SubagentRun, type SubagentResult, type SubagentRunEndInfo } from '@gemini-agy/dsh-subagent'
+import type { JsonRpcTransportPeer } from '@gemini-agy/dsh-sdk-protocol'
 import { HarnessSdkJsonRpcServer } from '../src/index.ts'
 
 class FakeTransport implements JsonRpcTransportPeer {
@@ -294,7 +294,7 @@ describe('HarnessSdkJsonRpcServer', () => {
         reasoningEffort: 'max',
         maxTokens: 321,
       }) as { serverInfo: { name: string } }
-      expect(init.serverInfo.name).toBe('deepseek-harness-sdk-runtime')
+      expect(init.serverInfo.name).toBe('agy-gemini-harness-sdk-runtime')
 
       const receipt = await server.handleRequest('session/prompt', {
         sessionId: 'main',

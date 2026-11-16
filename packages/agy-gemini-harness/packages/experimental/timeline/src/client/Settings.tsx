@@ -7,10 +7,10 @@ import {
   IconTrashOutlineRegular,
   Switch,
   Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type { ObservableSnapshot, PropsStore } from '@deepseek-ai/dsh-client-store'
-import type { ConfigFormSnapshot } from '@deepseek-ai/dsh-client-ui-settings/client'
+} from '@gemini-agy/dsh-client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import type { ObservableSnapshot, PropsStore } from '@gemini-agy/dsh-client-store'
+import type { ConfigFormSnapshot } from '@gemini-agy/dsh-client-ui-settings/client'
 import type { Config } from '../config.ts'
 import defaults from '../defaults.ts'
 import type { createSettingsStore } from './store.ts'

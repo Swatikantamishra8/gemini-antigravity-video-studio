@@ -1,6 +1,6 @@
 /** Gemini Antigravity Files API identifiers. @module dsh-llm-deepseek/file-id */
 
-import type { Branded } from '@deepseek-ai/dsh-brand'
+import type { Branded } from '@gemini-agy/dsh-brand'
 
 /** Opaque identifier returned by the Gemini Antigravity Files API. */
 export type Gemini AntigravityFileId = Branded<'Gemini AntigravityFileId'>

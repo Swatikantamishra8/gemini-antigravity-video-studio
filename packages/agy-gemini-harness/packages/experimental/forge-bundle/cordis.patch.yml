@@ -1,13 +1,13 @@
 - insert:
     - id: worktree
-      name: '@deepseek-ai/dsh-experimental-worktree'
+      name: '@gemini-agy/dsh-experimental-worktree'
     - id: tool-worktree
-      name: '@deepseek-ai/dsh-experimental-tool-worktree'
+      name: '@gemini-agy/dsh-experimental-tool-worktree'
     - id: forge
-      name: '@deepseek-ai/dsh-experimental-forge'
+      name: '@gemini-agy/dsh-experimental-forge'
     - id: forge-github
-      name: '@deepseek-ai/dsh-experimental-forge-github'
+      name: '@gemini-agy/dsh-experimental-forge-github'
     - id: forge-session
-      name: '@deepseek-ai/dsh-experimental-forge-session'
+      name: '@gemini-agy/dsh-experimental-forge-session'
     - id: forge-panel
-      name: '@deepseek-ai/dsh-experimental-client-ui-forge'
+      name: '@gemini-agy/dsh-experimental-client-ui-forge'

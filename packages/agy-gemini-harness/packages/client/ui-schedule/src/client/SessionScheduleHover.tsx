@@ -8,9 +8,9 @@
  */
 
 import { useState } from 'react'
-import { IconClockOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
+import { IconClockOutlineRegular } from '@gemini-agy/dsh-client-ui-primitives'
+import type { InjectFace, PropsLocale, PropsRuntime } from '@gemini-agy/dsh-client-ui-slots'
+import type {} from '@gemini-agy/dsh-client-ui-workspace/client'
 import { formatScheduleFrequency, nextRunParts, orderScheduleRecords, taskName } from './schedule-format.ts'
 import { taskNextRunAt } from './task-record.ts'
 import {

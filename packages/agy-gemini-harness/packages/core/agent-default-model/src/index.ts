@@ -1,20 +1,20 @@
 /**
  * Default model selection for an Agent without a session-specific selection.
  *
- * @module @deepseek-ai/dsh-agent-default-model
+ * @module @gemini-agy/dsh-agent-default-model
  */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@gemini-agy/dsh-settings'
 
-import type { Volatile } from '@deepseek-ai/cordis'
+import type { Volatile } from '@gemini-agy/cordis'
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { ModelSelection } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-config-editor'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { ModelSelection } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ReasoningEffortId } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/dsh-config-editor'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Default model selection for Agents created without an explicit model. */
     agentDefaultModel: AgentDefaultModelConfig

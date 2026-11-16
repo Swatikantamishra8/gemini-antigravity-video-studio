@@ -3,10 +3,10 @@
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-fs'
-import type {} from '@deepseek-ai/dsh-tools'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-fs'
+import type {} from '@gemini-agy/dsh-tools'
 
 export const name = 'workspace-context-global-failure'
 export const inject = ['fs']

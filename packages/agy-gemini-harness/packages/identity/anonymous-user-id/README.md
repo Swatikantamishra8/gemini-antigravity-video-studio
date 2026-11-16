@@ -3,7 +3,7 @@ description: "Anonymous per-harness-home identity for users and maintainers trac
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-anonymous-user-id
+# @gemini-agy/dsh-anonymous-user-id
 
 English | [中文](README.zh.md)
 
@@ -33,7 +33,7 @@ Three things your installation sends out carry the same id, so records line up a
 
 - **Session telemetry** — your telemetry exports carry the id as the `user.id` resource attribute, so a collector can group an installation's records.
 - **Feedback** — each feedback acknowledgement names the anonymous installation that recorded it.
-- **Gemini Antigravity requests** — every provider request carries the `x-deepseek-harness-user-id` header, so usage can be attributed per installation.
+- **Gemini Antigravity requests** — every provider request carries the `x-agy-gemini-harness-user-id` header, so usage can be attributed per installation.
 
 ### Observing and resetting the id
 
@@ -44,7 +44,7 @@ The id lives in `$DSH_HOME/.anonymous-user-id` (`$DSH_HOME` defaults to `~/.dsh`
 When you build a feature that should share the installation's anonymous id, import the value once and reuse it — telemetry, feedback, and Gemini Antigravity already use the same id, so your records line up with theirs:
 
 ```ts
-import { getOrCreateAnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import { getOrCreateAnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
 
 const userId = getOrCreateAnonymousUserId() // stable for the process lifetime
 ```
@@ -96,7 +96,7 @@ Read these pages when the package-level contract is not enough. They move from t
 - [dsh-home-paths](../../util/home-paths/README.md) — owns `$DSH_HOME` and `~/.dsh` resolution.
 - [dsh-session-telemetry-otel](../../session/session-telemetry-otel/README.md) — reports the id as the OTel Resource `user.id`.
 - [dsh-command-feedback](../../feedback/command-feedback/README.md) — embeds the id in the feedback acknowledgement.
-- [dsh-llm-deepseek](../../llm/llm-deepseek/README.md) — sends `x-deepseek-harness-user-id` on provider requests.
+- [dsh-llm-deepseek](../../llm/llm-deepseek/README.md) — sends `x-agy-gemini-harness-user-id` on provider requests.
 - [Session telemetry subsystem](../../../docs/subsystems/session-telemetry.md) — the telemetry seam and its backend contract.
 
 -----

@@ -1,7 +1,7 @@
 /** Session-authorized, version-checked Office bytes shared by concurrent preview reads. */
-import type { OfficeKitPriority, OfficeKitGeneration } from '@deepseek-ai/dsh-office-kit/types'
-import type { RemoteResult } from '@deepseek-ai/dsh-api-remotes/client'
-import type { WorkspaceFileStat } from '@deepseek-ai/dsh-api-workspace-files/types'
+import type { OfficeKitPriority, OfficeKitGeneration } from '@gemini-agy/dsh-office-kit/types'
+import type { RemoteResult } from '@gemini-agy/dsh-api-remotes/client'
+import type { WorkspaceFileStat } from '@gemini-agy/dsh-api-workspace-files/types'
 import type { DocumentFileBytes, SessionFile } from '../rpc.ts'
 
 /** PDF bytes and conversion metadata owned by Office preview. */

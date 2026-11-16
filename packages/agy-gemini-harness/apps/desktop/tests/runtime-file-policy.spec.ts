@@ -29,8 +29,8 @@ it('omits development artifacts while preserving executable modules, assets and 
     '@mixmark-io/domino/test/entities.html',
     '@mixmark-io/domino/.yarn/plugins/@yarnpkg/plugin-version.cjs',
     '@mixmark-io/domino/.yarn/versions/release.yml',
-    '@deepseek-ai/libreoffice-kit-wasm/assets/soffice.data',
-    '@deepseek-ai/libreoffice-kit-darwin-arm64/bin/dsoffice',
+    '@gemini-agy/libreoffice-kit-wasm/assets/soffice.data',
+    '@gemini-agy/libreoffice-kit-darwin-arm64/bin/dsoffice',
     '.modules.yaml', '.pnpm-workspace-state-v1.json', '.bin/tool', '.pnpm/cache',
   ]
   const retained = [
@@ -50,15 +50,15 @@ it('omits development artifacts while preserving executable modules, assets and 
     '@mixmark-io/domino/LICENSE', '@mixmark-io/domino/package.json',
     'example/.yarn/runtime.cjs', '@mixmark-io/domino/.yarn-data.json',
     '@img/sharp-win32-x64/lib/libvips-42.dll',
-    '@deepseek-ai/libreoffice-kit-win32-x64/bin/dsoffice.exe',
-    '@deepseek-ai/libreoffice-kit-win32-x64/sources/core-source.json',
-    '@deepseek-ai/libreoffice-kit-win32-x64/licenses/MPL-2.0.txt',
-    '@deepseek-ai/dsh/lib/index.js', '@deepseek-ai/dsh/lib/bin.js',
-    '@deepseek-ai/dsh-session/lib/index.js',
-    '@deepseek-ai/dsh/src/bin.ts', '@deepseek-ai/dsh/docs/architecture.md',
-    '@deepseek-ai/dsh/docs/upgrade-guide/v0.2.0/example/guide.md',
-    '@deepseek-ai/dsh-session/src/index.ts',
-    '@deepseek-ai/dsh-client-ui-chat/src/client/Page.tsx',
+    '@gemini-agy/libreoffice-kit-win32-x64/bin/dsoffice.exe',
+    '@gemini-agy/libreoffice-kit-win32-x64/sources/core-source.json',
+    '@gemini-agy/libreoffice-kit-win32-x64/licenses/MPL-2.0.txt',
+    '@gemini-agy/dsh/lib/index.js', '@gemini-agy/dsh/lib/bin.js',
+    '@gemini-agy/dsh-session/lib/index.js',
+    '@gemini-agy/dsh/src/bin.ts', '@gemini-agy/dsh/docs/architecture.md',
+    '@gemini-agy/dsh/docs/upgrade-guide/v0.2.0/example/guide.md',
+    '@gemini-agy/dsh-session/src/index.ts',
+    '@gemini-agy/dsh-client-ui-chat/src/client/Page.tsx',
   ]
   try {
     const runtime = runtimeFixture(source)
@@ -160,7 +160,7 @@ it.each([
 ] as const)('retains only the selected Office engine for %s/%s', (platform, arch, engine) => {
   for (const candidate of ['linux-x64', 'darwin-arm64', 'wasm']) {
     const omitted = desktopRuntimeFileExclusion(
-      `@deepseek-ai/libreoffice-kit-${candidate}/prebuilds.json`, { platform, arch }, engine,
+      `@gemini-agy/libreoffice-kit-${candidate}/prebuilds.json`, { platform, arch }, engine,
     )
     expect(omitted === undefined).toBe(candidate === engine)
   }

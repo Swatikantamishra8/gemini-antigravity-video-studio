@@ -1,13 +1,13 @@
-import * as Protocol from '@deepseek-ai/dsh-llm-deepseek'
+import * as Protocol from '@gemini-agy/dsh-llm-deepseek'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
-import type { AttachmentStore, ImageAttachmentRef, RequestImageAttachment } from '@deepseek-ai/dsh-attachment'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { AttachmentId, ImageVariantId } from '@gemini-agy/dsh-attachment/types'
+import type { AttachmentStore, ImageAttachmentRef, RequestImageAttachment } from '@gemini-agy/dsh-attachment'
+import { createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
 import LlmRuntime, { type ToolCallId, createUserMessage,
   CONTEXT_WINDOW_EXCEEDED_CODE,
   createToolResultMessage,
@@ -17,15 +17,15 @@ import LlmRuntime, { type ToolCallId, createUserMessage,
   QUOTA_EXCEEDED_CODE,
   type ReasoningEffortId,
   userAgent,
-} from '@deepseek-ai/dsh-llm'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
-import { getOrCreateAnonymousUserId, type AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import Gemini AntigravityLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import type { PreparedGemini AntigravityLlmApiExtensions } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import { Gemini AntigravityAdapter, resolveAdapterOptions } from '@deepseek-ai/dsh-llm-deepseek'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+} from '@gemini-agy/dsh-llm'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
+import { getOrCreateAnonymousUserId, type AnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import Gemini AntigravityLlmApiExtensionRegistry from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import type { PreparedGemini AntigravityLlmApiExtensions } from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
+import { Gemini AntigravityAdapter, resolveAdapterOptions } from '@gemini-agy/dsh-llm-deepseek'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
 import { providerError } from '../src/transport.ts'
 import { resolveRequestImageTarget } from '../src/request-pricing.ts'
 import { assemble } from './assemble.ts'
@@ -33,7 +33,7 @@ import { closeMockServers, mockServer, textEvents } from './mock-server.ts'
 import type { Behavior } from './mock-server.ts'
 import { requestImageStore } from './helpers.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }
@@ -382,12 +382,12 @@ describe('Gemini AntigravityAdapter against a mock server', () => {
     })
     // App attribution and Gemini Antigravity request identity are independent wire facts.
     expect(server.headers[0]?.['user-agent']).toBe(userAgent())
-    expect(server.headers[0]?.['x-deepseek-harness-user-id']).toBe(getOrCreateAnonymousUserId())
-    expect(server.headers[0]).not.toHaveProperty('x-deepseek-harness-session-id')
+    expect(server.headers[0]?.['x-agy-gemini-harness-user-id']).toBe(getOrCreateAnonymousUserId())
+    expect(server.headers[0]).not.toHaveProperty('x-agy-gemini-harness-session-id')
     expect(server.headers[0]).not.toHaveProperty('http-referer')
     expect(server.headers[0]).not.toHaveProperty('x-openrouter-title')
     expect(server.headers[0]).not.toHaveProperty('x-openrouter-categories')
-    expect(server.headers[0]).not.toHaveProperty('x-deepseek-harness-compact')
+    expect(server.headers[0]).not.toHaveProperty('x-agy-gemini-harness-compact')
   })
 
   it('uploads a durable image once and sends only its Files API id to the vision model', async () => {
@@ -754,7 +754,7 @@ describe('Gemini AntigravityAdapter against a mock server', () => {
       { messages: [{ content: [expect.objectContaining({ type: 'text' }), { type: 'image', source: { type: 'file', file_id: 'file-api-1' } }] }] },
       { messages: [{ content: [expect.objectContaining({ type: 'text' }), { type: 'image', source: { type: 'file', file_id: 'file-api-1' } }] }] },
     ])
-    expect(server.headers[1]?.['x-deepseek-harness-compact']).toBe('1')
+    expect(server.headers[1]?.['x-agy-gemini-harness-compact']).toBe('1')
   })
 
   it('explains a provider rejection of a normalized image and retains the raw response as cause', async () => {
@@ -1231,8 +1231,8 @@ describe('Gemini AntigravityAdapter against a mock server', () => {
       sessionId: brandString<SessionId>('child-session'),
     })
 
-    expect(server.headers[0]?.['x-deepseek-harness-session-id']).toBe('child-session')
-    expect(server.headers[0]?.['x-deepseek-harness-user-id']).toBe(getOrCreateAnonymousUserId())
+    expect(server.headers[0]?.['x-agy-gemini-harness-session-id']).toBe('child-session')
+    expect(server.headers[0]?.['x-agy-gemini-harness-user-id']).toBe(getOrCreateAnonymousUserId())
   })
 
   it('marks the auxiliary compaction call on the wire', async () => {
@@ -1248,7 +1248,7 @@ describe('Gemini AntigravityAdapter against a mock server', () => {
       purpose: 'compaction',
     })
 
-    expect(server.headers[0]?.['x-deepseek-harness-compact']).toBe('1')
+    expect(server.headers[0]?.['x-agy-gemini-harness-compact']).toBe('1')
   })
 
   it('switches dynamically from the configured low default through off to max', async () => {

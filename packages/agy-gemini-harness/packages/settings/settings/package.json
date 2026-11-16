@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-settings",
+  "name": "@gemini-agy/dsh-settings",
   "description": "Abstract user-settings seam (ctx.settings) for the Gemini Antigravity Harness",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/settings/settings"
   },
   "type": "module",
@@ -37,27 +37,27 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/cordis-plugin-timer": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-hmr": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/schemastery": "workspace:~",
+    "@gemini-agy/cordis-plugin-timer": "workspace:~",
+    "@gemini-agy/dsh-app-boot": "workspace:*",
+    "@gemini-agy/dsh-hmr": "workspace:*",
+    "@gemini-agy/dsh-agent-default-model": "workspace:*",
     "yaml": "^2.8.1"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-config-editor": "workspace:*",
-    "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/cosmokit": "workspace:~",
+    "@gemini-agy/dsh-util-values": "workspace:*",
+    "@gemini-agy/dsh-config-editor": "workspace:*",
+    "@gemini-agy/cordis-plugin-loader": "workspace:~",
+    "@gemini-agy/cosmokit": "workspace:~",
     "yaml": "^2.8.1"
   }
 }

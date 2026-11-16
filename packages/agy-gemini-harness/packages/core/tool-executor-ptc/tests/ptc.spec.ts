@@ -1,33 +1,33 @@
-import type { ScopeKey } from '@deepseek-ai/dsh-scope'
-import type { ToolExecutionInput } from '@deepseek-ai/dsh-tools'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
+import type { ScopeKey } from '@gemini-agy/dsh-scope'
+import type { ToolExecutionInput } from '@gemini-agy/dsh-tools'
+import * as PtcToolExecutor from '@gemini-agy/dsh-tool-executor-ptc'
 import { PtcExecutor, CodeRunFailedError, CodeResetFailedError } from '../src/index.ts'
-import { NativeToolExecutor } from '@deepseek-ai/dsh-tool-executor-native'
-import { setSandboxMode } from '@deepseek-ai/dsh-sandbox-policy'
+import { NativeToolExecutor } from '@gemini-agy/dsh-tool-executor-native'
+import { setSandboxMode } from '@gemini-agy/dsh-sandbox-policy'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId  } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { ToolSchema } from '@deepseek-ai/dsh-llm'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import type { Scope } from '@deepseek-ai/dsh-scope'
-import SystemPrompt, { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import { PtcRuntime, PtcRuntimeError } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcRunFailure, PtcRunRequest, PtcRunResult } from '@deepseek-ai/dsh-ptc-runtime'
-import ToolRuntime, { RUN_CODE_NAME, TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH, defineTool } from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import type { JsonSchemaNode, PostToolDecision, ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import type { Agent, AgentCancelCause } from '@deepseek-ai/dsh-agent'
-import SessionStore, { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import ApprovalService, { type ApprovalOutcome, type ApprovalRequest } from '@deepseek-ai/dsh-user-approval'
-import type { SessionEventMap } from '@deepseek-ai/dsh-session'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import SessionProjections from '@deepseek-ai/dsh-session-projection'
+import { provideWorkingDirectoryFixture } from '@gemini-agy/dsh-agent-loop-testkit'
+import { Context } from '@gemini-agy/cordis'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createUserMessage, type ToolCallId  } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+import type { ToolSchema } from '@gemini-agy/dsh-llm'
+import { createScope } from '@gemini-agy/dsh-scope'
+import type { Scope } from '@gemini-agy/dsh-scope'
+import SystemPrompt, { renderPrompt } from '@gemini-agy/dsh-system-prompt'
+import { PtcRuntime, PtcRuntimeError } from '@gemini-agy/dsh-ptc-runtime'
+import type { PtcRunFailure, PtcRunRequest, PtcRunResult } from '@gemini-agy/dsh-ptc-runtime'
+import ToolRuntime, { RUN_CODE_NAME, TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH, defineTool } from '@gemini-agy/dsh-tools'
+import { defineContentToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import type { JsonSchemaNode, PostToolDecision, ToolExecutionResult } from '@gemini-agy/dsh-tools'
+import type { Agent, AgentCancelCause } from '@gemini-agy/dsh-agent'
+import SessionStore, { Session, type SessionId, SessionSeq } from '@gemini-agy/dsh-session'
+import ApprovalService, { type ApprovalOutcome, type ApprovalRequest } from '@gemini-agy/dsh-user-approval'
+import type { SessionEventMap } from '@gemini-agy/dsh-session'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
+import SandboxPolicy from '@gemini-agy/dsh-sandbox-policy'
+import SessionProjections from '@gemini-agy/dsh-session-projection'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'order-probe': { kind: 'order-probe' } & ContextFormed
     'test': { kind: 'test' } & ContextFormed
@@ -46,7 +46,7 @@ const testToolSignal = new AbortController().signal
 
 /** A scriptable in-repo PtcRuntime: each test sets `behavior` to drive the bindings however it needs. */
 class FakeRuntime extends PtcRuntime {
-  resolve(request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest): import('@deepseek-ai/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
+  resolve(request: import('@gemini-agy/dsh-ptc-runtime').PtcRunRequest): import('@gemini-agy/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
 
   readonly language: string
   readonly isolation = 'fake'
@@ -2481,7 +2481,7 @@ describe('per-agent presentation', () => {
   })
 
   it('inherits a STANDING preset scope\'s mode down the chain, agents beside it unaffected', async () => {
-    const { bindScopeParent } = await import('@deepseek-ai/dsh-scope')
+    const { bindScopeParent } = await import('@gemini-agy/dsh-scope')
     const { ctx, systemPrompt } = await setup({ mode: 'native' })
     const calls = registerEcho(ctx)
     // The preset's standing scope declares once; the agent only PARENTS to it

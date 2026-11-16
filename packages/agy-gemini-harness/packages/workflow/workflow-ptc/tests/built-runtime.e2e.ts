@@ -28,16 +28,16 @@ describe.skipIf(!built)('built workflow PTC runtime', () => {
       await writeFile(outside, 'unchanged')
       const driver = join(driverRoot, 'driver.mjs')
       await writeFile(driver, `
-import { Context } from '@deepseek-ai/cordis'
-import PtcWorkflowEngine from '@deepseek-ai/dsh-workflow-ptc'
+import { Context } from '@gemini-agy/cordis'
+import PtcWorkflowEngine from '@gemini-agy/dsh-workflow-ptc'
 const ctx = new Context()
 try {
   for (const name of ['session', 'session-projection', 'agent', 'system-prompt', 'fs-local', 'working-directory', 'subprocess-local', 'sandbox-local']) {
-    await ctx.plugin((await import('@deepseek-ai/dsh-' + name)).default, {})
+    await ctx.plugin((await import('@gemini-agy/dsh-' + name)).default, {})
   }
-  await ctx.plugin((await import('@deepseek-ai/dsh-sandbox-policy')).default, { mode: 'read-only', workspaceRoot: process.argv[2] })
-  await ctx.plugin((await import('@deepseek-ai/dsh-ptc-runtime-node')).default, {})
-  await ctx.plugin((await import('@deepseek-ai/dsh-subagent')).default, {})
+  await ctx.plugin((await import('@gemini-agy/dsh-sandbox-policy')).default, { mode: 'read-only', workspaceRoot: process.argv[2] })
+  await ctx.plugin((await import('@gemini-agy/dsh-ptc-runtime-node')).default, {})
+  await ctx.plugin((await import('@gemini-agy/dsh-subagent')).default, {})
   let selectedStarts = 0
   ctx.subagents.registerProvider({
     name: 'built-selected',

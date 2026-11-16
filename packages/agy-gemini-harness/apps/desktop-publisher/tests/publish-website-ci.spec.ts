@@ -3,10 +3,10 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, expect, it, vi } from 'vitest'
-import * as desktopCos from '@deepseek-ai/dsh-desktop-publisher/desktop-cos.ts'
+import * as desktopCos from '@gemini-agy/dsh-desktop-publisher/desktop-cos.ts'
 import { answer, cosError, startCosLoopback } from './cos-loopback.ts'
 import { teo } from 'tencentcloud-sdk-nodejs-teo'
-import { publishWebsiteCi, websiteApproval } from '@deepseek-ai/dsh-desktop-publisher/publish-website-ci.ts'
+import { publishWebsiteCi, websiteApproval } from '@gemini-agy/dsh-desktop-publisher/publish-website-ci.ts'
 
 vi.mock('node:timers/promises', () => ({ setTimeout: async () => {} }))
 afterEach(() => vi.restoreAllMocks())
@@ -30,7 +30,7 @@ it.each(['accepted', 'unconfirmed', 'incomplete', 'wrong-journal', 'upload', 'pu
     const manifest = { schemaVersion: 1, source: { repository: 'owner/repo', runId: '12', attempt: '1', commit: route.commit,
       workflowCommit: route.commit, sourceRef: 'master', channel: route.channel, runnerName: 'mini', target: 'mac-arm64',
       preset: 'production', productVersion: '1.0.0', version: '1.0.0', testReleaseId: null, qualification: 'notarized' },
-    files: [{ name: 'deepseek-harness-1.0.0-mac-arm64.dmg', size: 1, sha512: createHash('sha512').update('x').digest('base64') }] }
+    files: [{ name: 'agy-gemini-harness-1.0.0-mac-arm64.dmg', size: 1, sha512: createHash('sha512').update('x').digest('base64') }] }
     await writeFile(join(root, 'releases', '12', '1', 'manifest.json'), JSON.stringify(manifest))
     const approval = websiteApproval(manifest, 'production-123')
     await writeFile(join(records, 'state.json'), JSON.stringify({ approval, upload: 'uploaded' }))

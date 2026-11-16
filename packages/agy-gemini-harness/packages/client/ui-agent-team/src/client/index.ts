@@ -1,6 +1,6 @@
 /** Browser entry registering the task-board sections in the subagent catalog. */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
 import { registerAgentTeamUi } from './mount.ts'
 
 export { inject } from './mount.ts'

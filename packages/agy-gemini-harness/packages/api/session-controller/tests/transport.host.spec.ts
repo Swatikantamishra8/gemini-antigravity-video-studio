@@ -1,15 +1,15 @@
-import { Context } from '@deepseek-ai/cordis'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionHeader, SurfaceIntent } from '@deepseek-ai/dsh-session'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { snapshotSubagentDescriptor } from '@deepseek-ai/dsh-subagent'
-import { subagentIdentityProjectionDefinition } from '@deepseek-ai/dsh-subagent/src/projection.ts'
+import { Context } from '@gemini-agy/cordis'
+import { createScope } from '@gemini-agy/dsh-scope'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@gemini-agy/dsh-session'
+import type { Session, SessionEvent, SessionHeader, SurfaceIntent } from '@gemini-agy/dsh-session'
+import type { SessionObservation } from '@gemini-agy/dsh-session-query'
+import { snapshotSubagentDescriptor } from '@gemini-agy/dsh-subagent'
+import { subagentIdentityProjectionDefinition } from '@gemini-agy/dsh-subagent/src/projection.ts'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HistoryController } from '../src/history/controller.ts'
 import { WebController } from '../src/web/controller.ts'
 import { installSessionReadTestServices, testSessionPersistence } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const signal = (): AbortSignal => new AbortController().signal
 

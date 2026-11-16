@@ -1,7 +1,7 @@
 /** Repository-facing Host package entry over the mirrored implementation tree. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
 import {
   apply as applyHost,
 } from './host/plugin.ts'
@@ -49,7 +49,7 @@ export interface InspectorService {
   readonly cordis: CordisRuntimeTreeReader
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Publish Host-realm observations and query the shared Inspector state. */
     inspector: InspectorService

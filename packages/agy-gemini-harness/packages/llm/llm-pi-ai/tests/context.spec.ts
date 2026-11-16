@@ -1,20 +1,20 @@
 import { describe, expect, it, vi } from 'vitest'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
+import type { AttachmentId, ImageVariantId } from '@gemini-agy/dsh-attachment/types'
 import type {
   AttachmentStore,
   ImageAttachmentRef,
   ImageRequestTarget,
   RequestImageAttachment,
-} from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createDeveloperMessage, type ToolCallId, createAssistantMessage, createMessage, createToolResultMessage, createUserMessage, offloadedImageText } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, GenerateOptions, Message, RequestUserInput } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+} from '@gemini-agy/dsh-attachment'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createDeveloperMessage, type ToolCallId, createAssistantMessage, createMessage, createToolResultMessage, createUserMessage, offloadedImageText } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, GenerateOptions, Message, RequestUserInput } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
 import { toPiContext } from '../src/context.ts'
 import type { PiImageRequestContext } from '../src/context.ts'
 import { toPiAssistant } from '../src/replay.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

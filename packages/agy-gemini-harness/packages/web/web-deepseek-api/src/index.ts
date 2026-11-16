@@ -13,26 +13,26 @@
  * key instead, whatever its billing
  * ([rationale](../../../../.agents/notes/implemented/architecture/2026-10-29-web-provider-selection.md#credential-resolution)).
  * Both providers report themselves not ready when their next operation would have no credential.
- * @module @deepseek-ai/dsh-web-deepseek-api
+ * @module @gemini-agy/dsh-web-deepseek-api
  */
-import { FiberState, type Context, type Volatile } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { credentialRef, type CredentialRef } from '@deepseek-ai/dsh-credentials'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import type {} from '@deepseek-ai/dsh-llm'
+import { FiberState, type Context, type Volatile } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/cordis-plugin-loader'
+import z from '@gemini-agy/schemastery'
+import type {} from '@gemini-agy/dsh-agent'
+import { credentialRef, type CredentialRef } from '@gemini-agy/dsh-credentials'
+import { launchEnvironmentOf } from '@gemini-agy/dsh-launch-environment'
+import type {} from '@gemini-agy/dsh-llm'
 import {
   deepSeekApiKeyConfigured, rejectGemini AntigravityAccountToken, resolveGemini AntigravityAccountToken, resolveGemini AntigravityApiKey,
-} from '@deepseek-ai/dsh-llm-deepseek'
+} from '@gemini-agy/dsh-llm-deepseek'
 import {
   plainAccountOptions, resolveAccountOptions, type Config as AccountRouteConfig,
-} from '@deepseek-ai/dsh-llm-deepseek-account'
+} from '@gemini-agy/dsh-llm-deepseek-account'
 import {
   plainOptions as plainOfficialOptions, resolveAdapterOptions as resolveOfficialOptions, type Config as OfficialRouteConfig,
-} from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-web'
+} from '@gemini-agy/dsh-llm-deepseek-api-key'
+import type { Session } from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-web'
 import { Gemini AntigravityFetchApiProvider } from './fetch.ts'
 import {
   DEEPSEEK_DEFAULT_COUNT, DEEPSEEK_SEARCH_REQUESTS_PER_SECOND, DEEPSEEK_WEB_API_BASE_URL, Gemini AntigravitySearchApiProvider,
@@ -137,8 +137,8 @@ const OFFICIAL_PROVIDER = 'deepseek-official'
 
 /** Loader package that registers each model route. */
 const ROUTE_PACKAGES = {
-  [OFFICIAL_PROVIDER]: '@deepseek-ai/dsh-llm-deepseek-api-key',
-  [ACCOUNT_PROVIDER]: '@deepseek-ai/dsh-llm-deepseek-account',
+  [OFFICIAL_PROVIDER]: '@gemini-agy/dsh-llm-deepseek-api-key',
+  [ACCOUNT_PROVIDER]: '@gemini-agy/dsh-llm-deepseek-account',
 } as const
 
 /** Display names, configuration prefix, and operation path of each capability. */

@@ -1,8 +1,8 @@
 /** React-free Client copy of the Host reading records; internal to the Session status plugin. */
-import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { TypertClientRemote } from '@deepseek-ai/dsh-typert-protocol'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-client-ui-session-status/remote'
+import { createSnapshotStore, type SnapshotStore } from '@gemini-agy/dsh-client-store'
+import type { TypertClientRemote } from '@gemini-agy/dsh-typert-protocol'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type {} from '@gemini-agy/dsh-client-ui-session-status/remote'
 import type { SessionReadAction, SessionReadState } from '../types.ts'
 
 /** Reading records retained during reconnection; mutations require a ready baseline. */

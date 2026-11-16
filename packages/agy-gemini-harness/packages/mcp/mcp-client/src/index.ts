@@ -10,13 +10,13 @@
  * disposing the old instance and creating a new one; identical `serverName`
  * reproduces identical public tool names.
  *
- * @module @deepseek-ai/dsh-mcp-client
+ * @module @gemini-agy/dsh-mcp-client
  */
 
-import { Context, type Fiber } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { scopeOf } from '@deepseek-ai/dsh-scope'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { Context, type Fiber } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { scopeOf } from '@gemini-agy/dsh-scope'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
 import { DEFAULT_MAX_INSTRUCTION_BYTES, RECONNECT_DEFAULTS, resolveReconnectPolicy, startConnection } from './connection.ts'
 
 export { resolveReconnectPolicy } from './connection.ts'
@@ -25,7 +25,7 @@ import { registerServerContext } from './server-context.ts'
 import { connectionStatusIn, registerStatusCell } from './status.ts'
 import type { McpConnectionStatusHandle } from './status.ts'
 // Side-effect type import: declaration-merges `ctx.tools` onto Context.
-import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@gemini-agy/dsh-tools'
 
 export { createMcpToolDefinition } from './tools.ts'
 export { McpLocalError, McpToolError } from './diagnostic.ts'

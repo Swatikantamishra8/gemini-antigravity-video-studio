@@ -1,12 +1,12 @@
 /** Discover the caller's entire subagent tree; the control plugin owns registration. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import { defineTool, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type { ToolDefinition } from '@deepseek-ai/dsh-tools'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { ROOT_AGENT_NAME } from '@deepseek-ai/dsh-subagent'
-import type { SubagentDescendantListEntry } from '@deepseek-ai/dsh-subagent'
+import type { Context } from '@gemini-agy/cordis'
+import { defineTool, ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
+import type { ToolDefinition } from '@gemini-agy/dsh-tools'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { ROOT_AGENT_NAME } from '@gemini-agy/dsh-subagent'
+import type { SubagentDescendantListEntry } from '@gemini-agy/dsh-subagent'
 
 
 type ListAgentsStatus = 'running' | 'inactive' | 'corrupt' | 'unsupported' | 'unavailable'

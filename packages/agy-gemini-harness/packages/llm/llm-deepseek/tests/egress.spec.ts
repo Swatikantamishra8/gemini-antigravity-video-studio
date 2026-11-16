@@ -1,7 +1,7 @@
 import { createServer, type Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
-import { installProxyFromEnvironment } from '@deepseek-ai/dsh-http-proxy'
+import { installProxyFromEnvironment } from '@gemini-agy/dsh-http-proxy'
 
 let seen: string[] = []
 let proxy: Server
@@ -35,10 +35,10 @@ import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import Gemini AntigravityLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Context } from '@gemini-agy/cordis'
+import LlmRuntime from '@gemini-agy/dsh-llm'
+import Gemini AntigravityLlmApiExtensionRegistry from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
 
 let home: string
 beforeAll(() => {

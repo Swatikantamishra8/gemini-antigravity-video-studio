@@ -12,17 +12,17 @@
  */
 
 import { createHash } from 'node:crypto'
-import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import { brandNumber, brandString } from '@deepseek-ai/dsh-brand'
+import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@gemini-agy/dsh-attachment'
+import { brandNumber, brandString } from '@gemini-agy/dsh-brand'
 import type {
   AssistantMessage, ContentBlock, LlmFailure, MessageId, SystemMessage, ToolCallBlock, ToolCallId, ToolResultMessage,
   UserMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { SessionEvent, SessionSeq } from '@deepseek-ai/dsh-session'
-import { normalizeSessionTitle } from '@deepseek-ai/dsh-session-title'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import { formatFetchOutput, formatSearchOutput, fetchMetaFromValue, searchMetaFromValue } from '@deepseek-ai/dsh-tool-web'
-import type { WebFetchResult, WebSearchResult } from '@deepseek-ai/dsh-web'
+} from '@gemini-agy/dsh-llm'
+import type { SessionEvent, SessionSeq } from '@gemini-agy/dsh-session'
+import { normalizeSessionTitle } from '@gemini-agy/dsh-session-title'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
+import { formatFetchOutput, formatSearchOutput, fetchMetaFromValue, searchMetaFromValue } from '@gemini-agy/dsh-tool-web'
+import type { WebFetchResult, WebSearchResult } from '@gemini-agy/dsh-web'
 import { parseExportTime, parseKnownFragment } from './format.ts'
 import type { ExportFileEntry, ExportMessage, ExportSessionFile, KnownFragment } from './format.ts'
 

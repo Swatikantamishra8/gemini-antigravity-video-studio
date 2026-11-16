@@ -6,15 +6,15 @@
  * entry, installation-carried bundles, and unaddressable rows stay protected by their own rules.
  */
 export const PROTECTED_PLUGINS: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-plugin-manager', '@deepseek-ai/cordis-plugin-loader',
-  '@deepseek-ai/cordis-plugin-include', '@deepseek-ai/dsh-api-gateway',
-  '@deepseek-ai/dsh-host-webserver', '@deepseek-ai/dsh-client-modules',
-  '@deepseek-ai/dsh-client-ui-settings-plugin-inventory', '@deepseek-ai/dsh-client-ui-plugin-manager',
-  '@deepseek-ai/dsh-host-plugin-inventory', '@deepseek-ai/dsh-typert-registry',
-  '@deepseek-ai/dsh-api-remotes', '@deepseek-ai/dsh-api-remote-access',
-  '@deepseek-ai/cordis-plugin-timer', '@deepseek-ai/dsh-client-connection',
-  '@deepseek-ai/dsh-host-frontend-static', '@deepseek-ai/dsh-tools',
-  '@deepseek-ai/dsh-hmr',
+  '@gemini-agy/dsh-plugin-manager', '@gemini-agy/cordis-plugin-loader',
+  '@gemini-agy/cordis-plugin-include', '@gemini-agy/dsh-api-gateway',
+  '@gemini-agy/dsh-host-webserver', '@gemini-agy/dsh-client-modules',
+  '@gemini-agy/dsh-client-ui-settings-plugin-inventory', '@gemini-agy/dsh-client-ui-plugin-manager',
+  '@gemini-agy/dsh-host-plugin-inventory', '@gemini-agy/dsh-typert-registry',
+  '@gemini-agy/dsh-api-remotes', '@gemini-agy/dsh-api-remote-access',
+  '@gemini-agy/cordis-plugin-timer', '@gemini-agy/dsh-client-connection',
+  '@gemini-agy/dsh-host-frontend-static', '@gemini-agy/dsh-tools',
+  '@gemini-agy/dsh-hmr',
 ])
 
 /**
@@ -23,15 +23,15 @@ export const PROTECTED_PLUGINS: ReadonlySet<string> = new Set([
  * Their Host availability and activation stay intact.
  */
 export const HIDDEN_BUNDLES: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-base',
-  '@deepseek-ai/dsh-web-app',
-  '@deepseek-ai/dsh-headless',
-  '@deepseek-ai/dsh-sdk-app',
-  '@deepseek-ai/dsh-acp-app',
-  '@deepseek-ai/dsh-sdk-minimal',
-  '@deepseek-ai/dsh-experimental-terminal-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
-  '@deepseek-ai/dsh-cua-mcp',
+  '@gemini-agy/dsh-base',
+  '@gemini-agy/dsh-web-app',
+  '@gemini-agy/dsh-headless',
+  '@gemini-agy/dsh-sdk-app',
+  '@gemini-agy/dsh-acp-app',
+  '@gemini-agy/dsh-sdk-minimal',
+  '@gemini-agy/dsh-experimental-terminal-bundle',
+  '@gemini-agy/dsh-experimental-tool-worktree',
+  '@gemini-agy/dsh-cua-mcp',
 ])
 
 /**
@@ -39,9 +39,9 @@ export const HIDDEN_BUNDLES: ReadonlySet<string> = new Set([
  * this list, decides whether a bundle appears on the main list.
  */
 export const EXTENSION_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
+  '@gemini-agy/dsh-experimental-voice-input-bundle',
+  '@gemini-agy/dsh-experimental-plugin-market-bundle',
+  '@gemini-agy/dsh-experimental-auto-review',
 ]
 
 /**
@@ -49,37 +49,37 @@ export const EXTENSION_BUNDLES: readonly string[] = [
  * which includes every eligible bundle, ranks them last in this order.
  */
 export const MORE_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-personalized-recommendations',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-timeline',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-gemini-3.8-flash-high-import',
-  '@deepseek-ai/dsh-subagent-codex',
-  '@deepseek-ai/dsh-subagent-claude-code',
+  '@gemini-agy/dsh-personalized-recommendations',
+  '@gemini-agy/dsh-experimental-inspector-profile',
+  '@gemini-agy/dsh-cua-bundle',
+  '@gemini-agy/dsh-timeline',
+  '@gemini-agy/dsh-experimental-cot-translation-bundle',
+  '@gemini-agy/dsh-experimental-session-search',
+  '@gemini-agy/dsh-experimental-session-titles-bundle',
+  '@gemini-agy/dsh-experimental-badge-skill-bundle',
+  '@gemini-agy/dsh-experimental-ralph-bundle',
+  '@gemini-agy/dsh-gemini-3.8-flash-high-import',
+  '@gemini-agy/dsh-subagent-codex',
+  '@gemini-agy/dsh-subagent-claude-code',
 ]
 
 /** Official bundles the plugin manager marks with the Experimental badge. */
 export const EXPERIMENTAL_BUNDLES: ReadonlySet<string> = new Set([
-  '@deepseek-ai/dsh-personalized-recommendations',
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-cua-mcp',
-  '@deepseek-ai/dsh-timeline',
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-experimental-forge-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-liveshare',
-  '@deepseek-ai/dsh-gemini-3.8-flash-high-import',
+  '@gemini-agy/dsh-personalized-recommendations',
+  '@gemini-agy/dsh-cua-bundle',
+  '@gemini-agy/dsh-cua-mcp',
+  '@gemini-agy/dsh-timeline',
+  '@gemini-agy/dsh-experimental-voice-input-bundle',
+  '@gemini-agy/dsh-experimental-auto-review',
+  '@gemini-agy/dsh-experimental-inspector-profile',
+  '@gemini-agy/dsh-experimental-forge-bundle',
+  '@gemini-agy/dsh-experimental-tool-worktree',
+  '@gemini-agy/dsh-experimental-cot-translation-bundle',
+  '@gemini-agy/dsh-experimental-session-search',
+  '@gemini-agy/dsh-experimental-session-titles-bundle',
+  '@gemini-agy/dsh-experimental-badge-skill-bundle',
+  '@gemini-agy/dsh-experimental-ralph-bundle',
+  '@gemini-agy/dsh-experimental-plugin-market-bundle',
+  '@gemini-agy/dsh-experimental-liveshare',
+  '@gemini-agy/dsh-gemini-3.8-flash-high-import',
 ])

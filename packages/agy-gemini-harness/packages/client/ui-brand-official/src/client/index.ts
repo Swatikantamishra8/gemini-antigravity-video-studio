@@ -1,8 +1,8 @@
 /** Official Gemini Antigravity Harness occupants: the profile-gated sidebar brand slots and the home whale frame layer. */
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-client-ui-renderer/client'
+import type {} from '@gemini-agy/dsh-client-ui-sidebar/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
 import { PixelWhale } from './home-whale/PixelWhale.tsx'
 import { OfficialBrandMark, OfficialBrandName } from './Brand.tsx'
 

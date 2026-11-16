@@ -1,10 +1,10 @@
 /** Agent-scoped JSONL requests over a connection to the shared native helper. */
 import { randomUUID } from 'node:crypto'
 import assert from 'node:assert/strict'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import type { SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
-import type { ToolExecution } from '@deepseek-ai/dsh-tools'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import { HarnessError } from '@gemini-agy/dsh-error'
+import type { SubprocessRuntime } from '@gemini-agy/dsh-subprocess'
+import type { ToolExecution } from '@gemini-agy/dsh-tools'
+import type { JsonValue } from '@gemini-agy/dsh-util-values'
 import { z } from 'zod'
 import type { Readable, Writable } from 'node:stream'
 

@@ -1,12 +1,12 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { JobAppendOptions, JobHandle, JobOutcome } from '@deepseek-ai/dsh-jobs'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import { unsupportedModel, unsupportedInbox } from '@gemini-agy/dsh-agent-loop-testkit'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { JobAppendOptions, JobHandle, JobOutcome } from '@gemini-agy/dsh-jobs'
+import LocalJobRegistry from '@gemini-agy/dsh-jobs-local'
+import { Session, type SessionId } from '@gemini-agy/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** A registry with a tiny ring so eviction is cheap to reach. */
 export async function harness(): Promise<Context> {

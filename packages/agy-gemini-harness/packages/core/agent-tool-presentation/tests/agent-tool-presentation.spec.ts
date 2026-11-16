@@ -5,22 +5,22 @@
  * inherited executor.
  */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { describe, expect, it, onTestFinished } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import { PtcRuntime } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcRunRequest, PtcRunResult } from '@deepseek-ai/dsh-ptc-runtime'
-import ToolRuntime, { RUN_CODE_NAME, defineTool } from '@deepseek-ai/dsh-tools'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { apply, Config, inject, name } from '@deepseek-ai/dsh-agent-tool-presentation'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { Context } from '@gemini-agy/cordis'
+import { createScope } from '@gemini-agy/dsh-scope'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import { PtcRuntime } from '@gemini-agy/dsh-ptc-runtime'
+import type { PtcRunRequest, PtcRunResult } from '@gemini-agy/dsh-ptc-runtime'
+import ToolRuntime, { RUN_CODE_NAME, defineTool } from '@gemini-agy/dsh-tools'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { apply, Config, inject, name } from '@gemini-agy/dsh-agent-tool-presentation'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** A runtime that never runs anything: presentation never dispatches. */
 class StubRuntime extends PtcRuntime {
-  resolve(request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest): import('@deepseek-ai/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
+  resolve(request: import('@gemini-agy/dsh-ptc-runtime').PtcRunRequest): import('@gemini-agy/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
 
   readonly language: string
 

@@ -6,19 +6,19 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { teo } from 'tencentcloud-sdk-nodejs-teo'
-import { readDesktopPublishConfig } from '@deepseek-ai/dsh-desktop-publisher/desktop-publish-config.ts'
+import { readDesktopPublishConfig } from '@gemini-agy/dsh-desktop-publisher/desktop-publish-config.ts'
 import { createDesktopUploadPlan } from '../scripts/desktop-upload-plan.ts'
-import { desktopBuildRecordFilename, desktopWebsiteInstallerUrl } from '@deepseek-ai/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
+import { desktopBuildRecordFilename, desktopWebsiteInstallerUrl } from '@gemini-agy/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
 import { dump, load } from 'js-yaml'
 import { expect, it, vi } from 'vitest'
-import { prepareDesktopRollout, rolloutDesktopRelease } from '@deepseek-ai/dsh-desktop-publisher/desktop-rollout.ts'
-import * as cosTransport from '@deepseek-ai/dsh-desktop-publisher/desktop-publish-cos.ts'
-import * as websitePublisher from '@deepseek-ai/dsh-desktop-publisher/publish-website-ci.ts'
-import { prepareDesktopRolloutCi, publishDesktopRolloutCi } from '@deepseek-ai/dsh-desktop-publisher/publish-desktop-rollout-ci.ts'
-import { createDesktopPublicationRecord } from '@deepseek-ai/dsh-desktop-publisher/desktop-publish-record.ts'
-import { readRetainedDesktopManifest, type DesktopRetainedManifest } from '@deepseek-ai/dsh-desktop-publisher/desktop-release-store.ts'
-import { resolveRetainedDesktopPublication } from '@deepseek-ai/dsh-desktop-publisher/resolve-retained-desktop-publish-ci.ts'
-import type { DesktopPublishEvent, DesktopRemoteObject, DesktopPublishTransport } from '@deepseek-ai/dsh-desktop-publisher/desktop-publish.ts'
+import { prepareDesktopRollout, rolloutDesktopRelease } from '@gemini-agy/dsh-desktop-publisher/desktop-rollout.ts'
+import * as cosTransport from '@gemini-agy/dsh-desktop-publisher/desktop-publish-cos.ts'
+import * as websitePublisher from '@gemini-agy/dsh-desktop-publisher/publish-website-ci.ts'
+import { prepareDesktopRolloutCi, publishDesktopRolloutCi } from '@gemini-agy/dsh-desktop-publisher/publish-desktop-rollout-ci.ts'
+import { createDesktopPublicationRecord } from '@gemini-agy/dsh-desktop-publisher/desktop-publish-record.ts'
+import { readRetainedDesktopManifest, type DesktopRetainedManifest } from '@gemini-agy/dsh-desktop-publisher/desktop-release-store.ts'
+import { resolveRetainedDesktopPublication } from '@gemini-agy/dsh-desktop-publisher/resolve-retained-desktop-publish-ci.ts'
+import type { DesktopPublishEvent, DesktopRemoteObject, DesktopPublishTransport } from '@gemini-agy/dsh-desktop-publisher/desktop-publish.ts'
 
 const digest = (contents: string) => ({
   size: Buffer.byteLength(contents), sha512: createHash('sha512').update(contents).digest('base64'),
@@ -31,7 +31,7 @@ async function fixture(target: 'mac-arm64' | 'mac-x64' | 'win-x64' = 'mac-arm64'
     const directory = join(root, 'releases', '42', '1')
     await mkdir(directory, { recursive: true })
     const version = '0.2.2-rc.1'
-    const payload = `deepseek-harness-${version}-${target}.${target === 'win-x64' ? 'exe' : 'zip'}`
+    const payload = `agy-gemini-harness-${version}-${target}.${target === 'win-x64' ? 'exe' : 'zip'}`
     const contents = dump({ version, files: [{ url: payload, ...digest('installer') }],
       path: payload, sha512: digest('installer').sha512, releaseDate: '2026-11-04T00:00:00.000Z' })
     const filename = `${channel}${target === 'win-x64' ? '' : '-mac'}.yml`
@@ -339,7 +339,7 @@ it('runs the real route CLI without gh and emits the selected route and preset',
 it.each(['mac-arm64', 'win-x64'] as const)('accepts %s metadata produced by the original full upload planner', async (target) => {
   const f = await fixture(target)
   try {
-    const base = `deepseek-harness-${f.manifest.source.version}-${target}`
+    const base = `agy-gemini-harness-${f.manifest.source.version}-${target}`
     const extension = target === 'win-x64' ? 'exe' : 'zip'
     await writeFile(join(f.directory, `${base}.${extension}`), 'installer')
     await writeFile(join(f.directory, `${base}.${extension}.blockmap`), 'blockmap')
@@ -432,6 +432,6 @@ it('executes the master guard and keeps all rollout preflights ahead of dependen
     if (name === 'route') continue
     const local = job.steps.findIndex(step => step.run?.includes('preflight-desktop-publish-local.mjs'))
     expect(local).toBeGreaterThanOrEqual(0)
-    expect(local).toBeLessThan(job.steps.findIndex(step => step.run === 'pnpm --filter @deepseek-ai/dsh-desktop-publisher --fail-if-no-match install --prod --frozen-lockfile --ignore-scripts'))
+    expect(local).toBeLessThan(job.steps.findIndex(step => step.run === 'pnpm --filter @gemini-agy/dsh-desktop-publisher --fail-if-no-match install --prod --frozen-lockfile --ignore-scripts'))
   }
 })

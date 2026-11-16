@@ -1,22 +1,22 @@
 /** Remote contribution and slot registrations of the forge panel. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { RemoteHostFacts } from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-layout/client'
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
-import { IconBranchOutlineRegular, type QuoteSummary } from '@deepseek-ai/dsh-client-ui-primitives'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-settings/client'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
-import type {} from '@deepseek-ai/dsh-experimental-client-ui-forge/remote'
-import type { ForgeReviewThread } from '@deepseek-ai/dsh-experimental-forge/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { RemoteResult, TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
+import type { Context } from '@gemini-agy/cordis'
+import type { RemoteHostFacts } from '@gemini-agy/dsh-api-remotes/client'
+import type {} from '@gemini-agy/dsh-api-session-controller/client'
+import type {} from '@gemini-agy/dsh-client-locale/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
+import type {} from '@gemini-agy/dsh-client-ui-layout/client'
+import type {} from '@gemini-agy/dsh-client-ui-plugin-manager/client'
+import { IconBranchOutlineRegular, type QuoteSummary } from '@gemini-agy/dsh-client-ui-primitives'
+import type {} from '@gemini-agy/dsh-client-ui-renderer/client'
+import type {} from '@gemini-agy/dsh-client-ui-settings/client'
+import type {} from '@gemini-agy/dsh-client-ui-sidebar-right/client'
+import type { HostObservable } from '@gemini-agy/dsh-client-ui-slots'
+import type {} from '@gemini-agy/dsh-client-ui-workspace/client'
+import type {} from '@gemini-agy/dsh-experimental-client-ui-forge/remote'
+import type { ForgeReviewThread } from '@gemini-agy/dsh-experimental-forge/types'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
+import type { RemoteResult, TypertRemoteContribution } from '@gemini-agy/dsh-typert-protocol'
 import type {
   ForgeChangeRequestListState, ForgeChangeRequestStatesFrame, ForgeExtensionState, ForgePanelChangeRequest,
 } from '../types.ts'
@@ -52,13 +52,13 @@ import { WorktreeToggle, type WorktreeToggleInjected } from './WorktreeToggle.ts
 export const inject = ['remote', 'slots', 'locale', 'sidebarRightTabs', 'sidebarRight', 'sessions', 'configForms']
 
 /** The worktree row of the Forge bundle, whose Plugins page carries the archive cleanup switch. */
-export const WORKTREE_ROW_KEY = '@deepseek-ai/dsh-experimental-forge-bundle#worktree'
+export const WORKTREE_ROW_KEY = '@gemini-agy/dsh-experimental-forge-bundle#worktree'
 
 /** The Loader entry id the worktree service's settings namespace follows. */
 export const WORKTREE_NS = 'worktree'
 
 /** Registry id of the forge tab type, also its slot key. */
-export const TAB_ID = '@deepseek-ai/dsh-experimental-client-ui-forge'
+export const TAB_ID = '@gemini-agy/dsh-experimental-client-ui-forge'
 
 /** Kind of the forge tab. */
 export const TAB_KIND = 'forge-panel'

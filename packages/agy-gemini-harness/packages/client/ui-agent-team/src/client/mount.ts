@@ -1,22 +1,22 @@
 /** Source-safe task-board browser registration. */
 
-import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-ui-subagent/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-ui-model-selection/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { Context as ClientContext } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-api-session-controller/client'
+import type {} from '@gemini-agy/dsh-client-ui-subagent/client'
+import type {} from '@gemini-agy/dsh-client-ui-conversation/client'
+import type {} from '@gemini-agy/dsh-client-locale/client'
+import type {} from '@gemini-agy/dsh-client-ui-renderer/client'
+import type {} from '@gemini-agy/dsh-api-remotes/client'
+import type {} from '@gemini-agy/dsh-client-ui-model-selection/client'
+import { createSnapshotStore } from '@gemini-agy/dsh-client-store'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import { TeamDisableConfirmation, type TeamDisableConfirmationInjected, type TeamDisableRequest } from './TeamDisableConfirmation.tsx'
 import { TeamModePane, TeamModeToggle, type TeamModePaneInjected } from './TeamModeToggle.tsx'
 import { TeamBoard } from './TeamBoard.tsx'
 import { TeamCommandRow } from './TeamCommandRow.tsx'
 import { en, ja, es, fr, de, ru, pt, NS, zh, type TeamKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@gemini-agy/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Shared task-board copy. */
     'agent-team': TeamKey

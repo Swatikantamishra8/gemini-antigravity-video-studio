@@ -1,43 +1,43 @@
 /** Native helper replacement is synchronized with Agent and provider disposal. */
-import { executeModelToolFixture, executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeModelToolFixture, executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
 import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { setImmediate } from 'node:timers/promises'
-import { Context, FiberState } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Timer from '@deepseek-ai/cordis-plugin-timer'
-import { initProfile, mountRootInclude, readProfilePatches, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import ConfigEditor from '@deepseek-ai/dsh-config-editor'
-import Settings from '@deepseek-ai/dsh-settings'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import ComputerUseRegistry from '@deepseek-ai/dsh-computer-use'
-import { COMMON_GUIDANCE } from '@deepseek-ai/dsh-cua/guidance'
-import { CuaConfig, installCua } from '@deepseek-ai/dsh-cua'
-import { createConfigProjector } from '@deepseek-ai/dsh-app-boot/src/config-schema/projector.ts'
-import LocalAttachmentStore from '@deepseek-ai/dsh-attachment-local'
-import FileSystem from '@deepseek-ai/dsh-fs-local'
-import UserQuestions, { UserQuestionError } from '@deepseek-ai/dsh-user-questions'
-import NodeRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import { createRunCodeTool } from '@deepseek-ai/dsh-tool-executor-ptc/run-code'
-import Sandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import { LlmAdapter, LlmError, type ToolCallId, type LlmResolvedModelInfo, type StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import Subprocess from '@deepseek-ai/dsh-subprocess'
-import SubprocessLocal from '@deepseek-ai/dsh-subprocess-local'
+import { Context, FiberState } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Timer from '@gemini-agy/cordis-plugin-timer'
+import { initProfile, mountRootInclude, readProfilePatches, type ProfileContext } from '@gemini-agy/dsh-app-boot'
+import ConfigEditor from '@gemini-agy/dsh-config-editor'
+import Settings from '@gemini-agy/dsh-settings'
+import Storage from '@gemini-agy/dsh-storage'
+import * as StorageJson from '@gemini-agy/dsh-storage-json'
+import * as StorageDomain from '@gemini-agy/dsh-storage-domain'
+import Hmr from '@gemini-agy/dsh-hmr'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@gemini-agy/dsh-agent-loop-testkit'
+import ComputerUseRegistry from '@gemini-agy/dsh-computer-use'
+import { COMMON_GUIDANCE } from '@gemini-agy/dsh-cua/guidance'
+import { CuaConfig, installCua } from '@gemini-agy/dsh-cua'
+import { createConfigProjector } from '@gemini-agy/dsh-app-boot/src/config-schema/projector.ts'
+import LocalAttachmentStore from '@gemini-agy/dsh-attachment-local'
+import FileSystem from '@gemini-agy/dsh-fs-local'
+import UserQuestions, { UserQuestionError } from '@gemini-agy/dsh-user-questions'
+import NodeRuntime from '@gemini-agy/dsh-ptc-runtime-node'
+import { createRunCodeTool } from '@gemini-agy/dsh-tool-executor-ptc/run-code'
+import Sandbox from '@gemini-agy/dsh-sandbox-local'
+import SandboxPolicy from '@gemini-agy/dsh-sandbox-policy'
+import { LlmAdapter, LlmError, type ToolCallId, type LlmResolvedModelInfo, type StreamChunk } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import Subprocess from '@gemini-agy/dsh-subprocess'
+import SubprocessLocal from '@gemini-agy/dsh-subprocess-local'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import sharp from 'sharp'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
+import type { ImageAttachmentRef } from '@gemini-agy/dsh-attachment'
 import * as NativeProvider from '../src/index.ts'
-import { NativeError, type NativeClient } from '@deepseek-ai/dsh-cua/native-client'
+import { NativeError, type NativeClient } from '@gemini-agy/dsh-cua/native-client'
 import type { NativeBuildSpec } from '../src/native-build.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const native = vi.hoisted(() => ({
   connect: vi.fn<typeof import('../src/shared-native.ts')['createSharedNativeChannel']>(),
@@ -53,8 +53,8 @@ vi.mock('../src/native-build.ts', async importOriginal => ({
   nativeHostArchitecture: native.architecture,
   prepareNativeExecutable: native.prepare,
 }))
-vi.mock('@deepseek-ai/dsh-cua/native-client', async importOriginal => ({
-  ...await importOriginal<typeof import('@deepseek-ai/dsh-cua/native-client')>(),
+vi.mock('@gemini-agy/dsh-cua/native-client', async importOriginal => ({
+  ...await importOriginal<typeof import('@gemini-agy/dsh-cua/native-client')>(),
   NativeClient: class {
     disposed = false
     constructor(...args: ConstructorParameters<typeof NativeClient>) {
@@ -962,7 +962,7 @@ it.each([
     let closed = false
     closing = (owner === 'provider' ? f.provider.dispose()
       : owner === 'agent' ? f.handle.dispose()
-        : f.ctx.cuaAccess.revoke('a'.repeat(64) as import('@deepseek-ai/dsh-cua/types').CuaApplicationId)).then(() => { closed = true })
+        : f.ctx.cuaAccess.revoke('a'.repeat(64) as import('@gemini-agy/dsh-cua/types').CuaApplicationId)).then(() => { closed = true })
     await setImmediate()
     expect(admissionSignal?.aborted).toBe(true)
     expect(closed).toBe(false)
@@ -1107,7 +1107,7 @@ it('stores revocation without entering the HMR configuration queue', async () =>
   onTestFinished(() => { release.resolve(undefined) })
   const blocked = f.ctx.hmr.runExclusive(async () => { acquired.resolve(undefined); await release.promise })
   await acquired.promise
-  await f.ctx.cuaAccess.revoke(grant.id as import('@deepseek-ai/dsh-cua/types').CuaApplicationId)
+  await f.ctx.cuaAccess.revoke(grant.id as import('@gemini-agy/dsh-cua/types').CuaApplicationId)
   expect((await f.ctx.cuaAccess.applications()).allowedApps).toEqual([])
   expect(await readFile(f.profile.patchPath, 'utf8')).toBe(before)
   release.resolve(undefined)

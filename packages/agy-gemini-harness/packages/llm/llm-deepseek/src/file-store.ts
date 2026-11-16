@@ -1,8 +1,8 @@
 /** Gemini Antigravity Files API upload reuse, invalidation, and quota recovery. @module dsh-llm-deepseek/file-store */
 
-import { timeoutOf, type TimeoutReason } from '@deepseek-ai/dsh-timeout'
-import type { RequestImageAttachment } from '@deepseek-ai/dsh-attachment'
-import { LlmError } from '@deepseek-ai/dsh-llm'
+import { timeoutOf, type TimeoutReason } from '@gemini-agy/dsh-timeout'
+import type { RequestImageAttachment } from '@gemini-agy/dsh-attachment'
+import { LlmError } from '@gemini-agy/dsh-llm'
 import { Gemini AntigravityFilesClient, isFilesQuotaError } from './files-api.ts'
 import type { Gemini AntigravityFileId } from './file-id.ts'
 import { messagesApiRoot } from './messages-api.ts'

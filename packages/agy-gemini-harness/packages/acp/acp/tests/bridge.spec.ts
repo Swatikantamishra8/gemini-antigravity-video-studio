@@ -4,13 +4,13 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { AttachmentError } from '@deepseek-ai/dsh-attachment'
-import type { ToolCallId, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionPersistenceRevision, SessionPersistenceSnapshot } from '@deepseek-ai/dsh-session-persistence'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { AttachmentError } from '@gemini-agy/dsh-attachment'
+import type { ToolCallId, StreamChunk } from '@gemini-agy/dsh-llm'
+import { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@gemini-agy/dsh-session'
+import type { SessionHeader } from '@gemini-agy/dsh-session'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { SessionPersistenceRevision, SessionPersistenceSnapshot } from '@gemini-agy/dsh-session-persistence'
+import { defineContentToolFixture } from '@gemini-agy/dsh-tool-testkit'
 import { makeBridgeHarness, textResponse, type BridgeHarness } from './harness.ts'
 import { startHttpMcpFixture } from '../../../mcp/mcp-client/tests/http-fixture.ts'
 
@@ -49,7 +49,7 @@ describe('automation-only ACP bridge', () => {
 
     expect(response).toEqual({
       protocolVersion: PROTOCOL_VERSION,
-      agentInfo: { name: 'deepseek-harness-acp', version: '0.0.1' },
+      agentInfo: { name: 'agy-gemini-harness-acp', version: '0.0.1' },
       agentCapabilities: {
         mcpCapabilities: { http: true },
         promptCapabilities: { image: false, audio: false, embeddedContext: false },

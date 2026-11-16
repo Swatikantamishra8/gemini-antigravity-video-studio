@@ -1,23 +1,23 @@
 /**
  * Model-facing `get_goal`, `create_goal`, and `update_goal` tools over the
  * persisted same-session goal domain.
- * @module @deepseek-ai/dsh-tool-goal
+ * @module @gemini-agy/dsh-tool-goal
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId, GoalRef, GoalView } from '@deepseek-ai/dsh-goal/types'
-import { boundContextSummary, createUserMessage, HarnessError } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { GoalId, GoalRef, GoalView } from '@gemini-agy/dsh-goal/types'
+import { boundContextSummary, createUserMessage, HarnessError } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'tool-goal': { kind: 'tool-goal' } & ContextFormed
   }
 }
 
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView } from '@deepseek-ai/dsh-tools'
+import { defineTool } from '@gemini-agy/dsh-tools'
+import type { GenericCallView } from '@gemini-agy/dsh-tools'
 import {
   completionAuthority,
   goalToolExecution,

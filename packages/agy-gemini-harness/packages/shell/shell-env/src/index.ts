@@ -5,23 +5,23 @@
  * the registry itself while plugins can register additional, enumerable facts
  * with effect-scoped disposal.
  *
- * @module @deepseek-ai/dsh-shell-env
+ * @module @gemini-agy/dsh-shell-env
  */
 
 import { dirname } from 'node:path'
-import { Service, type Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { DSH_ENV_PREFIX } from '@deepseek-ai/dsh-shell'
-import type { DshEnvironment, DshEnvironmentKey } from '@deepseek-ai/dsh-shell'
-import { DSH_HOME_ENV, resolveDshHome } from '@deepseek-ai/dsh-home-paths'
+import { Service, type Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { DSH_ENV_PREFIX } from '@gemini-agy/dsh-shell'
+import type { DshEnvironment, DshEnvironmentKey } from '@gemini-agy/dsh-shell'
+import { DSH_HOME_ENV, resolveDshHome } from '@gemini-agy/dsh-home-paths'
 import { ShellEnvError } from './error.ts'
-import type { ToolExecution } from '@deepseek-ai/dsh-tools'
+import type { ToolExecution } from '@gemini-agy/dsh-tools'
 // Declares `Context.profileContext`, the launcher-provided profile the built-ins read.
-import type {} from '@deepseek-ai/dsh-app-boot'
+import type {} from '@gemini-agy/dsh-app-boot'
 
 export { ShellEnvError, type ShellEnvErrorCode } from './error.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     shellEnv: ShellEnvRegistry
   }

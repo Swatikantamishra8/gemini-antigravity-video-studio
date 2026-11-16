@@ -1,9 +1,9 @@
 /** Direct Messages transport with one cancellable lifecycle per model request. */
 
-import { attributionHeaders, LlmAdapter, LlmError } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, ImageAttachmentAccessResolver, PreparedAdapterCall, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { Gemini AntigravityLlmApiExtensionRequest, Gemini AntigravityLlmApiJson } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import { idleWatchdog, timeoutOf } from '@deepseek-ai/dsh-timeout'
+import { attributionHeaders, LlmAdapter, LlmError } from '@gemini-agy/dsh-llm'
+import type { GenerateOptions, ImageAttachmentAccessResolver, PreparedAdapterCall, StreamChunk } from '@gemini-agy/dsh-llm'
+import type { Gemini AntigravityLlmApiExtensionRequest, Gemini AntigravityLlmApiJson } from '@gemini-agy/dsh-deepseek-llm-api-extensions'
+import { idleWatchdog, timeoutOf } from '@gemini-agy/dsh-timeout'
 import { modelInfo } from './model-info.ts'
 import type { Gemini AntigravityAdapterOptions, Gemini AntigravityConnectionOptions as Connection } from './types.ts'
 import { Gemini AntigravityFileStore } from './file-store.ts'
@@ -15,7 +15,7 @@ import { serialize } from './serialize.ts'
 import { parseSse } from './sse.ts'
 import { translate } from './translate.ts'
 import { providerError, providerErrorDetail } from './transport.ts'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
+import type { ImageAttachmentRef } from '@gemini-agy/dsh-attachment'
 import { resolveRequestImageTarget } from './request-pricing.ts'
 
 /** Gemini Antigravity provider using Messages content and native thinking replay. */
@@ -147,9 +147,9 @@ export class Gemini AntigravityAdapter<C extends Connection = Connection> extend
             ...auth.headers,
             'anthropic-version': '2023-06-01',
             ...betas.length === 0 ? {} : { 'anthropic-beta': betas.join(',') },
-            'x-deepseek-harness-user-id': this.dependencies.resolveUserId(),
-            ...options.sessionId === undefined ? {} : { 'x-deepseek-harness-session-id': String(options.sessionId) },
-            ...requestIdentity.purpose === 'compaction' ? { 'x-deepseek-harness-compact': '1' } : {},
+            'x-agy-gemini-harness-user-id': this.dependencies.resolveUserId(),
+            ...options.sessionId === undefined ? {} : { 'x-agy-gemini-harness-session-id': String(options.sessionId) },
+            ...requestIdentity.purpose === 'compaction' ? { 'x-agy-gemini-harness-compact': '1' } : {},
           },
         })
         if (!response.ok) {

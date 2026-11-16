@@ -4,14 +4,14 @@
  * `job.follow` stream per observed job — so overlapping viewers share a
  * stream, rosters resume whole after a reconnect, and observations resume
  * from the model's cursor, plus the human kill passthrough over `job.kill`.
- * @module @deepseek-ai/dsh-api-job-controller/client/service
+ * @module @gemini-agy/dsh-api-job-controller/client/service
  */
 
-import { Service, type Context } from '@deepseek-ai/cordis'
-import { RemoteStreamCarrierError, type ClientRemote } from '@deepseek-ai/dsh-api-gateway/client'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
-import type { JobId } from '@deepseek-ai/dsh-jobs/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { Service, type Context } from '@gemini-agy/cordis'
+import { RemoteStreamCarrierError, type ClientRemote } from '@gemini-agy/dsh-api-gateway/client'
+import type { RemoteResult } from '@gemini-agy/dsh-typert-protocol'
+import type { JobId } from '@gemini-agy/dsh-jobs/types'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import type { JobKillRequest, JobKillValue, JobFollowFrame, JobFollowRequest, JobListFrame, JobListRequest } from '../types.ts'
 import type { ClientJobsModel, JobsSource } from './model.ts'
 
@@ -82,7 +82,7 @@ interface StreamEntry {
   dispose: () => Promise<void>
 }
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** React-free client job rosters and observation control. */
     jobs: IJobs

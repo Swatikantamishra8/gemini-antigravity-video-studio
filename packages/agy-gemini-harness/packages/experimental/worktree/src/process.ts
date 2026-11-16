@@ -1,12 +1,12 @@
 /** Cancellable commands under the calling Session's existing file policy, whose stdout is collected within a bound or streamed. */
 
 import type { Readable } from 'node:stream'
-import type { Context } from '@deepseek-ai/cordis'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
+import type { Context } from '@gemini-agy/cordis'
+import type { SandboxExecutionPolicy } from '@gemini-agy/dsh-sandbox'
 import type {
   SubprocessCollect, SubprocessCollectedOutputs, SubprocessHandle, SubprocessOutcome, SubprocessOutputReader,
-} from '@deepseek-ai/dsh-subprocess'
-import { deadline, timeoutOf } from '@deepseek-ai/dsh-timeout'
+} from '@gemini-agy/dsh-subprocess'
+import { deadline, timeoutOf } from '@gemini-agy/dsh-timeout'
 import { WorktreeError } from './error.ts'
 
 /** Resolved process resource limits owned by the worktree service. */

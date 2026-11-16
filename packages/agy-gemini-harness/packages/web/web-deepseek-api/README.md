@@ -3,7 +3,7 @@ description: "Gemini Antigravity Search and Fetch API providers, their shared au
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-web-deepseek-api
+# @gemini-agy/dsh-web-deepseek-api
 
 English | [中文](README.zh.md)
 
@@ -27,11 +27,11 @@ Search and fetch the web through the Gemini Antigravity Search and Fetch APIs: o
 Mount the plugin alongside `dsh-web` and select its providers. Shipped profiles mount it and select its Search API (`deepseek-search-api`) for search and local HTTP fetch for fetch. In **Plugins > Built-in plugin settings > Web search and fetch**, choosing **Gemini Antigravity Search API** in the **Search** menu selects `deepseek-search-api` and choosing **Gemini Antigravity Fetch API** in the **Fetch** menu selects `deepseek-fetch-api`; each menu is saved independently, and choosing another entry restores another provider. While a menu selects one of these providers, its **Billing** menu below writes `searchBilling` or `fetchBilling`: **Automatic**, **Signed-in Gemini Antigravity account**, or **Gemini Antigravity API key**. A saved selection applies to the next operation.
 
 ```yaml
-- name: '@deepseek-ai/dsh-web'
+- name: '@gemini-agy/dsh-web'
   config:
     searchProvider: deepseek-search-api
     fetchProvider: deepseek-fetch-api
-- name: '@deepseek-ai/dsh-web-deepseek-api'
+- name: '@gemini-agy/dsh-web-deepseek-api'
   config:
     searchBaseURL: https://search.example.test/api/v1/tools
     searchApiKeyEnv: DEEPSEEK_SEARCH_API_KEY
@@ -59,8 +59,8 @@ Run the real API tests with `DEEPSEEK_API_KEY` and `DEEPSEEK_SEARCH_API_TEST_BAS
 Search and Fetch each resolve their endpoint and credential from one settings snapshot per operation, so a saved setting, a model-provider change, a sign-in, or a stored key applies to the next operation. The conversation's route is the `provider` of the initiating Session's latest request context; `ready()` uses the route of the model request being prepared.
 
 - **Own settings.** A capability with a non-empty `*BaseURL` or `*ApiKeyEnv` sends only the key under its `*ApiKeyEnv` (`DEEPSEEK_API_KEY` when unset) as `Authorization: Bearer` to its `*BaseURL` (`https://api.deepseek.com/v1/tools` when unset) on every route, and never the account token. Without the key, the operation fails with a diagnostic that names the reference and the `*ApiKeyEnv` field.
-- **Account token.** The operation sends the token that `ctx.deepseekAccount` releases for the dispatch endpoint as `x-dsh-auth-token`; the public Search and Fetch routes accepted it on 2026-10-16. The endpoint is under the origin of the active Loader entry of `@deepseek-ai/dsh-llm-deepseek-account` at the entry root that the model provider directory lists for `deepseek-account`; without that entry, it is under the origin of that route's default base URL (`https://api.deepseek.com`, or the `DEEPSEEK_BASE_URL` origin). No sign-in, no account service, or an empty token means no token. A failed account-token read fails the operation without trying another credential. An active entry whose settings the route's own resolver rejects fails the operation before that account token is read when the operation reaches this source.
-- **API key.** The operation sends the key under the `apiKeyEnv` of the active `@deepseek-ai/dsh-llm-deepseek-api-key` entry the directory lists for `deepseek-official` (`DEEPSEEK_API_KEY` by default) as `Authorization: Bearer` to that route's origin, resolving its options as the route does. Without that entry, or with an inactive one, it sends `DEEPSEEK_API_KEY` to `https://api.deepseek.com/v1/tools`. An active entry whose settings the route's own resolver rejects fails each operation that needs the key, before the key is read; the operation never substitutes the official endpoint or `DEEPSEEK_API_KEY`.
+- **Account token.** The operation sends the token that `ctx.deepseekAccount` releases for the dispatch endpoint as `x-dsh-auth-token`; the public Search and Fetch routes accepted it on 2026-10-16. The endpoint is under the origin of the active Loader entry of `@gemini-agy/dsh-llm-deepseek-account` at the entry root that the model provider directory lists for `deepseek-account`; without that entry, it is under the origin of that route's default base URL (`https://api.deepseek.com`, or the `DEEPSEEK_BASE_URL` origin). No sign-in, no account service, or an empty token means no token. A failed account-token read fails the operation without trying another credential. An active entry whose settings the route's own resolver rejects fails the operation before that account token is read when the operation reaches this source.
+- **API key.** The operation sends the key under the `apiKeyEnv` of the active `@gemini-agy/dsh-llm-deepseek-api-key` entry the directory lists for `deepseek-official` (`DEEPSEEK_API_KEY` by default) as `Authorization: Bearer` to that route's origin, resolving its options as the route does. Without that entry, or with an inactive one, it sends `DEEPSEEK_API_KEY` to `https://api.deepseek.com/v1/tools`. An active entry whose settings the route's own resolver rejects fails each operation that needs the key, before the key is read; the operation never substitutes the official endpoint or `DEEPSEEK_API_KEY`.
 - **`auto` billing** follows the conversation. On the `deepseek-account` route it sends the account token, and without one the API key; without the account route entry, only the API key. On the `deepseek-official` route it sends only the API key. On any other route or outside a Session it sends the API key, and without a key the account token; without a key, a mounted account route entry whose settings do not resolve fails the operation.
 - **`account` billing** sends only the account token on every route, and **`api-key` billing** only the API key; neither falls back to the other credential.
 
@@ -132,7 +132,7 @@ A returning or removed web tool changes the declared tools as [`dsh-tool-web`](.
 - API query and URL constraints are enforced by the remote service. An unresolvable Fetch target returned HTTP 500 rather than the documented 404 on 2026-10-16, and its failure carries the same endpoint guidance as an endpoint failure. Fetch exposes neither the target status nor the final redirect URL, so results report HTTP 200 and the requested URL; the provider discards the API's page title.
 - `available()` cannot query asynchronous credential stores; `ready()` does, so model steps withhold the tools when the store lacks the key. A direct `ctx.web.search()` or `ctx.web.fetch()` call can still fail with a missing-credential error.
 - Search pacing limits send times within one plugin instance. Other processes and clients on the same account share the account-wide 5 QPS limit without coordination, and network jitter can still bunch arrivals; an HTTP 429 fails that search, and `dsh-tool-web` then fails the whole multi-query call. Fetch is not paced, so parallel `web_fetch` calls can exceed the Fetch limit.
-- Route endpoints and keys follow only the Loader entries of `@deepseek-ai/dsh-llm-deepseek-api-key` and `@deepseek-ai/dsh-llm-deepseek-account` at the entry root; another package registering the same provider id, such as a test replay adapter, counts as no route, so its conversations use `DEEPSEEK_API_KEY` and the official base.
+- Route endpoints and keys follow only the Loader entries of `@gemini-agy/dsh-llm-deepseek-api-key` and `@gemini-agy/dsh-llm-deepseek-account` at the entry root; another package registering the same provider id, such as a test replay adapter, counts as no route, so its conversations use `DEEPSEEK_API_KEY` and the official base.
 
 <a id="dev-note"></a>
 ### Dev Note

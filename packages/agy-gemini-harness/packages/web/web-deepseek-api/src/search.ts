@@ -1,9 +1,9 @@
 /**
  * Gemini Antigravity Search API provider: one direct request per search, without an
  * auxiliary model request.
- * @module @deepseek-ai/dsh-web-deepseek-api/search
+ * @module @gemini-agy/dsh-web-deepseek-api/search
  */
-import type { WebSearchProvider, WebSearchRequest, WebSearchResult } from '@deepseek-ai/dsh-web'
+import type { WebSearchProvider, WebSearchRequest, WebSearchResult } from '@gemini-agy/dsh-web'
 import {
   dispatchGemini AntigravityWeb, hasGemini AntigravityWebCredential, invalidResponse, isRecord, searchAborted,
   type Gemini AntigravityWebAuth, type Gemini AntigravityWebGuidance,

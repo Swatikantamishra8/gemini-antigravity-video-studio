@@ -1,22 +1,22 @@
 import { access } from 'node:fs/promises'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { AgentCancelCause } from '@deepseek-ai/dsh-agent'
-import { CREATED_RECORD } from '@deepseek-ai/dsh-experimental-worktree'
-import type {} from '@deepseek-ai/dsh-experimental-forge-session'
-import SessionStore, { appendPluginRecord, type SessionId } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-working-directory'
+import { Context } from '@gemini-agy/cordis'
+import type { AgentCancelCause } from '@gemini-agy/dsh-agent'
+import { CREATED_RECORD } from '@gemini-agy/dsh-experimental-worktree'
+import type {} from '@gemini-agy/dsh-experimental-forge-session'
+import SessionStore, { appendPluginRecord, type SessionId } from '@gemini-agy/dsh-session'
+import type { Session } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-working-directory'
 import type { ForgeSessionWorktree, ForgeWorktreeCreation, ForgeWorktreeState } from '../src/index.ts'
 import { CreationFailure, forgeWorktreeProjection, WORKTREE_RECORD, WorktreeCreations } from '../src/worktree.ts'
 import {
   branches, commitAt, git, hold, notice, plainSession, prompt, proposeStep, rejectionOf, repository, runtime, scratch, startStep, startTurn,
 } from './harness.ts'
 import type { Runtime } from './harness.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const cleanups: (() => Promise<void>)[] = []
 

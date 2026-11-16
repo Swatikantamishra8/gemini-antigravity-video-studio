@@ -1,26 +1,26 @@
 /** Host Remote of the forge panel: checkout, code host, sign-in, change request, and worktree state per Session. */
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
-import { changeRequestKey } from '@deepseek-ai/dsh-experimental-forge'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-api-remote-access'
+import { changeRequestKey } from '@gemini-agy/dsh-experimental-forge'
 import type {
   BranchUpdateMethod, ChangeRequestKey, ChangeRequestRef, ChangeRequestReviewer, ChangeRequestSnapshot, ForgeActionFailure, ForgeCommitList,
   ForgeFailure,
   ForgeLineComment, ForgeRerunRequest, ForgeReviewData, ForgeReviewerCandidate, ForgeReviewRequest, ForgeReviewResult, ForgeReviewWrite,
   ForgeReviewWriteResult, ForgeViewedFiles, ForgeViewedRequest, MergeMethod,
-} from '@deepseek-ai/dsh-experimental-forge'
-import type { SessionChangeRequest } from '@deepseek-ai/dsh-experimental-forge-session'
-import type { WorktreeCleanup } from '@deepseek-ai/dsh-experimental-worktree/types'
-import { appendPluginRecord } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-query'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+} from '@gemini-agy/dsh-experimental-forge'
+import type { SessionChangeRequest } from '@gemini-agy/dsh-experimental-forge-session'
+import type { WorktreeCleanup } from '@gemini-agy/dsh-experimental-worktree/types'
+import { appendPluginRecord } from '@gemini-agy/dsh-session'
+import type { Session, SessionEvent } from '@gemini-agy/dsh-session'
+import type { ProjectionHandle } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-session-projection-cache'
+import type {} from '@gemini-agy/dsh-session-query'
+import { MAX_TIMER_DELAY_MS } from '@gemini-agy/dsh-timeout'
+import { Remote, RemoteError, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
+import { assertNever } from '@gemini-agy/dsh-util-values'
 import { gitIn, inspectCheckout, listBranches } from './git.ts'
 import type { Inspection } from './git.ts'
 import { parseDiff } from './diff.ts'
@@ -49,7 +49,7 @@ import type { HeldWork } from './worktree.ts'
 
 export type * from './types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Remote that serves the forge panel of the GUI. */
     forgePanel: ForgePanelController

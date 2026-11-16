@@ -1,7 +1,7 @@
 /** Whole-session totals from the host projections that survive client paging. */
 
-import type { SessionStatsProjection } from '@deepseek-ai/dsh-session-stats/types'
-import type { TokenUsageProjection } from '@deepseek-ai/dsh-token-meter/client'
+import type { SessionStatsProjection } from '@gemini-agy/dsh-session-stats/types'
+import type { TokenUsageProjection } from '@gemini-agy/dsh-token-meter/client'
 import type { StatsTotals } from './stats-aggregate.ts'
 
 /**

@@ -2,14 +2,14 @@
 import { runInNewContext } from 'node:vm'
 import { bootThemeInjections } from '../src/boot-theme.ts'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { stubConfigForm, type StubConfigForm } from '@deepseek-ai/dsh-client-test-runtime'
+import { Context } from '@gemini-agy/cordis'
+import { stubConfigForm, type StubConfigForm } from '@gemini-agy/dsh-client-test-runtime'
 import type {
   ThemeSettings,
   ThemeSnapshot,
   ThemeTokenOverrides,
-} from '@deepseek-ai/dsh-client-ui-theme/client'
-import { ThemeRuntime } from '@deepseek-ai/dsh-client-ui-theme/client'
+} from '@gemini-agy/dsh-client-ui-theme/client'
+import { ThemeRuntime } from '@gemini-agy/dsh-client-ui-theme/client'
 
 const make = (host = stubConfigForm<ThemeSettings>()): {
   ctx: Context

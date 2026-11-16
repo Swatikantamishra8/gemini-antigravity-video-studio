@@ -5,24 +5,24 @@
  * one source byte before the service runs, so a cached result never answers a call that cannot read the source.
  * Converted files stay in the Office kit's private output store; the model copies them into the workspace with the
  * shell, so these tools write no workspace file.
- * @module @deepseek-ai/dsh-tool-office
+ * @module @gemini-agy/dsh-tool-office
  */
 
 import { basename } from 'node:path'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { AttachmentError, type ImageAttachmentRef, type ImageMediaType } from '@deepseek-ai/dsh-attachment'
-import { FsError, type FsInfo, type FsTarget } from '@deepseek-ai/dsh-fs'
-import type {} from '@deepseek-ai/dsh-llm'
-import { SubagentError } from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-skill'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { OfficeSourceKey } from '@deepseek-ai/dsh-office-kit/types'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { AttachmentError, type ImageAttachmentRef, type ImageMediaType } from '@gemini-agy/dsh-attachment'
+import { FsError, type FsInfo, type FsTarget } from '@gemini-agy/dsh-fs'
+import type {} from '@gemini-agy/dsh-llm'
+import { SubagentError } from '@gemini-agy/dsh-subagent'
+import type {} from '@gemini-agy/dsh-skill'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { OfficeSourceKey } from '@gemini-agy/dsh-office-kit/types'
 import { OfficeKitError, type OfficeDocumentExtension, type OfficeImageInputExtension, type OfficeKit,
-  type OfficeKitSource, type OfficeWorkbookExtension } from '@deepseek-ai/dsh-office-kit'
-import { defineTool, ToolContextUnavailableError, type ToolActivationContext, type ToolExecution } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-working-directory'
+  type OfficeKitSource, type OfficeWorkbookExtension } from '@gemini-agy/dsh-office-kit'
+import { defineTool, ToolContextUnavailableError, type ToolActivationContext, type ToolExecution } from '@gemini-agy/dsh-tools'
+import type {} from '@gemini-agy/dsh-working-directory'
 import { checkParameterNames, checkRenderArguments, checkConversionArguments, extensionOf, inputFamily, OUTPUT_FORMATS,
   RECALCULATION_FORMATS,
   type OfficeRenderArgs, type OfficeConvertArgs, type OfficeRecalculateArgs, type OfficeFamily, type OfficeOperationName,

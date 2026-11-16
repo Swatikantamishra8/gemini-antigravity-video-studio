@@ -44,30 +44,30 @@ const DEV_ONLY_AREAS = [
 /** Third-party implementations embedded by named Host packages' shipping build configurations. */
 const HOST_BUNDLED_DEPENDENCIES: Readonly<Record<string, readonly string[]>> = {
   // subagent-oar/tsdown.config.ts embeds the patched adapter instead of installing a second copy.
-  '@deepseek-ai/dsh-experimental-subagent-oar': ['@botiverse/oar'],
+  '@gemini-agy/dsh-experimental-subagent-oar': ['@botiverse/oar'],
 }
 
 /** First-party public native packages: reachable at runtime but not third-party. */
 const FIRST_PARTY = new Set([
-  '@deepseek-ai/node-addon-system',
-  '@deepseek-ai/node-addon-system-darwin-arm64',
-  '@deepseek-ai/node-addon-system-darwin-x64',
-  '@deepseek-ai/node-addon-system-linux-arm64',
-  '@deepseek-ai/node-addon-system-linux-x64',
+  '@gemini-agy/node-addon-system',
+  '@gemini-agy/node-addon-system-darwin-arm64',
+  '@gemini-agy/node-addon-system-darwin-x64',
+  '@gemini-agy/node-addon-system-linux-arm64',
+  '@gemini-agy/node-addon-system-linux-x64',
 ])
 
 /** Official SDK identity covered by the project's narrow owner authorization. */
 export const CLAUDE_AGENT_SDK_PACKAGE = '@anthropic-ai/claude-agent-sdk'
 const CLAUDE_PLATFORM_PACKAGE_PREFIX = `${CLAUDE_AGENT_SDK_PACKAGE}-`
 const CLAUDE_PLATFORM_DECLARED_LICENSE = 'SEE LICENSE IN LICENSE.md'
-const LIBREOFFICE_KIT_PACKAGE = '@deepseek-ai/libreoffice-kit'
+const LIBREOFFICE_KIT_PACKAGE = '@gemini-agy/libreoffice-kit'
 const LIBREOFFICE_PACKAGES = new Set([
   LIBREOFFICE_KIT_PACKAGE,
-  '@deepseek-ai/libreoffice-kit-wasm',
-  '@deepseek-ai/libreoffice-kit-darwin-arm64',
-  '@deepseek-ai/libreoffice-kit-darwin-x64',
-  '@deepseek-ai/libreoffice-kit-win32-arm64',
-  '@deepseek-ai/libreoffice-kit-win32-x64',
+  '@gemini-agy/libreoffice-kit-wasm',
+  '@gemini-agy/libreoffice-kit-darwin-arm64',
+  '@gemini-agy/libreoffice-kit-darwin-x64',
+  '@gemini-agy/libreoffice-kit-win32-arm64',
+  '@gemini-agy/libreoffice-kit-win32-x64',
 ])
 
 /**
@@ -103,7 +103,7 @@ const OVERRIDES: Record<string, { license?: string; repo?: string }> = {
  * manifests and the shared runtime lock reject names absent from this map.
  */
 const PYTHON_METADATA: Record<string, { license: string; repo: string; role?: string }> = {
-  pydantic: { license: 'MIT', repo: 'https://github.com/pydantic/pydantic', role: 'runtime dependency of `deepseek-harness-sdk`' },
+  pydantic: { license: 'MIT', repo: 'https://github.com/pydantic/pydantic', role: 'runtime dependency of `agy-gemini-harness-sdk`' },
   hatchling: { license: 'MIT', repo: 'https://github.com/pypa/hatch', role: 'build backend' },
   'et-xmlfile': { license: 'MIT', repo: 'https://foss.heptapod.net/openpyxl/et_xmlfile' },
   lxml: { license: 'BSD-3-Clause', repo: 'https://github.com/lxml/lxml' },
@@ -849,7 +849,7 @@ ${bundledPython.map(dep => `| [\`${dep.name}\`](${dep.repo}) | ${dep.version} | 
 
 ## First-party native packages
 
-\`@deepseek-ai/node-addon-system\` (and its platform packages) is built and released from this repository under BSD 3-Clause. It is listed here for completeness; it is first-party, not third-party.
+\`@gemini-agy/node-addon-system\` (and its platform packages) is built and released from this repository under BSD 3-Clause. It is listed here for completeness; it is first-party, not third-party.
 `
 }
 

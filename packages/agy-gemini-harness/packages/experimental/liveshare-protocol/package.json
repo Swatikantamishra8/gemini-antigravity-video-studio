@@ -1,10 +1,10 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-liveshare-protocol",
+  "name": "@gemini-agy/dsh-experimental-liveshare-protocol",
   "description": "Liveshare wire frames and the identity contract shared by the owner bundle and the Relay",
   "version": "0.2.2-rc.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/experimental/liveshare-protocol"
   },
   "type": "module",
@@ -26,13 +26,13 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@gemini-agy/dsh-brand": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "publishConfig": {
     "access": "public"

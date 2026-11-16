@@ -1,5 +1,5 @@
-import { Context } from '@deepseek-ai/cordis'
-import type { Dict } from '@deepseek-ai/cosmokit'
+import { Context } from '@gemini-agy/cordis'
+import type { Dict } from '@gemini-agy/cosmokit'
 import { Entry } from './entry.ts'
 
 declare module './entry.ts' {

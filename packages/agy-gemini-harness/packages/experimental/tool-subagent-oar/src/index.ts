@@ -1,9 +1,9 @@
 /** One delegation tool selects a configured external provider for each task. */
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { defineTool, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import { SubagentError } from '@deepseek-ai/dsh-subagent'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { defineTool, ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
+import { SubagentError } from '@gemini-agy/dsh-subagent'
 
 export const name = 'experimental-tool-subagent-oar'
 export const inject = ['tools', 'subagents']

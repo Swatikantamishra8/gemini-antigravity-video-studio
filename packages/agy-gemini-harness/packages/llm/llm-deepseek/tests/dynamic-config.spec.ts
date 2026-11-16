@@ -1,12 +1,12 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context, Service } from '@deepseek-ai/cordis'
+import { Context, Service } from '@gemini-agy/cordis'
 import { access, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import LlmRuntime, { createUserMessage, INVALID_CREDENTIAL_CODE } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import AttachmentStore from '@deepseek-ai/dsh-attachment'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
+import LlmRuntime, { createUserMessage, INVALID_CREDENTIAL_CODE } from '@gemini-agy/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import AttachmentStore from '@gemini-agy/dsh-attachment'
+import type { AttachmentId, ImageVariantId } from '@gemini-agy/dsh-attachment/types'
 import type {
   ImageAttachmentLimits,
   ImageAttachmentRef,
@@ -14,16 +14,16 @@ import type {
   RequestImageAttachment,
   SaveImageAttachment,
   StoredImageAttachment,
-} from '@deepseek-ai/dsh-attachment'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { LocalCredentialProvider } from '@deepseek-ai/dsh-credentials-local'
+} from '@gemini-agy/dsh-attachment'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import { LocalCredentialProvider } from '@gemini-agy/dsh-credentials-local'
 import { liveConfig } from '../../../settings/settings/tests/live-config.ts'
-import * as LlmGemini Antigravity from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import * as LlmGemini Antigravity from '@gemini-agy/dsh-llm-deepseek-api-key'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
 import { assemble } from './assemble.ts'
 import { closeMockServers, mockServer, textEvents } from './mock-server.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

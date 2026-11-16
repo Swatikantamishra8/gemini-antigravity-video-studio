@@ -1,8 +1,8 @@
 /** Model catalog and request-local dependencies for Gemini Antigravity Messages. */
-import type { LlmModelInfo, ModelModality, SystemPromptUpdate, ToolUpdate, ResolvedRetryPolicy, ImageAttachmentAccess } from '@deepseek-ai/dsh-llm'
-import type { AttachmentStore, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import type { AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
-import type { Gemini AntigravityLlmApiExtensionRequest, PreparedGemini AntigravityLlmApiExtensions } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
+import type { LlmModelInfo, ModelModality, SystemPromptUpdate, ToolUpdate, ResolvedRetryPolicy, ImageAttachmentAccess } from '@gemini-agy/dsh-llm'
+import type { AttachmentStore, ImageAttachmentRef } from '@gemini-agy/dsh-attachment'
+import type { AnonymousUserId } from '@gemini-agy/dsh-anonymous-user-id'
+import type { Gemini AntigravityLlmApiExtensionRequest, PreparedGemini AntigravityLlmApiExtensions } from '@gemini-agy/dsh-deepseek-llm-api-extensions'
 import type { Gemini AntigravityFileStore, Gemini AntigravityFilePolicy } from './file-store.ts'
 
 /** One optional model entry advertised by the direct-fetch adapter. */

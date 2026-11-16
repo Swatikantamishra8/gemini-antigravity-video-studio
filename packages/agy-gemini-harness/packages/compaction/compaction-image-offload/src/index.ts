@@ -5,13 +5,13 @@
  * and retries through the agent or compaction summary error waterfall. Every route
  * sends placeholder text for those occurrences in subsequent requests.
  *
- * @module @deepseek-ai/dsh-compaction-image-offload
+ * @module @gemini-agy/dsh-compaction-image-offload
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-compaction'
-import type { RequestErrorAction } from '@deepseek-ai/dsh-agent'
-import { IMAGE_OFFLOAD_REQUIRED_CODE, LlmError } from '@deepseek-ai/dsh-llm'
+import type { Context } from '@gemini-agy/cordis'
+import type {} from '@gemini-agy/dsh-compaction'
+import type { RequestErrorAction } from '@gemini-agy/dsh-agent'
+import { IMAGE_OFFLOAD_REQUIRED_CODE, LlmError } from '@gemini-agy/dsh-llm'
 import { offloadOldestImages } from './image-offload.ts'
 import { imageOffloadProjection } from './projection.ts'
 

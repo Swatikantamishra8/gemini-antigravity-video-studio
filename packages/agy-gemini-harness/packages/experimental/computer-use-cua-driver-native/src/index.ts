@@ -1,18 +1,18 @@
 /**
  * Computer use through the in-process Cua Driver native SDK and its own tools.
- * @module @deepseek-ai/dsh-experimental-computer-use-cua-driver-native
+ * @module @gemini-agy/dsh-experimental-computer-use-cua-driver-native
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import Schema from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ComputerUseProviderName } from '@deepseek-ai/dsh-computer-use/types'
-import { createMcpToolDefinition } from '@deepseek-ai/dsh-mcp-client'
+import type { Context } from '@gemini-agy/cordis'
+import Schema from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ComputerUseProviderName } from '@gemini-agy/dsh-computer-use/types'
+import { createMcpToolDefinition } from '@gemini-agy/dsh-mcp-client'
 import { z } from 'zod'
 import type { CuaDriver as NativeDriver } from '@trycua/cua-driver'
-import type {} from '@deepseek-ai/dsh-computer-use'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@gemini-agy/dsh-computer-use'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import type {} from '@gemini-agy/dsh-tools'
 import { CuaDriverError } from './error.ts'
 
 export { CuaDriverError, type CuaDriverErrorCode } from './error.ts'

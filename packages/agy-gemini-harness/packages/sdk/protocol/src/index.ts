@@ -2,10 +2,10 @@
  * Shared wire protocol for the Gemini Antigravity Harness SDK runtime: the
  * newline-delimited JSON-RPC stdio transport plus the named request, result,
  * and notification types both wire ends speak. The runtime server plugin
- * (`@deepseek-ai/dsh-sdk-jsonrpc-server`) serves this protocol; SDK clients
- * (`@deepseek-ai/dsh-sdk-client`, the Python SDK) drive it.
+ * (`@gemini-agy/dsh-sdk-jsonrpc-server`) serves this protocol; SDK clients
+ * (`@gemini-agy/dsh-sdk-client`, the Python SDK) drive it.
  *
- * @module @deepseek-ai/dsh-sdk-protocol
+ * @module @gemini-agy/dsh-sdk-protocol
  */
 
 export { JsonRpcLineTransport, JsonRpcResponseError } from './transport.ts'

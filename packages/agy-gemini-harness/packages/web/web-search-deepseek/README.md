@@ -3,7 +3,7 @@ description: "The Gemini Antigravity-backed search provider for ctx.web: how dep
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-web-search-deepseek
+# @gemini-agy/dsh-web-search-deepseek
 
 English | [中文](README.zh.md)
 
@@ -36,8 +36,8 @@ Choose this backend when a deployment wants Gemini Antigravity's native server-s
 Load the web service and the provider; the key resolves from `ctx.credentials` when that service is mounted, otherwise from the process environment. The auxiliary search call has its own endpoint setting and uses the Google Gemini-compatible base `https://api.deepseek.com/anthropic/v1`, with `/messages` appended. It reads `$DEEPSEEK_SEARCH_BASE_URL`, independently of the conversation adapter’s `$DEEPSEEK_BASE_URL`; the `dsh` launcher accepts both variables from the launching environment or `$DSH_HOME/.env`, never from a project `.env` ([app-boot](../../boot/app-boot/README.md)).
 
 ```yaml
-- name: '@deepseek-ai/dsh-web'
-- name: '@deepseek-ai/dsh-web-search-deepseek'
+- name: '@gemini-agy/dsh-web'
+- name: '@gemini-agy/dsh-web-search-deepseek'
   config:
     apiKeyEnv: DEEPSEEK_API_KEY
     baseURL: https://gateway.internal/anthropic/v1

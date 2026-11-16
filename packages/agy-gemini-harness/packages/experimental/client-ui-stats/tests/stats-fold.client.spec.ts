@@ -1,14 +1,14 @@
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'agent-message': { readonly kind: 'agent-message' }
   }
 }
 
 import { beforeEach, describe, expect, it } from 'vitest'
-import type { SessionEventLike } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { TeamId, TeamMessageId } from '@deepseek-ai/dsh-agent-team/types'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { SessionEventLike } from '@gemini-agy/dsh-api-session-controller/client'
+import type { TeamId, TeamMessageId } from '@gemini-agy/dsh-agent-team/types'
+import type { AttachmentId } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   LlmAttemptId,
   MessageId,
@@ -21,10 +21,10 @@ import type {
   TokenUsage,
   ToolResultMessage,
   UserMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { RetryId } from '@deepseek-ai/dsh-llm-retry/types'
-import { type SessionId, SessionSeq, type SessionEventMap, type SessionEventType } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
+} from '@gemini-agy/dsh-llm'
+import type { RetryId } from '@gemini-agy/dsh-llm-retry/types'
+import { type SessionId, SessionSeq, type SessionEventMap, type SessionEventType } from '@gemini-agy/dsh-session/types'
+import type {} from '@gemini-agy/dsh-tool-executor-ptc/types'
 import {
   CALL_LIMIT, fallbackState, foldEvent, isCodeMode, newState, promptOf, stepMetrics, toolSpanUnion, triggerSenderOf,
 } from '../src/client/stats-fold.ts'

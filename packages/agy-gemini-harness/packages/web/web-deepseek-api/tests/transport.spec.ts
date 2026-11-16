@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { WebError } from '@deepseek-ai/dsh-web'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import { WebError } from '@gemini-agy/dsh-web'
 import { customGuidance } from './guidance.ts'
 import {
   dispatchGemini AntigravityWeb, hasGemini AntigravityWebCredential, isGemini AntigravityWebAuthReady,

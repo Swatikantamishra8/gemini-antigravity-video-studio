@@ -3,29 +3,29 @@ import { mkdtemp, readFile, realpath, rm, symlink, writeFile } from 'node:fs/pro
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include, { applyEntryPatches } from '@deepseek-ai/cordis-plugin-include'
-import { loadOverlayPatches } from '@deepseek-ai/dsh-app-boot'
-import WorkspaceFiles, { type WorkspaceFileScope } from '@deepseek-ai/dsh-api-workspace-files'
-import OfficeKit from '@deepseek-ai/dsh-office-kit'
-import * as DocumentPreview from '@deepseek-ai/dsh-client-ui-sidebar-documentpreview'
-import type { IndexInjection, WebServer } from '@deepseek-ai/dsh-host-webserver'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import { FsError } from '@deepseek-ai/dsh-fs'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
-import type { Converter, ConverterOptions } from '@deepseek-ai/libreoffice-kit'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include, { applyEntryPatches } from '@gemini-agy/cordis-plugin-include'
+import { loadOverlayPatches } from '@gemini-agy/dsh-app-boot'
+import WorkspaceFiles, { type WorkspaceFileScope } from '@gemini-agy/dsh-api-workspace-files'
+import OfficeKit from '@gemini-agy/dsh-office-kit'
+import * as DocumentPreview from '@gemini-agy/dsh-client-ui-sidebar-documentpreview'
+import type { IndexInjection, WebServer } from '@gemini-agy/dsh-host-webserver'
+import SessionStore, { type SessionId } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SandboxPolicyService from '@gemini-agy/dsh-sandbox-policy'
+import LocalFileSystem from '@gemini-agy/dsh-fs-local'
+import { FsError } from '@gemini-agy/dsh-fs'
+import TypertRegistry from '@gemini-agy/dsh-typert-registry'
+import type { Converter, ConverterOptions } from '@gemini-agy/libreoffice-kit'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** The Peer an index render speaks for; this listener reads no field of it. */
 const PAGE_PEER = { principal: { kind: 'owner' } } as Parameters<WebServer['renderIndex']>[1]
 
 const kit = vi.hoisted(() => ({ create: vi.fn<(options?: ConverterOptions) => Promise<Converter>>() }))
-vi.mock('@deepseek-ai/libreoffice-kit', () => ({ createConverter: kit.create }))
+vi.mock('@gemini-agy/libreoffice-kit', () => ({ createConverter: kit.create }))
 
 it('loads the shipped Office rows with separately patched settings and authorized PDF output', async () => {
   const directory = await realpath(await mkdtemp(join(tmpdir(), 'dsh-web-office-')))
@@ -41,8 +41,8 @@ it('loads the shipped Office rows with separately patched settings and authorize
   })
   const configPath = join(directory, 'cordis.yml')
   const expectedRows = {
-    'office-kit': '@deepseek-ai/dsh-office-kit',
-    'ui-sidebar-documentpreview': '@deepseek-ai/dsh-client-ui-sidebar-documentpreview',
+    'office-kit': '@gemini-agy/dsh-office-kit',
+    'ui-sidebar-documentpreview': '@gemini-agy/dsh-client-ui-sidebar-documentpreview',
   }
   const rows = loadOverlayPatches('web-office-test', fileURLToPath(new URL('../cordis.patch.yml', import.meta.url)))
     .flatMap(patch => patch.insert ?? []).filter(row => row.id !== undefined && Object.hasOwn(expectedRows, row.id))
@@ -55,12 +55,12 @@ it('loads the shipped Office rows with separately patched settings and authorize
   ], (message) => { throw new Error(message) })
   expect(configured.find(row => row.id === 'ui-sidebar-documentpreview')!.config).toEqual(clientConfig)
   await writeFile(configPath, JSON.stringify([
-    { name: '@deepseek-ai/dsh-session' },
-    { name: '@deepseek-ai/dsh-session-projection' },
-    { name: '@deepseek-ai/dsh-sandbox-policy', config: { workspaceRoot: directory } },
-    { name: '@deepseek-ai/dsh-fs-local', config: { cwd: directory } },
-    { name: '@deepseek-ai/dsh-typert-registry' },
-    { name: '@deepseek-ai/dsh-api-workspace-files', config: { maxFileBytes: 1 } },
+    { name: '@gemini-agy/dsh-session' },
+    { name: '@gemini-agy/dsh-session-projection' },
+    { name: '@gemini-agy/dsh-sandbox-policy', config: { workspaceRoot: directory } },
+    { name: '@gemini-agy/dsh-fs-local', config: { cwd: directory } },
+    { name: '@gemini-agy/dsh-typert-registry' },
+    { name: '@gemini-agy/dsh-api-workspace-files', config: { maxFileBytes: 1 } },
     ...configured,
   ]))
   const pdf = Buffer.from('%PDF-1.7\nLoader preview\n%%EOF\n')
@@ -80,14 +80,14 @@ it('loads the shipped Office rows with separately patched settings and authorize
   ctx.loader.builtins.include = Include
   // Loader's native imports must share the test's source-plane Service classes.
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-    ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-    ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-    ['@deepseek-ai/dsh-typert-registry', TypertRegistry],
-    ['@deepseek-ai/dsh-api-workspace-files', WorkspaceFiles],
-    ['@deepseek-ai/dsh-office-kit', OfficeKit],
-    ['@deepseek-ai/dsh-client-ui-sidebar-documentpreview', DocumentPreview],
+    ['@gemini-agy/dsh-session', SessionStore],
+    ['@gemini-agy/dsh-session-projection', SessionProjectionRegistry],
+    ['@gemini-agy/dsh-sandbox-policy', SandboxPolicyService],
+    ['@gemini-agy/dsh-fs-local', LocalFileSystem],
+    ['@gemini-agy/dsh-typert-registry', TypertRegistry],
+    ['@gemini-agy/dsh-api-workspace-files', WorkspaceFiles],
+    ['@gemini-agy/dsh-office-kit', OfficeKit],
+    ['@gemini-agy/dsh-client-ui-sidebar-documentpreview', DocumentPreview],
   ])
   ctx.loader.internal = {
     version: 'v2',

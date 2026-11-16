@@ -5,22 +5,22 @@
  * every other search reuses `DEEPSEEK_API_KEY`. The provider does not reuse `DEEPSEEK_BASE_URL`;
  * auxiliary search has its own endpoint configuration. The provider reports itself not ready for a
  * model request whose search would have no credential.
- * @module @deepseek-ai/dsh-web-search-deepseek
+ * @module @gemini-agy/dsh-web-search-deepseek
  */
-import type { Volatile } from '@deepseek-ai/cordis'
+import type { Volatile } from '@gemini-agy/cordis'
 
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type { CredentialRef } from '@deepseek-ai/dsh-credentials'
-import type {} from '@deepseek-ai/dsh-deepseek-account'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type {} from '@gemini-agy/dsh-agent'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import type { CredentialRef } from '@gemini-agy/dsh-credentials'
+import type {} from '@gemini-agy/dsh-deepseek-account'
+import { launchEnvironmentOf } from '@gemini-agy/dsh-launch-environment'
 import {
   deepSeekApiKeyConfigured, rejectGemini AntigravityAccountToken, resolveGemini AntigravityAccountToken, resolveGemini AntigravityApiKey,
-} from '@deepseek-ai/dsh-llm-deepseek'
-import type {} from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-web'
+} from '@gemini-agy/dsh-llm-deepseek'
+import type {} from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-web'
 import {
   Gemini AntigravitySearchProvider,
   DEEPSEEK_DEFAULT_API_VERSION,

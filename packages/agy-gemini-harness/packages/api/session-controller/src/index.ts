@@ -2,21 +2,21 @@
 
 import { hostname } from 'node:os'
 import { resolve } from 'node:path'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-fs'
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { errorChain, type ReasoningEffortId, type MessageSource } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-client-file-upload'
-import { canOpenNativePath, nativeFileManager, nativeFileApplications, openNativeFileApplication, openNativeAssociatedPath, revealNativePath } from '@deepseek-ai/dsh-native-command'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { Remote, RemoteError, TypertRemoteService, principalOf, type TypertResourceResolveInput } from '@deepseek-ai/dsh-typert-protocol'
-import { canonicalClientTimeZone } from '@deepseek-ai/dsh-util-time'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type {} from '@gemini-agy/dsh-fs'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { errorChain, type ReasoningEffortId, type MessageSource } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/dsh-client-file-upload'
+import { canOpenNativePath, nativeFileManager, nativeFileApplications, openNativeFileApplication, openNativeAssociatedPath, revealNativePath } from '@gemini-agy/dsh-native-command'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-session-projection-cache'
+import type { SessionObservation } from '@gemini-agy/dsh-session-query'
+import { Remote, RemoteError, TypertRemoteService, principalOf, type TypertResourceResolveInput } from '@gemini-agy/dsh-typert-protocol'
+import { canonicalClientTimeZone } from '@gemini-agy/dsh-util-time'
+import { assertNever } from '@gemini-agy/dsh-util-values'
+import type {} from '@gemini-agy/dsh-api-remote-access'
 import {
   ApiSessionAgentController,
   type ApiSessionAgentResult,
@@ -72,7 +72,7 @@ export { ApiSessionNotFound } from './agent.ts'
 export { SessionFileReferences } from './file-references.ts'
 export { SessionSkillCatalog } from './skill-catalog.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     /** Host Session business API and Remote namespace owner. */
     sessionController: SessionController

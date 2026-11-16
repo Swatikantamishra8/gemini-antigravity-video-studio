@@ -1,16 +1,16 @@
 /** Initial and incremental tool definitions survive current-format restoration and forks. */
 import { describe, expect, expectTypeOf, it } from 'vitest'
-import { createDeveloperMessage } from '@deepseek-ai/dsh-llm'
-import type { ToolAdditionBlock, ToolSchema } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import { buildForkSeed } from '@deepseek-ai/dsh-session/fork'
-import { createSessionFormatCatalog } from '@deepseek-ai/dsh-session-format'
-import { restoreReleasedV4Artifact } from '@deepseek-ai/dsh-session-format-v3-to-v4'
+import { createDeveloperMessage } from '@gemini-agy/dsh-llm'
+import type { ToolAdditionBlock, ToolSchema } from '@gemini-agy/dsh-llm'
+import { Session, type SessionId, SessionLogOffset } from '@gemini-agy/dsh-session'
+import type { SessionEvent, SessionHeader } from '@gemini-agy/dsh-session'
+import { buildForkSeed } from '@gemini-agy/dsh-session/fork'
+import { createSessionFormatCatalog } from '@gemini-agy/dsh-session-format'
+import { restoreReleasedV4Artifact } from '@gemini-agy/dsh-session-format-v3-to-v4'
 import { sessionFormatCatalogOptions } from '../src/generated.ts'
-import type { SessionFormatEvent } from '@deepseek-ai/dsh-session-format'
+import type { SessionFormatEvent } from '@gemini-agy/dsh-session-format'
 import { sessionFormatCatalog } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 function restore(session: Session): Session {
   const header = { ...session.header, delegationDepth: 0 }

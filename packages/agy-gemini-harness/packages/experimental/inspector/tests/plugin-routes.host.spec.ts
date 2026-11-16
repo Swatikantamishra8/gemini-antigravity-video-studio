@@ -3,16 +3,16 @@
 import { randomBytes } from 'node:crypto'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { connect, createConnection, createServer, type AddressInfo, type Socket } from 'node:net'
-import { Context } from '@deepseek-ai/cordis'
-import type { Message } from '@deepseek-ai/cordis'
-import type { WebRoute, WebServer, WebUpgradeRoute } from '@deepseek-ai/dsh-host-webserver'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
+import { Context } from '@gemini-agy/cordis'
+import type { Message } from '@gemini-agy/cordis'
+import type { WebRoute, WebServer, WebUpgradeRoute } from '@gemini-agy/dsh-host-webserver'
+import * as Connection from '@gemini-agy/dsh-client-connection'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { apply, Config, inject, name } from '../src/index.ts'
 import { startInspector, type InspectorHandle } from '../src/host/bridge/controller.ts'
 import { dispatchHttp, dispatchUpgrade } from './fixtures/web-carrier.ts'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@gemini-agy/dsh-typert-protocol' {
   interface PrincipalMap {
     inspectorAuthorizationTest: { readonly kind: 'inspector-authorization-test' }
   }

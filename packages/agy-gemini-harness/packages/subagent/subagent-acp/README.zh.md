@@ -3,7 +3,7 @@ description: "面向用户与维护者的进程外 ACP（Agent Client Protocol�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-subagent-acp
+# @gemini-agy/dsh-subagent-acp
 
 [English](README.md) | 中文
 
@@ -49,7 +49,7 @@ Gemini Antigravity Harness 子进程使用产品启动器和一个显式的绝�
 
 ```yaml
 - id: subagent-acp
-  name: '@deepseek-ai/dsh-subagent-acp'
+  name: '@gemini-agy/dsh-subagent-acp'
   config:
     providerName: acp
     command: dsh

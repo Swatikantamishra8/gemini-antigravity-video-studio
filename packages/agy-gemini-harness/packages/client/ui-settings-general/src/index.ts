@@ -1,9 +1,9 @@
 /** Welcome acknowledgement stored in the plugin configuration. */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@gemini-agy/dsh-settings'
 
-import type { Volatile, Context } from '@deepseek-ai/cordis'
+import type { Volatile, Context } from '@gemini-agy/cordis'
 
-import z from '@deepseek-ai/schemastery'
+import z from '@gemini-agy/schemastery'
 
 /** Runtime preferences projected to the browser. */
 export interface Config {

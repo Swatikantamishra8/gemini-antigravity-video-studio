@@ -153,7 +153,7 @@ describe('CI workflow', () => {
     const hostSteps = scripts.scripts['build:lib:host']!.split(' && ')
     expect(hostSteps[0]).toBe('tsx scripts/compile-referenced-projects.ts host-libraries')
     expect(hostSteps).toContain('node --max-old-space-size=8192 ./node_modules/typescript/bin/tsc -p tsconfig.host.json')
-    expect(hostSteps.at(-1)).toBe('pnpm --filter @deepseek-ai/dsh-desktop run bundle')
+    expect(hostSteps.at(-1)).toBe('pnpm --filter @gemini-agy/dsh-desktop run bundle')
     expect(scripts.scripts['build:lib:client']).toContain('tsc -b tsconfig.client.json')
     expect(scripts.scripts.typecheck).toBe('tsx scripts/build.ts --scope typecheck')
   })
@@ -563,7 +563,7 @@ describe('CI workflow', () => {
     expect(node24Bench.env).toBeUndefined()
     expect(node24Bench.steps).toContainEqual({
       name: 'Install benchmark browser and hosted dependencies',
-      run: 'pnpm --filter @deepseek-ai/dsh-benchmarks exec playwright install --with-deps chromium',
+      run: 'pnpm --filter @gemini-agy/dsh-benchmarks exec playwright install --with-deps chromium',
     })
     expect(JSON.stringify(node24Bench.steps)).not.toContain('DSH_CI_FAILOVER_LINUX')
     expect(node24Bench.steps).toContainEqual({
@@ -1532,8 +1532,8 @@ describe('Weighted approval workflow', () => {
       with: {
         'client-id': '${{ vars.DSH_APPROVAL_APP_CLIENT_ID }}',
         'private-key': '${{ secrets.DSH_APPROVAL_APP_PRIVATE_KEY }}',
-        owner: 'deepseek-harness',
-        repositories: 'deepseek-harness',
+        owner: 'agy-gemini-harness',
+        repositories: 'agy-gemini-harness',
         'permission-checks': 'write',
       },
     })
@@ -1651,8 +1651,8 @@ describe('Issue lifecycle workflow', () => {
       with: {
         'client-id': '${{ vars.DSH_ISSUE_APP_CLIENT_ID }}',
         'private-key': '${{ secrets.DSH_ISSUE_APP_PRIVATE_KEY }}',
-        owner: 'deepseek-harness',
-        repositories: 'deepseek-harness',
+        owner: 'agy-gemini-harness',
+        repositories: 'agy-gemini-harness',
         'permission-issues': 'read',
         'permission-organization-projects': 'read',
       },
@@ -1869,7 +1869,7 @@ describe('Policy workflows', () => {
     expect(events).not.toHaveProperty('pull_request')
     expect(events).toHaveProperty('pull_request_target')
     for (const job of jobs) {
-      const check = stepsOf(workflowJob(workflow, job)).find(step => typeof step.uses === 'string' && step.uses.startsWith('deepseek-harness/deepseek-harness-check@'))
+      const check = stepsOf(workflowJob(workflow, job)).find(step => typeof step.uses === 'string' && step.uses.startsWith('agy-gemini-harness/agy-gemini-harness-check@'))
       if (check === undefined || !isRecord(check.env)) throw new TypeError(`${file} ${job} must run the check action with env`)
       expect(String(check.env.CHECK_MODE)).toContain('vars.MERGE_POLICY_')
     }
@@ -1897,7 +1897,7 @@ describe('Policy workflows', () => {
     if (!isRecord(job) || !isRecord(job.permissions)) throw new TypeError('the approve job must declare permissions')
     expect(job.name).toBe('Approve Check')
     expect(job.permissions.checks).toBe('write')
-    const check = stepsOf(job).find(step => typeof step.uses === 'string' && step.uses.startsWith('deepseek-harness/deepseek-harness-check@'))
+    const check = stepsOf(job).find(step => typeof step.uses === 'string' && step.uses.startsWith('agy-gemini-harness/agy-gemini-harness-check@'))
     if (check === undefined || !isRecord(check.env)) throw new TypeError('the job must run the check action with env')
     expect(String(check.env.CHECK_MODE)).toContain('vars.MERGE_POLICY_HEAD_DIFF')
     expect(JSON.stringify(workflow)).not.toContain('MERGE_POLICY_REVIEW')

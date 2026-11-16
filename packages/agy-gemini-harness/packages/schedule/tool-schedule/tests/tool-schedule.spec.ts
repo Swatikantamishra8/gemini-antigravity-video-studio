@@ -1,13 +1,13 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as PtcToolExecutor from '@gemini-agy/dsh-tool-executor-ptc'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import type { ToolExecutionToken } from '@deepseek-ai/dsh-tools'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { createScope } from '@gemini-agy/dsh-scope'
+import { renderPrompt } from '@gemini-agy/dsh-system-prompt'
+import type { ToolExecutionToken } from '@gemini-agy/dsh-tools'
 import ScheduleService, {
   DEFAULT_LIST_LIMIT,
   MAX_LIST_LIMIT,
@@ -16,12 +16,12 @@ import ScheduleService, {
   ScheduleInputError,
   createAfterScheduleRecord,
   formatScheduleLocalTime,
-} from '@deepseek-ai/dsh-schedule'
-import type { ScheduleId } from '@deepseek-ai/dsh-schedule/client'
-import type { ScheduleCatalogEntry, ScheduleRecord } from '@deepseek-ai/dsh-schedule'
+} from '@gemini-agy/dsh-schedule'
+import type { ScheduleId } from '@gemini-agy/dsh-schedule/client'
+import type { ScheduleCatalogEntry, ScheduleRecord } from '@gemini-agy/dsh-schedule'
 import * as ToolSchedule from '../src/index.ts'
 import { agentFor, boundTask, harness, mountToolSchedule, PromptRuntime, seedTasks } from './harness.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const TOOL_NAMES = ['schedule_create', 'schedule_edit', 'schedule_list', 'schedule_view']
 const AUTHORIZATION = 'Only create or modify scheduled tasks at the user\'s explicit request; '

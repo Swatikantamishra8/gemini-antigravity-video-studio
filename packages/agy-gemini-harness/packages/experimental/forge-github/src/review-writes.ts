@@ -2,8 +2,8 @@
 
 import type {
   ChangeRequestRef, ForgeLineComment, ForgeReviewId, ForgeReviewWrite, ForgeReviewWriteResult,
-} from '@deepseek-ai/dsh-experimental-forge'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+} from '@gemini-agy/dsh-experimental-forge'
+import { assertNever } from '@gemini-agy/dsh-util-values'
 import { z } from 'zod'
 import type { GraphqlReader } from './commits.ts'
 import type { GhRunner } from './gh.ts'

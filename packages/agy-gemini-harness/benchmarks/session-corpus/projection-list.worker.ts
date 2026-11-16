@@ -5,19 +5,19 @@ import { mkdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { monitorEventLoopDelay, performance } from 'node:perf_hooks'
 import { scheduler, setTimeout as delay } from 'node:timers/promises'
-import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
-import type SessionController from '@deepseek-ai/dsh-api-session-controller'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, type SessionHeader } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SessionProjectionCache, { projectionCacheDomainSpec } from '@deepseek-ai/dsh-session-projection-cache'
-import SqliteSessionQueryEngine from '@deepseek-ai/dsh-session-query-sqlite'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
+import { Context } from '@gemini-agy/cordis'
+import AgentRegistry from '@gemini-agy/dsh-agent'
+import RemoteAccessService from '@gemini-agy/dsh-api-remote-access'
+import type SessionController from '@gemini-agy/dsh-api-session-controller'
+import { brandString } from '@gemini-agy/dsh-brand'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, type SessionHeader } from '@gemini-agy/dsh-session'
+import * as JsonlSessionPersistence from '@gemini-agy/dsh-session-persistence-jsonl'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import SessionProjectionCache, { projectionCacheDomainSpec } from '@gemini-agy/dsh-session-projection-cache'
+import SqliteSessionQueryEngine from '@gemini-agy/dsh-session-query-sqlite'
+import Storage from '@gemini-agy/dsh-storage'
+import * as StorageDomain from '@gemini-agy/dsh-storage-domain'
+import * as StorageJson from '@gemini-agy/dsh-storage-json'
 import { z } from 'zod'
 import { generationLogPath, sessionDir, toHeaderLine } from '../../packages/session/session-persistence-jsonl/src/format.ts'
 import { compressZstdFrame } from '../../packages/session/session-persistence-jsonl/src/zstd.ts'
@@ -54,7 +54,7 @@ const stateSchema = z.object({
 const viewSchema = z.object({ sessionOrdinal: z.number().int(), rows: z.number().int(), requests: z.number().int(), tokens: z.number().int() })
 type ProjectionState = z.infer<typeof stateSchema>
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@gemini-agy/dsh-session-projection/types' {
   interface SessionProjectionMap { syntheticProjectionList: z.infer<typeof viewSchema> }
 }
 
@@ -290,10 +290,10 @@ async function measure(controller: SessionController, observation: ViewObservati
 }
 
 assertBuiltBenchmarkRuntime(import.meta.url, {
-  controller: import.meta.resolve('@deepseek-ai/dsh-api-session-controller'),
-  registry: import.meta.resolve('@deepseek-ai/dsh-session-projection'),
-  cache: import.meta.resolve('@deepseek-ai/dsh-session-projection-cache'),
-  persistence: import.meta.resolve('@deepseek-ai/dsh-session-persistence-jsonl'),
+  controller: import.meta.resolve('@gemini-agy/dsh-api-session-controller'),
+  registry: import.meta.resolve('@gemini-agy/dsh-session-projection'),
+  cache: import.meta.resolve('@gemini-agy/dsh-session-projection-cache'),
+  persistence: import.meta.resolve('@gemini-agy/dsh-session-persistence-jsonl'),
 })
 const [root, workload, sliceArgument] = process.argv.slice(2)
 if (root === undefined || (workload !== 'modest' && workload !== 'tail' && workload !== 'cheap')) throw new Error('usage: projection-list.worker.js <private-root> <modest|tail|cheap> [work-slice-ms]')

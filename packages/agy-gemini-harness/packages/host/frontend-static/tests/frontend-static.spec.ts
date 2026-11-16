@@ -11,14 +11,14 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import Loader from '@deepseek-ai/cordis-plugin-loader'
-import Include from '@deepseek-ai/cordis-plugin-include'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
-import * as Token from '@deepseek-ai/dsh-host-authentication-token'
-import { BrowserAuth } from '@deepseek-ai/dsh-host-authentication-token/src/browser-auth.ts'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
-import HttpServer from '@deepseek-ai/dsh-host-webserver'
+import { Context } from '@gemini-agy/cordis'
+import Loader from '@gemini-agy/cordis-plugin-loader'
+import Include from '@gemini-agy/cordis-plugin-include'
+import * as Connection from '@gemini-agy/dsh-client-connection'
+import * as Token from '@gemini-agy/dsh-host-authentication-token'
+import { BrowserAuth } from '@gemini-agy/dsh-host-authentication-token/src/browser-auth.ts'
+import LocalCredentials from '@gemini-agy/dsh-credentials-local'
+import HttpServer from '@gemini-agy/dsh-host-webserver'
 import * as FrontendStatic from '../src/index.ts'
 
 const heldIndex = vi.hoisted(() => ({
@@ -68,18 +68,18 @@ async function loadComposition(): Promise<Context> {
   await mkdir(join(dist, 'empty'))
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-credentials-local'",
+    "- name: '@gemini-agy/dsh-credentials-local'",
     '  config:',
     `    path: '${join(root, '.credentials.yaml')}'`,
     '    watch: false',
-    "- name: '@deepseek-ai/dsh-host-webserver'",
+    "- name: '@gemini-agy/dsh-host-webserver'",
     '  config:',
     "    host: '127.0.0.1'",
     '    port: 0',
-    "- name: '@deepseek-ai/dsh-client-connection'",
-    "- name: '@deepseek-ai/dsh-host-authentication-token'",
+    "- name: '@gemini-agy/dsh-client-connection'",
+    "- name: '@gemini-agy/dsh-host-authentication-token'",
     '- id: frontend',
-    "  name: '@deepseek-ai/dsh-host-frontend-static'",
+    "  name: '@gemini-agy/dsh-host-frontend-static'",
     '  config:',
     `    distIndex: '${distIndex}'`,
     '',
@@ -90,11 +90,11 @@ async function loadComposition(): Promise<Context> {
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-credentials-local', LocalCredentials],
-    ['@deepseek-ai/dsh-host-webserver', HttpServer],
-    ['@deepseek-ai/dsh-client-connection', Connection],
-    ['@deepseek-ai/dsh-host-authentication-token', Token],
-    ['@deepseek-ai/dsh-host-frontend-static', FrontendStatic],
+    ['@gemini-agy/dsh-credentials-local', LocalCredentials],
+    ['@gemini-agy/dsh-host-webserver', HttpServer],
+    ['@gemini-agy/dsh-client-connection', Connection],
+    ['@gemini-agy/dsh-host-authentication-token', Token],
+    ['@gemini-agy/dsh-host-frontend-static', FrontendStatic],
   ])
   context.loader.internal = {
     version: 'v2',

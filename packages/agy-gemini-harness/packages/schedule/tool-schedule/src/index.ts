@@ -4,19 +4,19 @@
  * plugin registers them in the mounting scope, so a preset decides which
  * agents receive them. Tasks belong to the Host, not to a Session: the tools
  * read and change any task by id, and only the delivery target names a Session.
- * @module @deepseek-ai/dsh-tool-schedule
+ * @module @gemini-agy/dsh-tool-schedule
  */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
 // Type-only: make `ctx.get('agentPresets')` resolve to the preset roster when
 // composed. A rosterless deployment records no preset for a created Session.
-import type {} from '@deepseek-ai/dsh-agent-preset-registry'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { delegationDepthOf } from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView, ToolRunContext } from '@deepseek-ai/dsh-tools'
+import type {} from '@gemini-agy/dsh-agent-preset-registry'
+import type { ContentBlock } from '@gemini-agy/dsh-llm'
+import { delegationDepthOf } from '@gemini-agy/dsh-subagent'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import { defineTool } from '@gemini-agy/dsh-tools'
+import type { GenericCallView, ToolRunContext } from '@gemini-agy/dsh-tools'
 import {
   DEFAULT_LIST_LIMIT,
   MAX_LIST_LIMIT,
@@ -24,13 +24,13 @@ import {
   MIN_EVERY_INTERVAL_SECONDS,
   ScheduleInputError,
   formatScheduleLocalTime,
-} from '@deepseek-ai/dsh-schedule'
-import type { ScheduleId } from '@deepseek-ai/dsh-schedule/client'
+} from '@gemini-agy/dsh-schedule'
+import type { ScheduleId } from '@gemini-agy/dsh-schedule/client'
 import type {
   InternalScheduleError, ScheduleEditRequest, ScheduleTargetRequest, ScheduleToolError,
   ScheduleCatalogEntry, ScheduleDeliveryReceipt, ScheduleRecord, SubagentSessionError,
-} from '@deepseek-ai/dsh-schedule'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@gemini-agy/dsh-schedule'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 /** Plugin name registered with the Loader. */
 export const name = 'tool-schedule'

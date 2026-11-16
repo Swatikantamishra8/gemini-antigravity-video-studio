@@ -8,8 +8,8 @@
  * select one by name.
  *
  * This package owns the Service Definition role of the capability seam. Service Providers
- * (`@deepseek-ai/dsh-subagent-spawn-in-process`, `-fork`, `-acp`) and the model-facing
- * consumer (`@deepseek-ai/dsh-tool-subagent`) are separate packages.
+ * (`@gemini-agy/dsh-subagent-spawn-in-process`, `-fork`, `-acp`) and the model-facing
+ * consumer (`@gemini-agy/dsh-tool-subagent`) are separate packages.
  *
  * `startActivation` establishes every child under the activation manager, which
  * owns execution, result delivery, and resource release. Local providers seed
@@ -25,23 +25,23 @@
  * serialization and hostile-input validation belong at real process, worker,
  * persistence, and model boundaries.
  *
- * @module @deepseek-ai/dsh-subagent
+ * @module @gemini-agy/dsh-subagent
  */
-import type { Volatile } from '@deepseek-ai/cordis'
+import type { Volatile } from '@gemini-agy/cordis'
 
-import { Context, Service } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import type {} from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
-import type { Scoped } from '@deepseek-ai/dsh-scope'
-import { assertObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import type { ContentBlock, MessageId } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { canonicalClientTimeZone } from '@deepseek-ai/dsh-util-time'
-import { Remote, RemoteError, TypertRemoteService, principalOf, type Principal } from '@deepseek-ai/dsh-typert-protocol'
+import { Context, Service } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type {} from '@gemini-agy/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-attachment'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { scopeTarget } from '@gemini-agy/dsh-scope'
+import type { Scoped } from '@gemini-agy/dsh-scope'
+import { assertObjectJsonSchema } from '@gemini-agy/dsh-tools'
+import type { ContentBlock, MessageId } from '@gemini-agy/dsh-llm'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import { canonicalClientTimeZone } from '@gemini-agy/dsh-util-time'
+import { Remote, RemoteError, TypertRemoteService, principalOf, type Principal } from '@gemini-agy/dsh-typert-protocol'
 import {
   rejectPrompt, validateControlRequest,
 } from './control.ts'
@@ -128,7 +128,7 @@ export type { SubagentDescendantListEntry } from './list-children.ts'
 export type { SubagentRunEndInfo, SubagentRunInfo } from './types.ts'
 export type { SubagentCatalogEntry, SubagentIdentityProjection, SubagentTimingProjection } from './projection-types.ts'
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     subagents: SubagentRuntime
   }

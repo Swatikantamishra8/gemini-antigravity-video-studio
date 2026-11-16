@@ -4,16 +4,16 @@ import { createHash, randomUUID } from 'node:crypto'
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import type { Sharp } from 'sharp'
-import { AttachmentError } from '@deepseek-ai/dsh-attachment'
-import type { ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { AttachmentError } from '@gemini-agy/dsh-attachment'
+import type { ImageVariantId } from '@gemini-agy/dsh-attachment/types'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type {
   ImageMediaType,
   ImageAttachmentRef,
   ImageRequestTarget,
   RequestImageAttachment,
   StoredImageAttachment,
-} from '@deepseek-ai/dsh-attachment'
+} from '@gemini-agy/dsh-attachment'
 import {
   IMAGE_ENCODING_QUALITIES,
   WEBP_ENCODING_EFFORT,

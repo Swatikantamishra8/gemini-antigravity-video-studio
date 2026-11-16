@@ -1,21 +1,21 @@
 /**
  * `LocalSpillStore`: the host-filesystem implementation of the
- * `@deepseek-ai/dsh-spill` storage seam. Persists oversized text to a
+ * `@gemini-agy/dsh-spill` storage seam. Persists oversized text to a
  * private, session-scoped file (see `./store.ts` for the traversal-safe naming
  * and exclusive owner-only write) and returns a path locator plus local
  * read/grep retrieval guidance. After activation it runs one best-effort
  * startup sweep that reclaims spill files older than `cleanupPeriodDays`.
  *
- * @module @deepseek-ai/dsh-spill-local
+ * @module @gemini-agy/dsh-spill-local
  */
 
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { resolve } from 'node:path'
 import { tmpdir } from 'node:os'
-import z from '@deepseek-ai/schemastery'
-import { type SpillLocator, SpillStore } from '@deepseek-ai/dsh-spill'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SaveTextSpill, SpillRef } from '@deepseek-ai/dsh-spill'
+import z from '@gemini-agy/schemastery'
+import { type SpillLocator, SpillStore } from '@gemini-agy/dsh-spill'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { SaveTextSpill, SpillRef } from '@gemini-agy/dsh-spill'
 import { gatherSweepRoots, sweepSpillRoots } from './cleanup.ts'
 import type { SweepRoot, WarnFn } from './cleanup.ts'
 import { privateRoot, saveTextFile } from './store.ts'

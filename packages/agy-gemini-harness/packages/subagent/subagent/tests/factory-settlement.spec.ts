@@ -1,15 +1,15 @@
 import { expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId, Session, SessionEvent } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import AgentLoop from '@gemini-agy/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@gemini-agy/dsh-agent-loop-testkit'
+import type { SessionId, Session, SessionEvent } from '@gemini-agy/dsh-session'
 import SubagentRuntime from '../src/index.ts'
-import * as SubagentSpawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
+import * as SubagentSpawn from '@gemini-agy/dsh-subagent-spawn-in-process'
 import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 import { managerState } from './manager-internals.ts'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 it.each([false, true])('settles an activation after factory unload with queue-clear failure=%s', async (rejectQueueClear) => {
   const ctx = new Context()

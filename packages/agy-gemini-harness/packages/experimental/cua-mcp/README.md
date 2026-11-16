@@ -3,7 +3,7 @@ description: "Serve Computer Use to Codex, Gemini 3.8 Flash High Code, and other
 kind: "package-bundle"
 ---
 
-# @deepseek-ai/dsh-cua-mcp
+# @gemini-agy/dsh-cua-mcp
 
 English | [中文](README.zh.md)
 
@@ -32,7 +32,7 @@ The bundle is a runtime dependency of the `dsh` installation, so a profile that 
 
 ```sh
 mkdir -p "${DSH_HOME:-$HOME/.dsh}/profiles/cua-mcp"
-printf '%s\n' '{ "name": "dsh-profile-cua-mcp", "private": true, "dependencies": {}, "dsh": { "profile": { "bundles": ["@deepseek-ai/dsh-cua-mcp"] } } }' > "${DSH_HOME:-$HOME/.dsh}/profiles/cua-mcp/package.json"
+printf '%s\n' '{ "name": "dsh-profile-cua-mcp", "private": true, "dependencies": {}, "dsh": { "profile": { "bundles": ["@gemini-agy/dsh-cua-mcp"] } } }' > "${DSH_HOME:-$HOME/.dsh}/profiles/cua-mcp/package.json"
 ```
 
 The Python runtime wheel ships the same installation: write the same manifest under the home the harness passes as `DSH_HOME`, then use its executable as the stdio command:

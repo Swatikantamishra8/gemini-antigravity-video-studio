@@ -10,8 +10,8 @@ import { tmpdir } from 'node:os'
 import { isAbsolute, join, relative, resolve as resolvePath } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ReasoningEffortId } from '@gemini-agy/dsh-llm'
 import {
   Gemini AntigravityHarness,
   HarnessClient,
@@ -612,7 +612,7 @@ describe('HarnessClient', () => {
 
     // A bare unbounded request with omitted params sends `{}` on the wire.
     const identity = await client.request('initialize') as { serverInfo: { name: string } }
-    expect(identity.serverInfo.name).toBe('deepseek-harness-sdk-runtime')
+    expect(identity.serverInfo.name).toBe('agy-gemini-harness-sdk-runtime')
 
     // Async iteration consumes queued items and then parks.
     const collected: string[] = []

@@ -1,12 +1,12 @@
 /** The external MCP process is replaced by barriers to pin disposal ordering. */
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import ComputerUse from '@deepseek-ai/dsh-computer-use'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ComputerUseProviderName } from '@deepseek-ai/dsh-computer-use/types'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import { Context } from '@gemini-agy/cordis'
+import ComputerUse from '@gemini-agy/dsh-computer-use'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ComputerUseProviderName } from '@gemini-agy/dsh-computer-use/types'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime from '@gemini-agy/dsh-tools'
 
 const fake = vi.hoisted(() => ({
   start: vi.fn<() => Promise<void>>(),
@@ -14,8 +14,8 @@ const fake = vi.hoisted(() => ({
   configurations: [] as unknown[],
 }))
 
-vi.mock('@deepseek-ai/dsh-mcp-client', async (importOriginal) => {
-  const original = await importOriginal<typeof import('@deepseek-ai/dsh-mcp-client')>()
+vi.mock('@gemini-agy/dsh-mcp-client', async (importOriginal) => {
+  const original = await importOriginal<typeof import('@gemini-agy/dsh-mcp-client')>()
   return {
     ...original,
     async apply(ctx: Context, config: unknown) {

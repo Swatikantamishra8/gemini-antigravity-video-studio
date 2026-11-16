@@ -3,7 +3,7 @@ description: "Gemini 3.8 Flash High Code 与 Codex 桥接背后的共享钩子�
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-hook-protocol
+# @gemini-agy/dsh-hook-protocol
 
 [English](README.md) | 中文
 

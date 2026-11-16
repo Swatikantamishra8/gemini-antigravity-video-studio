@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-permission-presets",
+  "name": "@gemini-agy/dsh-client-ui-permission-presets",
   "description": "Permission surfaces: a new-session default in General settings and a current-session /permission popup over the permissions projection",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/client/ui-permission-presets"
   },
   "type": "module",
@@ -29,13 +29,13 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-session-controller",
-        "@deepseek-ai/dsh-client-connection",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-commands",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-ui-settings"
+        "@gemini-agy/dsh-api-session-controller",
+        "@gemini-agy/dsh-client-connection",
+        "@gemini-agy/dsh-client-locale",
+        "@gemini-agy/dsh-client-ui-commands",
+        "@gemini-agy/dsh-client-ui-conversation",
+        "@gemini-agy/dsh-api-remotes",
+        "@gemini-agy/dsh-client-ui-settings"
       ],
       "platform": "web"
     }
@@ -46,28 +46,28 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-remote-mock": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-commands": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-settings": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-input-trigger": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
+    "@gemini-agy/dsh-remote-mock": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-api-remotes": "workspace:*",
+    "@gemini-agy/dsh-api-session-controller": "workspace:*",
+    "@gemini-agy/dsh-client-connection": "workspace:*",
+    "@gemini-agy/dsh-client-locale": "workspace:*",
+    "@gemini-agy/dsh-client-store": "workspace:*",
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*",
+    "@gemini-agy/dsh-client-ui-commands": "workspace:*",
+    "@gemini-agy/dsh-client-ui-conversation": "workspace:*",
+    "@gemini-agy/dsh-client-ui-primitives": "workspace:*",
+    "@gemini-agy/dsh-client-ui-settings": "workspace:*",
+    "@gemini-agy/dsh-client-ui-input-trigger": "workspace:*",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-permission-presets": "workspace:*",
     "clsx": "^2.0.0",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-session": "workspace:*"
+    "@gemini-agy/dsh-client-ui-renderer": "workspace:*",
+    "@gemini-agy/dsh-client-ui-session": "workspace:*"
   },
   "files": [
     "locale/*.json",

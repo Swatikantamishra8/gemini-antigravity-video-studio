@@ -1,4 +1,4 @@
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import type {
   AgentContext,
   ISessions,
@@ -7,12 +7,12 @@ import type {
   SessionReference,
   SessionRetainInfo,
   SessionSnapshot,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import { MutableSessionEventSource } from '@deepseek-ai/dsh-api-session-controller/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { StaticRemoteAccess } from '@deepseek-ai/dsh-client-test-runtime'
-import type { HostObservable, RootStandardSourceContribution } from '@deepseek-ai/dsh-client-ui-slots'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+} from '@gemini-agy/dsh-api-session-controller/client'
+import { MutableSessionEventSource } from '@gemini-agy/dsh-api-session-controller/client'
+import { createSnapshotStore } from '@gemini-agy/dsh-client-store'
+import { StaticRemoteAccess } from '@gemini-agy/dsh-client-test-runtime'
+import type { HostObservable, RootStandardSourceContribution } from '@gemini-agy/dsh-client-ui-slots'
+import type { SessionId } from '@gemini-agy/dsh-session/types'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   apply,

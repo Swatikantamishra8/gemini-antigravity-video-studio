@@ -7,24 +7,24 @@
  * call is decoded or prepared cancels nothing, and one whose grant ended is refused before dispatch.
  */
 
-import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
-import { TypertGatewayService } from '@deepseek-ai/dsh-api-gateway'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
-import { TypertRegistry } from '@deepseek-ai/dsh-typert-registry'
-import type { PeerScope } from '@deepseek-ai/dsh-typert-protocol'
-import type { ShareRpcActor } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
-import { identityKeyOf } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+} from '@gemini-agy/dsh-agent-loop-testkit'
+import { TypertGatewayService } from '@gemini-agy/dsh-api-gateway'
+import RemoteAccessService from '@gemini-agy/dsh-api-remote-access'
+import { TypertRegistry } from '@gemini-agy/dsh-typert-registry'
+import type { PeerScope } from '@gemini-agy/dsh-typert-protocol'
+import type { ShareRpcActor } from '@gemini-agy/dsh-experimental-liveshare-protocol'
+import { identityKeyOf } from '@gemini-agy/dsh-experimental-liveshare-protocol'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { ConnectionAuthentication } from '@deepseek-ai/dsh-client-connection'
+import { ConnectionAuthentication } from '@gemini-agy/dsh-client-connection'
 import { HostConnectionService } from '../../../client/connection/src/rpc-host.ts'
 import { createSessionTestController } from '../../../api/session-controller/tests/test-remote.ts'
 import { SessionController, type SessionCancelRequest } from '../../../api/session-controller/src/index.ts'
@@ -34,9 +34,9 @@ import type { ForkShareState } from '../src/host/fork-policy.ts'
 import { createViewerAccessPolicy, readerWriteRefusal, type ViewerAccessFacts } from '../src/host/viewer-access-policy.ts'
 import { createViewerReadService } from '../src/host/viewer-read.ts'
 import type { ViewerCallRequest } from '../src/viewer-channel.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@gemini-agy/dsh-brand'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@gemini-agy/dsh-typert-protocol' {
   interface TypertLookupMap {
     /** Test-only lookup holding a cancel request in the Gateway's preparation, after access was checked. */
     viewerCancelAdmissionRequest: TypertLookup<SessionCancelRequest, SessionCancelRequest>

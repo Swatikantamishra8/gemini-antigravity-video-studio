@@ -1,18 +1,18 @@
 /** Session-owned MCP browser processes and provider catalog activation. @module */
 
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import Schema from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { BrowserUseProviderName } from '@deepseek-ai/dsh-browser-use/types'
-import * as McpClient from '@deepseek-ai/dsh-mcp-client'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import type { Scope } from '@deepseek-ai/dsh-scope'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import Schema from '@gemini-agy/schemastery'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { BrowserUseProviderName } from '@gemini-agy/dsh-browser-use/types'
+import * as McpClient from '@gemini-agy/dsh-mcp-client'
+import { createScope } from '@gemini-agy/dsh-scope'
+import type { Scope } from '@gemini-agy/dsh-scope'
 import { BrowserSessionError, SessionResources } from './index.ts'
-import type {} from '@deepseek-ai/dsh-browser-use'
-import { ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@gemini-agy/dsh-browser-use'
+import { ToolContextUnavailableError } from '@gemini-agy/dsh-tools'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import type {} from '@gemini-agy/dsh-working-directory'
 
 /** Browser launch settings shared by the MCP integrations. */
 export interface BrowserMcpLaunchConfig {

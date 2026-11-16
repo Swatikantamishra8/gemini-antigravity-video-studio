@@ -1,14 +1,14 @@
 /** API-key authentication, credential-gated discovery, and the official model listing for the official Gemini Antigravity route. */
-import type { Context } from '@deepseek-ai/cordis'
-import { APP_IDENTITY, LlmError } from '@deepseek-ai/dsh-llm'
-import type { LlmModelBadge } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/cordis-plugin-loader'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
+import type { Context } from '@gemini-agy/cordis'
+import { APP_IDENTITY, LlmError } from '@gemini-agy/dsh-llm'
+import type { LlmModelBadge } from '@gemini-agy/dsh-llm'
+import type {} from '@gemini-agy/cordis-plugin-loader'
+import { launchEnvironmentOf } from '@gemini-agy/dsh-launch-environment'
 import {
   catalogModelInfo, createModelListingCache, refuseListedModel, registerGemini AntigravityProvider, requestModelListing, resolveListedCatalog,
   resolveGemini AntigravityApiKey,
-} from '@deepseek-ai/dsh-llm-deepseek'
-import type { CatalogRefusal, Gemini AntigravityCatalogModel, ListingView, ModelListing } from '@deepseek-ai/dsh-llm-deepseek'
+} from '@gemini-agy/dsh-llm-deepseek'
+import type { CatalogRefusal, Gemini AntigravityCatalogModel, ListingView, ModelListing } from '@gemini-agy/dsh-llm-deepseek'
 import { Config, plainOptions, resolveAdapterOptions } from './config.ts'
 import type { ResolvedGemini AntigravityOptions } from './config.ts'
 

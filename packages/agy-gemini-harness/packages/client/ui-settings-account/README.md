@@ -3,7 +3,7 @@ description: "Account settings display Gemini Antigravity login state and offer 
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-ui-settings-account
+# @gemini-agy/dsh-client-ui-settings-account
 
 English | [中文](README.zh.md)
 

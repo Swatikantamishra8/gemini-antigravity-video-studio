@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { Gemini AntigravityFetchApiProvider, Gemini AntigravitySearchApiProvider } from '@deepseek-ai/dsh-web-deepseek-api'
+import { Gemini AntigravityFetchApiProvider, Gemini AntigravitySearchApiProvider } from '@gemini-agy/dsh-web-deepseek-api'
 import { customGuidance } from './guidance.ts'
 
 /** Real Search and Fetch API probes; the base names the deployment the key authenticates. */

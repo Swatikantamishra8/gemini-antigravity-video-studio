@@ -2,25 +2,25 @@
  * Cross-session snapshot preparation. Hosts adapt mentions into structured
  * references; this service owns exact reads, projection, budgets, and durable context.
  *
- * @module @deepseek-ai/dsh-session-reference
+ * @module @gemini-agy/dsh-session-reference
  */
 
-import { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import { TextSearchIndex, type SearchKeys } from '@deepseek-ai/dsh-util-text-search'
-import { createUserMessage, freezeMessage, LlmError } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, LlmCallConfig, LlmResolvedModelInfo, UserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import type { Agent, PreStepDecision } from '@gemini-agy/dsh-agent'
+import { Remote, TypertRemoteService } from '@gemini-agy/dsh-typert-protocol'
+import { TextSearchIndex, type SearchKeys } from '@gemini-agy/dsh-util-text-search'
+import { createUserMessage, freezeMessage, LlmError } from '@gemini-agy/dsh-llm'
+import type { ContentBlock, LlmCallConfig, LlmResolvedModelInfo, UserMessage } from '@gemini-agy/dsh-llm'
+import type { SessionId } from '@gemini-agy/dsh-session'
 // Type-only: the `title` projection key plus the live registry and durable
 // cache Context merges — the two projection faces discovery labels from.
-import type { ProjectionSnapshot } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-title'
-import type {} from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type { SessionRecord, SessionSurfaceSnapshot } from '@deepseek-ai/dsh-session-query'
+import type { ProjectionSnapshot } from '@gemini-agy/dsh-session-projection'
+import type {} from '@gemini-agy/dsh-session-projection-cache'
+import type {} from '@gemini-agy/dsh-session-title'
+import type {} from '@gemini-agy/dsh-subagent'
+import type {} from '@gemini-agy/dsh-system-prompt'
+import type { SessionRecord, SessionSurfaceSnapshot } from '@gemini-agy/dsh-session-query'
 import { prepareReferenceOmission, REFERENCE_WARNING } from './spill.ts'
 import {
   DEFAULT_CANDIDATE_LIMIT,
@@ -67,7 +67,7 @@ const PROMPT_SUFFIX = '\n</referenced-sessions>'
 /** Projection keys a discovery label is answered from. */
 const LABEL_KEYS = ['title', 'subagent'] as const
 
-declare module '@deepseek-ai/cordis' {
+declare module '@gemini-agy/cordis' {
   interface Context {
     sessionReferenceResolver: SessionReferenceResolver
   }

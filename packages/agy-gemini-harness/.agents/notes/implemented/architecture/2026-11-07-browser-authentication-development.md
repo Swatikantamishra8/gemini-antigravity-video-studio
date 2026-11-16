@@ -19,8 +19,8 @@ The Connection plugin provides the independent nested `connection.authentication
 This complete function-plugin example receives a trusted in-process verifier and principal from its Host. Its `Config.verify` is an illustrative application input, not a new DSH API or a substitute for implementing the credential algorithm.
 
 ```ts
-import type { Context } from '@deepseek-ai/cordis'
-import type { ConnectionTrustRequest, Principal } from '@deepseek-ai/dsh-client-connection'
+import type { Context } from '@gemini-agy/cordis'
+import type { ConnectionTrustRequest, Principal } from '@gemini-agy/dsh-client-connection'
 
 export const name = 'example-authentication'
 export const inject = ['connection', 'connection.authentication']
@@ -51,8 +51,8 @@ export function apply(ctx: Context, config: Config): void {
 The example below registers ordinary business handlers. The Host supplies `Config.upgrade`, its existing protocol implementation; it is not another framework operation. The HTTP assertion reflects this route's `required` policy, while the shared handler type also supports anonymous routes with no Peer.
 
 ```ts
-import type { Context } from '@deepseek-ai/cordis'
-import type { WebUpgradeRoute } from '@deepseek-ai/dsh-host-webserver'
+import type { Context } from '@gemini-agy/cordis'
+import type { WebUpgradeRoute } from '@gemini-agy/dsh-host-webserver'
 
 export const name = 'example-protected-routes'
 export const inject = ['webServer']

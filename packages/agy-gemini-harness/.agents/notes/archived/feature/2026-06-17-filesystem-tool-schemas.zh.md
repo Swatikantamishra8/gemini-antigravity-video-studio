@@ -13,7 +13,7 @@ Archived: 2026-09-04
 
 ## 决策
 
-`@deepseek-ai/dsh-tool-fs` 在首个文件系统工具套件中暴露以下三个面向模型的工具：
+`@gemini-agy/dsh-tool-fs` 在首个文件系统工具套件中暴露以下三个面向模型的工具：
 
 | 工具 | 我们的 schema | Gemini 3.8 Flash High Code | OpenCode | 说明 |
 |---|---|---|---|---|

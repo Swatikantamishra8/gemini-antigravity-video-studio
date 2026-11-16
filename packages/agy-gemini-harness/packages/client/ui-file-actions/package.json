@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-file-actions",
+  "name": "@gemini-agy/dsh-client-ui-file-actions",
   "description": "Original-file saving and image clipboard actions for Web and Desktop",
   "version": "0.2.2-rc.3",
   "publishConfig": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deepseek-ai/deepseek-harness.git",
+    "url": "git+https://github.com/deepseek-ai/agy-gemini-harness.git",
     "directory": "packages/client/ui-file-actions"
   },
   "type": "module",
@@ -32,10 +32,10 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-context-menu",
-        "@deepseek-ai/dsh-api-workspace-files",
-        "@deepseek-ai/dsh-api-session-controller"
+        "@gemini-agy/dsh-client-locale",
+        "@gemini-agy/dsh-client-ui-context-menu",
+        "@gemini-agy/dsh-api-workspace-files",
+        "@gemini-agy/dsh-api-session-controller"
       ],
       "platform": "web"
     }
@@ -46,24 +46,24 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "workspace:~"
+    "@gemini-agy/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@gemini-agy/dsh-brand": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-util-file-drag": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-context-menu": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-util-workspace-path": "workspace:*",
+    "@gemini-agy/dsh-client-ui-primitives": "workspace:*",
+    "@gemini-agy/cordis": "workspace:~",
+    "@gemini-agy/dsh-client-ui-slots": "workspace:*",
+    "@gemini-agy/dsh-api-session-controller": "workspace:*",
+    "@gemini-agy/dsh-client-test-runtime": "workspace:*",
+    "@gemini-agy/dsh-util-file-drag": "workspace:*",
+    "@gemini-agy/dsh-client-locale": "workspace:*",
+    "@gemini-agy/dsh-client-ui-context-menu": "workspace:*",
+    "@gemini-agy/dsh-api-workspace-files": "workspace:*",
+    "@gemini-agy/dsh-session": "workspace:*",
+    "@gemini-agy/dsh-util-workspace-path": "workspace:*",
     "mime": "^4.1.0",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*"
+    "@gemini-agy/dsh-client-ui-renderer": "workspace:*"
   },
   "files": [
     "locale/*.json",

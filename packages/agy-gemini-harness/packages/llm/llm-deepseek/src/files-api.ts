@@ -1,8 +1,8 @@
 /** Gemini Antigravity Files API transport. @module dsh-llm-deepseek/files-api */
 
-import { attributionHeaders, LlmError } from '@deepseek-ai/dsh-llm'
-import type { ImageMediaType } from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { attributionHeaders, LlmError } from '@gemini-agy/dsh-llm'
+import type { ImageMediaType } from '@gemini-agy/dsh-attachment'
+import { brandString } from '@gemini-agy/dsh-brand'
 import type { Gemini AntigravityFileId as Gemini AntigravityFileIdType } from './file-id.ts'
 import { messagesApiRoot, MESSAGES_FILES_BETA } from './messages-api.ts'
 

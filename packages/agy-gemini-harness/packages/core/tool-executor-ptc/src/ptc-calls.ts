@@ -1,8 +1,8 @@
 /** Cancellation and settlement of complete PTC calls, including nested tools. */
-import type { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import { toolErrorMessage } from '@deepseek-ai/dsh-tools/pipeline'
+import type { Context } from '@gemini-agy/cordis'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import type { SandboxMode } from '@gemini-agy/dsh-sandbox'
+import { toolErrorMessage } from '@gemini-agy/dsh-tools/pipeline'
 import { CodeRunFailedError } from './errors.ts'
 
 interface Call {

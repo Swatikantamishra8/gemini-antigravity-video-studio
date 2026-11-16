@@ -158,7 +158,7 @@ describe('installed update archive contents', () => {
   it('accepts only the builder transformation of runtime dependency manifests', async () => {
     await fixture(async ({ manifest, source, payload, version, seal }) => {
       const preparedRoot = join(dirname(manifest), version, 'dsh')
-      const packagePath = 'node_modules/@deepseek-ai/dsh/package.json'
+      const packagePath = 'node_modules/@gemini-agy/dsh/package.json'
       const preparedPath = join(preparedRoot, packagePath)
       const data = JSON.parse(await readFile(preparedPath, 'utf8')) as Record<string, unknown>
       data.scripts = { test: 'inert' }
@@ -225,7 +225,7 @@ describe('installed update verification records', () => {
         const root = join(manifest, '..')
         const output = join(root, version, 'installer')
         await mkdir(output)
-        const name = `deepseek-harness-${version}-win-x64.exe`
+        const name = `agy-gemini-harness-${version}-win-x64.exe`
         const bytes = Buffer.from('inert installer fixture, never executed')
         const installer = join(output, name)
         await writeFile(installer, bytes)

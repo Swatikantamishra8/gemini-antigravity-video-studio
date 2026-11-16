@@ -1,8 +1,8 @@
 /** Browser-safe wire types of the Gemini Antigravity chat export importer. */
 
-import type {} from '@deepseek-ai/dsh-typert-protocol'
+import type {} from '@gemini-agy/dsh-typert-protocol'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@gemini-agy/dsh-typert-protocol' {
   interface RemoteErrorDetailsMap {
     /** Only the owner may import; every other principal is refused. */
     'deepseekChatImport/owner-only': {}

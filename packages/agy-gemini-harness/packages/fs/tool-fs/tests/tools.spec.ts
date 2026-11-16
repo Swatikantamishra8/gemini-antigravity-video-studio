@@ -1,22 +1,22 @@
-import AgentRegistry from '@deepseek-ai/dsh-agent'
+import AgentRegistry from '@gemini-agy/dsh-agent'
 /**
  * Consumer API tests over a fake provider and the real policy collaborator: schemas,
  * validation, formatting, typed errors, intent dispatch, and observation-driven authorization.
  */
-import { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { ToolExecutionPipeline } from '@gemini-agy/dsh-tools/pipeline'
+import { executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
+import * as PtcToolExecutor from '@gemini-agy/dsh-tool-executor-ptc'
+import { provideWorkingDirectoryFixture } from '@gemini-agy/dsh-agent-loop-testkit'
 import { describe, expect, it, vi } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import { PtcRuntime } from '@deepseek-ai/dsh-ptc-runtime'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt, { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type ToolResult } from '@deepseek-ai/dsh-tools'
-import { FileSystem, FsError, type FsTargetKey, type FsVersion } from '@deepseek-ai/dsh-fs'
+import { Context } from '@gemini-agy/cordis'
+import { PtcRuntime } from '@gemini-agy/dsh-ptc-runtime'
+import { createScope, type Scope } from '@gemini-agy/dsh-scope'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import SystemPrompt, { renderPrompt } from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime, { type ToolResult } from '@gemini-agy/dsh-tools'
+import { FileSystem, FsError, type FsTargetKey, type FsVersion } from '@gemini-agy/dsh-fs'
 import type {
   FsDirEntry,
   FsEditOutcome,
@@ -26,19 +26,19 @@ import type {
   FsTarget,
   FsWriteIntent,
   FsWriteOutcome,
-} from '@deepseek-ai/dsh-fs'
-import * as FsPolicy from '@deepseek-ai/dsh-fs-observation-policy'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
+} from '@gemini-agy/dsh-fs'
+import * as FsPolicy from '@gemini-agy/dsh-fs-observation-policy'
+import * as ToolFs from '@gemini-agy/dsh-tool-fs'
 import { STREAM_MIN_SIZE } from '../src/read.ts'
 import { formatReadOutput } from '../src/read-render.ts'
 import type { FileReadOutcome } from '../src/read-render.ts'
 import { sessionResolveOptions } from '../src/session-cwd.ts'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
-import type { SandboxExecutionPolicy, SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import { type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import ApprovalService from '@gemini-agy/dsh-user-approval'
+import type { SandboxExecutionPolicy, SandboxMode } from '@gemini-agy/dsh-sandbox'
+import SandboxPolicyService from '@gemini-agy/dsh-sandbox-policy'
+import { type SessionId, SessionLogOffset, SessionSeq } from '@gemini-agy/dsh-session'
+import SessionProjectionRegistry from '@gemini-agy/dsh-session-projection'
+import { brandString } from '@gemini-agy/dsh-brand'
 
 const testToolSignal = new AbortController().signal
 
@@ -1226,7 +1226,7 @@ function withPersona(...sections: string[]): string {
 
 /** Schema assembly only: these cases never execute user code. */
 class GuidancePtcRuntime extends PtcRuntime {
-  resolve(request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest): import('@deepseek-ai/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
+  resolve(request: import('@gemini-agy/dsh-ptc-runtime').PtcRunRequest): import('@gemini-agy/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
 
   readonly language = 'typescript'
   readonly isolation = 'fake'

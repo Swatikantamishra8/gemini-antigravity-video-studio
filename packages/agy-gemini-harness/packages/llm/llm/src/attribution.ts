@@ -4,7 +4,7 @@
  * `docs/subsystems/llm-streaming.md#appidentity--app-attribution`.
  *
  * App-attribution vocabulary for provider requests.
- * @module @deepseek-ai/dsh-llm/attribution
+ * @module @gemini-agy/dsh-llm/attribution
  */
 
 import { createRequire } from 'node:module'
@@ -58,9 +58,9 @@ function launchSuffix(): string | undefined {
  * can suppress attribution entirely.
  */
 export const APP_IDENTITY: AppIdentity = {
-  product: 'deepseek-harness',
+  product: 'agy-gemini-harness',
   version,
-  url: 'https://github.com/deepseek-ai/deepseek-harness',
+  url: 'https://github.com/deepseek-ai/agy-gemini-harness',
   get suffix() { return launchSuffix() },
 }
 

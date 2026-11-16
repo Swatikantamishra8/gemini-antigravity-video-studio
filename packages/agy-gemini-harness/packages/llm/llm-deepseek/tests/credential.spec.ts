@@ -1,8 +1,8 @@
 /** Shared credential resolution and metadata-only readiness across Gemini Antigravity consumers. */
-import { Context } from '@deepseek-ai/cordis'
+import { Context } from '@gemini-agy/cordis'
 import { describe, expect, it, vi } from 'vitest'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { createLaunchEnvironmentSnapshot, DSH_LAUNCH_ENVIRONMENT_KEY } from '@deepseek-ai/dsh-launch-environment'
+import { credentialRef } from '@gemini-agy/dsh-credentials'
+import { createLaunchEnvironmentSnapshot, DSH_LAUNCH_ENVIRONMENT_KEY } from '@gemini-agy/dsh-launch-environment'
 import { deepSeekApiKeyConfigured, rejectGemini AntigravityAccountToken, resolveGemini AntigravityAccountToken, resolveGemini AntigravityApiKey } from '../src/credential.ts'
 
 const ref = credentialRef('TEST_DEEPSEEK_KEY')

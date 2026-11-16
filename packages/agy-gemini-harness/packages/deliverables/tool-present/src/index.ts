@@ -1,11 +1,11 @@
 /** Scoped tool that declares filesystem deliveries in their owning Session. */
-import type {} from '@deepseek-ai/dsh-working-directory'
-import type { Context } from '@deepseek-ai/cordis'
-import z from '@deepseek-ai/schemastery'
-import { FsError } from '@deepseek-ai/dsh-fs'
-import { ToolArgsError, ToolContextUnavailableError, defineTool, type ToolExecution } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-agent'
-import type { Session } from '@deepseek-ai/dsh-session'
+import type {} from '@gemini-agy/dsh-working-directory'
+import type { Context } from '@gemini-agy/cordis'
+import z from '@gemini-agy/schemastery'
+import { FsError } from '@gemini-agy/dsh-fs'
+import { ToolArgsError, ToolContextUnavailableError, defineTool, type ToolExecution } from '@gemini-agy/dsh-tools'
+import type {} from '@gemini-agy/dsh-agent'
+import type { Session } from '@gemini-agy/dsh-session'
 import type { PresentedFile } from './types.ts'
 
 /** Stable Loader identity. */

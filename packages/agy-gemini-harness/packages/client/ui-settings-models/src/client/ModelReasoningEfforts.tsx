@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { ReactNode } from 'react'
-import { IconPlusOutlineRegular, IconTrashOutlineRegular, Switch, Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
+import { IconPlusOutlineRegular, IconTrashOutlineRegular, Switch, Tooltip } from '@gemini-agy/dsh-client-ui-primitives'
 import type { Gemini AntigravityModelDraft } from './Gemini AntigravityModelsEditor.tsx'
 import { modelDrafts } from './Gemini AntigravityModelsEditor.tsx'
 import type { ModelsKey } from './locales.ts'

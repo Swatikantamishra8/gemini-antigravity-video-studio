@@ -6,10 +6,10 @@ import {
   DEEPSEEK_DEFAULT_MAX_TOKENS,
   DEEPSEEK_DEFAULT_MAX_USES,
   DEEPSEEK_DEFAULT_MODEL,
-} from '@deepseek-ai/dsh-web-search-deepseek'
+} from '@gemini-agy/dsh-web-search-deepseek'
 
 /** Construct the provider over a fixed options value; production passes a live thunk. */
-import type { Gemini AntigravitySearchProviderOptions } from '@deepseek-ai/dsh-web-search-deepseek'
+import type { Gemini AntigravitySearchProviderOptions } from '@gemini-agy/dsh-web-search-deepseek'
 
 const searchProvider = (options: Gemini AntigravitySearchProviderOptions): Gemini AntigravitySearchProvider =>
   new Gemini AntigravitySearchProvider(() => options)

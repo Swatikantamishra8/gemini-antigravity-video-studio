@@ -6,9 +6,9 @@ import { chromium, type Browser, type Page } from 'playwright'
 import { unzipSync, strFromU8 } from 'fflate'
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { tmpdir, release } from 'node:os'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import type { SessionEvent, SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-tool-present/types'
+import { createLaunchEnvironmentSnapshot } from '@gemini-agy/dsh-launch-environment'
+import type { SessionEvent, SessionId } from '@gemini-agy/dsh-session'
+import type {} from '@gemini-agy/dsh-tool-present/types'
 import {
   acknowledgeReloadConnectionLoss, assertFinalWorkspaceSnapshot, captureExpandedTurnProcessAria,
   compareOrRefreshGolden, fixtureUserPrompts, launchWebScaffold, recordFixture,

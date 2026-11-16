@@ -6,10 +6,10 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createServer, type IncomingMessage, type Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
-import { Gemini AntigravitySearchProvider } from '@deepseek-ai/dsh-web-search-deepseek'
+import { Gemini AntigravitySearchProvider } from '@gemini-agy/dsh-web-search-deepseek'
 
 /** Construct the provider over a fixed options value; production passes a live thunk. */
-import type { Gemini AntigravitySearchProviderOptions } from '@deepseek-ai/dsh-web-search-deepseek'
+import type { Gemini AntigravitySearchProviderOptions } from '@gemini-agy/dsh-web-search-deepseek'
 
 const searchProvider = (options: Gemini AntigravitySearchProviderOptions): Gemini AntigravitySearchProvider =>
   new Gemini AntigravitySearchProvider(() => options)

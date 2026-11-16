@@ -1,9 +1,9 @@
 /** Current-generation benchmark seeds retain the system head across continuation. */
 import { expect, it } from 'vitest'
-import { createSystemMessage } from '@deepseek-ai/dsh-llm'
-import { parseSessionLog } from '@deepseek-ai/dsh-llm-replay'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
+import { createSystemMessage } from '@gemini-agy/dsh-llm'
+import { parseSessionLog } from '@gemini-agy/dsh-llm-replay'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@gemini-agy/dsh-session'
 import { syntheticHistory as browserHistory } from '../long-session-browser/synthetic-history.ts'
 import { syntheticHistory } from './workload.ts'
 

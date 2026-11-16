@@ -1,7 +1,7 @@
 import { expect, it, vi } from 'vitest'
-import { agentEvents, type Agent, type PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
+import { agentEvents, type Agent, type PreStepDecision } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import { createUserMessage, type ToolCallId } from '@gemini-agy/dsh-llm'
 import { fixture, callId, proposal, recordCard, ACTION } from './fixture.ts'
 import * as CreationRecommendations from '../src/index.ts'
 

@@ -1,16 +1,16 @@
 /** Conditional registrations share step admission with direct and nested execution. */
-import { executeModelToolFixture, executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeModelToolFixture, executeToolFixture } from '@gemini-agy/dsh-tool-testkit'
+import * as NativeToolExecutor from '@gemini-agy/dsh-tool-executor-native'
 import { afterEach, expect, it } from 'vitest'
-import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { defineTool, TOOL_ABORTED_BEFORE_DISPATCH, ToolActivationError } from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionInput, ToolExecutionResult } from '@deepseek-ai/dsh-tools'
+import { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { ToolCallId } from '@gemini-agy/dsh-llm'
+import { createScope, type Scope } from '@gemini-agy/dsh-scope'
+import type { SessionId } from '@gemini-agy/dsh-session'
+import SystemPrompt from '@gemini-agy/dsh-system-prompt'
+import ToolRuntime, { defineTool, TOOL_ABORTED_BEFORE_DISPATCH, ToolActivationError } from '@gemini-agy/dsh-tools'
+import type { ToolExecutionInput, ToolExecutionResult } from '@gemini-agy/dsh-tools'
 
 const TEST_MODEL_SELECTION = { provider: 'test', model: 'test' }
 const contexts: Context[] = []

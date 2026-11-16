@@ -3,7 +3,7 @@ description: "设置中的账号页面显示 Gemini Antigravity 登录状态，�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-ui-settings-account
+# @gemini-agy/dsh-client-ui-settings-account
 
 [English](README.md) | 中文
 

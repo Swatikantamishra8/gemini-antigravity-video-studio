@@ -1,21 +1,21 @@
 /** Host timer over standalone tasks; target Session activation is a delivery operation. */
 import { randomUUID } from 'node:crypto'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import { createUserMessage } from '@gemini-agy/dsh-llm'
+import type { ContextFormed } from '@gemini-agy/dsh-llm'
+declare module '@gemini-agy/dsh-llm' {
   interface MessageSourceMap {
     'schedule': { kind: 'schedule' } & ContextFormed
   }
 }
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionId as SessionIdType } from '@deepseek-ai/dsh-session/types'
-import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SessionPersistenceNotFoundError } from '@deepseek-ai/dsh-session-persistence'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import type {} from '@deepseek-ai/dsh-session-title'
-import type {} from '@deepseek-ai/dsh-workspace'
+import { brandString } from '@gemini-agy/dsh-brand'
+import type { SessionId as SessionIdType } from '@gemini-agy/dsh-session/types'
+import type { Context } from '@gemini-agy/cordis'
+import type { Agent } from '@gemini-agy/dsh-agent'
+import { SessionPersistenceNotFoundError } from '@gemini-agy/dsh-session-persistence'
+import { RemoteError } from '@gemini-agy/dsh-typert-protocol'
+import type {} from '@gemini-agy/dsh-api-session-controller'
+import type {} from '@gemini-agy/dsh-session-title'
+import type {} from '@gemini-agy/dsh-workspace'
 import {
   isRecurringScheduleRecord, MIN_EVERY_INTERVAL_SECONDS, renderRecurringReminderBatchFraming, renderReminderFraming,
   resolveRecurringOccurrence, type RecurringOccurrence,

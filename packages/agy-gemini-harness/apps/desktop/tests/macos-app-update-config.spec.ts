@@ -37,14 +37,14 @@ describe('macOS packaged updater configuration', () => {
 
   it('writes and verifies the fixed release feed before signing', async () => {
     const paths = await fixture()
-    expect(createMacOSAppUpdateConfig(update, 'deepseek-harness-updater')).toEqual({
+    expect(createMacOSAppUpdateConfig(update, 'agy-gemini-harness-updater')).toEqual({
       provider: 'generic',
       url: update.publicUrl,
       channel: 'nightly',
-      updaterCacheDirName: 'deepseek-harness-updater',
+      updaterCacheDirName: 'agy-gemini-harness-updater',
     })
-    await writeMacOSAppUpdateConfig(paths.resourcesDir, update, 'deepseek-harness-updater')
-    await expect(verifyMacOSAppUpdateConfig(paths.appPath, update, 'deepseek-harness-updater')).resolves.toBeUndefined()
+    await writeMacOSAppUpdateConfig(paths.resourcesDir, update, 'agy-gemini-harness-updater')
+    await expect(verifyMacOSAppUpdateConfig(paths.appPath, update, 'agy-gemini-harness-updater')).resolves.toBeUndefined()
   })
 
   it.each([
@@ -60,8 +60,8 @@ describe('macOS packaged updater configuration', () => {
   it('rejects another updater cache directory when the signed value is known', async () => {
     const paths = await fixture()
     await writeMacOSAppUpdateConfig(paths.resourcesDir, update, 'wrong-updater')
-    await expect(verifyMacOSAppUpdateConfig(paths.appPath, update, 'deepseek-harness-updater'))
-      .rejects.toThrow(/expected deepseek-harness-updater/u)
+    await expect(verifyMacOSAppUpdateConfig(paths.appPath, update, 'agy-gemini-harness-updater'))
+      .rejects.toThrow(/expected agy-gemini-harness-updater/u)
   })
 })
 

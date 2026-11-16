@@ -8,7 +8,7 @@ import {
   parseSnapshotManifest,
   type Scenario,
   type SnapshotSuiteOptions,
-} from '@deepseek-ai/dsh-session-snapshot'
+} from '@gemini-agy/dsh-session-snapshot'
 
 const corpusDir = fileURLToPath(new URL('./', import.meta.url))
 
