@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "blender": {
+      "command": "python3",
+      "args": [
+        "${PLUGIN_ROOT}/vendors/mcp-for-blender/main.py"
+      ],
+      "env": {
+        "PYTHONPATH": "${PLUGIN_ROOT}/vendors/mcp-for-blender/src"
+      }
+    }
+  }
+}

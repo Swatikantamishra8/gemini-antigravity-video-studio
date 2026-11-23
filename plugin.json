@@ -1,0 +1,14 @@
+{
+  "name": "antigravity-video-studio",
+  "displayName": "Antigravity Video Studio Core",
+  "version": "1.0.0",
+  "description": "Full-stack programmatic AI video editor, 3D WebGL motion engine, and viral content production pipeline with social compliance gates.",
+  "logo": "assets/logo.svg",
+  "author": "Swatikantamishra8",
+  "repository": "https://github.com/Swatikantamishra8/gemini-antigravity-video-studio",
+  "suggestedPrompts": [
+    "Create a 9:16 viral vertical video using Three.js and beat sync",
+    "Analyze and remix raw footage with auto-captions and sound effects",
+    "Extract beatmap and viral blueprint from reference audio"
+  ]
+}
