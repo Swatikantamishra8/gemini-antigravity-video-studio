@@ -1,0 +1,12 @@
+{
+  "name": "claude-video-studio",
+  "description": "Full-stack programmatic AI video editor, 3D WebGL motion engine, and viral content production pipeline with social compliance gates for Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Swatikantamishra8",
+    "url": "https://github.com/Swatikantamishra8"
+  },
+  "homepage": "https://github.com/Swatikantamishra8/gemini-antigravity-video-studio",
+  "repository": "https://github.com/Swatikantamishra8/gemini-antigravity-video-studio",
+  "license": "MIT"
+}

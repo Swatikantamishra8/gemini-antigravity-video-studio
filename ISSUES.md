@@ -1,4 +1,4 @@
-# Antigravity Video Studio — Issues Log & Roadmap
+# Antigravity & Claude Video Studio — Issues Log & Roadmap
 
 > **Updated**: 2026-11-23  
 > **Workspace**: `<workspace_root>`  
@@ -21,6 +21,7 @@
 | **ISS-011** | No `.gitignore` at workspace root | 🟡 Medium | Created comprehensive `.gitignore` filtering `node_modules`, `vendors/`, venvs, OS files, and intermediate renders. |
 | **ISS-014** | CC0 test audio clip missing from `assets/audio/` | 🟡 Medium | Synthesized and verified standard 128 BPM electronic kick/hat audio clip at `assets/audio/test_bgm.wav`. |
 | **ISS-020** | Antigravity Plugin & Global Skill packaging missing | 🔴 Critical | Packaged repository as an official Antigravity Plugin: authored `plugin.json` (v1.0.0), modern vector branding `assets/logo.svg`, social media compliance gates `rules/AGENTS.md`, and portable Blender MCP `mcp_config.json` (`${PLUGIN_ROOT}`). Migrated all 9 skills into `skills/` with progressive disclosure (`scripts/`, `references/`, `examples/`). Validated with `agy plugin validate . --strict` and enabled globally in Antigravity (`~/.gemini/config/plugins/antigravity-video-studio`). |
+| **ISS-021** | Claude Code Skill & Cross-Agent Compatibility | 🟠 High | Added full native support for **Claude Code**: authored `CLAUDE.md`, `.claude-plugin/plugin.json`, custom slash commands in `.claude/commands/` (`/video-generate`, `/video-remix`, `/video-analyze`, `/video-render`), and `.claude/mcp.json`. Linked globally to `~/.claude/plugins/` and `~/.claude/skills/`. Both Antigravity and Claude Code validation verified with zero conflicts. |
 
 ---
 
@@ -32,7 +33,7 @@
 - **Affected**: Phase 3 (deterministic physics), Mode A (code-driven generation).
 
 ### ISS-007: Blender host application install
-- **Impact**: The Blender MCP server bridge is registered via `mcp_config.json`, but Blender itself is not installed on the system. Headless 3D mesh synthesis requires Blender CLI.
+- **Impact**: The Blender MCP server bridge is registered via `mcp_config.json` and `.claude/mcp.json`, but Blender itself is not installed on the system. Headless 3D mesh synthesis requires Blender CLI.
 - **Fix**: Install Blender (`brew install --cask blender` or manual download) and register addon from `vendors/mcp-for-blender/addon.py`.
 - **Affected**: Mode A 3D asset generation.
 
@@ -65,8 +66,10 @@ Phase 4: Antigravity Plugin & Global Integration      [COMPLETED]
 ├── Validated via `agy plugin validate . --strict`
 └── Enabled globally in ~/.gemini/config/plugins/antigravity-video-studio
 
-Phase 5: Automated Production & Viral Workflows       [ACTIVE]
-├── Mode A: Text-to-Video code-driven generation
-├── Mode B: Raw footage remix with auto-captions & safe zones
-└── Mode C: Viral reference deconstruction and rebuild
+Phase 5: Claude Code Cross-Agent Integration         [COMPLETED]
+├── CLAUDE.md project guide & directives
+├── .claude-plugin/plugin.json manifest
+├── .claude/commands/ (/video-generate, /video-remix, /video-analyze, /video-render)
+├── .claude/mcp.json Blender MCP server bridge
+└── Linked globally in ~/.claude/plugins/ and ~/.claude/skills/
 ```
